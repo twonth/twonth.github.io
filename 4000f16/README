@@ -1,0 +1,10 @@
+This directory contains the dos version of the march utility and
+the R2->R3 source converter.
+
+March is used to create and maintain Maple library archives.
+
+The updtsrc utility converts Maple V Release 2 source (text) files
+so that the handling of undeclared variables in Maple procedures
+conforms to the rules of Maple V Release 3. 
+
+ updtsrc inputfile.t > outputfile

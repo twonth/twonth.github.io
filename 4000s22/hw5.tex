@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\renewcommand\subset\subseteq
+%\usepackage{bbold}
+\usepackage{url}
+\usepackage{geometry}
+\def\C{\mathbb{C}}
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\Nm{\mathbf{N}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\Pp{\mathcal{P}}
+\def\lcm{\mathrm{lcm}}
+\def\proj{\mathrm{proj}}
+\def\ord{\mathrm{ord}}
+\def\bz{\mathbb{1}}
+%\def\1{\mathbb{1}}
+\def\Arg{\mathrm{Arg}}
+\renewcommand\Re{\mathrm{Re}}
+\renewcommand\Im{\mathrm{Im}}
+\newcommand{\leg}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+\newcommand{\vc}[1]{\mathbf{#1}}
+\theoremstyle{plain}
+
+\newtheorem*{lem}{Lemma}
+\newtheorem*{thm}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+\geometry{left=1in, right=1in, top=.75in, bottom=.75in}
+\makeatletter
+\let\@@pmod\pmod
+\DeclareRobustCommand{\pmod}{\@ifstar\@pmods\@@pmod}
+\def\@pmods#1{\mkern4mu({\operator@font mod}\mkern 6mu#1)}
+\makeatother
+\begin{document}
+\thispagestyle{empty} \begin{center} {\textbf{MATH 4000/6000 --
+Homework \#5}\\ posted \today; due by midnight on March 23, 2022}
+\end{center}
+
+\begin{quote} {\scriptsize Algebra is but written geometry and geometry is but written algebra. -- Sophie Germain}
+\end{quote}
+
+\noindent Assignments are expected to be neat and stapled. \textbf{Illegible work may not be marked}. Starred problems (*) are required for those in MATH 6000 and extra credit for those in MATH 4000.
+
+\vskip 0.1in
+\begin{enumerate}
+\item 3.1.6.
+
+\item 3.1.10(a,c,e).
+
+% \item 3.1.15.
+
+% {\scriptsize \emph{Hint:} You should assume, without proof, that the product rule holds for derivatives of polynomials over an arbitrary field. That is, $(fg)' = f'g + fg'$.}
+
+\item Let $F$ be a field. Prove that the units in $F[x]$ are precisely the nonzero elements of $F$.
+
+\item Let $F$ be a field. Recall the definition of the gcd in $F[x]$: a gcd of $a(x), b(x)$ is a common divisor of $a(x)$ and $b(x)$ in $F[x]$ that is divisible by every common divisor in $F[x]$.
+
+Show that if $d(x) \in F[x]$ is a gcd of $a(x), b(x)$, then so is $c \cdot d(x)$ for every nonzero $c \in F$. Conversely, show that every gcd of $a(x), b(x)$ has the form $c \cdot d(x)$ for some nonzero $c \in F$.
+
+\item Let $F$ be a field. Give a detailed proof that every nonconstant polynomial in $F[x]$ can be written as a product of irreducible polynomials. (You are not asked to prove uniqueness in this problem.)
+
+
+\item In Chapter 4, we will construct a field $K$ with $4$ elements containing $\Z_2$ as subfield. In this exercise, \emph{assume} $K$ is such a field. Then in addition to $0,1$ from $\Z_2$, the field $K$ has two extra elements; call these $\alpha$ and $\beta$.
+\begin{enumerate}
+\item Show that $\alpha+1 = \beta$.\\
+{\scriptsize \emph{Hint.} Try process of elimination.}
+
+\item Show that $\alpha^2=\beta$.
+\item Show that both $\alpha$ and $\beta$ are roots of $x^2+x+1$ and deduce that $x^2+x+1 = (x-\alpha)(x-\beta)$ in $K[x]$.
+\end{enumerate}
+
+\item Let $F$ be a subfield of $K$, and let $\alpha \in K$. Suppose that $\alpha$ is a root of the irreducible polynomial $p(x) \in F[x]$. Let $n$ be the degree of $p(x)$. Show that every element of $F[\alpha]$ has a \emph{unique} representation in the form
+\[ a_0 + a_1 \alpha + a_2 \alpha^2 +\dots+a_{n-1}\alpha^{n-1},\]
+where $a_0, a_1, \dots, a_{n-1} \in F$.
+
+{\scriptsize \emph{Hint:} We [will have] proved this in class without the uniqueness requirement. So your job is (only) to prove uniqueness.}
+
+\item 
+\begin{enumerate}
+\item Let $\sqrt{2}, \sqrt{3}$ denote the positive real square roots of $2$ and $3$, respectively. Prove that $\sqrt{3} \notin \Q[\sqrt{2}]$. 
+\item Prove that $\Q[\sqrt{2},\sqrt{3}] = \Q[\sqrt{2}+\sqrt{3}]$.
+
+{\scriptsize \emph{Hint:} Show containment both ways. One direction is fairly easy: Since $\sqrt{2}, \sqrt{3} \in \Q[\sqrt{2},\sqrt{3}]$, and $\Q[\sqrt{2},\sqrt{3}]$ is closed under addition (being a ring), we have $\sqrt{2}+\sqrt{3} \in \Q[\sqrt{2},\sqrt{3}]$. Since $\Q[\sqrt{2},\sqrt{3}]$ contains both $\Q$ and $\sqrt{2}+\sqrt{3}$, and is closed under addition and multiplication (being a ring), it follows that $\Q[\sqrt{2},\sqrt{3}]$ contains $\Q[\sqrt{2}+\sqrt{3}]$. Can you find a similar argument for the other containment?}
+\end{enumerate}
+
+\item Let $F$ be a subfield of $K$, and suppose $\alpha \in K$ is not algebraic over $F$. Prove that $\alpha$ has no multiplicative inverse in $F[\alpha]$. Deduce that $F[\alpha]$ is not a field.
+
+\item (*) Let $F$ be a field and let $a\in F$ be nonzero.
+\begin{enumerate}
+\item Prove that there cannot be \textbf{exactly two} distinct solutions $z$ in $F$ to the equation $z^3=a$. 
+\item Write down an example  of an equation $z^3=a$ (with $a$ nonzero) that has no solutions. Then write down an example with $1$ solution and an example with $3$ solutions. (An example consists of both a specific field $F$ and a nonzero element $a\in F$. You will probably want to use different choices of $F$ for different examples!)
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

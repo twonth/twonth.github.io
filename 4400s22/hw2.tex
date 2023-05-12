@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsthm}
+\def\Z{\mathbf{Z}}
+\def\Q{\mathbf{Q}}
+\def\C{\mathbf{C}}
+\def\R{\mathbf{R}}
+\def\lcm{\mathrm{lcm}}
+\def\ord{\mathrm{ord}}
+\def\proj{\mathrm{proj}}
+\renewcommand\subset\subseteq
+\newcommand{\vc}[1]{\mathbf{#1}}
+\geometry{left=1in, right=1in, top=.75in, bottom=.75in}
+\begin{document}
+\thispagestyle{empty} \begin{center} {\textbf{MATH 4400/6400 --
+Homework \#2}\\ posted \today; due Feb. 7, by midnight}
+\end{center}
+
+{\scriptsize \begin{quote} God made the integers, all else is the work of man. \\-- L. Kronecker\end{quote}}
+
+
+\vskip 10pt \noindent\textbf{Directions}. Give complete solutions, providing full justifications when appropriate. Your assignment must be stapled if it goes on beyond one page.
+
+\vskip 10pt \noindent\textbf{MATH 4400 problems}
+\begin{enumerate}
+
+\item Give a careful proof that if $\pi$ is prime in $\mathbb{Z}[i]$, so is $\epsilon \pi$ for each unit $\epsilon$ of $\Z[i]$.
+
+\item Prove that if $\pi$ is prime in $\Z[i]$, then $\pi \mid p$ for some ordinary prime $p$ (of $\Z$).
+
+\item Let $\alpha, \beta \in \Z[i]$.
+\begin{enumerate}
+\item Prove or disprove: If $\alpha, \beta$ have $1$ as a greatest common divisor in $\Z[i]$, then $N(\alpha)$ and $N(\beta)$ have $1$ as a greatest common divisor in $\Z$.
+\item Prove or disprove: If $N(\alpha), N(\beta)$ have $1$ as a greatest common divisor in $\Z$, then $\alpha$ and $\beta$ have $1$ as a greatest common divisor in $\Z[i]$.
+\end{enumerate}
+
+\item Use the Euclidean algorithm to compute a greatest common divisor $\delta$ of $108+i$ and $3-14i$. Use your work to find Gaussian integers $\mu ,\nu$ with $(108+i)\mu + (3-14i)\nu = \delta$.
+
+\end{enumerate}
+
+\noindent For each positive integer $d$, we can consider the ring $\Z[\sqrt{-d}] = \{a+b\sqrt{-n}: a, b\in \Z\}$. (The cases $n=1$ and $n=2$ were discussed in class.) Writing, as usual, $N(\alpha)=\alpha\bar{\alpha}$, we have 
+\begin{itemize}
+    \item $N(\alpha\beta) = N(\alpha)N(\beta)$ for all $\alpha,\beta \in \C$,
+    \item $N(\alpha) \in \Z_{\ge 0}$ for all $\alpha \in \Z[\sqrt{-d}]$, with $N\alpha = 0$ only if $\alpha=0$,
+    \item when $\alpha \in \Z[\sqrt{-d}]$,\quad $N(\alpha)=1$ $\Longleftrightarrow$ $\alpha$ is a unit in $\Z[\sqrt{-d}]$.
+\end{itemize}
+(We omit the proofs, which are analogous to those in $\Z[i]$ and $\Z[\sqrt{-2}]$.)
+
+
+
+
+\begin{enumerate}
+\item[5.] Let $d$ be a positive integer, $d>1$. Show that $\pm 1$ are the only units in $\Z[\sqrt{-d}]$.
+
+\item[6.] Show that every  nonzero, nonunit element of $\Z[\sqrt{-d}]$ can be written as a product of primes. 
+
+{\scriptsize Recall our definition of \textsf{prime}: $\pi$ is prime if it is a nonzero, nonunit such that, whenever $\pi=\alpha \beta$, one of $\alpha$ or $\beta$ is a unit.}
+
+\item[7.] If $\Z[\sqrt{-d}]$ obeys Euclid's lemma, then arguing as in class, one can prove that $\Z[\sqrt{-d}]$ obeys the unique factorization theorem. Give a careful proof of the converse. That is, show that if $\Z[\sqrt{-d}]$ obeys the unique factorization theorem, then it also obeys Euclid's lemma.
+
+\item[8.] Let $d$ be a positive integer, $d\ge 3$.
+\begin{enumerate}
+\item Show that $2$ is prime in $\Z[\sqrt{-d}]$.
+\item Show that $2\mid (d+\sqrt{-d})(d-\sqrt{-d})$ in $\Z[\sqrt{-d}]$ while $2\nmid d+\sqrt{-d}$ and $2\nmid d-\sqrt{-d}$.
+\item Conclude that $\Z[\sqrt{-d}]$ does not have unique factorization.
+\end{enumerate}
+
+
+\end{enumerate}
+
+\vskip 10pt \noindent\textbf{MATH 6400 problem}
+\begin{enumerate}
+\item[G1.] Let $R = \{\frac{a+b\sqrt{-3}}{2}: a, b \in \Z, a\equiv b\pmod{2}\}$. Prove that $R$ contains $1$ and is closed under multiplication and subtraction. (As you know from MATH 4000, it follows that $R$ is a subring of $\mathbb{C}$.)
+
+
+\item[G2.] (continuation) 
+\begin{enumerate}
+    \item Show that the norm map, restricted to $R$, maps $R$ into $\Z_{\ge 0}$.
+    \item Prove the division algorithm holds in $R$: Given $\alpha, \beta \in R$ with $\beta \ne 0$, there are $\gamma, \rho \in R$ with $\alpha=\beta\gamma + \rho$ and $N\rho < N\beta$.
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document}

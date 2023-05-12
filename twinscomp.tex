@@ -1,0 +1,1609 @@
+\documentclass[a4paper]{compositio}
+\usepackage{amsmath,amssymb,amsthm,amscd}
+\usepackage[curve]{xy}
+\begin{document}
+\renewcommand{\theenumi}{\roman{enumi}}
+\newtheorem*{abh}{Abhyankar's Lemma}
+\newtheorem*{hl}{A Hardy-Littlewood Conjecture for Polynomials over $\F_q$}
+\newtheorem*{bang}{Bang's Theorem on Primitive Prime Divisors}
+\newtheorem*{bsd}{A Criterion of Birch \& Swinnerton-Dyer}
+\newtheorem*{cast}{Castelnuovo's Inequality}
+\newtheorem*{cheb}{Explicit Chebotarev Density Theorem for First Degree Primes}
+\newtheorem*{hyph}{Hypothesis H}
+\newtheorem*{thma}{Theorem A}
+\newtheorem*{guess}{Conjecture}
+\newtheorem{thm}{Theorem}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{prop}[thm]{Proposition}
+\theoremstyle{remark}
+\newtheorem*{example}{Example}
+\theoremstyle{definition}
+\newtheorem*{rmk}{Remark}
+\newtheorem*{rmks}{Remarks}
+\def\sing{\mathfrak{S}}
+\def\disc{\mathrm{disc}}
+\def\res{\mathrm{res}}
+\def\Frob{\mathrm{Frob}}
+\def\Gal{\mathrm{Gal}}
+\def\Sym{\mathrm{Sym}}
+\def\I{\mathcal{I}}
+\def\P{\mathcal{P}}
+\def\Z{\mathbf{Z}}
+\def\R{\mathbf{R}}
+\def\Q{\mathbf{Q}}
+\def\F{\mathbf{F}}
+\def\C{\mathcal{C}}
+\def\Nm{\mathrm{Nm}}
+\def\Tr{\mathrm{Tr}}
+\def\lcm{\mathrm{lcm}}
+\newcommand{\leg}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+\title[Counting Irreducibility-preserving substitutions]{Counting irreducibility-preserving substitutions for polynomials over
+finite fields}
+\author{Paul Pollack}
+\email{paul.pollack@dartmouth.edu} \thanks{The author is supported
+by an NSF Graduate Research Fellowship.}
+\begin{abstract} Let $n$ be a positive integer and let $f_1(T), \dots, f_r(T)$ be
+pairwise nonassociated irreducible polynomials over a finite field
+$\F_q$ with the degree of $f_1 \cdots f_r$ bounded by $B$.  We show
+that the number of univariate monic polynomials $h$ of degree $n$
+for which all of $f_1(h(T)), \dots, f_r(h(T))$ are irreducible over
+$\F_q$ is $q^n/n^r + O_{n,B}(q^{n-1/2})$ provided $\gcd(q,2n)=1$. As
+an application, fix an infinite arithmetic progression $a \bmod{m}$
+and fix pairwise nonassociated irreducibles $f_1(T), \dots, f_r(T)$
+over $\F_p$ with the degree of $f_1\cdots f_r$ bounded by $B$. If
+$p$ is sufficiently large depending only on $m$, $r$, and $B$, then
+there are infinitely many monic polynomials $h(T)$ with
+$\deg{h}\equiv a \pmod{m}$ and all of $f_1(h(T)), \dots, f_r(h(T))$
+irreducible over $\F_p$.
+\end{abstract}
+\keywords{Finite fields, Hardy-Littlewood conjectures, Irreducible
+polynomials, Twin prime polynomials}
+\address{Department of Mathematics\\Dartmouth College\\Hanover, NH 03755}
+\subjclass[2000]{Primary: 11T55, Secondary: 11N32}\maketitle
+\section{Introduction}
+
+Are there infinitely many primes of the form $n^2+1$? Questions of
+this type, where one inquires about the prime values of a polynomial
+(or the simultaneous prime values of a finite collection of
+polynomials) have received considerable attention, especially since
+the development of sieve methods in the early 20th century. Yet we
+still cannot prove the existence a single polynomial of degree $> 1$
+that assumes prime values infinitely often.
+
+In 1923, Hardy \& Littlewood \cite{hl23} formulated quantitative
+predictions for the number of simultaneous prime values assumed on
+integers $n\leq x$ for several specific families of polynomials. A
+general prediction for all finite collections of polynomials was
+later given by Bateman \& Horn \cite{bh}; roughly speaking, the
+number of such $n$ is conjectured to be governed by a global factor
+predicted by the density of primes, multiplied by a local factor
+depending on the number of solutions of our polynomials modulo $p$
+for all primes $p$.
+
+In light of the strong analogies between the ring of integers and
+the ring of polynomials in one variable over a finite field, it is
+natural to wonder if similar conjectures can be formulated in the
+polynomial context. This is indeed the case: the following is one
+plausible analogue of the Hardy-Littlewood/Bateman-Horn conjectures:
+
+\begin{conj}[(A Hardy-Littlewood Conjecture for Polynomials over $\F_q$)]\label{conj:hl} Let $f_1, \dots, f_r$ be nonassociated irreducible
+one-variable polynomials over $\F_q$. Suppose that there is no prime
+$\pi$ of $\F_q[T]$ for which the map
+\[ h(T) \mapsto f_1(h(T)) \cdots f_r(h(T)) \bmod \pi \]
+is identically zero. Then there are infinitely many monic $h(T)$ for
+which all of $f_1(h(T)), \dots, f_r(h(T))$ are simultaneously
+irreducible over $\F_q$. Moreover,
+\begin{multline*} \#\{h(T): h \text{ monic},~\deg{h}=n, \text{ and $f_1(h(T)), \dots, f_r(h(T))$
+are all prime}\} \sim
+\\ \sing(f_1,\dots,f_r)  \frac{1}{\prod_{i=1}^{r}\deg{f_i}}\frac{q^n}{n^r}  \quad
+\text{as $n\to\infty$}. \end{multline*} Here the local factor
+$\sing(f_1, \dots, f_r)$ is defined by
+\[ \sing(f_1, \dots, f_r) := \prod_{n=1}^{\infty}\prod_{\substack{\deg{\pi}=n \\ \pi \text{ monic prime of
+$\F_q[T]$}}}\frac{1- \omega(\pi)/q^{n}}{(1-1/q^{n})^r},
+\] where
+\[ \omega(\pi) := \#\{a \bmod{\pi}: f_1(a) \cdots f_r(a) \equiv 0
+\pmod{\pi}\}. \]
+\end{conj}
+\begin{rmks} We make two remarks about the behavior of $\sing(f_1, \dots, f_r)$, deferring their proofs
+to \S\ref{sec:local}.
+\begin{enumerate}
+\item Under the hypotheses of Conjecture \ref{conj:hl}, the product defining
+$\sing(f_1,\dots,f_r)$ converges to a nonzero constant.
+\item If the sum of the degrees of the $f_i$ is bounded, then the ratio $\sing(f_1, \dots,
+f_r)/\prod_{i=1}^r{\deg{f_i}}$ tends uniformly to $1$ as $q$ tends
+to infinity. This observation will be useful in explaining the form
+of Theorem \ref{thm:main} below.
+\end{enumerate}
+\end{rmks}
+
+Conjecture \ref{conj:hl} is the expected translation of the
+Hardy-Littlewood/Bateman-Horn prediction into the polynomial
+setting, except that we have been a bit conservative in our
+formulation by restricting ourselves to polynomials with
+coefficients from $\F_q$. A complete analogue of the
+Hardy-Littlewood conjectures would address prime specializations of
+polynomials with coefficients from $\F_q[u]$ (predicting, e.g., the
+frequency of polynomials $h$ for which $h(u)$ and $h(u)^q+u$ are
+both prime in $\F_q[u]$). However, formulating a plausible
+conjecture in complete generality requires some care; simply
+translating the classical conjectures into the language of
+polynomials is no longer adequate. Indeed, the number of prime
+specializations of a single irreducible polynomial in $\F_q[u][T]$
+may already display unexpected behavior if the polynomial is
+inseparable over $\F_q(u)$. The underlying issues here were brought
+to light and vigorously explored by Conrad, Conrad \& Gross
+(\cite{ccg03}; see also the survey \cite{conrad05}). We restrict our
+attention in this paper to Conjecture \ref{conj:hl}.
+
+Let $B$ denote an upper bound on the degree of the product
+$f_1\cdots f_r$. Then Conjecture \ref{conj:hl} provides a
+(predicted) asymptotic formula for fixed $q$ and $B$ valid as
+$n\to\infty$. It makes equally good sense to ask for asymptotics in
+other ranges of $(q,n,B)$-space, perhaps for a uniform conjecture.
+In this paper we make some progress in this direction by proving
+asymptotic results when $q$ is large compared to $n$ and $B$,
+subject to mild restrictions on the characteristic of $\F_q$. Our
+main result is as follows:
+
+\begin{thm}\label{thm:main} Let $n$ be a positive integer. Let $f_1(T), \dots, f_r(T)$ be
+pairwise nonassociated irreducible polynomials over $\F_q$ with the
+degree of the product $f_1 \cdots f_r$ bounded by $B$. The number of
+univariate monic polynomials $h$ of degree $n$ for which all of
+$f_1(h(T)), \dots, f_r(h(T))$ are irreducible over $\F_q$ is
+$q^n/n^r + O_{n,B}(q^{n-1/2})$ provided $\gcd(q,2n)=1$.
+\end{thm}
+\noindent The dependence of the $O_{n,B}$-term here is explicit but
+unpleasant, and it would be interesting to improve this. Observe
+that there is no coefficient appearing in front of $q^n/n^r$ in the
+estimate of Theorem \ref{thm:main}. Referring to Remark (ii) above,
+we see that this is exactly what we would expect if a uniform
+version of Conjecture \ref{conj:hl} holds.
+
+\begin{example} The polynomial $T^2+1$ is irreducible over
+$\F_q$ if and only if $q \equiv 3 \pmod{4}$. By Theorem
+\ref{thm:main} (with $r=1$) the number of $h$ of a fixed degree
+$n\geq 1$ for which $h^2+1$ is irreducible is asymptotic to $q^n/n$,
+provided $q\to\infty$ through prime powers $3\pmod{4}$ satisfying
+$\gcd(q,2n)=1$. This prediction may be initially surprising: if $h$
+has degree $n$, then $h^2+1$ has degree $2n$, and a random
+polynomial of degree $2n$ is irreducible with probability roughly
+$1/(2n)$. So we obtain from Theorem \ref{thm:main} twice as many
+irreducible specializations as we might expect. But this naive
+expectation fails to take the local data into account; as remarked
+above, a uniform version of Conjecture \ref{conj:hl} would explain
+the discrepancy. Alternatively, one can convince oneself that the
+estimate of Theorem \ref{thm:main} is reasonable by realizing that
+for $q\equiv 3 \pmod{4}$, the polynomial $h^2+1$ is irreducible over
+$\F_q$ exactly when $h+i$ is irreducible over $\F_{q^2}$, and it is
+plausible that the latter should happen with probability about
+$1/n$.
+\end{example}
+
+Theorem \ref{thm:main} was inspired by the result of Effinger,
+Hicks, and Mullen \cite{ehm02} that for each fixed $n \geq 1$ and
+every large enough finite field $\F_q$, one can find a pair of
+distinct monic irreducibles of degree $n$ over $\F_q$ which differ
+only in their constant term. To see this, let $h(T)$ range over the
+polynomials of degree $n$ with vanishing constant term, and let
+$N_h$ denote the number of $a \in \F_q$ for which $h(T)-a$ is
+irreducible over $\F_q$. By Gauss's formula for the number of monic
+irreducibles of degree $n$ (see, for example, \cite[Theorem
+3.25]{ln97}), we have
+\[ \sum_{h} N_{h} = q^n/n + O(q^{n/2}/n), \]
+so that by the Cauchy-Schwarz inequality,
+\[ \sum_{h}{1^2} \sum_{h} N_{h}^2 \geq \left(\sum_{h} N_{h}\right)^2=
+q^{2n}/n^2 + O(q^{3n/2}/n^2), \] and hence
+\[ \sum_{h} N_{h}^2 \geq q^{n+1}/n^2 + O(q^{n/2+1}/n^2). \]
+But the left-hand side counts the number of ordered pairs of monic
+degree $n$ irreducibles which differ at most in their constant term.
+Since the lower bound exceeds the number of trivial pairs once $q$
+is large enough compared to $n$, the result follows.
+
+An averaging argument of this kind does not appear sufficient for
+the proof of Theorem \ref{thm:main}. Instead we employ an explicit
+form of the Chebotarev density theorem. Our argument is similar in
+strategy to that used by Cohen \cite{cohen70} and Ree (\cite{ree71},
+\cite{ree72}) to settle Chowla's conjecture \cite{chowla66} on the
+existence of prime polynomials of the form $T^n + T + a$ modulo $p$
+for $p > p_0(n)$.
+
+Under the hypotheses of Conjecture \ref{conj:hl} we expect
+infinitely many irreducibility-preserving specializations.
+Surprisingly, this qualitative version of Conjecture \ref{conj:hl}
+can be rigorously confirmed in many special  cases, even if the
+asymptotic appears out of reach. The first to make significant
+progress in this direction was Hall \cite{hall06}, who showed that
+there are infinitely many monic twin prime pairs $f, f+1$ over all
+finite fields $\F_q$ with more than two elements (excepting $\F_3$,
+which was later treated by the present author \cite[Theorem
+1]{pollack06a}). Generalizing the work of Hall, the author recently
+established the following result (cf. \cite[Theorem 2]{pollack06a}):
+\begin{thma} Let $f_1(T), \dots, f_r(T)$ be
+pairwise nonassociated irreducible polynomials over $\F_q$ with the
+degree of $f_1 \cdots f_r$ bounded by $B$. If $q \geq 2^{2r} \left(1
++ B\right)^2$, then there is a prime $l$ dividing $q-1$ and an
+element $\beta \in \F_q$ for which every substitution
+\[ T \mapsto T^{l^k}-\beta \quad \text{with} \quad k=1, 2, 3, \dots \]
+leaves all of $f_1, \dots, f_r$ irreducible. In particular, there
+are infinitely many $h$ as in Conjecture \ref{conj:hl}.
+\end{thma}
+In both Hall's original theorem and in Theorem A, the set of
+substitutions $T \mapsto h(T)$ leaving all the $f_i$ irreducible
+form a sparse set. A weak consequence of Conjecture \ref{conj:hl} is
+that there should be such irreducibility-preserving substitutions
+$h(T)$ of every sufficiently large degree. Here we establish that
+the degrees of the permissible substitutions are ``dense'' with
+respect to arithmetic progressions, in the following sense:
+
+\begin{thm}\label{thm:arith} Let $f_1(T), \dots, f_r(T)$ be pairwise
+nonassociated irreducibles over $\F_q$ with the degree of $f_1
+\cdots f_r$ bounded by $B$. Let $a \bmod m$ be an arbitrary infinite
+arithmetic progression of integers. If the finite field $\F_q$ is
+sufficiently large, depending just on $m$, $r$, and $B$, and if $q$
+is prime to $2\gcd(a,m)$, then there are infinitely many univariate
+monic polynomials $h$ over $\F_q$ with
+\[ \deg{h} \equiv a \pmod{m} \quad \text{and} \quad f_1(h(T)), \dots, f_r(h(T)) \text{ all irreducible over
+$\F_q$}. \]
+\end{thm}
+This result is most satisfactory in the case of prime fields, since
+the restriction that $q$ be coprime to $2\gcd(a,m)$ is satisfied for
+all sufficiently large primes $q$. Probably Theorem \ref{thm:arith}
+remains true without any restriction on the characteristic of
+$\F_q$, but we have not been able to show this.
+
+Our proof of Theorem \ref{thm:arith} is completely effective. We
+illustrate our methods with the following result, the first half of
+which settles a problem posed by Hall \cite[p. 140]{hall06}:
+\begin{thm}\label{thm:hall} Let $\F_q$ be any finite field with more than two elements.
+Then there are infinitely many monic prime pairs $f, f+1$ of odd
+degree over $\F_q$. The same holds for the case of even degree.
+\end{thm}
+\noindent Even for large $q$ this is not immediate from Theorem
+\ref{thm:arith}, since that theorem says nothing about prime
+specializations over fields of characteristic $2$.
+
+Theorem \ref{thm:hall} is an analogue of Kornblum's result that
+every coprime residue class of polynomials over $\F_q$ contains
+infinitely many monic irreducibles of odd degree, as well as
+infinitely many of even degree. In the posthumously-published
+version of Kornblum's paper \cite{kornblum}, Landau proved the more
+general theorem that the degrees can be taken from an arbitrary
+arithmetic progression. Theorem \ref{thm:arith} can be seen as an
+effort in the same direction.
+
+\section{Analysis of the Local Factor}\label{sec:local}
+Here we justify the remarks following Conjecture \ref{conj:hl}.
+Proposition \ref{prop:prod1} vindicates our first remark, and
+Proposition \ref{prop:prod2} establishes the second in a more
+precise form.
+\begin{prop}\label{prop:prod1} Let $f_1, \dots, f_r$ be pairwise nonassociated
+irreducibles over $\F_q$ satisfying also the hypothesis of
+Conjecture \ref{conj:hl} that $f_1\cdots f_r$ has no fixed prime
+divisor. Then the product defining $\sing(f_1, \dots, f_r)$
+converges to a positive constant.
+\end{prop}
+
+\begin{prop}\label{prop:prod2} Let $f_1, \dots, f_r$ be pairwise nonassociated
+irreducibles over $\F_q$ with the degree of $f_1\dots f_r$ bounded
+by $B$. If $q\geq 2B^2$, then
+\[ \frac{1}{\prod_{i=1}^{r}\deg{f_i}} \sing(f_1, \dots, f_r) = 1 + O(B/q^{1/2}), \]
+where the implied constant is absolute.
+\end{prop}
+
+The proofs of both propositions are based on the following technical
+lemma:
+
+\begin{lem}\label{lem:estimate} Let $f_1, \dots, f_r$ be pairwise nonassociated
+irreducibles over $\F_q$. For $\pi$ a prime of $\F_q[T]$, let
+$\omega(\pi)$ denote the number of roots of $f_1\cdots f_r$ modulo
+$\pi$, and for each $i=1,2, \dots, r$, let $\omega_i(\pi)$ denote
+the number of roots of $f_i$ modulo $\pi$. Suppose that $B$ is an
+upper bound for the degree of $f_1\cdots f_r$. Then
+\begin{equation}\label{eq:sprod} \log \prod_{n=N_0}^{N_1} \prod_{\deg{\pi}=n}
+\left(1 - \frac{1}{q^n}\right)^{-r} = r
+\sum_{n=N_0}^{N_1}\frac{1}{n} + O\left(\frac{B}{N_0
+q^{N_0/2}}\right)
+\end{equation} for all positive integers $N_0 < N_1$. Moreover, if
+$q^{N_0} \geq 2B$, then
+\begin{multline}\label{eq:sprod2}
+ \log \prod_{n=N_0}^{N_1} \prod_{\deg{\pi}=n} \left(1 -
+\frac{\omega(\pi)}{q^n}\right) = \\
+-\left(\deg{f_1}\sum_{\substack{n=N_0
+\\ \deg{f_1} \mid n}}^{N_1}\frac{1}{n} +\dots+ \deg{f_r}\sum_{\substack{n=N_0
+\\ \deg{f_r} \mid n}}^{N_1}\frac{1}{n} \right) +
+O\left(\frac{B}{N_0 q^{N_0/2}}\right) + O\left(\frac{B^2}{N_0
+q^{N_0}}\right).
+\end{multline} All implied constants here
+are absolute.
+\end{lem}
+\begin{proof} The left hand side of \eqref{eq:sprod} is given by
+\[ - r \sum_{n=N_0}^{N_1}\sum_{\deg{\pi}=n} \log(1-1/q^n)=  -r \sum_{n=N_0}^{N_1} \sum_{\deg{\pi}=n} \left(-\frac{1}{q^n} + O\left(\frac{1}{q^{2n}}\right)\right).
+\] Inserting the estimate $q^n/n + O(q^{n/2}/n)$ for the number of monic irreducibles of
+degree $n$, this simplifies to
+\[ r \sum_{n=N_0}^{N_1} \frac{1}{n} + O\left(r \sum_{n=N_0}^{N_1} \frac{1}{n q^n} + r \sum_{n=N_0}^{N_1} \frac{1}{n q^{n/2}}\right). \]
+The error term is $O(r/(N_0 q^{N_0/2}))$; since $r$ is bounded by
+$B$, this proves \eqref{eq:sprod}.
+
+The proof of \eqref{eq:sprod2} is similar but a bit more involved.
+Since $q^{N_0} \geq 2B$, we have $\omega(\pi)/q^n \leq 1/2$ for any
+prime $\pi$ of $\F_q[T]$ of degree $n \geq N_0$. As a consequence,
+we may write the left hand side of \eqref{eq:sprod2} as
+\[ -\sum_{n=N_0}^{N_1} \sum_{\deg\pi = n}\left(\frac{\omega(\pi)}{q^n} + O\left(\frac{B^2}{q^{2n}}\right)\right). \]
+The $O$-term here is
+\begin{equation}\label{eq:oterm}
+ \ll \sum_{n=N_0}^{N_1} \frac{B^2}{q^{2n}} \frac{q^n}{n} \ll B^2 \frac{1}{N_0 q^{N_0}}.
+\end{equation}
+To evaluate the main term, we observe that since the $f_i$ are
+pairwise coprime, we have $\omega(\pi) = \omega_1(\pi) + \dots +
+\omega_r(\pi)$. Moreover, $\omega_i(\pi)$ vanishes unless the degree
+of $f_i$, say $d_i$, divides the degree of $\pi$, in which case
+$\omega_i(\pi)=d_i$. With this information in hand, we can write the
+main term as
+\[ -\sum_{n=N_0}^{N_1} \sum_{\deg\pi=n} \frac{\omega(\pi)}{q^n} = -
+\left(d_1 \sum_{\substack{n=N_0 \\ d_1 \mid
+n}}^{N_1}\frac{1}{q^n}\sum_{\deg{\pi}=n}{1} + \dots +d_r
+\sum_{\substack{n=N_0 \\ d_r \mid
+n}}^{N_1}\frac{1}{q^n}\sum_{\deg{\pi}=n}{1}\right).\] For each $1
+\leq i \leq r$, we have
+\begin{align*}
+ d_i \sum_{\substack{n=N_0 \\ d_i \mid
+n}}^{N_1}\frac{1}{q^n}\sum_{\deg{\pi}=n}{1} &= d_i
+\sum_{\substack{n=N_0 \\ d_i \mid n}}^{N_1}\frac{1}{n} + O\left(d_i
+\sum_{n=N_0}^{N_1}\frac{1}{n q^{n/2}} \right) \\ &= d_i
+\sum_{\substack{n=N_0 \\ d_i \mid n}}^{N_1}\frac{1}{n} +
+O\left(\frac{d_i}{N_0 q^{N_0/2}}\right).
+\end{align*}
+Adding all these estimates (and keeping in mind the prior error term
+\eqref{eq:oterm}) we obtain the main term of \eqref{eq:sprod2} with
+an error that is $\ll B/(N_0 q^{N_0/2}) + B^2/(N_0 q^{N_0})$, as
+claimed.
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{prop:prod1}] Suppose that
+$q$ and the $f_i$ are fixed, and let $d_i$ denote the degree of
+$f_i$ as above. By \eqref{eq:sprod} and \eqref{eq:sprod2}, if $N_1
+> N_0$ and $N_0$ is large enough to satisfy $q^{N_0} \geq 2B$, then
+we have
+\begin{multline}\label{eq:part} \log \prod_{n=N_0}^{N_1}
+\prod_{\deg\pi=n}\frac{\left(1-\omega(\pi)/q^n\right)}{(1-1/q^n)^r}
+=\\ -\left(d_1 \left(\frac{1}{d_1} \sum_{N_0/d_1 \leq n \leq
+N_1/d_1}\frac{1}{n}\right) +\dots + d_r \left(\frac{1}{d_r}
+\sum_{N_0/d_r \leq n \leq N_1/d_r}\frac{1}{n}\right)\right) +\\ r
+\sum_{n=N_0}^{N_1} \frac{1}{n} + O\left(\frac{B}{N_0 q^{N_0/2}} +
+\frac{B^2}{N_0 q^{N_0}}\right).
+\end{multline}
+Since we have $\sum_{N_0/d_i \leq n \leq N_1/d_i}\frac{1}{n} =
+\log{(N_1/N_0)} + O(d_i/N_0)$ while $\sum_{N_0 \leq n \leq
+N_1}\frac{1}{n} = \log{(N_1/N_0)} + O(1/N_0)$, this simplifies to
+\[ -r \log{(N_1/N_0)} + r \log{(N_1/N_0)} + O\left(B/N_0 + r/N_0 +
+\frac{B}{N_0 q^{N_0/2}} + \frac{B^2}{N_0 q^{N_0}}\right) =
+O(B^2/N_0).\] But in our situation $B$ is fixed. It follows that
+\eqref{eq:part} tends to zero as $N_0$ tends to infinity. This
+verifies that the sequence of logarithms of the partial products for
+the expression defining $\sing(f_1, \dots,f_r)$ is Cauchy, hence
+convergent. Consequently, the product defining $\sing(f_1, \dots,
+f_r)$ converges to a positive real number, as claimed. (Note that in
+order to know that the sequence of logarithms of the partial
+products is well-defined, we are implicitly using the condition that
+$f_1\cdots f_r$ has no fixed prime divisor.)
+\end{proof}
+
+\begin{proof}[Proof of Proposition \ref{prop:prod2}] We appeal to
+estimates \eqref{eq:sprod} and \eqref{eq:sprod2} with $N_0 = 1$.
+Since $q\geq 2B^2$, the condition $q^{N_0} \geq 2B$ of Lemma
+\ref{lem:estimate} is certainly satisfied. Proceeding as in the
+proof of Proposition \ref{prop:prod1}, we find \[ \log
+\prod_{n=1}^{N}\prod_{\deg{\pi}=n}\frac{\left(1-\omega(\pi)/q^n\right)}{(1-1/q^n)^r}
+= - \left(\sum_{n \leq N/d_1}\frac{1}{n} + \dots + \sum_{n  \leq
+N/d_r}\frac{1}{n}\right) + r \sum_{n \leq N} \frac{1}{n} +
+O\left(\frac{B}{q^{1/2}} + \frac{B^2}{q}\right). \]Since $\sum_{n
+\leq N/d_i} \frac{1}{n} = \log{(N/d_1)} + \gamma + O(d_i/N)$ while
+$\sum_{n \leq N}\frac{1}{n} = \log{N} + \gamma + O(1/N)$, the last
+expression can be estimated as
+\begin{multline*}
+ -\log{\frac{N^r}{d_1 \cdots d_r}} + r \log{N} -r\gamma + r\gamma + O(B/N + r/N + B/q^{1/2} + B^2/q) =\\ \log{d_1\cdots
+ d_r} + O(B/N + B/q^{1/2}).
+\end{multline*}
+(Note that $B/q^{1/2} \geq B^2/q$ since $q \geq B^2$.) Letting $N$
+tend to infinity and exponentiating now gives the result.
+\end{proof}
+
+\section{Preparation for the Proof of Theorem \ref{thm:main}}
+\subsection{Notation} We fix once and for all an algebraically closed
+field $\Omega_q$ of infinite transcendence degree over $\F_q$ and
+assume for the remainder of the paper that all extensions of $\F_q$
+which appear are subfields of $\Omega_q$. We use an overline to
+denote the operation of taking an algebraic closure; in particular,
+$\overline{\F}_q$ denotes the algebraic closure of $\F_{q}$ inside
+$\Omega_q$.
+
+We use $\res$ and $\disc$ to denote the polynomial resultant and
+discriminant, respectively. Our work also requires variants of these
+quantities, which we define as follows: If $f = \sum_{i=0}^{n}a_i
+u^i$ and $g = \sum_{j=0}^{m}{b_j u^j}$ are polynomials in $u$ of
+degrees \emph{at most} $n$ and $m$ respectively over a domain $R$
+(so that $a_n$ and $b_m$ may vanish), we define
+\[ \res_u^{n,m}(f,g):= \left.\res_u\left(\sum_{i=0}^{n}{A_i u^i},
+\sum_{j=0}^{m} B_j u^j\right)\right|_{A_0= a_0, \dots, A_n= a_n,
+B_0=b_0, \dots, B_m = b_m},
+\] where the right-hand resultant is computed
+over the ring $R[A_0, \dots, A_n, B_0, \dots, B_m]$ of polynomials
+obtained by adjoining the indeterminates $A_i$ and $B_j$ to $R$.
+Similarly, if $f = \sum_{i=0}^{n}a_i T^i$ is a polynomial in $T$ of
+degree at most $n$, we define
+\[ \disc_T^n(f) := \left.\disc_T\left(\sum_{i=0}^{n}{A_i T^i}\right)\right|_{A_0 = a_0, \dots,
+A_n = a_n}, \] the right-hand discriminant being taken over
+$R[A_0,\dots,A_n]$. If $n$ and $m$ represent the actual degrees of
+$f$ and $g$, respectively, then $\res_u^{n,m}(f,g) = \res_{u}(f,g)$,
+and similarly for $\disc_T^{n}(f)$. We work with $\res_u^{n,m}$ and
+$\disc_T^n$ rather than the usual resultant and discriminant in
+order to obtain uniform formulas without needing to worry about
+``degree-dropping'' in intermediate calculations. The fundamental
+property of $\res_u^{n,m}$ that we need is that $\res_u^{n,m}(f,g)$
+is an $R[u]$-linear combination of $f$ and $g$. (This follows from
+our definitions above and the analogous result for the usual
+resultant.) In particular, if $R$ is a field and $\res_u^{n,m}(f,g)$
+is a nonzero constant, then $f$ and $g$ have no common roots in $R$.
+
+We use $\Sym(S)$ to denote the symmetric group on the set $S$.
+
+\subsection{Further Preliminaries for the Proof of Theorem \ref{thm:main}}
+Since the case $n=1$ of Theorem \ref{thm:main} is trivial, we always
+suppose that $n \geq 2$. We also suppose the following setup:
+\begin{alignat*}{1}
+f_1, \dots, f_r &\qquad\text{pairwise nonassociated irreducible
+univariate polynomials over $\F_q$,} \\
+d_1, \dots, d_r &\qquad \text{degrees of $f_1, \dots, f_r$
+respectively,} \\
+\theta_1, \dots, \theta_r &\qquad \text{fixed roots of $f_1, \dots,
+f_r$, respectively, from $\overline{\F}_q$,} \\
+\theta_i^{(j)} &\qquad \text{$j$th conjugate of $\theta_i$ with
+respect to Frobenius, i.e., $\theta_i^{(j)}:= \theta_i^{q^j}$.}
+\end{alignat*}
+
+If $h$ is a fixed polynomial of degree $n\geq 2$ over $\F_q$, we
+define the function fields $K_{i,j}/\F_q, L_{i,j}/\F_q$ and
+$M_i/\F_q$ (for $1 \leq i \leq r, 1 \leq j \leq d_i$) as follows,
+suppressing in our notation the dependence on $h$:
+\begin{alignat*}{1}
+K_{i,j} &\qquad\text{field obtained by adjoining a fixed root of
+$h(T) - u - \theta_i^{(j)}$ to $\F_{q^{d_i}}(u)$,} \\
+L_{i,j} &\qquad \text{Galois closure of $K_{i,j}$ over
+$\F_{q^{d_i}}(u)$,} \\
+M_i &\qquad \text{compositum of the fields $L_{i,j}$ for $j=1, 2
+\dots, d_i$.}
+\end{alignat*}
+
+We let $D$ be the least common multiple of $d_1, \dots, d_r$ and
+denote with a tilde the corresponding fields obtained by extending
+the constant field by $\F_{q^D}$. (That is, we set
+$\widetilde{K}_{i,j}:= K_{i,j}\F_{q^D}, \widetilde{L}_{i,j}:=
+L_{i,j} \F_{q^D}$ and $\widetilde{M}_i:=M_i \F_{q^D}$.) Finally, we
+let $\widetilde{M}$ denote the compositum of $\widetilde{M}_1,
+\dots, \widetilde{M}_r$. The inclusion relations between these
+fields are illustrated in Figures \ref{fig:tower} and
+\ref{fig:bigtower}.
+
+
+\begin{figure}\[
+\xy
+ (0,0)*+{\F_{q^{d_i}}(u)};(16,12)*+{K_{i,d_i}}**\dir{-};
+(-16,12)*+{K_{i,1}};(-32,24)*+{L_{i,1}}**\dir{-};
+(16,12)*+{K_{i,d_i}};(32,24)*+{L_{i,d_i}}**\dir{-};
+(0,-13)*+{\F_{q}(u)};(0,0)*+{\F_{q^{d_i}}(u)}**\dir{-};
+(-16,12)*+{K_{i,1}}**\dir{-};(0,0)*+{\F_{q^{d_i}}(u)};(16,12)*+{K_{i,d_i}}**\dir{-};(0,0)*+{\F_{q^{d_i}}(u)};
+(-32,24)*+{L_{i,1}};(0,40)*+{M_i}**\dir{-};
+(32,24)*+{L_{i,d_i}};(0,40)*+{M_i}**\dir{-};
+(0,0)*+{\F_{q^{d_i}}(u)};(-16,24)*+{\dots}**\dir{--};
+(0,0)*+{\F_{q^{d_i}}(u)};(16,24)*+{\dots}**\dir{--};
+(-16,24)*+{\dots};(0,40)*+{M_i}**\dir{--};(0,0)*+{\F_{q^{d_i}}(u)};(0,12)*+{K_{i,j}}**\dir{--};
+(0,12)*+{K_{i,j}};(0,24)*+{L_{i,j}}**\dir{--};
+(0,24)*+{L_{i,j}};(0,40)*+{M_i}**\dir{--};
+(16,24)*+{\dots};(0,40)*+{M_i}**\dir{--};
+\endxy
+\]
+\caption{Tower of fields illustrating the inclusion relations
+between $\F_{q}(u), \F_{q^{d_i}}(u)$, the $K_{i,j}$, the $L_{i,j}$
+and $M_i$.\label{fig:tower} }
+\end{figure}
+
+
+\begin{figure}
+\[
+\xy (0,0)*+{};(0,-10)*+{\F_{q}(u)}**\dir{-};
+(0,0)*+{\F_{q^{D}}(u)};(-15,5)*+{\widetilde{K}_{1,1}}**\dir{-};
+(-15,5)*+{\widetilde{K}_{1,1}};(-30,10)*+{\widetilde{L}_{1,1}}**\dir{-};
+(0,0)*+{\F_{q^{D}}(u)};(-20,0)*+{\widetilde{K}_{1,j}}**\dir{--};
+(-20,0)*+{\widetilde{K}_{1,j}};(-40,0)*+{\widetilde{L}_{1,j}}**\dir{--};
+(0,0)*+{\F_{q^{D}}(u)};(-15,-5)*+{\widetilde{K}_{1,d_1}}**\dir{-};
+(-15,-5)*+{\widetilde{K}_{1,d_1}};(-30,-10)*+{\widetilde{L}_{1,d_1}}**\dir{-};
+(-60,0)*+{\widetilde{M}_{1}};(-30,-10)*+{\widetilde{L}_{1,d_1}}**\dir{-};
+(-60,0)*+{\widetilde{M}_{1}};(-40,0)*+{\widetilde{L}_{1,j}}**\dir{--};
+(-60,0)*+{\widetilde{M}_{1}};(-30,10)*+{\widetilde{L}_{1,1}}**\dir{-};
+(0,0)*+{\F_{q^{D}}(u)};(15,5)*+{\widetilde{K}_{r,1}}**\dir{-};
+(15,5)*+{\widetilde{K}_{r,1}};(30,10)*+{\widetilde{L}_{r,1}}**\dir{-};
+(0,0)*+{\F_{q^{D}}(u)};(20,0)*+{\widetilde{K}_{r,j}}**\dir{--};
+(20,0)*+{\widetilde{K}_{r,j}};(40,0)*+{\widetilde{L}_{r,j}}**\dir{--};
+(0,0)*+{\F_{q^{D}}(u)};(15,-5)*+{\widetilde{K}_{r,d_r}}**\dir{-};
+(15,-5)*+{\widetilde{K}_{r,d_r}};(30,-10)*+{\widetilde{L}_{r,d_r}}**\dir{-};
+(60,0)*+{\widetilde{M}_{r}};(30,-10)*+{\widetilde{L}_{r,d_r}}**\dir{-};
+(60,0)*+{\widetilde{M}_{r}};(40,0)*+{\widetilde{L}_{r,j}}**\dir{--};
+(60,0)*+{\widetilde{M}_{r}};(30,10)*+{\widetilde{L}_{r,1}}**\dir{-};
+(0,0)*+{\F_{q^{D}}(u)};(10,15)*+{\widetilde{K}_{i,d_i}}**\dir{-};
+(10,15)*+{\widetilde{K}_{i,d_i}};(20,30)*+{\widetilde{L}_{i,d_i}}**\dir{-};
+(0,0)*+{\F_{q^{D}}(u)};(0,15)*+{\widetilde{K}_{i,j}}**\dir{--};
+(0,15)*+{\widetilde{K}_{i,j}};(0,30)*+{\widetilde{L}_{i,j}}**\dir{--};
+(0,0)*+{\F_{q^{D}}(u)};(-10,15)*+{\widetilde{K}_{i,1}}**\dir{-};
+(-10,15)*+{\widetilde{K}_{i,1}};(-20,30)*+{\widetilde{L}_{i,1}}**\dir{-};
+(-20,30)*+{\widetilde{L}_{i,1}};(0,50)*+{\widetilde{M}_{i}}**\dir{-};
+(20,30)*+{\widetilde{L}_{i,d_i}};(0,50)*+{\widetilde{M}_{i}}**\dir{-};
+(0,30)*+{\widetilde{L}_{i,j}};(0,50)*+{\widetilde{M}_{i}}**\dir{--};
+(0,80)*+{\widetilde{M}};(0,50)*+{\widetilde{M}_{i}}**\dir{-};
+(0,80)*+{\widetilde{M}};(-60,0)*+{\widetilde{M}_{1}}**\crv{(-40,60)};
+(0,80)*+{\widetilde{M}};(60,0)*+{\widetilde{M}_{r}}**\crv{(40,60)};
+\endxy\]
+\caption{Field diagram illustrating the inclusion relations between
+$\F_{q}(u), \F_{q^{D}}(u)$, the $\widetilde{K}_{i,j}$, the
+$\widetilde{L}_{i,j}$, $\widetilde{M}_i$ and $\widetilde{M}$. Here
+moving to a larger field is signified by moving outward from
+$\F_q(u)$. \label{fig:bigtower}}
+\end{figure}
+
+
+
+\begin{lem}\label{lem:hnon} Assume that $h(T)$ is a polynomial of degree $n\geq 2$ over $\F_q$
+which is not a polynomial in $T^p$, where $p$ is the characteristic
+of $\F_q$. Then the extensions $M_i/\F_q(u)$ are Galois for each
+$i=1, 2, \dots, r$. The same assertion holds for the extensions
+$\widetilde{M}_i/\F_q(u)$ and $\widetilde{M}/\F_q(u)$.
+\end{lem}
+\begin{proof} Observe that $M_i$ is the splitting field over
+$\F_q(u)$ of $f_i(h(T)-u)$, so that the first half of the lemma
+follows immediately once we show that the irreducible factors of
+$f_i(h(T)-u)$ are separable over $\F_q(u)$. Moving to the finite
+extension $\F_{q^{d_i}}(u)$ of $\F_q(u)$ we have
+\[ f_i(h(T)-u) = \prod_{j=1}^{d_i}(h(T) - u - \theta_i^{(j)}). \]
+The $d_i$ factors on the right-hand side are pairwise coprime (in
+$\overline{\F_q(u)}[T]$), so that it suffices to verify that each
+factor $h(T) - u - \theta_i^{(j)}$ has no repeated roots. Any such
+repeated root is also a root of $h'(T)$. But our hypothesis on $h$
+ensures that $h'$ is not identically zero, so each root of $h'(T)$
+is algebraic over $\F_q$, while $h(T) - u - \theta_i^{(j)}$ has no
+roots algebraic over $\F_q$.
+
+The second half of the lemma is a consequence of the first. Indeed,
+since $\F_{q^D}(u)/\F_q(u)$ is Galois, what we have just proved
+implies that $\widetilde{M}_i = M_i \F_{q^D} = M_i \F_{q^D}(u)$ is
+also Galois over $\F_q(u)$, and thus so is the compositum of the
+$\widetilde{M}_i$.
+\end{proof}
+
+The groups $\Gal(\widetilde{M}/\F_{q}(u))$ and $\Gal(M_i/\F_q(u))$
+will play an important role and so we study them in some detail. Let
+$S_{i,j}$ denote the full set of roots of $h(T) - u -
+\theta_{i}^{(j)}$ (thus $S_{i,j}$ depends only on $j\bmod{d_i}$). We
+begin by observing that under the hypothesis of Lemma
+\ref{lem:hnon}, which assures that the extensions appearing below
+are Galois, we have for each $k=1, 2, \dots, r$ a commutative
+diagram
+\begin{equation}\label{eq:cd}
+\begin{CD}
+\Gal(\widetilde{M}/\F_q(u)) @>\iota_1>> \Gal(\F_{q^D}/\F_q)\times
+\prod_{i=1}^{r}\mathrm{Sym}(\cup_{j=1}^{d_i}S_{i,j})\\
+@V \sigma \mapsto \sigma|_{M_k} VV @V\pi VV \\
+\Gal(M_k/\F_q(u)) @>\iota_2 >> \Gal(\F_{q^{d_k}}/\F_q)\times
+\mathrm{Sym}(\cup_{j=1}^{d_k}S_{k,j})
+\end{CD}.
+\end{equation} Here the maps $\iota_1, \iota_2$ are given by
+\begin{align*}
+ \iota_1\colon \sigma &\mapsto (\sigma|_{\F_{q^D}}, \sigma|_{\cup_{j=1}^{d_1} S_{1,j}}, \dots, \sigma|_{\cup_{j=1}^{d_r}
+ S_{r,j}}),\\
+\iota_2\colon \sigma &\mapsto (\sigma|_{\F_{q^{d_k}}},
+\sigma|_{\cup_{j=1}^{d_k} S_{k,j}}),
+\end{align*}
+and
+\[ \pi\colon (\tau, \sigma_1, \dots, \sigma_r) \mapsto (\tau|_{\F_{q^{d_k}}}, \sigma_k). \]
+Note that $\iota_1$ and $\iota_2$ are embeddings while $\pi$ is a
+surjection.
+
+The remainder of this section is devoted to an explicit description
+of the images of $\iota_1$ and $\iota_2$ under a mild restriction on
+$h$. This characterization is obtained under the following two
+hypotheses:
+\begin{equation}\label{eq:disccond}
+ \disc_u^{n-1}\disc_{T}^n (h(T)-u - \theta_i^{(j)}) \neq 0 \quad \text{for all}\quad 1 \leq i \leq r, \quad 1 \leq j\leq
+ d_i,
+\end{equation}
+and
+\begin{multline}\label{eq:rescond}
+ \res_{u}^{n-1,n-1}\left(\disc_{T}^n (h(T)-u -
+\theta_i^{(j)}),\disc_{T}^n (h(T)-u - \theta_{i'}^{(j')})\right) \neq 0 \\
+\text{whenever $i, i', j, j'$ are as above and $(i,j) \neq (i',
+j')$.}
+\end{multline}
+(Note that from \eqref{eq:disccond} we have immediately that $h$ is
+not a polynomial in $T^p$.) That together \eqref{eq:disccond} and
+\eqref{eq:rescond} impose only a mild restriction on $h$ is borne
+out by the following lemma, which we prove in \S\ref{sec:proofs}:
+
+\begin{lem}\label{lem:few} Let $h(T)$ range over the polynomials of the
+form $T^n + a_{n-1} T^{n-1} + \dots + a_1 T$, with all coefficients
+$a_i$ belonging to $\F_q$. Assume that $q$ is prime to $2n$. Then
+both of the following hold:
+\begin{enumerate}\item The number of such $h$ for which
+\eqref{eq:disccond} fails is bounded above by
+\begin{equation}\label{eq:bounds}
+ (2n-1)(2n-3) q^{n-2}. \end{equation}
+ \item For any fixed pairs of indices $(i,j) \neq (i',j')$, the same bound holds for the
+number of such $h$ which fail to satisfy \eqref{eq:rescond}.
+\end{enumerate}
+Consequently, for all but at most
+\[ 4n^2\left(1 + \binom{d_1 + \dots + d_r}{2}\right) q^{n-2} \]
+values of $h$ as above, both \eqref{eq:disccond} and
+\eqref{eq:rescond} hold for all distinct pairs of indices $(i, j)$
+and $(i', j')$.
+\end{lem}
+
+We now present the promised descriptions of the images of $\iota_1$
+and $\iota_2$, beginning with $\iota_2$:
+
+\begin{lem}\label{lem:iota2} Let $n \geq 2$. Assume that the characteristic of $\F_q$ is prime to $2n$.
+Then if $h(T)$ has the form
+\[ h(T) = T^n + a_{n-1} T^{n-1} + \dots + a_1 T, \quad \text{with each $a_i \in \F_q$}, \]
+and $h(T)$ satisfies both \eqref{eq:disccond} and
+\eqref{eq:rescond}, then all of the following hold:
+\begin{enumerate}
+\item The $L_{i,j}$ are Galois over $\F_{q^{d_i}}(u)$ with
+Galois group $\Sym(S_{i,j})$ for each $1 \leq i \leq r, 1 \leq j
+\leq d_i$.
+\item For every $1 \leq i \leq r, 1 \leq j \leq d_i$, the field $L_{i,j}$
+is linearly disjoint from the compositum of all other fields $L_{i,
+j'}$ with $1 \leq j' \neq j \leq d_i$.
+\item $\F_{q^{d_i}}$ is the full field of constants of $M_i/\F_{q^{d_i}}$.
+\item The extension $M_i/\F_{q^{d_i}}(u)$ is Galois with
+\[ \Gal(M_i/\F_{q^{d_i}}(u)) \cong \prod_{j=1}^{d_i}
+\Gal(L_{i,j}/\F_{q^{d_i}}(u)) \cong \prod_{j=1}^{d_i} \Sym(S_{i,j}),
+\] the first isomorphism being induced by restriction in each
+component.
+\item Fix $1 \leq i \leq r$. Let $\Frob$ denote the $q$th power map, so that
+$\Frob$ generates $\Gal(\F_{q^{d_i}}/\F_q)$. The image of $\iota_2$
+consists of all pairs $(\Frob^k, \sigma)$ which obey the following
+compatibility condition:
+\[ \sigma(S_{i,j}) \subset \sigma(S_{i,j+k}). \]
+\end{enumerate}
+\end{lem}
+
+A similar lemma characterizes the image of $\iota_1$:
+
+\begin{lem}\label{lem:iota1} Let $n \geq 2$. Assume that the characteristic of $\F_q$ is prime to $2n$.
+Then if $h(T)$ has the form
+\[ h(T) = T^n + a_{n-1} T^{n-1} + \dots + a_1 T, \quad \text{with each $a_i \in \F_q$}, \]
+and $h(T)$ satisfies both \eqref{eq:disccond} and
+\eqref{eq:rescond}, then all of the following hold:
+\begin{enumerate}
+\item The fields $\widetilde{L}_{i,j}$ are Galois over $\F_{q^{D}}(u)$ with
+Galois group $\Sym(S_{i,j})$ for each $1 \leq i \leq r, 1 \leq j
+\leq d_i$.
+\item For every $1 \leq i \leq r, 1 \leq j \leq d_i$, the field $\widetilde{L}_{i,j}$
+is linearly disjoint from the compositum of all other fields
+$\widetilde{L}_{i', j'}$ with $1 \leq i' \leq r,  1 \leq j' \leq
+d_{i'}$ and $(i,j) \neq (i', j')$.
+\item $\F_{q^{D}}$ is the full field of constants of $\widetilde{M}$.
+\item The image of $\iota_2$ consists of all pairs $(\Frob^k, \sigma)$ which obey the
+compatibility condition
+\[ \sigma(S_{i,j}) \subset \sigma(S_{i,j+k}) \qquad \text{for every $i=1, 2, \dots, r$}. \]
+\end{enumerate}
+\end{lem}
+
+The proofs of Lemmas \ref{lem:few}, \ref{lem:iota2}, and
+\ref{lem:iota1} are deferred to the next section. The curious reader
+may jump directly to the proof of Theorem \ref{thm:main} in
+\S\ref{sec:thm}.
+
+\section{Proofs of Lemmas \ref{lem:few}, \ref{lem:iota2},
+and \ref{lem:iota1}}\label{sec:proofs}
+\subsection{Proof of Lemma \ref{lem:few}}
+The proof of Lemma \ref{lem:few} rests on the following elementary
+bound for the number of affine zeros of a polynomial:
+
+\begin{lem}\label{lem:pbound} Let $E/\F_q$ be an arbitrary field extension
+and let $P(T_1,\dots, T_m)$ be a nonzero polynomial in $m$ variables
+over $E$ with total degree bounded by $d$. Then there are at most $d
+q^{m-1}$ solutions to $P(x_1, \dots, x_m) = 0$ in $\F_q^{m}$.
+\end{lem}
+
+This lemma is well-known in the case when $E = \F_q$ (see, e.g.,
+\cite[Theorem 6.13]{ln97}), and the general case reduces to this one
+upon writing the coefficients of $P$ with respect to an $\F_q$-basis
+of $E$.
+
+Our computations also require the following evaluation of the
+discriminants of certain trinomials (cf. \cite[Exercise
+4.5.4]{esmonde-murty99}):
+
+\begin{lem}\label{lem:discriminants} Let $R$ be any integral domain, and let $a$ and $b$ be
+any elements of $R$. Then
+\[ \disc_{T}(T^n + aT + b) = (-1)^{\binom{n}{2}} (n^n b^{n-1} + (-1)^{n-1} (n-1)^{n-1} a^n).\]
+\end{lem}
+
+\begin{proof}[Proof of Lemma \ref{lem:few}(i)] For every pair of $i$ and $j$
+with $1 \leq i \leq r$ and $1 \leq j \leq d_i$,  we have
+\begin{equation}\label{eq:multex}
+\disc_u^{n-1}\disc_{T}^n (h(T)-u - \theta_i^{(j)}) =
+\disc_u^{n-1}\disc_{T}^n (h(T)-u);
+\end{equation}
+indeed, the $T$-discriminant on the left-hand side differs from the
+one on the right only in that $u$ is replaced by $u-\theta_i^{(j)}$,
+and such a shift leaves the outer $u$-discriminant unaffected.
+
+Define a polynomial $\hat{P}$ with integer coefficients in the $n-1$
+indeterminates $T_1, \dots, T_{n-1}$ by
+\begin{equation}\label{eq:hatpdef}
+\hat{P}(T_1, \dots, T_{n-1}) := \disc_u^{n-1} \disc_T^{n}(T^n + T_{n-1} T^{n-1} + \dots + T_{1} T
+-u).
+\end{equation}
+(Note that $T$ and $u$ are successively eliminated by the right-hand
+discriminants, so that only the indeterminates $T_1, \dots, T_{n-1}$
+remain.) We claim that if $q$ is prime to $2n$, then $\hat{P}$ does
+not reduce to the zero polynomial when considered over $\F_q$. This
+suffices to prove \eqref{eq:bounds}. To see why, observe (from the
+definition of the discriminant in terms of the determinant of the
+$(2n-1)\times (2n-1)$ Sylvester matrix) that the inner
+$T$-discriminant on the right of \eqref{eq:hatpdef} is a polynomial
+in $u$ of degree at most $n-1$, each coefficient of which is a
+polynomial in $T_1, \dots, T_{n-1}$ of total degree bounded by
+$2n-1$. These coefficients determine the entries of the $(2n-3)
+\times (2n-3)$ determinant used to compute $\hat{P}$, whence
+$\hat{P}$ has total degree at most $(2n-1)(2n-3)$ in $T_1, \dots,
+T_{n-1}$. The desired bound \eqref{eq:bounds} on the number of $h$
+which fail to satisfy \eqref{eq:disccond} now follows from Lemma
+\ref{lem:few}.
+
+It remains to prove our claim that $\hat{P}$ is nonvanishing when
+considered over $\F_q$. This is easiest if we adopt the further
+assumption that the characteristic $p$ of $\F_q$ is prime to $n-1$.
+Indeed, successive application of Lemma \ref{lem:discriminants}
+shows
+\begin{align*}
+ \hat{P}(1,0,\dots,0) &= \disc_u^{n-1} \disc_T^{n}(T^n +T-u) \\
+ &= \disc_u^{n-1} \left((-1)^{\binom{n}{2}}\left(n^n (-u)^{n-1} + (-1)^{n-1}(n-1)^{n-1}\right)\right) \\
+ &= \disc_u^{n-1} (n^n u^{n-1} + (n-1)^{n-1}) = \pm
+ (n-1)^{(n-1)^2} n^{n(n-2)},
+\end{align*}
+which is nonzero under this additional hypothesis.
+
+We therefore suppose that $p$ divides $n-1$. In this case we
+consider
+\begin{align*}
+ \hat{P}(1,1,\dots,1) &= \disc_u^{n-1} \disc_{T}^n(T^n + T^{n-1} + \dots
+ + T - u).
+\end{align*}
+To understand the inner discriminant, note that
+\[ (T-1)(T^n + T^{n-1} + \dots + T - u)= T^{n+1} - T - (T-1)u. \]
+By Lemma \ref{lem:discriminants}, the $T$-discriminant of the
+right-hand polynomial is given explicitly by
+\begin{equation}\label{eq:preq} (-1)^{\binom{n+1}{2}}\left((n+1)^{n+1} u^n - n^n (u+1)^{n+1}\right).
+\end{equation} We can relate this to the discriminant we are after
+by using the relations
+\begin{multline*}  \disc_T((T-1)
+(T^n + T^{n-1} + \dots
+ + T - u)) = \\\pm\left((T^n + T^{n-1} + \dots + T-u)|_{T=1}\right)^2 \disc_T(T^n + T^{n-1}+\dots
+ + T - u) =\\
+\pm (n-u)^2 \disc_T(T^n + T^{n-1}+ \dots
+ + T - u).
+ \end{multline*} Piecing this all together we obtain
+\[ \hat{P}(1,1,\dots,1) = \disc_u^{n-1}\left(\frac{(n+1)^{n+1} u^n
+- n^n (u+1)^{n+1}}{(u-n)^2}\right). \]
+
+Let $Q(u)$ denote the polynomial in $u$ appearing in the argument of
+$\disc_u$ here, so that $Q$ has degree $n-1$ in $u$. If
+$\hat{P}(1,1,\dots,1)$ vanishes, then $Q$ has a multiple root, which
+is necessarily also a multiple root of \eqref{eq:preq}. One computes
+easily that unless $p$ divides $n+1$, the only common root of
+\eqref{eq:preq} and its derivative is $u=n$. If $u=n$ is a multiple
+root of $Q$, then it must be a root of multiplicity at least $4$ of
+\eqref{eq:preq}, which forces the second derivative of
+\eqref{eq:preq} to vanish at $u=n$. But this second derivative is
+given by \begin{multline*} (-1)^{\binom{n+1}{2}} \left((n+1)^{n+1} n
+(n-1) n^{n-2} - n^{n+1} (n+1) (n+1)^{n-1}\right) =
+\\ (-1)^{\binom{n+1}{2}+1}n^{n-1} (n+1)^n. \end{multline*} Since the characteristic
+$p$ is prime to $n$, this can only vanish if $p$ divides $n+1$. So
+we are forced to the conclusion that $\hat{P}(1,\dots,1)$ is
+nonvanishing except possibly if $p$ divides $n+1$. However, $p$
+divides $n-1$ in the case we are considering, so that $p$ can divide
+$n+1$ only if $p=2$, which is excluded.
+\end{proof}
+
+
+\begin{proof}[Proof of Lemma \ref{lem:few}(ii)] We proceed as in the
+proof of Lemma \ref{lem:few}(i). Write $h(T) = T^n + a_{n-1}T^{n-1}+
+\dots + a_1 T$ as usual. Fix pairs $(i,j)$ and $(i', j')$ with
+$(i,j) \neq (i', j')$ and set
+\[ P(a_1, \dots, a_{n-1}):= \res_{u}^{n-1,n-1}\left(\disc_{T}^n{(h(T)-u-\theta_{i}^{(j)})},
+\disc_{T}^n{(h(T)-u-\theta_{i'}^{(j')})}\right). \] Arguing as in
+Lemma \ref{lem:few}(i), we see that there is some polynomial
+$\hat{P}(T_1, \dots, T_{n-1})$ over $\overline{\F}_q$ of degree at
+most $(2n-1)(2n-3)$ for which
+\[ P(a_1, \dots, a_{n-1}) = \hat{P}(a_1, \dots, a_{n-1}) \quad\text{for all $a_1, \dots, a_{n-1} \in \F_q$}. \]
+Then \eqref{eq:rescond} is satisfied (for the fixed pairs $(i,j)$
+and $(i',j')$) as long as $\hat{P}$ is nonvanishing. This
+nonvanishing is easily checked: indeed,
+\begin{align*}
+ \hat{P}(0,\dots,0)&= \res_{u}^{n-1,n-1}(\disc_T(T^n - u
+ -\theta_{i}^{(j)}),\disc_T(T^n-u-\theta_{i'}^{(j')})) \\
+&= \res_{u}^{n-1,n-1}(\disc_T(T^n
+-u),\disc_T(T^n-u+\theta_{i}^{(j)}-\theta_{i'}^{(j')}))\\ &=
+(-1)^{n+1} n^{n(2n-2)}
+(\theta_{i}^{(j)}-\theta_{i'}^{(j')})^{(n-1)^2} \neq 0.\end{align*}
+Lemma \ref{lem:pbound} now implies that $\hat{P}$ has at most
+$(2n-1)(2n-3)q^{n-2}$ zeros in $\F_q^{n-1}$, finishing the proof.
+\end{proof}
+
+
+
+\subsection{Proofs of Lemmas \ref{lem:iota2} and \ref{lem:iota1}}
+Our fundamental tool is the following criterion of Birch \&
+Swinnerton-Dyer \cite{bs59} for certain polynomials to have the full
+symmetric group as their Galois group. We state their result in an
+alternative form attributed by the same authors to Davenport:
+
+\begin{bsd}\label{lem:bsd} Let $h$ be a
+polynomial of degree $n\geq 2$ with coefficients from a finite field
+$F$ whose characteristic is prime to $n$. Suppose that with $u$ an
+indeterminate over $F$, we have
+\begin{equation}\label{eq:bsdcriterion}
+\disc_u^{n-1}\disc_{T}^n (h(T)-u) \neq 0.
+\end{equation}
+Then the Galois group of $h(T)-u$ over the rational function field
+$\overline{F}(u)$ is the full symmetric group on the $n$ roots of
+$h(T)-u$. Consequently, if $E$ is any algebraic extension of $F$,
+then the Galois group of $h(T)-u$ over $E(u)$ is also the full
+symmetric group.
+\end{bsd}
+
+\begin{proof}[Proof of Lemmas \ref{lem:iota2}(i) and \ref{lem:iota1}(i)]
+Suppose that $h$ satisfies both conditions \eqref{eq:disccond} and
+\eqref{eq:rescond}. Then part (i) of Lemma \ref{lem:iota2} is
+immediate from the Birch \& Swinnerton-Dyer criterion. Since
+$\widetilde{L}_{i,j}$ is the splitting field of $h(T) - u -
+\theta_i^{(j)}$ over $\F_{q^{D}}$, the same argument also
+establishes Lemma \ref{lem:iota1}(i).\end{proof}
+
+To continue we require two more technical tools. The first is a
+lemma of Hayes appearing in an alternative proof of the Birch \&
+Swinnerton-Dyer criterion:
+
+\begin{lem}[(Hayes)]\label{lem:hayes} Let $h$ be a polynomial of degree $n \geq 2$ over
+the finite field $\F_q$ which satisfies the hypotheses of the Birch
+\& Swinnerton-Dyer criterion with $F = \F_q$. Let $L$ be the
+splitting field of $h(T)-u$ over $\overline{\F}_q(u)$. Let
+$P_{\infty}$ be the prime of $\overline{\F}_{q}(u)$ corresponding to
+the $(1/u)$-adic valuation on $\overline{\F}_q[1/u]$, and let $P$ be
+any prime of $L$ lying above above $P_{\infty}$. Then $e(P |
+P_{\infty}) = n$, where $e(P|P_{\infty})$ denotes the ramification
+index of $P$ over $P_{\infty}$.
+\end{lem}
+Hayes proves this explicitly only in the case $h = T^n + T-u$ (see
+\cite[Proof of Lemma 1]{hayes73}), but as he remarks the arguments
+extend easily to the general case. It is necessary for us to also
+understand the ramification of $P_{\infty}$ in certain extensions of
+the fields appearing in Hayes's lemma; for this we appeal to the
+following result (\cite[Proposition III.8.9]{stichtenoth93}):
+
+\begin{abh} Let $F'/F$ be a finite separable extension of function
+fields. Suppose that $F' = F_1 F_2$ is the compositum of two
+intermediate fields $F \subset F_1, F_2 \subset F'$. Let $P$ be a
+prime of $F$ and $P'$ a prime of $F'$ lying above $P$. With $P_i :=
+P' \cap F_i$ for $i=1$ and $2$, assume that at least one of the
+extensions $P_1/P$ or $P_2/P$ is tame (i.e., that $e(P_i/P)$ is
+relatively prime to the characteristic of $F$). Then
+\[ e(P'/P) = \lcm[e(P_1/P), e(P_2/P)]. \]
+In particular, if both $P_1/P$ and $P_2/P$ are tamely ramified, then
+so is $P'/P$.
+\end{abh}
+
+
+\begin{proof}[Proof of Lemmas \ref{lem:iota2}(ii) and \ref{lem:iota1}(ii)]
+Define the constant field extensions \[ \hat{K}_{i,j} := K_{i,j}
+\overline{\F}_q, \quad \hat{L}_{i,j} := L_{i,j}
+\overline{\F}_q,\quad \text{and}\quad \hat{M}_{i} := M_i
+\overline{\F}_q.\] Thus $\hat{L}_{i,j}$ is the splitting field of
+$h(T) - u - \theta_i^{(j)}$ over $\overline{\F}_q$. To prove Lemma
+\ref{lem:iota2}(ii), it suffices to show that for each fixed $i$,
+\begin{equation}\label{eq:disjoint}
+\hat{L}_{i,j} \text{ is linearly disjoint from the compositum of
+$\hat{L}_{i,j'}$ for $1 \leq j' \neq j \leq d_i$.}
+\end{equation} Indeed, once \eqref{eq:disjoint} is known, we may
+deduce that
+\[ \Gal(\hat{M}_i/\overline{\F}_q(u)) \cong \Gal(\hat{L}_{i,1}/\overline{\F}_q(u)) \times \dots
+\times \Gal(\hat{L}_{i,d_i}/\overline{\F}_q(u)). \] By the Birch \&
+Swinnerton-Dyer criterion the right-hand Galois groups each have
+size $n!$, so that the left-hand Galois group has size $n!^{d_i}$.
+But the left-hand Galois group injects (via restriction) into
+$\Gal(M_i/\F_{q^{d_i}}(u))$, and degree counting shows that this
+injection must be an isomorphism; thus
+\begin{multline*} [M_i: \F_{q^{d_i}}(u)] = [L_{i,1} L_{i,2} \cdots L_{i, d_i}: \F_{q^{d_i}}(u)] = \\
+[L_{i,1}: \F_{q^{d_i}}(u)] [L_{i,2}: \F_{q^{d_i}}(u)] \cdots
+[L_{i,d_i}: \F_{q^{d_i}}(u)],
+\end{multline*}
+which implies Lemma \ref{lem:iota2}(ii).
+
+To prove \eqref{eq:disjoint}, consider the intersection $N$ of
+$\hat{L}_{i,j}$ with the compositum of the fields $\hat{L}_{i,j'}$
+for $1 \leq j \neq j' \leq d_i$. The only primes of
+$\overline{\F}_q(u)$ that can ramify in $N$ ramify in both
+$\hat{K}_{i,j}$ and some $\hat{K}_{i,j'}$ with $1 \leq j \neq j'
+\leq d_i$. But by \eqref{eq:rescond}, the polynomials
+\[ \disc_{T}^{n}(h(T) - u - \theta_i^{(j)}) \quad \text{and} \quad
+\disc_{T}^{n}(h(T) - u - \theta_i^{(j')}) \quad \text{have no common
+roots},
+\] and so the only prime that can possibly ramify in both extensions is $P_{\infty}$. By
+Hayes's Lemma \ref{lem:hayes} and repeated application of
+Abhyankar's Lemma, $P_{\infty}$ is tamely ramified in
+$\hat{L}_{i,j}$ and hence also in $N$. (Here we again use our
+hypothesis that $q$ is prime to $n$.) Thus $N$ is a finite, tamely
+ramified geometric extension of $\overline{\F}_q(u)$ unramified
+except possibly at primes above the degree $1$ prime $P_{\infty}$.
+It follows that $N= \overline{\F}_q(u)$ (this is an immediate
+consequence of the Riemann-Hurwitz genus formula; see, e.g.,
+\cite[p.460]{hayes73} or \cite[Exercise 6, p.99]{rosen02}). This
+proves \eqref{eq:disjoint} and together with the above argument
+completes the proof of Lemma \ref{lem:iota2}(ii).
+
+The proof of Lemma \ref{lem:iota1}(ii) is nearly identical but is
+based instead on the claim that
+\begin{equation}\label{eq:disjoint2}
+\hat{L}_{i,j} \text{ is linearly disjoint from the compositum of
+$\hat{L}_{i,j}$ for $(i,j) \neq (i', j')$;}
+\end{equation}
+we omit the details.\end{proof}
+
+\begin{proof}[Proof of Lemmas \ref{lem:iota2}(iii) and
+\ref{lem:iota1}(iii)] In the course of proving Lemma
+\ref{lem:iota2}(ii), we showed that restriction induces an
+isomorphism
+\[ \Gal(\hat{M}_i/\overline{\F}_q(u)) \cong \Gal(M_i/\F_{q^{d_i}}(u)).\]
+If $\alpha \in M_i \cap \overline{\F}_q$, then $\alpha$ is fixed by
+every element of the left-hand Galois group appearing above, and so
+must be fixed by all elements of the right-hand Galois group. But
+this forces $\alpha$ to lie in the field of rational functions
+$\F_{q^{d_i}}(u)$. Since $\alpha$ is algebraic over $\F_q$, it must
+belong to $\F_{q^{d_i}}$. So $\F_{q^{d_i}}$ is the full field of
+constants of $M_i$. Lemma \ref{lem:iota1}(iii) can be proved
+similarly, using that restriction induces an isomorphism
+$\Gal(\widetilde{M} \overline{\F}_q/\overline{\F}_q(u)) \cong
+\Gal(\widetilde{M}/\F_{q^{D}}(u))$.\end{proof}
+
+\begin{proof}[Proof of Lemma \ref{lem:iota2}(iv)] This is immediate from parts (i) and (ii) of Lemma \ref{lem:iota2}.
+\end{proof}
+
+\begin{proof}[Proof of Lemma \ref{lem:iota2}(v) and Lemma
+\ref{lem:iota1}(iv)] Suppose that $\sigma \in
+\Gal(M_i/\F_{q^{d_i}}(u))$ satisfies $\sigma|_{\F_{q^{d_i}}} =
+\Frob^k$. Then $\sigma$ takes $\theta_i^{(j)}$ to $\theta_i^{(j+k)}$
+and so takes every root of $h(T)-u-\theta_i^{(j)}$ to a root of
+$h(T) - u - \theta_i^{(j+k)}$. It follows that the image of
+$\iota_2$ is contained within the set of elements obeying the
+compatibility condition specified in Lemma \ref{lem:iota2}(v). A
+straightforward counting argument shows that there are $d_i
+n!^{d_i}$ such elements of $\Gal(\F_{q^{d_i}}/\F_{q}) \times
+\Sym(\cup_{j=1}^{d_i}S_{i,j})$. On the other hand, we know that
+$M_i/\F_q(u)$ is Galois of degree $[M_i: \F_q(u)] =[M_i:
+\F_{q^{d_i}}(u)][\F_{q^{d_i}}(u):\F_q(u)] = d_i n!^{d_i}$. Since
+$\iota_2$ is injective, it follows that the image of $\iota_2$ must
+coincide with the set specified in (v).
+
+A similar argument establishes Lemma \ref{lem:iota1}(iv): in that
+case $\widetilde{M}$ is Galois over $\F_q(u)$ of degree $D n!^{d_1+
+\dots + d_r}$, and this degree coincides with the number of elements
+obeying the compatibility condition of Lemma \ref{lem:iota1}(iv).
+\end{proof}
+
+\section{Proof of Theorem \ref{thm:main}}\label{sec:thm}
+
+Throughout this section $f_1(T), \dots, f_r(T)$ denote pairwise
+nonassociated irreducible polynomials of respective degrees $d_1,
+\dots, d_r$ over $\F_q$ and $h(T) = T^n + a_{n-1}T^{n-1} + \dots +
+a_1 T$ denotes a monic polynomial of degree $n \geq 2$ without
+constant term satisfying conditions \eqref{eq:disccond} and
+\eqref{eq:rescond}.
+
+Our plan is to use the Chebotarev density theorem to estimate, for
+each individual $h(T)$, the number of $a \in \F_q$ for which all of
+the specializations $f_i(h(T)-a)$ are irreducible. We begin by
+recalling the following well-known lemma (see, e.g., \cite[pp.
+408-409]{cohen89}):
+
+\begin{lem}\label{lem:subst} Let $f$ be an irreducible polynomial of degree $d$
+over $\F_q$ and let $\theta$ be a root of $f$ from the extension
+$\F_{q^d}$. Let $p(T)$ be a nonconstant polynomial over $\F_q$. Then
+$f(p(T))$ is irreducible over $\F_q$ if and only if $p(T) - \theta$
+is irreducible over $\F_{q^d}$.
+\end{lem}
+
+The next result explains how the Chebotarev density theorem enters
+the picture:
+
+\begin{lem}\label{lem:class} There is a conjugacy class $\C$ of $\Gal(\widetilde{M}/\F_{q}(u))$ with the following
+property: If $a$ is an element of $\F_q$ which is not a zero of any
+of the polynomials \begin{equation}\label{eq:notroot}
+ \disc_{T}(h(T)-u-\theta_{i}^{(j)}) \quad \text{for}\quad  1 \leq i \leq
+ r,\quad
+1 \leq j \leq d_i, \end{equation} then $f_i(h(T)-a)$ is irreducible
+over $\F_q$ if and only if $\C$ coincides with the Frobenius
+conjugacy class $(\widetilde{M}/\F_{q}(u), P_a)$.
+\end{lem}
+\begin{proof} Since $a$ is not a root of any of the polynomials
+\eqref{eq:notroot}, $P_a$ is unramified in $\widetilde{M}$, where
+$P_a$ denotes the prime of $\F_q(u)$ corresponding to the
+$(u-a)$-adic valuation on $\F_q(u)$. Now fix $1 \leq i \leq r$.
+Using Lemma \ref{lem:subst} and Kummer's Theorem (\cite[Theorem
+3.3.7]{stichtenoth93}), we find
+\begin{align*}
+ f_i(h(T)-a) \text{ is irreducible over $\F_q$} &\Longleftrightarrow
+h(T) - a - \theta_i^{(1)} \text{ is irreducible over
+$\F_{q^{d_i}}$} \\
+&\Longleftrightarrow P_a \text{ stays prime in $K_{i,1}$}.
+\end{align*}
+This last possibility can be recast in terms of the action of
+Frobenius. Let $\sigma$ denote any element of the Frobenius
+conjugacy class $(M_i/\F_{q}(u), P_a)$; then necessarily
+\begin{equation}\label{eq:restriction}
+ \sigma \text{ restricts to the $q$th power map on
+$\F_{q^{d_i}}$}. \end{equation} Moreover, $P_a$ stays prime in
+$K_{i,1}$ if and only if
+\begin{equation}\label{eq:galunion}
+ \Gal(M_i/\F_q(u)) = \dot\bigcup_{l=0}^{d_i n -1}\Gal(M_i/K_{i,1})
+\sigma^{l}. \end{equation} We now investigate when
+\eqref{eq:galunion} holds.
+
+Write $K_{i,1} = \F_{q^{d_i}}(u)(\alpha)$, where $\alpha \in
+S_{i,1}$. Now \eqref{eq:restriction} implies that under $\iota_2$
+the element $\sigma$ is identified with $(\Frob, \sigma')$, where
+$\sigma'$ is a permutation of $\cup_{j=1}^{d_i}{S_{i,j}}$. We claim
+that \eqref{eq:galunion} holds if and only if $\sigma'$ is an
+$nd_i$-cycle. Indeed, suppose that $\sigma$ (equivalently,
+$\sigma'$) acts as an $nd_i$-cycle on $\cup_{j=1}^{d_i}{S_{i,j}}$;
+then for any $\gamma \in \Gal(M_i/\F_q(u))$, there is a unique $0
+\leq l < d_i n$ for which $\tau \sigma^{-l}$ fixes $\alpha$, and
+this implies \eqref{eq:galunion}. Conversely, if \eqref{eq:galunion}
+holds then $\sigma \not\in \Gal(M_i/K_{i,1})$, so that $\sigma$ (and
+hence $\sigma'$) must move $\alpha$. Thus in the decomposition of
+$\sigma'$ into disjoint cycles, $\alpha$ must occur in a nontrivial
+cycle. If this cycle has length $l < nd_i$, then both $\sigma^l$ and
+$\sigma^0$ belong to $\Gal(M/K_{i,1})$, and this contradicts that
+\eqref{eq:galunion} is a disjoint union.
+
+Let $\gamma$ denote an element of the conjugacy class of
+$(\widetilde{M}/\F_{q}(u), P_a)$. Since $\gamma$ restricts down to
+an element of the conjugacy class of $(M_i/\F_q(u), P_a)$, in order
+for $P_a$ to stay prime in $M_i$ for every $i=1, 2, \dots, r$ it is
+necessary and sufficient that $\gamma|_{M_i}$ satisfies both
+\eqref{eq:restriction} and \eqref{eq:galunion} for every $1\leq i
+\leq r$. By our work above and the commutativity of diagram
+\eqref{eq:cd}, this condition on $\gamma$ holds if and only if
+$\gamma$ (identified with its representation under $\iota_1$) has
+the form $(\Frob, \sigma_1, \dots, \sigma_r)$, where each $\sigma_i$
+is an $nd_i$-cycle on $\cup_{j=1}^{d_i}S_{i,j}$. It remains to prove
+that the $\gamma $ in $\Gal(\widetilde{M}/\F_{q}(u))$ of this form
+make up a single conjugacy class of size $n^{-r} n!^{d_1 + \dots +
+d_r}$.
+
+Suppose that $\gamma \in \Gal(\widetilde{M}/\F_{q}(u))$ has the
+above form. The compatibility condition of Lemma \ref{lem:iota1}(iv)
+implies that
+\[ \sigma_i(S_{i,j}) \subset S_{i, j+1} \quad \text{for all $1\leq i \leq r$
+and all $j$}. \] Now fix $1 \leq i \leq r$. Since $\sigma_i$ is an
+$nd_i$-cycle on $\cup_{j=1}^{d_i}S_{i,j}$, it follows that
+$\sigma_i$ has exactly $n$ representations in the form
+\begin{multline*} (a_1~a_2~\dots~a_{n d_i}), \quad\text{where for each
+$1 \leq k \leq d_i$}, \\ (a_k~a_{k+d_i}~\dots~a_{(n-1)k+d_i}) \text{
+is an $n$-cycle of $\Sym(S_{i,k})$}. \end{multline*} Consequently,
+there are exactly $n^{-1} n!^{d_i}$ possibilities for $\sigma_i$,
+and so exactly
+\[n!^{-r} n!^{d_1 + \dots + d_r}\]  possibilities for $\gamma$.
+Moreover, this explicit description shows that the $\gamma$ of this
+form make up a single conjugacy class of
+$\Gal(\widetilde{M}/\F_q(u))$. To see this observe that
+\[ \Gal(\widetilde{M}/\F_q(u)) \supset \Gal(\widetilde{M}/\F_{q^D}(u)) = \prod_{\substack{1 \leq i \leq r \\ 1 \leq j \leq d_i}}
+\Sym(S_{i,j})
+\] and that $\Sym(S_{i,j})$ acts transitively by conjugation on its own
+$n$-cycles.
+\end{proof}
+
+To apply the Chebotarev density theorem we require an estimate for
+the genus of $\widetilde{M}/\F_{q^D}$. This will be obtained as a
+corollary of the next result, which appears as \cite[Theorem
+III.10.3]{stichtenoth93}:
+
+\begin{cast} Let $F/k$ be a function field with full constant field
+$k$. Suppose we are given two subfields $F_1/k$ and $F_2/k$ of $F/k$
+satisfying
+\begin{enumerate}
+\item $F = F_1 F_2$ is the compositum of $F_1$ and $F_2$,
+\item $[F: F_i] = n_i$ and $F_i/k$ has genus $g_i$ for $i=1, 2$.
+\end{enumerate}
+Then the genus $g$ of $F/k$ obeys the bound
+\[ g \leq n_1 g_1 + n_2 g_2 + (n_1 -1)(n_2-1). \]
+\end{cast}
+
+\begin{cor}\label{lem:genus} Let $f_1(T), \dots, f_r(T)$ be pairwise nonassociated
+monic irreducible polynomials of respective degrees $d_1, \dots,
+d_r$ over $\F_q$ and suppose that $h(T)$ is a polynomial of degree
+$n \geq 2$ without constant term satisfying conditions
+\eqref{eq:disccond} and \eqref{eq:rescond}. Then the genus of
+$\widetilde{M}/\F_{q^D}$ is bounded above by
+\[ (2(d_1 + \dots + d_r)-1) n!^{d_1+\dots+d_r-1} n^n. \]
+\end{cor}
+\begin{proof} We make repeated use of Castelnuovo's Inequality. Our
+first application is an estimate for the genus of the function
+fields $\widetilde{L}_{i,j}/\F_{q^D}$. For a fixed pair of $i$ and
+$j$, let $\widetilde{K}^{(1)}, \dots, \widetilde{K}^{(n)}$ be the
+complete list of conjugate fields of $\widetilde{K}_{i,j}$, so that
+$\widetilde{L}_{i,j}$ is the compositum of $\widetilde{K}^{(1)},
+\dots, \widetilde{K}^{(n)}$. For any $m \leq n$, Castelnuovo's
+Inequality implies that (using $g_N$ to denote the genus of
+$N/\F_{q^D}$)
+\begin{multline*}
+g_{\widetilde{K}^{(1)}  \cdots \widetilde{K}^{(m)}} \leq \\
+[\widetilde{K}^{(1)} \cdots \widetilde{K}^{(m)}: \widetilde{K}^{(1)}
+\cdots \widetilde{K}^{(m-1)}] g_{\widetilde{K}^{(1)} \cdots
+\widetilde{K}^{(m-1)}}
+ +
+[\widetilde{K}^{(1)} \cdots \widetilde{K}^{(m)}: \widetilde{K}^{(m)}] g_{\widetilde{K}^{(m)}} +\\
+\left([\widetilde{K}^{(1)} \cdots \widetilde{K}^{(m)}:
+\widetilde{K}^{(1)} \cdots
+\widetilde{K}^{(m-1)}]-1\right)\left([\widetilde{K}^{(1)} \cdots
+\widetilde{K}^{(m)}: \widetilde{K}^{(m)}]-1\right).
+\end{multline*}
+Since each $\widetilde{K}^{(i)}$ is a rational function field
+(obtainable by adjoining a single root of $h(T)-u-\theta_i^{(j)}$ to
+$\F_{q^D}$), we have $g_{\widetilde{K}^{(m)}} = 0$ and so the second
+summand on the right hand side vanishes. Estimating the size of the
+field extensions appearing here trivially, we find
+\[
+g_{\widetilde{K}^{(1)} \cdots \widetilde{K}^{(m)}} \leq n
+g_{\widetilde{K}^{(1)} \cdots \widetilde{K}^{(m-1)}} +
+(n-1)(n^{m-1}-1) \leq n g_{\widetilde{K}^{(1)} \cdots
+\widetilde{K}^{(m-1)}} + n^{m-1}.
+\]
+This relation implies inductively that
+\[ g_{\widetilde{K}^{(1)} \cdots \widetilde{K}^{(m)}} \leq (m-1) n^{m-1} \]
+and so taking $m=n$ yields \[ g_{\widetilde{L}_{i,j}} \leq (n-1)
+n^{n-1} \leq n^n,
+\] say. To continue we enumerate the $\widetilde{L}_{i,j}$ as $\widetilde{L}^{(1)}, \dots,
+\widetilde{L}^{(d_1+\dots+d_r)}$, so that $\widetilde{M}$ is the
+compositum of the $\widetilde{L}^{(i)}$ for $1 \leq i \leq d_1 +
+\dots + d_r$. By Castelnuovo's Inequality, we have for any $k \leq
+d_1 + \dots + d_r$ that
+\begin{multline*}
+ g_{\widetilde{L}^{(1)} \cdots \widetilde{L}^{(k)}} \leq [\widetilde{L}^{(1)} \cdots \widetilde{L}^{(k)}: \widetilde{L}^{(k)}] g_{\widetilde{L}^{(k)}} +
+  [\widetilde{L}^{(1)} \cdots \widetilde{L}^{(k)}: \widetilde{L}^{(1)} \cdots \widetilde{L}^{(k-1)}] g_{\widetilde{L}^{(1)} \cdots \widetilde{L}^{(k-1)}} + \\
+  ([\widetilde{L}^{(1)} \cdots \widetilde{L}^{(k)}: \widetilde{L}^{(k)}]-1)([\widetilde{L}^{(1)} \cdots \widetilde{L}^{(k)}: \widetilde{L}^{(1)} \cdots
+  \widetilde{L}^{(k-1)}]-1);
+\end{multline*}
+thus \begin{align*}
+ g_{\widetilde{L}^{(1)} \cdots \widetilde{L}^{(k)}} &\leq n!^{k-1} n^n + n! g_{\widetilde{L}^{(1)} \cdots \widetilde{L}^{(k-1)}} + (n!^{k-1}-1)(n!-1)
+\\ &\leq n!^{k-1} n^n + n!  g_{\widetilde{L}^{(1)} \cdots \widetilde{L}^{(k-1)}} + n!^{k-1} n^n.\end{align*}
+Another induction now shows
+\[ g_{\widetilde{L}^{(1)} \cdots \widetilde{L}^{(k)}} \leq (2k-1) n!^{k-1} n^n; \]
+taking $k=d_1 + d_2 + \dots + d_r$ gives the result.
+\end{proof}
+
+Finally we state the particular version of the Chebotarev density
+theorem required in our application. This result is implicit in
+Fried \& Jarden's discussion of the Chebotarev density theorem (see
+\cite[Proposition 6.4.8]{fj05} and its proof, which incorporates
+corrections from \cite[Appendix]{gj98}); a similar explicit estimate
+has been given by Murty \& Scherk \cite{MS94}.
+
+\begin{cheb} Suppose $M/\F_{q}(u)$ is a finite
+Galois extension having full field of constants $\F_{q^D}$. Let $\C$
+be a conjugacy class of $\Gal(M/\F_{q}(u))$ every element of which
+restricts down to the $q$th power map on $\F_{q^D}$. Let
+\[ \P:= \left\{\text{first degree primes $P$ of $\F_q(u)$
+unramified in $M$}: \leg{M/\F_q(u)}{P} = \C\right\}. \] Then
+\[ \left|\#\P - \frac{\#C}{[M:\F_{q^D}(u)]}q\right| \leq 2 \frac{\#C}{[M:\F_{q^D}(u)]}(g q^{1/2} + g + [M:\F_{q^D}(u)]), \]
+where $g$ denotes the genus of $M/\F_{q^D}$.
+\end{cheb}
+
+\begin{proof}[Proof of Theorem \ref{thm:main}] Suppose that the polynomial
+$h(T) = T^n + a_{n-1}T^{n-1} + \dots + a_1 T$ over $\F_q$ satisfies
+both \eqref{eq:disccond} and \eqref{eq:rescond}. The number of $a
+\in \F_q$ for which at least one of the polynomials
+\eqref{eq:notroot} vanishes is bounded above by
+\[ (n-1)(d_1 + \dots + d_r) \leq (n-1)B. \] For all other $a \in \F_q$ the
+simultaneous irreducibility of the $f_i(h(T)-a)$ is equivalent to
+$(\widetilde{M}/\F_q(u), P_a)$ coinciding with the conjugacy class
+$\C$ appearing in Lemma \ref{lem:class}. Since $\C$ has size $n^{-r}
+n!^{d_1+\dots + d_r}$ and $[\widetilde{M}:\F_{q^D}(u)] =
+n!^{d_1+\dots+d_r}$, the explicit Chebotarev density theorem implies
+there are at least
+\[
+\frac{q}{n^r} - \frac{2}{n^r}\left(g q^{1/2} + g+
+n!^{d_1+\dots+d_r}\right)-(n-1) B\
+\] values of $a \in \F_q$ for which all the polynomials $f_i(h(T)-a)$ are
+irreducible, and at most \[(n-1) B + \frac{q}{n^r} +
+\frac{2}{n^r}\left(g q^{1/2} + g+ n!^{d_1+\dots+d_r}\right)
+\]
+such values of $a$. (Here $g$ denotes the genus of
+$\widetilde{M}/\F_{q^D}(u)$.)
+
+We now replace $d_1+\dots+d_r$ by $B$ and sum over the possibilities
+for $h$. Assume that
+\[ q^{n-1} > 4n^2 \left(1 + \binom{B}{2}\right), \]
+which holds if $q$ is sufficiently large in terms of $n$ and $B$.
+(This inequality guarantees that there is some $h$ of degree $n$ for
+which \eqref{eq:disccond} and \eqref{eq:rescond} both hold. Note
+that this inequality can be assumed for the proof of Theorem
+\ref{thm:main}, since for $q$ bounded in terms of $n$ and $B$ the
+estimate of that theorem is trivial.) Then we find that the total
+number of monic degree $n$ polynomials $\widetilde{h}(T)$ for which
+all the $f_i(\widetilde{h}(T))$ are irreducible is bounded below by
+\begin{equation}\label{eq:lower}
+\left(q^{n-1} - 4n^2 \left(1 + \binom{B}{2}\right)\right)\left(\frac{q}{n^r} - \frac{2}{n^r}\left(g q^{1/2} + g+ n!^{B}\right) - (n-1)B\right)
+\end{equation}
+and bounded above by
+\begin{multline*} 4n^2 q^{n-1} \left(1 + \binom{B}{2}\right) + \\
+\left(q^{n-1} - 4n^2 q^{n-2}\left(1 +
+\binom{B}{2}\right)\right)\left(\frac{q}{n^r} +\frac{2}{n^r}\left(g
+q^{1/2} + g+ n!^{B}\right)+ (n-1)B \right).
+\end{multline*}
+Since $g$ is $O_{n,B}(1)$ by Corollary \ref{lem:genus}, both the
+upper and lower bounds have the form $q^n/n^r + O_{n,B}(q^{n-1/2})$,
+finishing the proof.
+\end{proof}
+
+\section{Proof of Theorem \ref{thm:arith}}\label{sec:arithm} We begin with some comments on the relation
+between Theorem A and Theorem \ref{thm:arith}. For $q$ large in
+terms of $r$ and $B$, Theorem A asserts the existence of infinitely
+many irreducibility preserving substitutions $T \mapsto
+T^{l^k}-\beta$ for some prime $l$ dividing $q-1$ and some $\beta \in
+\F_q$. So we obtain irreducibility-preserving substitutions whose
+degrees are exactly the powers of $l$. In the proof of Theorem A,
+there is some control over the choice of $l$, and this could be used
+to establish Theorem \ref{thm:arith} in a number of special cases.
+
+In order to prove Theorem \ref{thm:arith} in full, we require two
+additional ingredients:
+\begin{enumerate}
+\item the existence of a preliminary irreducibility-preserving substitution $T \mapsto h(T)$
+of degree $d$, for an appropriate $d$ belonging to the progression
+$a\bmod m$,
+\item the existence of some $l$ prime to $m$ and some $\beta \in \F_q$ for which all the
+substitutions $T\mapsto T^{l^k}-\beta$ preserve the irreducibility
+of the polynomials $f_i(h(T))$, where $h(T)$ is as in (i).
+\end{enumerate}
+If we can establish (i) and (ii), then Theorem \ref{thm:arith}
+follows immediately, since $h(T^{l^k}-\beta)$ has degree from the
+progression $a\bmod m$ whenever $k$ is divisible by $\varphi(m)$.
+The most difficult part of the proof is obtaining (i), which
+requires Theorem \ref{thm:main}. By contrast, the techniques
+necessary for the proof of (ii) are present already in
+\cite{pollack06a}. However, the details here are slightly different;
+this is because in proving Theorem \ref{thm:arith} we take $l$ as a
+divisor of $q^d-1$ (with $d$ as in (i) above), while in the cited
+paper $l$ is always chosen as a divisor of $q-1$.
+
+We now give the specifics. Recall the following elementary result of
+Bang \cite{bang86} (see \cite[Theorem 3]{roitman97} for a short
+modern account):
+\begin{bang} Let $a$ and $d$ be integers greater than $1$. Then
+there is a prime $p$ for which $a$ has order $d$ modulo $p$ in all
+except the following cases:
+\begin{enumerate}
+\item $d=2$, $a=2^s-1$, where $s\geq 2$,
+\item $d=6$, $a=2$.
+\end{enumerate}
+\end{bang}
+
+\begin{cor}\label{cor:bangcor} Let $m$ be a positive integer. Then every integer $d > \max\{2, \varphi(m)\}$ has the following property: if $q$ is any odd integer $\geq
+3$, then $q^d-1$ has an odd prime divisor not dividing $m$.
+\end{cor}
+\begin{proof} Suppose $d >
+\max\{2,\varphi(m)\}$. By Bang's theorem there is a prime $l$ for
+which $q$ has order $d$ in $(\Z/l\Z)^{\times}$. Since $d > 1$, we
+must have $l \neq 2$. Moreover, $l$ is necessarily prime to $m$: for
+if $l$ divides $m$, then the order of $q$ in $(\Z/l\Z)^{\times}$ is
+a divisor of $\varphi(l)$, hence also a divisor of $\varphi(m)$ and
+so less than $d$, a contradiction. Hence $l$ is an odd prime divisor
+of $q^d-1$ which is prime to $m$.
+\end{proof}
+
+The next lemma, due to Serret in the case of prime fields
+\cite[Th\'{e}or\`{e}me I, p. 656]{serret86} and Dickson in the
+general case (\cite[p. 382]{dickson97}; see also
+\cite[\S34]{dickson58}), plays an essential role in the proofs of
+both Theorems \ref{thm:arith} and \ref{thm:hall}. (For a modern
+treatment see \cite[Theorem 3.3.5]{ln97}.) Recall that if $f(T)$ is
+an irreducible polynomial over $\F_q$ not associated to $T$, then by
+the \emph{order of $f$} we mean the order of any of its roots in the
+multiplicative group of its splitting field (equivalently, the order
+of $T$ in the unit group $(\F_q[T]/f)^{\times}$). Thus if $f$ has
+degree $d$, then the order of $f$ is a divisor of $q^d-1$.
+
+\begin{lem}[(Serret, Dickson)]\label{lem:dickson} Let $f$ be an irreducible
+polynomial over $\F_q$ of degree $d$ and order $e$. Let $l$ be an
+odd prime. Suppose that $f$ has a root $\alpha \in \F_{q^d}$ which
+is not an $l$th power, or equivalently that
+\begin{equation}\label{eq:hallcond} l \mid e \quad \text{but}
+\quad l \nmid (q^{d}-1)/e.
+\end{equation}
+Then the substitution $T \mapsto T^{l^k}$ leaves $f$ irreducible for
+every $k=1, 2, 3,\dots$.
+\end{lem}
+
+We also require the following estimate for character sums which
+appears as \cite[Lemma 7]{pollack06a}:
+\begin{lem}\label{lem:charest} Let $f_1(T), \dots, f_s(T)$ be pairwise nonassociated
+irreducible polynomials over $\F_q$ with the degree of $f_1 \cdots
+f_s$ bounded by $B$. Fix roots $\alpha_1, \dots, \alpha_s$ of $f_1,
+\dots, f_s$, respectively, lying in an algebraic closure of $\F_q$.
+Suppose that for each $i=1, 2, \dots, s$ we have a character
+$\chi_i$ of $\F_{q}(\alpha_i)$ and that at least one of these
+$\chi_i$ is nontrivial. Then
+\begin{equation}\label{eq:wanbound} \left|\sum_{\beta \in
+\F_q}\chi_1(\alpha_1+\beta) \cdots \chi_s(\alpha_s+\beta)\right|
+\leq (B - 1)\sqrt{q}.
+\end{equation}
+\end{lem}
+
+We can now establish the following variant of Theorem A:
+
+\begin{lem}\label{lem:variant} Let $f_1(T), \dots, f_r(T)$ be pairwise nonassociated
+irreducible polynomials over $\F_q$ with each $f_i$ of degree $>1$
+and the degree of $f_1\cdots f_r$ bounded by $B$. Suppose that there
+is a common odd prime $l$ dividing $q^{\deg{f_i}}-1$ for each
+$i=1,2,\dots,r$. If
+\[ q > (2^{r-1}B - 2^r + 1)^2, \]
+then there is a $\beta \in \F_q$ for which all the polynomials
+$f_1(T^{l^k}-\beta), \dots, f_r(T^{l^k}-\beta)$ are irreducible for
+each $k=1,2,3, \dots$.
+\end{lem}
+\begin{proof} Fix roots $\alpha_1, \dots, \alpha_r$ of
+$f_1(T), \dots, f_r(T)$, respectively. By Lemma \ref{lem:dickson},
+it suffices to produce an element $\beta \in \F_q$ with the property
+that $\alpha_i + \beta$ is an $l$th power nonresidue in
+$\F_{q}(\alpha_i)$ for every $i=1, 2, \dots, r$. Since $l$ divides
+$q^{\deg{f_i}}-1$ for each $i$, there are characters $\chi_i$ of
+order $l$ on each of the fields $\F_{q}(\alpha_i)$. If for every
+choice of $\beta$, there is an $i \in \{1, 2, \dots, r\}$ for which
+$\alpha_i+\beta$ is an $l$th power in $\F_{q}(\alpha_i)$, then the
+sum \[ \sum_{\beta \in \F_q}(1-\chi_1(\alpha_1+\beta))
+(1-\chi_2(\alpha_2+\beta)) \cdots (1-\chi_r(\alpha_r+\beta)) \]
+vanishes. (Note that it is impossible for any of the arguments
+$\alpha_i+\beta$ inside a character to vanish, since each $\alpha_i$
+belongs to a nontrivial extension of $\F_q$.) But by Lemma
+\ref{lem:charest}, the absolute value of this sum is bounded below
+by
+\begin{multline*}
+ q - \sum_{\substack{\I \subset \{1, 2, \dots, r\}\\ \I \neq \emptyset}}\left(-1 + \sum_{i \in
+ \I}\deg{f_i(T)}\right)\sqrt{q}= \\ q + (2^{r}-1)\sqrt{q} - \sum_{i=1}^{r}\deg{f_i}
+ \left(\sum_{\substack{\I \subset \{1, 2, \dots, r\} \\ i
+\in I}}1\right)\sqrt{q} \geq \\ q + (2^r-1)\sqrt{q} - 2^{r-1} B
+\sqrt{q},
+\end{multline*}
+and this is positive for $q$ as in the hypothesis of the lemma.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:arith}] Suppose $f_1, \dots,
+f_r$ are irreducible polynomials over $\F_q$, where $\F_q$ is a
+finite field with characteristic $p$ coprime to $2\gcd(a,m)$. Let
+$d$ be the smallest integer exceeding $\max\{2, \varphi(m)\}$
+relatively prime to $p$ and satisfying $d\equiv a \pmod{m}$. Since
+$p$ is prime to $\gcd(a,m)$, it follows that $p$ divides at most one
+of any two consecutive terms from the progression $a\bmod{m}$, so
+that $d \leq 3m$. In particular $d$ is bounded solely in terms of
+$m$. So by Theorem \ref{thm:main}, as long as $q$ is sufficiently
+large (depending just on $B$ and $m$), there is a polynomial $h$ of
+degree $d$ for which all of $f_1(h(T)), \dots, f_r(h(T))$ are
+irreducible over $\F_q$. Using Corollary \ref{cor:bangcor}, choose a
+prime $l$ dividing $q^d-1$ which is relatively prime to $m$. Then
+$l$ also divides $q^{\deg{f_i(h(T))}}-1$ for each $i=1,2,\dots,r$.
+According to Lemma \ref{lem:variant} (applied to the polynomials
+$f_1(h(T)), \cdots, f_r(h(T))$), if
+\[ q> (2^{r-1}dB - 2^r + 1)^2, \] then there is some $\beta \in
+\F_q$ with the property that the polynomials $f_i(h(T^{l^k}-\beta))$
+are all irreducible over $\F_q$ for $k=1, 2, 3, \dots$. Since
+\[ \deg{h(T^{l^k}-\beta)} = d l^k \equiv a l^k \equiv a
+\pmod{m} \] whenever $k$ is a multiple of $\varphi(m)$, the proof of
+Theorem \ref{thm:arith} is complete.\end{proof}
+
+
+\section{Application to a Question of Hall}
+We prove Theorem \ref{thm:hall} in two parts:
+\subsection{Part I: Infinitely Many Twin Prime Pairs of Odd Degree}
+In the case when $q-1$ has an odd prime divisor the twin prime pairs
+constructed by Hall \cite{hall06} already have odd degree, so we may
+suppose that $q-1$ is a power of $2$. Now recall that if $q$ is an
+odd prime power for which $q-1$ is a power of $2$, then either $q=9$
+or $q$ is a Fermat prime (\cite[p. 374, Exercise 1]{sierpinski88}).
+
+Theorem \ref{thm:arith} guarantees the existence of a twin prime
+pair $f, f+1$ of degree $\equiv 1 \pmod{2}$ over all sufficiently
+large finite fields $\F_q$ with $q$ odd. The next lemma is an
+explicit version of a slightly weaker result:
+
+\begin{lem}\label{lem:hall} Suppose $q > 10^6$ is a prime power
+coprime to $6$. Then there are infinitely many twin prime pairs
+$f,f+1$ over $\F_q$ for which $\deg{f} = \deg{(f+1)}$ is odd.
+\end{lem}
+
+It is worth remarking that no Fermat primes $> 10^6$ are known, and
+it is plausible that none exist.
+
+\begin{proof} By Theorem
+\ref{thm:main}, if $q$ is large enough and prime to $6$, then we may
+choose a monic prime pair $f, f+1$ of degree $3$ over $\F_q$. In
+fact, referring to the lower bound \eqref{eq:lower} (with $r=2$,
+$B=2$ and $n=3$), we see that such pairs exist as long as $q$
+satisfies the inequalities
+\begin{equation}\label{eq:explicit}
+ q^2 > 8\cdot 3^2 \quad \text{and}\quad \frac{q}{9} - \frac{2}{9}(g q^{1/2} + g + 6^2) - 2\cdot 2 >
+ 0,
+\end{equation}
+where $g$ is the genus of an appropriate function field. The left
+hand inequality is satisfied already for $q \geq 9$. By Corollary
+\ref{lem:genus}, we have
+\[ g \leq (2\cdot 2-1) 6^{2-1} 3^3 = 486; \]
+and so the right hand inequality \eqref{eq:explicit} holds as soon
+as
+\[ \frac{1}{9} q - 108\sqrt{q} - 120 > 0, \]
+which is valid for $q \geq 946943$, so certainly for $q > 10^6$. To
+complete the proof, choose an odd prime divisor $l$ of $q^3-1$
+(e.g., any prime divisor of $q^2+q+1$) and apply Lemma
+\ref{lem:variant} to the pair $f, f+1$ (taking $B=6$ and $r=2$). We
+obtain that for $q> 81$, there is some $\beta \in \F_q$ for which
+both $f(T^{l^k}-\beta)$ and $f(T^{l^k}-\beta)+1$ are simultaneously
+irreducible for $k = 1, 2, 3, \dots$. This is an infinite family of
+twin prime pairs of odd degree.
+\end{proof}
+\begin{table} \caption{\label{tbl:smalltwins} For each odd prime power $q = 2^N+1$ not exceeding $10^6$,
+we exhibit a monic prime polynomial $f$ of odd degree $d$ over
+$\F_q$ for which $f+1$ is also prime, together with the
+factorization of $q^d-1$, the factorizations of the order of $f$ and
+$f+1$, and an odd prime $l$ for which Lemma \ref{lem:dickson} can be
+applied to both $f$ and $f+1$. We write $P_9$ for the $9$-digit
+prime $116085511$.} \small \centering \begin{tabular}{r|r|r|r|r|r}
+$q$ & $f$ &\textbf{$q^d-1$} & \textbf{order of $f$} & \textbf{order
+of $f+1$} & \textbf{$l$}\\\hline\hline\rule{0pt}{9pt} $3$ &
+$T^3-T+2$ & $2\cdot 13$ & $13$ & $26$ & $13$\\
+$9$ &
+$T^3-T+2$ & $2^3 \cdot 7 \cdot 13$ & $13$ & $26$ & $13$\\
+$5$ & $T^3+3T + 2$ & $2^2 \cdot 31$ & $2^2\cdot 31$ & $2^2\cdot 31$
+&
+$31$ \\
+$17$ & $T^3 + T + 8$ & $2^4\cdot 307$ & $2^2\cdot 307$ & $2^2\cdot
+307$ & $307$ \\
+$257$ & $T^3+T+15$ & $2^8 \cdot 61 \cdot 1087$ & $2^5\cdot 61 \cdot
+1087$ & $2^2\cdot 61 \cdot 1087$ & 61 \\ 65537 & $T^3+T+18$ &
+$2^{16}\cdot 37\cdot P_9$ & $2^{15}\cdot 37\cdot P_9$ & $2^{15}\cdot
+37\cdot P_9$ & 37
+\end{tabular}
+\normalsize
+\end{table}
+
+To finish off this half of Theorem \ref{thm:hall}, it remains to
+consider the cases when $q=9$ or when $q$ is a Fermat prime $<
+10^{6}$. These small finite fields are treated by hand. For each
+such $q$, Table \ref{tbl:smalltwins} exhibits the first member $f$
+of a monic twin prime pair $f, f+1$ of odd degree together with all
+the information necessary to verify that Lemma \ref{lem:dickson} can
+be applied to both $f$ and $f+1$ with the specified odd prime $l$.
+
+\subsection{Part II: Infinitely Many Twin Prime Pairs of
+Even Degree} We first argue that for $q \geq 4$, there is always a
+monic, quadratic twin prime pair $f, f+1$ over $\F_q$. In the proof
+of this result it is convenient to consider odd and even $q$
+separately.
+
+\begin{lem}\label{lem:quadratic1} Let $\F_q$ be a finite field of odd characteristic with $q\geq 5$. Then there is
+a pair $f, f+1$ of monic irreducible quadratic polynomials over
+$\F_q$.
+\end{lem}
+
+Lemma \ref{lem:quadratic1} could be established by the methods of
+Theorem \ref{thm:main}, in analogy with the proof of Lemma
+\ref{lem:hall} in Part I. However, the direct approach below leads
+to better bounds.
+
+\begin{proof} It suffices to show that there is some pair of consecutive quadratic
+nonresidues in $\F_q$. Letting $\chi$ denote the quadratic character
+on $\F_q$, the number of such pairs is $\frac{1}{4}$ of the sum
+$\sum(1-\chi(\alpha))(1-\chi(\alpha+1))$, the sum being taken over
+$\alpha \neq 0, -1$ from $\F_q$. Now a straightforward calculation
+using the evaluation $\sum_{\alpha \in \F_q}
+\chi(\alpha)\chi(\alpha+1) = -1$ (cf. \cite[Theorem 2.1.2]{bew98})
+results in a count of
+\[ \frac{1}{4}\left(q-3 +\chi(1) + \chi(-1)\right) = \frac{1}{4}
+\left(q-2 + \chi(-1)\right)\] such pairs, which is positive for $q >
+3$.
+\end{proof}
+\begin{lem}\label{lem:quadratic2} Let $\F_q$ be a finite field of characteristic $2$ with $q\geq 4$.
+Then there is a pair $f, f+1$ of monic quadratic polynomials both of
+which are irreducible over $\F_q$.
+\end{lem}
+\begin{proof} For any fixed $\gamma \in \F_q$, the map $\phi\colon
+\F_q\mapsto\F_q$ defined by $\phi(\beta) := \beta^2+\gamma\beta$ is
+an endomorphism of the underlying additive group of $\F_q$. We
+choose $\gamma$ so that $\gamma \neq 0$ and the image of $\phi$
+contains $1$ (and so contains all of $\F_2$). This is possible as
+soon as $\F_q$ is a nontrivial extension of $\F_2$; merely choose
+any $\beta \in \F_q\setminus \F_2$ and define $\gamma$ so that
+$\beta^2+\gamma\beta = 1$.
+
+We claim that with this choice of $\gamma$, there is a pair $f, f+1$
+of irreducibles where $f$ has the form $T^2+\gamma T + \delta$. A
+polynomial of this form is irreducible if and only if $\delta$ is
+not in the image of $\phi$. But by our choice of $\gamma$, the
+element $\delta$ is missing from the image of $\phi$ if and only if
+the same is true for $\delta+1$. So the lemma follows provided that
+$\phi$ is not onto. Since $\phi$ is a map from $\F_q$ to itself, if
+$\phi$ were onto it would also be injective. But $\phi(\gamma) =
+\phi(0) = 0$, and the lemma is proved.\end{proof}
+
+\begin{lem} Let $\F_q$ be a finite field with $q > 25$. Then there
+are infinitely many twin prime pairs $f, f+1$ of even degree over
+$\F_q$.
+\end{lem}
+\begin{proof} Lemmas \ref{lem:quadratic1} and
+\ref{lem:quadratic2} show that for $q \geq 4$ there is a monic twin
+prime pair $f,f+1$ of degree $2$ over $\F_q$. Since $q > 3$, it is
+impossible for both $q-1$ and $q+1$ to be powers of $2$, and so
+there must be an odd prime divisor $l$ of $q^2-1$. Lemma
+\ref{lem:variant} (with $r=2$ and $B=4$) implies that for $q> 25$,
+there is some $\beta \in \F_q$ for which both $f(T^{l^k}-\beta)$ and
+$f(T^{l^k}-\beta)+1$ are simultaneously irreducible for $k= 1, 2, 3,
+\dots$. Since these twin prime pairs have even degree, the lemma
+follows.
+\end{proof}
+
+To complete the proof of Theorem \ref{thm:hall} it suffices to
+consider those finite fields with at most $25$ elements, and these
+are treated in Table \ref{tbl:smalltwins2}.
+
+\begin{table} \caption{\label{tbl:smalltwins2} For each prime power $2 < q \leq 25$
+we exhibit a monic prime polynomial $f$ of even degree $d$ over
+$\F_q$ for which $f+1$ is also prime, together with the
+factorization of $q^d-1$, the factorizations of the order of $f$ and
+$f+1$, and a prime $l$ for which Lemma \ref{lem:dickson} can be
+applied to both $f$ and $f+1$.} \small \centering
+\begin{tabular}{r|r|r|r|r|r} $q$ & $f$ &\textbf{$q^d-1$} &
+\textbf{order of $f$} & \textbf{order of $f+1$} &
+\textbf{$l$}\\\hline\hline\rule{0pt}{9pt} $3$ &
+$T^6+T^5+2T^3+2T^2+1$ & $2^3\cdot 7 \cdot 13$ & $2^2 \cdot 7\cdot 13$ & $2^3\cdot 7 \cdot 13$ & $7$\\
+$4$ & $T^2+T + \alpha$ & $3\cdot 5$ & $3\cdot 5$ & $3 \cdot 5$ & $3$\\
+$5$ & $T^2+T+1$ & $2^3 \cdot 3$ & $3$ & $2^3\cdot 3$ &$3$ \\
+$7$ & $T^2 + T + 3$ & $2^4\cdot 3$ & $2^4\cdot 3$ & $2^3
+\cdot 3$ & $3$ \\
+$8$ & $T^2+(\beta+1)T+\beta^2+\beta$ & $3^2\cdot 7$ & $3^2\cdot 7$ & $3^2\cdot 7$ & $7$ \\
+$9$ & $T^2+(\gamma+1)T + \gamma+1$ & $2^4 \cdot 5$ & $2^4 \cdot 5$ & $2^4\cdot 5$ & $5$ \\
+$11$ & $T^2 + 3$ & $2^3\cdot 3\cdot 5$ & $2^2\cdot 5$ & $2^2\cdot 5$ & $5$ \\
+$13$ & $T^2 + 6$ & $2^3\cdot 3 \cdot 7$ & $2^3\cdot 3$ & $2^3\cdot 3$ & $3$\\
+$16$ & $T^2+ (\delta^2+\delta)T + \delta$ & $3 \cdot 5 \cdot 17$ & $3\cdot 5  \cdot 17$ & $3\cdot 5 \cdot 17$ & $3$\\
+$17$ & $T^2+T+2$ & $2^5\cdot 3^2$ & $2^4\cdot 3^2$ & $2^5 \cdot 3^2$ & $3$\\
+$19$ & $T^2+4$ & $2^3\cdot 3^2 \cdot 5$ & $2^2\cdot 3^2$ & $2^2\cdot 3^2$ & $3$\\
+$23$ & $T^2+2$ & $2^4 \cdot 3 \cdot 11$ & $2^2\cdot 11$ & $2^2\cdot 11$ & $11$\\
+$25$ & $T^2 + 4\epsilon T + 4\epsilon + 2$ & $2^4\cdot 3\cdot 13$ &
+$3\cdot 13$ & $2^2\cdot 3\cdot 13$ & $3$\\
+\end{tabular}
+\\\vskip 2pt
+Here $\alpha^2+\alpha+1=0$, $\beta^3+\beta+1 =0$, $\gamma^2+1=0$,
+$\delta^4 + \delta + 1 =0$, and $\epsilon^2 + 2=0$.
+\end{table}
+
+\begin{acknowledgements}
+Mitsuo Kobayashi and Tom Shemanske read over preliminary versions of
+this paper and offered suggestions which proved indispensable in
+coaxing it into its present form. Particular thanks are due to my
+advisor, Carl Pomerance, both for his helpful advice and
+encouragement on the paper at every stage of its development and for
+his initial suggestion that I attempt to prove Theorem
+\ref{thm:main} in its present generality.\end{acknowledgements}
+\bibliographystyle {amsalpha}
+\bibliography{twins}
+\end{document}

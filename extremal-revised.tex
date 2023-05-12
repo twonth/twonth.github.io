@@ -1,0 +1,201 @@
+\documentclass[12pt]{amsart}
+\author{Kevin James}
+\address{Clemson University\\Department of Mathematical Sciences\\Box 340975, Clemson, South Carolina 29634}
+\email{kevja@clemson.edu}
+\author{Paul Pollack}
+\address{University of Georgia\\ Department of Mathematics \\ Boyd Graduate Studies Research Center\\ Athens, Georgia 30602}
+\email{pollack@uga.edu}
+\title{Extremal primes for elliptic curves with complex multiplication}
+\usepackage{amsmath,amssymb,amsthm,microtype}
+\usepackage[margin=1in]{geometry}
+
+\subjclass[2010]{Primary 11R11, 11R29}
+
+\synctex=1
+%\DeclareMathAlphabet{\curly}{U}{rsfs}{m}{n}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem*{thmun}{Theorem}
+\newtheorem*{corun}{Corollary}
+\newtheorem*{thmA}{Theorem A}
+\newtheorem*{thmB}{Theorem B}
+\newtheorem*{thmC}{Theorem C}
+\DeclareMathOperator\sgn{sgn}
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+\newtheorem*{rmks}{Remarks}
+\newtheorem*{ex}{Example}
+\newtheorem*{examples}{Examples}
+
+\begin{document}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\lcm{\mathrm{lcm}}
+\newcommand{\leg}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+
+
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\newcommand\N{\mathbb{N}}
+\newcommand\R{\mathbb{R}}
+\newcommand\Ss{\mathcal{S}}
+\newcommand\Pp{\mathcal{P}}
+\newcommand\F{\mathbb{F}}
+\let\vv\v
+\newcommand\ca{\chi_{\mathrm{td}}}
+\renewcommand\v{\nu}
+\renewcommand\subset{\subseteq}
+\newcommand\Oo{\mathcal{O}}
+\newcommand\Qq{\mathcal{Q}}
+\keywords{champion prime, elliptic curve, complex multiplication, Sato--Tate, Lang--Trotter}
+
+\begin{abstract} Fix an elliptic curve $E/\Q$. For each prime $p$ of good reduction, let $a_p = p+1-\#E(\F_p)$. A well-known theorem of Hasse asserts that $|a_p| \le 2\sqrt{p}$. We say that $p$ is a <i>champion prime for $E$</i> if $a_p= -\lfloor 2\sqrt{p}\rfloor$, that is, $\#E(\F_p)$ is as large as allowed by the Hasse bound. Analogously, we call $p$ a <i>trailing prime</i> if $a_p = \lfloor 2\sqrt{p}\rfloor$. In this note, we study the frequency of  champion and trailing primes for CM elliptic curves. Our main theorem is that for CM curves, both the champion primes and trailing primes have counting functions $\sim \frac{2}{3\pi} x^{3/4}/\log{x}$, as $x\to\infty$. This confirms (in corrected form) a recent conjecture of James--Tran--Trinh--Wertheimer--Zantout.
+\end{abstract}
+
+\maketitle
+\section{Introduction}
+Let $E/\Q$ be an elliptic curve. For each prime $p$ of good reduction, a 1933 theorem of Hasse gives that $\#E(\F_p) = p+1-a_p$ for some integer $a_p$ (the \emph{trace of Frobenius}) satisfying $|a_p| \le 2\sqrt{p}$. Thinking of $p+1$ as the ``main term'' and $a_p$ as the ``error'', it is natural to ask how the normalized error terms $\frac{a_p}{2\sqrt{p}}$ are distributed in $[-1,1]$. The limiting distribution takes different forms depending on whether or not $E$ has complex multiplication (CM). The following classical result gives the answer in the CM case.
+
+\begin{thmA}[Hecke \cite{hecke18,hecke20}, Deuring \cite{deuring53,deuring55,deuring56,deuring57}] Suppose that $E$ is an elliptic curve over $\Q$ with complex multiplication. Then $a_p=0$ for asymptotically half of all primes $p$. Moreover, for each subinterval $[\alpha,\beta]\subset [-1,1]$,
+\[ \lim_{x\to\infty} \frac{1}{\pi(x)} \#\left\{p\le x: \frac{a_p}{2\sqrt{p}} \in [\alpha,\beta]\setminus\{0\}\right\} = \frac{1}{2\pi} \int_{\alpha}^{\beta} \frac{dt}{\sqrt{1-t^2}}.\]
+\end{thmA}
+
+\noindent The non-CM case lies much deeper. The correct conjecture was formulated independently in the 1960s by Mikio Sato and John Tate. It was finally resolved only in the last decade, in a series of papers by (various subsets of) Barnet-Lamb, Clozel, Geraghty, Harris, Shepherd-Barron, and Taylor, culminating in \cite{BLGHT11}.
+
+\begin{thmB}[Sato--Tate ``Conjecture''] Let $E$ be an elliptic curve over $\Q$ without complex multiplication. Then 
+for each subinterval $[\alpha,\beta]\subset [-1,1]$,
+\[ \lim_{x\to\infty} \frac{1}{\pi(x)} \#\left\{p\le x: \frac{a_p}{2\sqrt{p}} \in [\alpha,\beta]\right\} = \frac{2}{\pi} \int_{\alpha}^{\beta} \sqrt{1-t^2}\, dt.\]
+\end{thmB}
+
+This paper is a continuation of investigations begun in \cite{JTTWZ16} into primes landing at the extreme tail of these distributions. We call a prime $p$ of good reduction a \emph{champion prime} if $a_p=-\lfloor 2\sqrt{p}\rfloor$ and a \emph{trailing primes} if $a_p=\lfloor 2\sqrt{p}\rfloor$.  We lump the champion primes and trailing primes together under the label \emph{extremal primes}. The terminology reflects the fact that champion primes (respectively trailing primes) have $\#E(\F_p)$ as large (respectively, as small) as allowed by the Hasse bound.
+
+Extrapolating from the probability distributions in Theorem A and B, one can formulate a convincing heuristic prediction for the count of extremal primes $p\le x$. This is worked out in \cite{JTTWZ16}. It is suggested there that in the CM case, this count is \[ \sim \frac{4}{3\pi} x^{3/4}/\log{x},\footnote{The factor of $\#\Oo_K^{\times}$ in the statement of \cite[Conjecture 2.2]{JTTWZ16} should be replaced with the constant $2$.}\] as $x\to\infty$, 
+while in the non-CM case the argument in  \cite{JTTWZ16} can be corrected to show that the count should be \[ \sim \frac{16}{3\pi} x^{1/4}/\log{x}. \]  Moreover, these probabilistic arguments suggest that the extremal primes should be asymptotically split 50-50 between the two types. 
+
+The authors of \cite{JTTWZ16} attack this problem in the CM case. Assuming the Riemann Hypothesis for certain Hecke $L$-functions, they prove that the total count of extremal primes $p \le x$ (with champion and extremal primes counted together) is indeed $\sim \frac{4}{3\pi} x^{3/4}/\log{x}$, provided that $E$ has CM by a maximal order in an imaginary quadratic field $K\ne \Q(\sqrt{-1}), \Q(\sqrt{-3})$. 
+
+Our primary goal here is to remove the reliance on RH. Our method also allows us to separate the counts of champion and trailing primes and to remove the restrictions on the CM order.
+\begin{thm}\label{thm:main} Let $E/\Q$ be any CM elliptic curve. The number of trailing primes $p\le x$ is \[ \sim \frac{2}{3\pi} x^{3/4}/\log{x},\] as $x\to\infty$. The same asymptotic formula holds for the number of champion primes $p\le x$.
+\end{thm}
+
+At present, we do not see how to prove the existence of infinitely many extremal primes for a single non-CM elliptic curve over $\Q$. However, in the master's thesis of Jason Hedetniemi \cite{hedetniemi12, HJX14}, it is shown that 100\% of elliptic curves $E/\Q$ possess some champion prime. In fact, for each fixed $A$, the method shows that asymptotically 100\% of curves possess at least $A$ extremal primes of both types. We refer the reader to the original papers for the precise definition of ``100\%'' in these statements.
+
+In broad strokes, the proof of Theorem \ref{thm:main} uses the same strategy as \cite{JTTWZ16}; the problem is reduced to counting prime elements of imaginary quadratic fields that lie in certain narrow sectors of the complex plane. However, we are able to sidestep the dependence on GRH by appealing to an unconditional theorem of Maknys \cite{maknys83}, which he  proved using zero density estimates.
+
+\section{Proof of Theorem \ref{thm:main}}
+Let $K$ be an imaginary quadratic field. We write $w_K$ for the number of roots of unity in $K$, and we let $h_K$ denote the class number of $K$. By a \emph{prime} of $\Oo_K$, we mean an element $\varpi \in \Oo_K$ that generates a prime ideal. We say $\varpi$ \emph{lies above the rational prime $p$} when $\varpi \mid p$. For a nonzero element $\mu \in \Oo_K$, we set $\varphi(\mu) = \#(\Oo_K/\mu\Oo_K)^{\times}$. The following equidistribution result is due to Maknys \cite{maknys83}.
+
+\begin{prop}\label{prop:mak} Let $K$ be an imaginary quadratic field. Fix $\mu, \nu \in \Oo_K$ with $\mu \ne 0$ and with $\nu\bmod{\mu}$ an invertible residue class. As $x\to\infty$,
+\[ \sum_{\substack{\varpi\text{ prime} \\ N\varpi \text{ prime} \\ x < N\varpi \le x+x^{0.735} \\ \varpi \equiv \nu \pmod{\mu} \\ \theta_1 < \arg\varpi <\theta_2}} 1 \sim \frac{w_K}{h_K \varphi(\mu)} \cdot \frac{\theta_2-\theta_1}{2\pi} \cdot \frac{x^{0.735}}{\log{x}}, \]
+when $2\pi \ge \theta_2-\theta_1 > x^{-0.265}$. Here the estimate is  uniform in the $\theta_i$.
+\end{prop}
+
+\begin{rmks} Maknys claims that in place of the exponents $0.735$ and $-0.265$, one can take any fixed constants larger than $\frac{11}{16}$ and $\frac{11}{16}-1$, respectively. It was noted by Heath-Brown in Math Reviews that Maknys's argument is mistaken, and that when corrected, $\frac{11}{16}$ becomes $(221+\sqrt{201})/320 = 0.7349\dots$. We have used these corrected values above.
+(Improved values of the constants, such as those of \cite{zarzycki91}, have no effect on our final result.)
+
+Note that Maknys states his result as an estimate for certain sums of $\Lambda(\alpha)$, where $\Lambda$ is the $\Oo_K$-analogue of the von-Mangoldt function, but it is routine to transition from this to the prime counting estimate in Proposition \ref{prop:mak}.
+\end{rmks}
+
+
+We now set up for the proof of Theorem \ref{thm:main}. Let $E/\Q$ be a fixed elliptic curve with CM by an order $\Oo$ in the imaginary quadratic field $K$. There is a canonical $\Q$-rational isogeny $\phi\colon E\to E'$, where $E'$ has CM by the maximal order $\Oo_K$ (see, for instance, \cite[Proposition 25]{CCS13}). Then $a_p(E) = a_p(E')$ for all but finitely many primes $p$. Thus, it suffices to prove Theorem \ref{thm:main} for $E'$ replacing $E$. Said differently, we can (and do) assume that $\Oo=\Oo_K$. Note that since $E$ is defined over $\Q$, the CM field $K$ is one of the nine imaginary quadratic fields of class number $1$, i.e., $\Oo_K$ is a principal ideal domain.
+
+Let $p$ be a prime of good reduction for $E$. By a criterion of Deuring \cite{deuring41}, if $p\ge 5$, then $a_p=0$ if and only if $p$ is inert or ramified in $K$. So if $p$ is extremal for $E$ and $p\ge 5$, then $p$ is split in $K$. For each split prime $p$, there is a prime $\varpi\in \Oo_K$ with $\varpi \mid p$ and 
+\begin{equation}\label{eq:congruence} p+1-a_p = N(\varpi-1). \end{equation} However, an arbitrary prime $\varpi$ lying above $p$ need not satisfy \eqref{eq:congruence}; in fact, each prime ideal above $p$ possesses a unique generator $\varpi$ for which \eqref{eq:congruence} holds. 
+
+This generator $\varpi$ can be specified in terms of congruence conditions. To illustrate what is meant here, consider the example of the curve $E: y^2=x^3-x$. This $E$ has CM by $\Z[i]$. If $p\equiv 1\pmod{4}$ is prime, and $\varpi \in \Z[i]$ lies above $p$, then \eqref{eq:congruence} holds precisely when $\varpi \equiv 1\pmod{(1+i)^3}$ (cf. \cite[Theorem 5, p. 307]{IR90}; this example is closely related to the final entry in Gauss's mathematical diary). An entirely analogous result holds for all elliptic curves over $\Q$ with $\Oo_K$-CM: There is a nonzero $\mu$ in $\Oo_K$, along with invertible residue classes $\nu_1,\dots,\nu_r \pmod{\mu}$, such that for each split prime $p$ coprime to $\mu$ and each prime $\varpi$ above $p$, \eqref{eq:congruence} holds if and only if
+\begin{equation}\label{eq:residueclasslist} \varpi \equiv \nu_1, \dots, \nu_{r-1}, \text{ or }\nu_r \pmod{\mu}. \end{equation}
+(We can, and do, assume that this list is irredundant; i.e., the classes $\nu_i \bmod{\mu}$, for $i=1,2,\dots, r$, are distinct.) Given an elliptic curve $E/\Q$ with $\Oo_K$-CM, the exact congruence conditions to be imposed in \eqref{eq:residueclasslist} can be computed from the point counting formulas collected in Table 2 of \cite{JUJ09}. (Carrying this out involves application of the biquadratic reciprocity law in $\Z[i]$, the sextic reciprocity law in $\Z[e^{2\pi i/3}]$, and the  quadratic reciprocity law in $\Z$.) For more details, see the discussion in \cite[\S4]{pollack16}. 
+
+% We give one quick example. Suppose that $j(E)=1728$, so that $K=\Q(i)$. Then $E$ has a Weierstrass equation $y^2=x^3-gx$ for an integer $g$. Let $p$ be a prime not dividing $g$ with $p\equiv 1\pmod{4}$. Let $\rho \in \Z_K$ be a prime dividing $p$ with $\rho \equiv 1\pmod{(1+i)^3}$. (This last congruence condition on $\rho$ says that $\rho$ is \emph{primary}. It is simple to show that each Gaussian integer coprime to $1+i$ admits a unique primary associate.) Then 
+%  \[ a_p = \leg{g}{\bar{\rho}}_4 \rho + \leg{g}{\rho}_4 \bar{\rho}. \]
+% Here, $\leg{\cdot}{\cdot}_4$ is the classical biquadratic residue symbol. If $\pi$ is an arbitrary prime dividing $p$, write $\pi = \epsilon \rho$, where $\epsilon \in \{\pm 1, \pm i\}$ and $\rho$ is the unique primary associate of $\pi$. Then \eqref{eq:congruence} holds if and only if $\epsilon = \leg{g}{\bar{\rho}}_4$. Since $\leg{g}{\bar{\rho}}_4 = \leg{g}{\bar{\pi}}_4$, we deduce that \eqref{eq:congruence} holds precisely when
+% \[ \pi \equiv \leg{g}{\bar{\pi}}_4 \pmod{(1+i)^3}. \]
+% This can be converted into a congruence condition on $\pi$ by biquadratic reciprocity and the corresponding supplementary laws. A possible choice of $\mu$ is $16g$.
+
+Landau has shown that prime ideals are equidistributed in strict ray class groups \cite{landau18}. From this, one can deduce that the count of prime elements $\varpi$ satisfying \eqref{eq:residueclasslist} with $N\varpi \le x$ is 
+\[ \sim r \frac{w_K}{\varphi(\mu)} \frac{x}{\log{x}}, \] as $x\to\infty$. However, from the last paragraph, each prime ideal of $\Oo_K$ of sufficiently large prime norm has a unique generator $\varpi$ satisfying \eqref{eq:residueclasslist}. Since the number of prime ideals of norm not exceeding $x$ having prime norm is $\sim x/\log{x}$, as $x\to\infty$, it must be that $r \cdot w_K/\varphi(\mu)=1$. That is, \[ r=\varphi(\mu)/w_K. \]
+
+The next lemma will be used to connect the distribution of extremal primes with the distribution of primes in narrow sectors.
+
+\begin{lem}\label{lem:detect} Let $\varpi \in \Oo_K$ be an element of norm $p$, where $p$ is a rational prime with $X \le p \le X+X^{3/4}$. If $X$ exceeds a suitable absolute constant, and
+\begin{equation}\label{eq:arg1} -(1-X^{-1/5}) X^{-1/4} < \arg(\varpi) < (1-X^{-1/5}) X^{-1/4}, \end{equation}
+then $2\Re(\varpi) = \lfloor 2\sqrt{p}\rfloor$. In the opposite direction, if $2\Re(\varpi) = \lfloor 2\sqrt{p}\rfloor$, then
+\begin{equation}\label{eq:arg2} -(1+X^{-1/2}) X^{-1/4} < \arg(\varpi) < (1+X^{-1/2}) X^{-1/4}. \end{equation}
+\end{lem}
+\begin{proof} Throughout, we write $\varpi = a+bi$. Suppose first that \eqref{eq:arg1} holds. Then $a > 0$ and $b= a \tan(\arg(\varpi))$. Recalling that $\tan(u)=u + O(u^3)$ for $u$ close to $0$, 
+\[ |b| = |a| \cdot |\tan(\arg(\varpi))| \le |a| \cdot \left(1-\frac{1}{2}X^{-1/5}\right) X^{-1/4}, \]
+once $X$ is large. Hence,
+\[ b^2 \le a^2 \cdot X^{-1/2} \left(1-\frac{1}{2}X^{-1/5}\right), \]
+and 
+\[ p = a^2 + b^2 \le a^2\left(1 + X^{-1/2} \left(1-\frac{1}{2}X^{-1/5}\right)\right).\]
+Thus,
+\[ a^2 \ge p \left(1 + X^{-1/2} \left(1-\frac{1}{2}X^{-1/5}\right)\right)^{-1} \ge  p \left(1 - X^{-1/2} \left(1-\frac{1}{2}X^{-1/5}\right)\right). \]
+We recall the Taylor expansion $(1-u)^{1/2}=1-\frac{u}{2}-\sum_{n\ge 2}\frac{(1\cdot3\cdot...\cdot(2n-3))u^n}{2^nn!}$ which yields for
+$u$ near $0$, that $(1-u)^{1/2} \ge 1-u/2 -u^2$.
+Thus we deduce from above that
+\begin{align*} a &\ge p^{1/2} \left(1-\frac{1}{2}X^{-1/2} \left(1-\frac{1}{2}X^{-1/5}\right) - \frac{1}{4}X^{-1}\right) \\
+&= p^{1/2} - \frac{1}{2}(p/X)^{1/2} \left(1-\frac{1}{2}X^{-1/5}\right) -\frac{1}{4}p^{1/2}X^{-1}.
+  \end{align*}
+Since $p/X \le 1 + X^{-1/4}$, we have $(p/X)^{1/2} \le 1+\frac{1}{2}X^{-1/4}$, $p^{1/2}/X\le X^{-1/2}+\frac{1}{2}X^{-3/4}$ and
+for $X$ sufficiently large
+\[ a \ge p^{1/2} - \frac{1}{2} \left(1-\frac{1}{4}X^{-1/5}\right) -\frac{1}{4}\left(X^{-1/2} + \frac{1}{2}X^{-3/4}\right)> p^{1/2} -\frac{1}{2}.\]
+Thus, 
+\[ 2a > 2p^{1/2} - 1. \]
+On the other hand, since $p=a^2+b^2$, it is clear that $2a \le 2\sqrt{p}$. Since $2a \in \Z$, it must be that $2a=\lfloor 2\sqrt{p}\rfloor$. This proves the first half of the lemma. The second half is similar but simpler. In this case, 
+\[ 2a = \lfloor 2\sqrt{p}\rfloor > 2\sqrt{p}-1, \]
+so that $a > \sqrt{p}-\frac{1}{2}$ and
+\[ b^2 = p-a^2 < \sqrt{p}. \]
+Thus,
+\begin{eqnarray*}
+|b|/a &<& \frac{p^{1/4}}{p^{1/2}-\frac{1}{2}} =\frac{1}{p^{1/4}(1-\frac{1}{2p^{1/2}})}
+                                    =p^{-1/4}\sum_{n\ge 0} \frac{1}{(2p^{1/2})^n}\\
+&<& p^{-1/4} (1+p^{-1/2})  
+ \le X^{-1/4} (1+X^{-1/2}), 
+\end{eqnarray*}
+and
+\[ |\arg(\varpi)| = \arctan(|b|/a) < |b|/a < X^{-1/4} (1+X^{-1/2}). \qedhere\]
+\end{proof}
+
+% In the next proposition, we estimate the count of extremal primes in a dyadic interval.
+
+\begin{proof}[Proof of Theorem \ref{thm:main}] For the purpose of obtaining our asymptotic estimates, it is harmless to throw away finitely many primes $p$. With this in mind, we fix a real number $p_0 = p_0(E) \ge 5$ large enough to ensure that all primes $p\ge p_0$ are of good reduction for $E$, unramified in $K$, and coprime to $\mu$. (Here and below, $\mu, r$, and the $\nu_i$ are as in \eqref{eq:residueclasslist}.)
+
+Suppose that $p\ge p_0$. We have already seen that if $p$ is inert in $K$, then $p$ is not extremal. When $p$ splits in $K$, there are two primes $\varpi$ of norm $p$ for which \eqref{eq:congruence} holds, since each prime ideal above $p$ has precisely one generator $\varpi$ satisfying \eqref{eq:congruence}.  Moreover, a prime $\varpi$ above $p$ satisfies \eqref{eq:congruence} precisely when it satisfies \eqref{eq:residueclasslist}. 
+
+Call a prime $\varpi \in \Oo_K$ \emph{trailing-distinguished} if
+\begin{enumerate}
+\item $N\varpi$ is prime,
+\item $\varpi\equiv \nu_1, \dots, \nu_{r-1}\text{ or } \nu_r\bmod{\mu}$ (that is, \eqref{eq:residueclasslist} holds), 
+\item $2\Re(\varpi) = \lfloor 2\sqrt{N\varpi}\rfloor$.
+\end{enumerate} 
+Let $\ca$ denote the characteristic function of trailing-distinguished primes. Then
+\begin{equation}\label{eq:trailingcount} \sum_{\substack{p_0 \le p \le x \\ p\text{ trailing}}}1 = \frac{1}{2}\sum_{p_0 \le N\varpi \le x} \ca(\varpi). \end{equation}
+
+Rather than estimate the right-hand sum directly, it is more convenient to first consider a weighted version.  Put $\eta = 0.735$. Let $x$ be a large real number, and for each prime $\varpi$ with $N\varpi$ prime and $x^{1/2} < N\varpi \le x$, let 
+\[ \mathcal{X}(\varpi)= \{X \in \R: X< N\varpi \le X + X^{\eta}\}. \]
+Each $\mathcal{X}(\varpi)$ is an interval of length $\sim (N\varpi)^{\eta}$ (as $x\to\infty$), uniformly in $\varpi$. Thus,
+\begin{align} \sum_{x^{1/2} < N\varpi \le x} \ca(\varpi) (N\varpi)^{\eta} &= (1+o(1)) \sum_{x^{1/2} < N\varpi \le x}\ca(\varpi) \int_{\mathcal{X}(\varpi)} 1\, dX \notag\\
+&=(1+o(1)) \int_{x^{1/2} - x^{\eta/2}}^{x} \sum_{\substack{X < N\varpi \le X+X^{\eta} \\ x^{1/2} < N\varpi\le x}} \ca(\varpi) \, dX. \label{eq:integral}\end{align}
+For the range of integration where $x^{1/2} \le X \le x-x^{\eta}$, the first restriction on the sum subsumes the second. Given such an $X$, we estimate
+\[ \sum_{X < N\varpi \le X+X^{\eta}} \ca(\varpi) \]
+by applying Proposition \ref{prop:mak} and Lemma \ref{lem:detect}. In both \eqref{eq:arg1} and \eqref{eq:arg2}, the difference between the bounds on $\arg(\varpi)$ is $\sim 2X^{-1/4}$. Applying Proposition \ref{prop:mak}, and summing over the $r=\varphi(\mu)/w_K$ residue classes $\nu_i\pmod{\mu}$, gives
+\[ \sum_{X < N\varpi \le X+X^{\eta}} \ca(\varpi) \sim \frac{2X^{-1/4}}{2\pi} \frac{X^{\eta}}{\log{X}}. \]
+We deduce that the contribution to the integral in \eqref{eq:integral} from the range $x^{1/2} \le X \le x-x^{\eta}$ is
+\[ \sim \frac{1}{\pi(\eta+3/4)} \cdot \frac{x^{\eta+3/4}}{\log{x}}.\]
+The remaining $X \in [x^{1/2}-x^{\eta/2}, x]$ make up a set of measure $\ll x^{\eta}$, while the integrand itself is uniformly $\ll x^{\eta}$. Thus, the neglected range makes a contribution to the integral of $\ll x^{2\eta}$.  Since $\eta < 3/4$, this does not affect the asymptotic. We conclude that
+\begin{equation} \sum_{x^{1/2} < N\varpi \le x} \ca(\varpi) (N\varpi)^{\eta} \sim  \frac{1}{\pi(\eta+3/4)} \cdot \frac{x^{\eta+3/4}}{\log{x}},\label{eq:Sxasymp} \end{equation} as $x\to\infty$. On the left-hand side, we can delete the restriction that $N\varpi > x^{1/2}$ without altering the asymptotic, since the additional terms change the sum by only $O(x^{1/2} \cdot x^{\eta/2})$, which is negligible. The weights $(N\varpi)^{\eta}$ can now be removed by partial summation: Let $S(t) = \sum_{N\varpi \le t}\ca(\varpi) (N\varpi)^{\eta}$. Then
+\[ \sum_{N\varpi \le x} \ca(\varpi) = \int_{2^{-}}^{x} t^{-\eta}\, dS(t) =  \frac{1+o(1)}{\pi(\eta+3/4)} \frac{x^{3/4}}{\log{x}} +\eta \int_{2}^{x} S(t) t^{-\eta-1}\, dt. \]
+Moreover, 
+\[ \int_{2}^{x} S(t) t^{-\eta-1}\, dt = \frac{1}{\pi(\eta+3/4)} \int_{2}^{x}\frac{1+o(1)}{t^{1/4}\log{t}}\, dt \sim \frac{1}{\pi(\eta+3/4)} \frac{(4/3)x^{3/4}}{\log{x}} .\]
+Collecting terms, \[ \sum_{N\varpi \le x} \ca(\varpi) \sim \frac{1}{\pi(\eta+3/4)} \left(1 + \frac{4}{3}\eta\right) \frac{x^{3/4}}{\log{x}} = \frac{4}{3\pi} \cdot \frac{x^{3/4}}{\log{x}}. \]
+Substituting back into \eqref{eq:trailingcount}, we see that the count of trailing primes not exceeding $x$ is $\sim \frac{2}{3\pi} x^{3/4}/\log{x}$, as claimed. The asymptotic for the count of champion primes is established analogously; the only difference is that it is now $\arg(-\varpi)$ that is constrained by \eqref{eq:arg1} and \eqref{eq:arg2}, rather than $\arg(\varpi)$.
+\end{proof}
+
+\section*{Acknowledgements}
+Research of the second author is supported by NSF award DMS-1402268. We thank the referee for a careful reading of the manuscript.
+
+\bibliographystyle{amsplain}
+\bibliography{extremal}
+
+\end{document}

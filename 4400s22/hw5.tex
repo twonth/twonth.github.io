@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsthm}
+\usepackage{url}
+\def\Z{\mathbf{Z}}
+\def\Q{\mathbf{Q}}
+\def\C{\mathbf{C}}
+\def\R{\mathbf{R}}
+\def\lcm{\mathrm{lcm}}
+\def\ord{\mathrm{ord}}
+\def\proj{\mathrm{proj}}
+\newcommand{\leg}[2]{\genfrac{(}{)}{}{}{#1}{#2}} 
+
+\renewcommand\subset\subseteq
+\newcommand{\vc}[1]{\mathbf{#1}}
+\geometry{left=1in, right=1in, top=.75in, bottom=.75in}
+\begin{document}
+\thispagestyle{empty} \begin{center} {\textbf{MATH 4400/6400 --
+Homework \#5}\\ posted \today; due April 8, by midnight}
+\end{center}
+
+{\scriptsize \begin{quote} Any fool can know. The point is to understand.\\
+    -- Albert Einstein\end{quote}}
+
+ 
+\vskip 10pt \noindent\textbf{Directions}. Give complete solutions, providing full justifications when appropriate. Your assignment must be stapled if it goes on beyond one page.
+
+\vskip 10pt \noindent\textbf{MATH 4400 problems}
+\begin{enumerate}
+\item For every positive integer $a$, let $N(a)$ denote the number of integers in the half-open interval $(a,a^2]$ which are divisible by a prime $p > a$.
+\begin{enumerate}
+\item Prove that $\displaystyle N(a) = \sum_{a < p \le a^2} \lfloor a^2/p\rfloor$.
+\item Deduce from (a) and the trivial inequality $N(a) \le a^2$ that $\displaystyle \sum_{a < p \le a^2} \frac{1}{p} \le 2$.
+\item By using part (b) several times, find an upper bound on $\displaystyle\sum_{2 < p \le 2^{32}} \frac{1}{p}$.
+\end{enumerate}
+
+\item Let $\mathcal{D}(n) = \{d \in \Z^{+}: d \mid n\}$. Let $n_1$ and $n_2$ be relatively prime positive integers. Show that the map
+\begin{align*} M\colon \mathcal{D}(n_1) \times \mathcal{D}(n_2) &\to \mathcal{D}(n_1 n_2) \\
+    (d_1,d_2) &\mapsto d_1d_2
+\end{align*}
+is a bijection.
+
+\item Suppose $f$ is a multiplicative function.
+\begin{enumerate}
+\item Show that $f(1) = 1$ or $f(1)=0$.
+\item Show that if $f(1)=0$, then $f(n)=0$ for all positive integers $n$.
+\end{enumerate}
+
+\item Show that if $f, g$ are multiplicative functions with $f(1)=g(1)=1$, and $f(p^e) = g(p^e)$ for all primes $p$ and all positive integers $e$, then $f(n)=g(n)$ for all positive integers $n$.
+
+\item Prove that for all positive integers $n$,
+\[ \sum_{e \mid n} d(e)^3 = \left(\sum_{e \mid n}d(e)\right)^2.\]
+{\scriptsize \emph{Hint.} You may assume the formula $\sum_{k=1}^{m} k^3 = (m(m+1)/2)^2$, which could be proved by induction.}
+
+\item Recall that Euler's $\phi$-function is defined by $$\phi(n) = \#\{m: 1 \le m\le n\text{ and } \gcd(m,n)=1\}.$$
+We will show in class that $\phi(n)$ is multiplicative.
+
+Prove: $\phi(n) \sigma(n) \le n^2$ for all $n$.
+
+\item Recall from class that $d_k(n) = \#\{(d_1,\dots,d_k) \in (\Z^{+})^k: d_1\cdots d_k = n\}$. Find a formula for $d_3(n)$ in terms of the prime factorization of $n$.
+
+\item \begin{enumerate}
+\item Classify all $n$ for which $\phi(n)$ is an odd number. Justify your answer.
+\item Classify all $n$ for which $d(n)$ is an odd number. Justify your answer.
+    \item Classify all $n$ for which $\sigma(n)$ is an odd number. Justify your answer.
+\end{enumerate}
+
+\end{enumerate}
+
+\vskip 10pt \noindent\textbf{MATH 6400 problems}
+
+\begin{enumerate}
+\item[9.] (*) (Euler) Prove that if $n$ is odd and $\sigma(n)$ is twice an odd number, then $n = p^\alpha m^2$ for some prime $p$ and some positive integers $\alpha$ and $m$, where $p\nmid m$. Moreover, $p \equiv \alpha \equiv 1\pmod{4}$.
+
+{\scriptsize \emph{Remark.} The assumptions of the problem hold, in particular, if $n$ is an \emph{odd perfect number}. This was the context in which Euler proved the result.} 
+
+
+\item[10.] (*) Prove $\phi(n) \sigma(n) \ge \frac{1}{2}n^2$ for all $n$.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,bbm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsthm}
+\def\1{\mathbbm{1}}
+\def\H{\mathbb{H}}
+\def\Z{\mathbb{Z}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\lcm{\mathrm{lcm}}
+\def\ord{\mathrm{ord}}
+\def\proj{\mathrm{proj}}
+\renewcommand\subset\subseteq 
+\newcommand{\vc}[1]{\mathbf{#1}}
+\newcommand{\leg}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+
+\geometry{left=1in, right=1in, top=.75in, bottom=.75in}
+\begin{document}
+\thispagestyle{empty} \begin{center} {\textbf{MATH 4400/6400 --
+Homework \#5}\\ posted \today; due April 18, 2022}
+\end{center}
+
+\begin{quote} {\scriptsize The M\"{o}bius Inversion was a small but disruptive wormhole used in the Antarian Trans-stellar Rally, a race held in the Delta Quadrant to commemorate the signing of a treaty which brought four warring races to peace. \\
+-- Memory Alpha, describing the \textsl{Star Trek: Voyager} episode ``Drive''}
+\end{quote}
+
+
+\noindent\textbf{Directions}. Give complete solutions, providing full justifications when appropriate. Your assignment must be stapled if it goes on beyond one page.  Starred problems are required for MATH 6400 students and extra credit for 4400 students.
+\vskip 0.1in
+
+\noindent \textbf{MATH 4400 problems}
+
+\begin{enumerate}
+
+\item Find and prove simple formulas for each of the functions
+\[ \sum_{e \mid n} \mu(e) d(n/e), \qquad \sum_{e \mid n} \mu(e)d(e), \qquad \sum_{e \mid n} \mu(e)^2\phi(e). \]
+For the second and third sums, express your answers in terms of the prime factorization of $n$.
+
+
+\item A number $n$ is called \textbf{perfect} if $\sigma(n)=2n$.  What (if anything) is wrong with the following ``proof'' that all perfect numbers are even?
+    \begin{quote}{\small If $n$ is a perfect number, then $\sigma(n) = 2n$. In other words, $2n = \sum_{d \mid n} d$. So if $f$ and $g$ are the arithmetic functions defined by $g(n) = 2n$ and $f(n) =n$, then $g(n) = \sum_{d \mid n} f(d)$. By M\"{o}bius inversion,
+    \[ n = f(n) = \sum_{d \mid n} \mu(n/d) g(d)= \sum_{d \mid n} \mu(n/d)\cdot (2d) = 2\left(\sum_{d \mid n}\mu(n/d) d\right). \]
+    The final parenthesized expression is an integer, and so $n$ is even.}
+    \end{quote}
+
+
+
+\item This problem and the next assume familiarity with the system $\H$ of real quaternions, to be introduced in class on Wednesday, 4/13.
+
+Let $\alpha,\beta \in \H$. Prove that $\overline{\alpha\beta} =\overline{\beta}\cdot \overline{\alpha}$.
+
+\item Show that if $\alpha = a+bi+cj + dk \in \H$, then $N(\alpha)=a^2+b^2+c^2+d^2$.
+\end{enumerate}
+
+\noindent \textbf{MATH 6400 problem}
+
+\begin{enumerate}
+\item[5.] (*) Consider the set $\tilde{H}$ of all matrices of the form $[\begin{smallmatrix}z & w \\ -\bar{w} & \bar{z}\end{smallmatrix}]$, where $z$ and $w$ run through all complex numbers.
+\begin{enumerate}
+\item Recall from MATH 4000 that a nonempty subset of a ring is a subring whenever it contains the multiplicative identity of the ring and is closed under multiplication and under subtraction. Using this criterion, verify that $\tilde{H}$ is a subring of the ring of all $2\times 2$ complex matrices.
+\item Consider the elements of $\tilde{H}$ defined by
+\[ \1 = [\begin{smallmatrix}1 & 0 \\ 0 & 1\end{smallmatrix}],\quad I = [\begin{smallmatrix}i & 0 \\ 0 & -i\end{smallmatrix}], \quad J = [\begin{smallmatrix}0 & 1\\ -1 & 0\end{smallmatrix}], \quad K = [\begin{smallmatrix}0 & i \\ i & 0\end{smallmatrix}].\]
+Show that $\1, I, J, K$ form a basis for $\tilde{H}$, viewed as a vector space over $\R$. In other words, every element of $\tilde{H}$ is uniquely expressible as an $\R$-linear combination of $\1, I, J, K$.
+\end{enumerate}
+
+{\scriptsize \emph{Remark}: Since $\1$ is the identity element for $2\times 2$ complex matrices, it is also the multiplicative identity for $\H$. One can check directly that $I^2=J^2=K^2=-\1$, that $IJ=K$, $JK=I$, and $KI=J$, and that $I, J, K$ anticommute. These properties (along with the distributive law) imply $\tilde{H}$ is isomorphic to the ring $\H$ of real quaternions.}
+
+
+
+\end{enumerate}
+
+
+\end{document}  

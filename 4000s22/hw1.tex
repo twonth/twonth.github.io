@@ -1,0 +1,140 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{bbold}
+\usepackage{url}
+\usepackage{geometry}
+\def\C{\mathbb{C}}
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\Pp{\mathcal{P}}
+\def\lcm{\mathrm{lcm}}
+\def\proj{\mathrm{proj}}
+\def\ord{\mathrm{ord}}
+\def\bz{\mathbb{1}}
+%\def\1{\mathbb{1}}
+\def\Arg{\mathrm{Arg}}
+\renewcommand\Re{\mathrm{Re}}
+\renewcommand\Im{\mathrm{Im}}
+\newcommand{\leg}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+\newcommand{\vc}[1]{\mathbf{#1}}
+\theoremstyle{plain}
+
+\newtheorem*{lem}{Lemma}
+\newtheorem*{thm}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+\geometry{left=1in, right=1in, top=.75in, bottom=.75in}
+\makeatletter
+\let\@@pmod\pmod
+\DeclareRobustCommand{\pmod}{\@ifstar\@pmods\@@pmod}
+\def\@pmods#1{\mkern4mu({\operator@font mod}\mkern 6mu#1)}
+\makeatother
+\begin{document}
+\thispagestyle{empty} \begin{center} {\textbf{MATH 4000/6000 --
+Homework \#1}\\ posted \today; due at the \textbf{start of class} on January 24, 2022}
+\end{center}
+
+\begin{quote} {\scriptsize You know, for a mathematician, he did not have enough imagination. But he has become a poet and now he is fine. --- David Hilbert (1862--1943), talking of an ex-student}
+\end{quote}
+
+\noindent Assignments are expected to be neat and stapled. \textbf{Illegible work may not be marked}. Starred problems (*) are \emph{required} for those in MATH 6000 and \emph{extra credit} for those in MATH 4000.
+\vskip 0.1in
+\noindent Fully explain your answers. In problems \#1 and \#2 you must explain which algebraic properties (properties A1--A4, M1--M3, D1 on the handout) you are using at every step of the proof. I recommend a ``two column'' format with each line showing, on the left, a step in the proof and on the right a justification. For example:
+\[ a\cdot (0+0) = a\cdot 0 + a\cdot 0 \qquad (\text{Distributive law}). \]
+Refer to properties by name rather than number (write ``Distributive law'' and not ``D1'').
+\vskip 0.1in
+\noindent For all other problems, you may do ``familiar'' algebraic manipulations without citing the algebraic properties on the handout. \textbf{Throughout this problem set, you may also assume that $a\cdot 0=0= 0\cdot a$ and $(-1)a=-a = a(-1)$ for all $a$, as already shown in class}. You may also assume that $a>0$ is equivalent to $a \in \Z^{+}$.
+\vskip 0.1in
+\noindent Note: $\Z^{+}$ means the same as $\N$ (the book's notation).
+
+\begin{enumerate}
+\item Prove that for all $a, b \in \Z$, we have
+\begin{enumerate}
+\item $(-a)b = - (ab)$.
+\item $(-a)(-b) = ab$.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Let $a, b \in \Z$ and suppose that $a < b$. Prove that $a+c < b+c$ for every $c \in \Z$.
+\item Let $a, b \in \Z$ and suppose that $a < b$. Prove that $ac < bc$ for every $c \in \Z^{+}$.
+\end{enumerate}
+
+\item Let $a, b \in \Z$. Show that $a< b$, $a=b$, or $a>b$, and in fact exactly one of these three holds.
+
+\item Let $a, b \in \Z$.
+\begin{enumerate}
+ \item Prove that if $a < 0$ and $b < 0$, then $ab > 0$.
+ \item Show that if $a < 0$ and $b > 0$, then $ab < 0$.
+ \item Show that if $ab=0$, then either $a=0$ or $b=0$.
+\end{enumerate}
+
+\item Use the Well-Ordering  Principle to prove the following version of the Principle of Mathematical Induction.
+
+\begin{quote}Let $S$ be a subset of $\Z^{+}$. Assume:
+\begin{enumerate}\item[(1)] $1 \in S$, \item[(2)] for all $n \in \Z^{+}$, if $n\in S$ then also $n+1 \in S$. \end{enumerate}
+Then $S = \mathbb{Z}^{+}$.\end{quote}
+
+{\scriptsize \emph{Hint to get you started}: If $S \subsetneq \Z^{+}$, then there is a least positive integer \emph{not} in $S$.}
+
+
+\item (Laws of exponents) Let $a \in \Z$. Suppose that $m, n$ belong to the set $\Z^{+}\cup\{0\}$ of nonnegative integers.
+\begin{enumerate}
+ \item Prove that $a^m \cdot a^n = a^{m+n}$.
+ \item Prove that $a^{mn} = (a^{m})^n$.
+\end{enumerate}
+{\scriptsize \emph{Hint:} If $m=0$ or $n=0$, this is easy (why?). So you can suppose $m, n \in \Z^{+}$. Now think of $m$ as fixed and proceed by induction on $n$.}
+
+
+\item Use the binomial theorem to find formulas for the following sums, as functions of $n$, where $n$ is assumed to be a natural number.
+\begin{enumerate}
+ \item $\displaystyle\sum_{k=0}^{n} \binom{n}{k}$.
+ \item $\displaystyle\sum_{k=0}^{n} (-1)^{k} \binom{n}{k}$.
+\end{enumerate}
+
+
+\item Show that if $a, b\in\Z^{+}$ and $a \mid b$, then $a \le b$.
+
+
+\item In this exercise we outline a proof of the following statement, which we will be taking for granted in our proof of the Division Theorem: If $a, b \in \Z$ with $b > 0$, the set
+\[ S= \{a-bq: q \in \Z \text{ and } a-bq\ge 0\} \]
+has a least element.
+\begin{enumerate}
+\item Prove the claim in the case $0 \in S$.
+\item Prove the claim in the case $0 \notin S$ and $a > 0$.
+\item Prove the claim in the case $0\notin S$ and $a \le 0$.
+\end{enumerate}
+{\scriptsize \emph{Hint:} (a) is easy. To handle (b) and (c), first show that in these cases that $S$ is a nonempty set of natural numbers, so that the well-ordering principle guarantees $S$ has a least element as long as $S$ is nonempty. To prove $S$ is nonempty, show that in case (b), the integer $a$ is an element of $S$. You will have to work a little harder to prove $S$ is nonempty in case (c).}
+
+
+\item Use the Euclidean algorithm to find $\gcd(314,159)$ and $\gcd(272, 1479)$. Show the steps, not just the final answer.
+
+\end{enumerate}
+
+\newpage
+\noindent\textbf{6000 problems}
+
+\begin{enumerate}
+
+\item[11.] (*) Prove that there is no subset $S$ of the complex numbers $\mathbb{C}$ satisfying all three of the following properties.
+    \begin{enumerate}
+    \item[(1)] If $a, b \in S$, then $a+b \in S$.
+    \item[(2)] If $a, b \in S$, then $a\cdot b \in S$.
+    \item[(3)] For every $a \in \C$, exactly one of the following holds: (a) $a\in S$, (b) $a=0$, (c) $-a \in S$.
+    \end{enumerate}
+You may assume familiar properties of $\C$ for this problem.
+
+\item[12.] (*) Prove that the properties of the set $\mathbb{Z}^{+}$ on the handout uniquely determine $\mathbb{Z}^{+}$ as a set. 
+
+Precisely: Assume all of A1--N1, as usual. Furthermore, assume O1 and WOP hold with two subsets $P, P'$ of the integers in place of $\mathbb{Z}^{+}$. Prove that $P=P'$.
+\end{enumerate}
+
+
+\end{document}

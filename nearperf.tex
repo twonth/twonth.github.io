@@ -1,0 +1,121 @@
+\documentclass[12pt]{amsart}
+%\author{Paul Pollack}
+%\subjclass[2000]{Primary: 11A25, Secondary: 11N25}
+%\address{University of Illinois at Urbana-Champaign\\ Department of Mathematics \\ Urbana, Illinois 61802}
+%\email{pppollac@illinois.edu}
+\title{Notes on near-perfect numbers}
+%\dedicatory{Dedicated to Carl Pomerance on his 65th birthday.}
+\usepackage{amsmath,amssymb,amsthm,fullpage}
+\DeclareMathAlphabet{\curly}{U}{rsfs}{m}{n}
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}{Corollary}
+\newtheorem*{thmun}{Theorem}
+\newtheorem*{corun}{Corollary}
+\newtheorem*{thmA}{Theorem A}
+\newtheorem*{thmB}{Theorem B}
+\newtheorem*{rmk}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\begin{document}
+\renewcommand{\labelenumi}{(\roman{enumi})}
+\def\N{\mathbf{N}}
+\def\Q{\mathbf{Q}}
+\def\Z{\mathbf{Z}}
+\def\R{\mathbf{R}}
+\def\S{\curly{S}}
+\def\lcm{\mathrm{lcm}}
+\maketitle
+
+%\bibliographystyle{amsalpha}
+%\bibliography{oddperfs}
+
+\begin{thm}\label{thm:nearperf} The number of near-perfect $n\leq x$ is at most $x^{5/6+o(1)}$, as $x\to\infty$.
+\end{thm}
+
+The proof of Theorem \ref{thm:nearperf} requires some preparation. We begin by recalling Gronwall's determination of the maximal order of the sum-of-divisors function \cite[Theorem 323]{HW08}.
+
+\begin{lem}[Gronwall]\label{lem:gronwall} As $n\to\infty$, we have $\limsup \frac{\sigma(n)}{n\log\log{n}} = e^{\gamma}$,
+	where $\gamma = 0.57721\dots$ is the Euler--Mascheroni constant.
+\end{lem}
+
+The next proposition, which asserts that $\gcd(n,\sigma(n))$ is small on average, is extracted from \cite[Theorem 1.3]{pollack11}. 
+
+\begin{prop}\label{prop:wirsinggcd} For each $x \geq 3$, we have
+\[ \sum_{n \leq x} \gcd(n,\sigma(n)) \leq x^{1 + C/\sqrt{\log\log{x}}}, \]
+where $C$ is an absolute positive constant.
+\end{prop}
+
+The next lemma concerns solutions to the congruence $\sigma(n) \equiv a\pmod{n}$. For a given $a$, we divide the solutions $n$ to this congruence into two classes: by a \emph{trivial solution}, we mean a natural number 
+\begin{equation}\label{eq:regform} n = pm, \quad\text{where $p$ is a prime not dividing $m$},  \quad m \mid \sigma(m), \quad\text{and}\quad \sigma(m)=a. \end{equation}
+(It is straightforward to check that all such $n$ satisfy $\sigma(n)\equiv a\pmod{n}$.) All other solutions are called \emph{sporadic}. Pomerance \cite[Theorem 3]{pomerance75} showed that for each fixed $a$, the number of sporadic solutions to $\sigma(n)\equiv a\pmod{n}$ with $n \leq x$ is at most 
+\begin{equation}\label{eq:numsols0} x/\exp((1/\sqrt{2}+o(1))\sqrt{\log{x}\log\log{x}}),\end{equation} as $x\to\infty$. Theorem \ref{thm:nearperf} requires a stronger bound, with attention paid to uniformity in $a$.
+
+\begin{prop}\label{prop:sigmacongruence} Let $x\geq 3$, and let $a$ be an integer with $|a| < x^{2/3}$. Then the number of sporadic solutions $n\leq x$ to the congruence $\sigma(n) \equiv a \pmod{n}$ at most $x^{2/3+o(1)}$. Here the $o(1)$ term decays to $0$ as $x\to\infty$, uniformly in $a$.
+\end{prop}
+
+\begin{rmk} In addition to the congruence $\sigma(n)\equiv a\pmod{n}$, Pomerance \cite{pomerance75} also treats the congruence $n \equiv a\pmod{\phi(n)}$, proving the same upper bound \eqref{eq:numsols0} for the number of non-trivial solutions $n \leq x$. He returned to this latter congruence in the papers \cite{pomerance76}, \cite{pomerance77}, which sharpen the upper bound to $x^{2/3+o(1)}$ and $x^{1/2+o(1)}$ (again, for each fixed $a$). Our proof of Proposition \ref{prop:sigmacongruence} relies on the method of \cite{pomerance76}. It would be interesting to improve the exponent to $2/3$ to $1/2$, as in \cite{pomerance77}, but this seems somewhat more difficult than might be expected.
+\end{rmk}
+
+\begin{proof} We may assume that the squarefull part of $n$ is bounded by $x^{2/3}$, since the number of $n \leq x$ for which this condition fails is 
+	\[ \ll x \sum_{\substack{m > x^{2/3}\\\text{ squarefull}}} \frac{1}{m} \ll x^{2/3}.\]
+(We use here that the counting funciton of the squarefull numbers is $\ll x^{1/2}$.) We also assume, as is clearly permissible, that $n > x^{2/3}$. 
+	
+Consider first the case when the largest prime factor $p$ of $n$ satisfies $p > x^{1/3}$. Say that $n=mp$, so that $m \leq x^{2/3}$. By our condition on the squarefull part of $n$, we see that $p \nmid m$.  Write $\sigma(n) = nq+a$, where $q$ is a nonnegative integer; from Lemma \ref{lem:gronwall}, $q \ll \log\log{x}$. Observe that
+\[ \sigma(m)(p+1) = \sigma(mp) = qmp+a, \]
+so that
+\begin{equation}\label{eq:pka} p(\sigma(m)-qm)=a-\sigma(m). \end{equation}
+If $\sigma(m)-qm=0$, then \eqref{eq:pka} implies that $a=\sigma(m)$; referring back to the definitions we see that $n$ is a trivial solution to the congruence $\sigma(n)\equiv a\pmod{n}$, contrary to hypothesis. Thus, $\sigma(m)-qm  \neq 0$, and now \eqref{eq:pka} shows that $p$ is uniquely determined given $m$ and $q$. Since the number of possibilities for $m$ is at most $x^{2/3}$, while $q \ll \log\log{x}$, the number of $n$ that arise in this manner is $\ll x^{2/3}\log\log{x}$, which is acceptable for us.
+
+Now suppose that the largest prime factor of $n$ does not exceed $x^{1/3}$. We claim that $n$ has a unitary divisor $m$ from the interval $(x^{1/3}, x^{2/3}]$. The claim obviously holds if every prime power divisor of $n$ is bounded by $x^{1/3}$. Otherwise, $p^e \parallel n$ for some prime power $p^e > x^{1/3}$ (with $e > 1$). In this case, $p^e \leq x^{2/3}$ by our restriction on the squarefull part of $n$, and so we can take $m=p^e$. 
+
+Since $m$ is a unitary divisor of $n$, it follows that
+\[ \sigma(n) \equiv 0\pmod{\sigma(m)} \quad\text{and}\quad \sigma(n)\equiv a\pmod{m}.\]
+This places $\sigma(n)$ is a uniquely-defined residue class modulo $[m,\sigma(m)]$. Thus, summing over $m \in (x^{1/3}, x^{2/3}]$, we have that the number of values $\sigma(n)$ that can arise this way is at most
+\begin{align}\notag \sum_{x^{1/3} < m \leq x^{2/3}} \left(\frac{x}{\lcm[m,\sigma(m)]} + 1\right) &\leq x^{2/3} + x \sum_{x^{1/3} < m \leq x^{2/3}}\frac{\gcd(m,\sigma(m))}{m\sigma(m)} \\
+	&\leq x^{2/3} + x  \sum_{x^{1/3} < m \leq x^{2/3}} \frac{\gcd(m,\sigma(m))}{m^2}. \label{eq:gcdsumeq}\end{align}
+Letting $A(t) = \sum_{m \leq t} \gcd(m,\sigma(m))$, the final sum in \eqref{eq:gcdsumeq} is given by
+\begin{align*} \int_{x^{1/3}}^{x^{2/3}} \frac{1}{t^2}\, dA(t)&\leq A(x^{2/3}) x^{-4/3} + 2 \int_{x^{1/3}}^{x^{2/3}} A(t) t^{-3}\, dt \\
+	&\leq x^{-2/3 + o(1)} + x^{-1/3+o(1)} = x^{-1/3+o(1)},   \end{align*}
+where we use the estimate of Proposition \ref{prop:wirsinggcd} for $A(t)$. Referring back to \eqref{eq:gcdsumeq}, we see that the number of values $\sigma(n)$ that can arise is at most $x^{2/3+o(1)}$. Since $\sigma(n)=qn+a$, the values $\sigma(n)$ and $q$ uniquely determine $n$. Since the number of possible values of $q$ is $\ll \log\log{x} = x^{o(1)}$ (as above), and there are only $x^{2/3+o(1)}$ possible values of $\sigma(n)$, there are also only $x^{2/3+o(1)}$ possible values of $n$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:nearperf}] We can assume that $n > x^{5/6}$. Write $\sigma(n) = 2n+d$, where 
+	$d$ is a proper divisor of $n$. If  $d > x^{1/6}$, then $\gcd(n,\sigma(n)) =d > x^{1/6}$. By Proposition \ref{prop:wirsinggcd}, the number of such $n\leq x$ is at most $x^{5/6+o(1)}$. 
+	
+So suppose that $d \leq x^{1/6}$. In this case, we observe that $\sigma(n)\equiv d\pmod{n}$ and apply Proposition \ref{prop:sigmacongruence}. Let us check that our near-perfect number $n$ is not a trivial solution to this congruence. If it were, then we could write $n$ in the form \eqref{eq:regform}, with `$d$' in place of `$a$'. Then
+	\[ (p+1)d= (p+1)\sigma(m) = \sigma(mp) = 2mp + d, \]
+so that $d=2m$. But then $d$ and $pm$ have the same number of prime factors (counted with multiplicity), contradicting that $d$ is a proper divisor of $n$. So $n$ is a sporadic solution, and thus the number of possibilities for $n$, given $d$, is at most $x^{2/3+o(1)}$. Summing over values of $d\leq x^{1/6}$, we see the number of $n$ that arise in this way is at most $x^{5/6+o(1)}$.
+\end{proof} 
+
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{HW08}
+G.~H. Hardy and E.~M. Wright, \emph{An introduction to the theory of numbers},
+  sixth ed., Oxford University Press, Oxford, 2008.
+
+\bibitem{pollack11}
+P.~Pollack, \emph{On the greatest common divisor of a number and its sum of
+  divisors}, Michigan Math. J. \textbf{60} (2011), no.~1, 199--214.
+
+\bibitem{pomerance76}
+C.~Pomerance, \emph{On composite {$n$} for which {$\varphi (n)n-1$}}, Acta
+  Arith. \textbf{28} (1975/76), no.~4, 387--389.
+
+\bibitem{pomerance77}
+\bysame, \emph{On composite {$n$} for which {$\varphi (n)\mid n-1$}. {II}},
+  Pacific J. Math. \textbf{69} (1977), no.~1, 177--186.
+
+\bibitem{pomerance75}
+Carl Pomerance, \emph{On the congruences {$\sigma (n)\equiv a({\rm mod}\ n)$}
+  and {$n\equiv a({\rm mod}\ \varphi (n))$}}, Acta Arith. \textbf{26}
+  (1974/75), no.~3, 265--272.
+
+\end{thebibliography}
+\end{document}

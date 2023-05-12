@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{bbold}
+\usepackage{url}
+\usepackage{geometry}
+\def\C{\mathbb{C}}
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\Pp{\mathcal{P}}
+\def\lcm{\mathrm{lcm}}
+\def\proj{\mathrm{proj}}
+\def\ord{\mathrm{ord}}
+\def\bz{\mathbb{1}}
+%\def\1{\mathbb{1}}
+\def\Arg{\mathrm{Arg}}
+\renewcommand\Re{\mathrm{Re}}
+\renewcommand\Im{\mathrm{Im}}
+\newcommand{\leg}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+\newcommand{\vc}[1]{\mathbf{#1}}
+\theoremstyle{plain}
+
+\newtheorem*{lem}{Lemma}
+\newtheorem*{thm}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+\geometry{left=1in, right=1in, top=.75in, bottom=.75in}
+\makeatletter
+\let\@@pmod\pmod
+\DeclareRobustCommand{\pmod}{\@ifstar\@pmods\@@pmod}
+\def\@pmods#1{\mkern4mu({\operator@font mod}\mkern 6mu#1)}
+\makeatother
+\begin{document}
+\thispagestyle{empty} \begin{center} {\textbf{MATH 4000/6000 --
+Homework \#2}\\ posted \today; due at the \textbf{start of class} on February 2, 2022}
+\end{center}
+
+\begin{quote} {\scriptsize Mathematics is not a deductive science -- that's a clich\'e. When you try to prove a theorem, you don't just list the hypotheses, and then start to reason. What you do is trial and error, experimentation, guesswork. \\ --- Paul Halmos (1916--2006)}
+\end{quote}
+
+\noindent Assignments are expected to be neat and stapled. \textbf{Illegible work may not be marked}. Starred problems (*) are required for those in MATH 6000 and extra credit for those in MATH 4000.
+
+
+\begin{enumerate}
+\setcounter{enumi}{-1}
+
+\item{[For practice only: \textbf{not to turn in!}]} Prove the \emph{law of cancelation} in $\Z$: If $ab=ac$ and $a\ne 0$, then $b=c$.
+\emph{Hint:} If $ab=ac$, then $a(b-c)=0$. Now use a result from HW \#1.
+
+\item For each pair of integers $x,y$, define the set
+\[ \mathrm{CD}(a,b) = \{d \in \Z: d\mid a\text{ and } d\mid b\}. \]
+Suppose $a,b, q, r$ are integers with $a=bq+r$. Prove that $\mathrm{CD}(a,b) = \mathrm{CD}(b,r)$.
+
+{\scriptsize \emph{Remark.} As discussed in class, it is this result that justifies the Euclidean algorithm as a method of computing gcds. Namely, if we apply this result repeatedly as we step through the Euclidean algorithm, we eventually find that $CD(a,b) = CD(0,r)$, where $r$ is the last nonzero remainder. Hence, the set of common divisors of $a, b$ is the same as the set of divisors of $r$. Since the largest divisor of $r$ is $|r|$, one concludes that $\gcd(a,b)=|r|$.}
+
+\item Let $a,b$ be integers, not both $0$. We showed in class every common divisor of $a$ and $b$ divides $\gcd(a,b)$. Hence, the number $d=\gcd(a,b)$ is a positive integer with the following property:
+\begin{equation}
+\tag{$\dagger$} \text{$d$ divides $a$ and $b$, and every common divisor of $a$ and $b$ divides $d$}.
+\end{equation}
+Prove that $\gcd(a,b)$ is the \emph{only} positive integer $d$ that satisfies ($\dagger$).
+
+{\scriptsize \emph{Remark.} This exercise shows that ($\dagger$) could have been taken as the \textbf{definition} of $\gcd(a,b)$. That is the approach followed in your textbook.}
+
+\item Exercise 1.2.4, + the following  part (c): \\Prove or give a counterexample: If $d=\gcd(a,b)$, then $\gcd(a/d,b)=1$.
+
+
+\item Exercise 1.2.8.
+
+{\scriptsize \emph{Hint: } One approach starts by proving the following lemma:  $\gcd(A,B) > 1$ if and only if there is a common prime $p$ dividing both $A$ and $B$.}
+
+%\item Exercise 1.2.16(b). Where it says ``prove that every element of $T$ is a product of mock primes'', interpret ``every element'' to mean ``every element of $T$ \emph{larger than $1$}''.
+
+\item Exercise 1.3.12.
+
+\item (Divisibility in Pythagorean triples) Recall that an ordered triple of integers $x,y,z$ is called \textbf{Pythagorean} if $x^2+y^2=z^2$.
+\begin{enumerate}
+\item Show that in any Pythagorean triple, at least one of $x,y,z$ is a multiple of $3$.
+
+\item Do part (a) again but with ``$3$'' replaced by ``$4$'', and then do it once more with ``$3$'' replaced by ``$5$''.
+\end{enumerate}
+
+\item In class, it was claimed that for every pair of integers $a,b$, there are $x,y \in \Z$ with $ax+by = \gcd(a,b)$.
+
+The Euclidean algorithm gives a constructive proof of this theorem. We illustrate with the example of $x=942$ and $y=408$. Here the Euclidean algorithm runs as follows:
+\begin{align*}
+	942 &= 408 \cdot 2 + 126\\
+	408 &= 126\cdot 3 + 30 \\
+	126 &= 30 \cdot 4 + 6 \\
+	30 &= 6 \cdot 5 + 0.
+\end{align*}
+In particular, $\gcd(942,408)=6$. So there should be $x,y \in \Z$ with $942x+408y=6$.
+
+We can find $x,y$ by backtracking through the algorithm. First,
+\[ 6 = 126 + 30(-4), \qquad\text{so we get $6$ as a combination of $126, 30$}. \]
+Next,
+\begin{align*} 6 &= 126 + (408-126\cdot 3)(-4) \\
+	&= 408(-4) + 126(13), \qquad\text{so we get $6$ as a combination of $408, 126$}.
+\end{align*}
+Continuing,
+\begin{align*} 6  &= 408(-4) + (942-408\cdot 2)(13)\\
+	&=942\cdot 13 + 408(-30), \qquad\text{so we get $6$ as a combination of $942, 408$}.
+\end{align*}
+\begin{enumerate}
+\item Using this method, find integers $x$ and $y$ with $17x+97y=\gcd(17,97)$.
+\item Find integers $x$ and $y$ with $161x+63y = \gcd(161,63)$.
+\end{enumerate}
+
+\item Let $n$ be a positive integer. Suppose that the decimal digits of $n$ --- read from right-to-left --- are $a_0, a_1, \dots, a_k$. Show that
+\[ n \equiv a_0 + a_1 + a_2 + a_3 + \dots + a_k \pmod{9}.\]
+Use this to determine the remainder when $2022$ is divided by $9$.
+
+\item (Fermat's little theorem again) Complete the proof from class that when $p$ is prime, $a^p \equiv a\pmod{p}$ for \textbf{all} integers $a$. Remember that in class, we [will have] only handled the case when $a \in \Z^{+}$.
+
+{\scriptsize \emph{Hint:} Don't reinvent the wheel. Find a way to deduce the general result from the case handled in class.}
+
+\item Exercise 1.3.20(a,c,e,g)
+
+\newpage
+
+\textbf{MATH 6000 exercises}
+
+\item[11(*).] \begin{enumerate}
+    \item Prove that there are infinitely many prime numbers.
+
+    \item Prove that there are infinitely many prime numbers $p$ satisfying $p\equiv 3\pmod{4}$.
+\end{enumerate}
+
+\item[12(*).] Prove that there are infinitely many prime numbers $p$ satisfying $p\equiv 3 \text{ or } 5\pmod{8}$.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{amsthm}
+\def\N{\mathbb{N}}
+\def\Z{\mathbf{Z}}
+\def\Q{\mathbf{Q}}
+\def\R{\mathbf{R}}
+\def\lcm{\mathrm{lcm}}
+\def\ord{\mathrm{ord}}
+\def\proj{\mathrm{proj}}
+\renewcommand\subset\subseteq
+\newcommand{\vc}[1]{\mathbf{#1}}
+\geometry{left=1in, right=1in, top=.75in, bottom=.75in}
+\begin{document}
+\thispagestyle{empty} \begin{center} {\textbf{MATH 4400/6400 --
+Homework \#1}\\ posted \today; due Friday, January 28}
+\end{center}
+
+\noindent\textbf{Directions}. Give complete solutions, providing full justifications. (Ask me if you have a question about what constitutes a ``full'' justification.)
+
+\vskip 10pt \noindent\textbf{MATH 4400 problems}
+\begin{enumerate}
+
+\item This exercise asks you to fill in details of the proofs for some statements made in class.
+\begin{enumerate}
+\item Let $a, b \in \Z$. Show that if $a\mid b$ and $b\mid a$, then $a=\pm b$.
+
+{\scriptsize \emph{Hint:} You may assume, as stated in class, that if $a\mid b$ and $b\ne 0$, then $|a| \le |b|$. But make sure your proof also works in the case when one of $a, b$ is $0$.}
+\item Suppose $d, e$ are both greatest common divisors of the same pair of integers $a, b$. Prove that $d=\pm e$.
+\end{enumerate}
+
+\item Let $a, b \in \Z$. We know that $\gcd(a,b)$ can be written in the form $ax+by$ for some integers $x,y$.
+\begin{enumerate}
+\item Prove or give a counterexample: If there are integers $x$ and $y$ with $ax+by=2$, then $\gcd(a,b)=2$.
+\item Prove or give a counterexample: If there are integers $x$ and $y$ with $ax+by=1$, then $\gcd(a,b)=1$.
+\end{enumerate}
+
+\item Suppose $a, b \in \Z$ and $\gcd(a,b)=1$. Find all possible values of $\gcd(a-b,a+b)$. Justify your answer.
+
+\item Suppose $a, b \in \Z$ and $\gcd(a,b)=1$. Find all possible values of $\gcd(a+b,a^2-ab+b^2)$. Justify your answer.
+
+\item Let $a, b, c$ be positive integers with $\gcd(a,b)=1$ and $\gcd(a,c)=1$. Find all possible values of $\gcd(a,bc)=1$. Justify your answer.
+
+\end{enumerate}
+
+\noindent In what follows, $\ord_p(n)$ denotes the exponent of $p$ in the prime factorization of $n$. \\
+For example, \quad $\ord_3(54)=3$, \quad \text{while}\quad $\ord_3(17)=0$.
+\vskip 0.1in
+\noindent The function $\ord_p(\cdot)$ is well-defined (by unique factorization). Note that $\ord_p(n)$ can be defined, equivalently, as the largest nonnegative integer for which $p^{\ord_p(n)} \mid n$.
+
+
+\begin{enumerate}
+\item[6.] Show that if $a, b$ are positive integers,  and $p$ is a prime, then $$\ord_p(a+b) \ge \min\{\ord_p(a), \ord_p(b)\}.$$ Prove moreover that equality holds whenever $\ord_p(a) \ne \ord_p(b)$.
+    
+{\scriptsize Here the \textsf{min} of two numbers  means the smaller of the two, or the common value if the two are equal.}
+
+\item[7.] Suppose $u, v$ are positive integers and that $uv$ is a perfect square (meaning, $m^2$ for some integer $m$). Suppose also that $\gcd(u,v)=1$. Show that $u, v$ are both perfect squares.
+    
+    
+{\scriptsize \emph{Hint:} First show that a positive integer $n$ is a perfect square if and only if $\ord_p(n)$ is even for all primes $p$.}
+
+\item[8.] Let $a,b$ be positive integers. Show that for every prime $p$,
+\[ \ord_p(\gcd(a,b)) = \min\{\ord_p(a), \ord_p(b)\}. \]
+Using this formula, give the prime factorization of the number $\gcd(2^3 \cdot 7 \cdot 11, 2^2 \cdot 7^4 \cdot 13)$.
+
+\item[9.] Let $a, b$ be positive integers. Prove that there is a positive integer $L$ satisfying the following two conditions: (a) $a\mid L$ and $b\mid L$, (b) if $M$ is any positive integer for which $a\mid M$ and $b \mid M$, then $L\mid M$.
+    
+{\scriptsize The number $L$ is called a \textsf{least common multiple} of $a, b$.}
+
+\end{enumerate}
+
+\noindent\textbf{MATH 6400 problems} (extra credit for 4400 students)
+\begin{enumerate}
+\item[G1.] Prove that the product of two consecutive positive integers (meaning $n,n+1$) is never a square. Do the same with ``two'' replaced by ``three'' and then by ``four''.
+
+\item[G2.] Define a sequence $\{F_n\}$, for integers $n\ge 0$, by setting
+\[ F_n = 2^{2^n}+1.\]
+Show that for any pair of distinct integers $n, m\ge 0$, we have $\gcd(F_n,F_m)=1$.
+
+{\scriptsize \emph{Hint:} Compute the first several products of the form $F_0, F_0 F_1, F_0 F_1 F_2, \dots$; you should notice a pattern, which you can prove by induction. Use  this pattern to establish the gcd claim.}
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,62 @@
+## Corrected proof of the existence of the densities D(u)
+
+Recall: \delta_y(u) = density of \D_y(u).
+                 ^^^^^^^^^ decreasing in y, for fixed u
+
+Thus: For each u,
+ \delta(u) := \lim_{y\to\infty} \delta_y(u) exists.
+                
+Claim: For each u,
+ density of \D(u) = \delta(u). 
+
+Half of the claim is easy, and follows by essentially formal nonsense. If n \in \D(u), then h(n) = \sum_{d | n} 1/d <= u. Then for any y, we have h_y(n) <= h(n) <= u, so n \in \D_y(u).  Thus, \D(u) \subset \D_y(u). Hence,
+ upper density of \D(u) is <= upper density of \D_y(u)
+                            = \delta_y(u).
+LHS independent of y, so letting y-> \infty:
+ upper density of \D(u) <= \delta(u).
+
+Thus, it is suffices to prove that \D(u) has lower density = \delta(u). That is, we want the following Prop.
+
+Prop: Fix a real number u. For each \epsilon > 0 and all large x,
+ #{n <= x: h(n) <= u} >= (\delta(u)-\epsilon) x.
+
+We need two lemmas.
+
+Easy Lemma: Assume y \in \z^{+}. Then \sum_{n<=x} (h(n)-h_y(n)) <= x/y.
+Proof: This sum is 
+ \sum_{n <= x} \sum_{d|n, d> y} 1/d <= \sum_{d> y} 1/d \sum_{n<=x, d| n}
+                                    <= x \sum_{d>y} 1/d^2 <= x int_{y}^{\infty} dt/t^{2} = x/y. [.]
+                                                          ^^^^ (since y is an integer)
+
+Anti-concentration lemma (Erdos): Fix u. For each \epsilon > 0, there is a \delta > 0 such that, for all large x, 
+ #{n<=x: u-\delta <= h(n) <= u+\delta}
+is smaller than \epsilon x.
+
+[NOTE THE CHANGE FROM LECTURE ON THE INTERVAL FOR h(n) ! The weaker version stated in class would be enough for proving the existence of D(u), but for continuity --- and not just right-continuity --- we want the corrected statement above.]
+
+Proof that \D(u) has lower density >= \delta(u):
+
+First, apply anti-conc. lemma with \epsilon replaced by \epsilon/2. We get a \delta > 0 such that, for all large x,
+ #{n <= x: h(n) <= u} > #{n <= x: h(n) <= u+\delta} - \epsilon x/2.
+
+Fix a positive integer y large enough that y > 4/(\epsilon \delta) and such that \delta_y(u) >= \delta(u) - \epsilon/8. 
+
+If h_y(n) <= u, then either h(n) <= u+\delta, or h(n)-h_y(n) > \delta. 
+Hence,
+ #{n<=x: h(n) <= u+\delta} >= #{n <= x: h_y(n) <= u} - #{n <= x: h(n) - h_y(n) > \delta}
+                           >= #{n <= x: h_y(n) <= u} - x/(\delta y)
+                           > #{n <= x: h_y(n) <= u} - \epsilon x/4.
+Here in going from the first line to the second, we used that \sum_{n <= x} (h(n)-h_y(n)) <= x/y (Easy Lemma). To go from the second line to the third, we used the first half of the choice of y.
+
+Since {n: h_y(n) <= u} has density \delta_y(u), we have for all large x that
+ #{n <= x: h_y(n) <= u} >= (\delta_y(u) - \epsilon/8) x.
+So by the second half of our choice of y,
+ #{n<=x: h_y(n) <= u} >= (\delta(u) - \epsilon/4) x.
+
+Putting it all together: For large x, 
+ #{n<=x: h(n) <= u} > #{n <= x: h(n) <= u+\delta} - \epsilon x/2.
+                    > #{n <= x: h_y(n) <= u} - 3 \epsilon x/4.
+                   >= (\delta(u)-\epsilon) x. 
+The LHS is the # of n <=x in \D(u). It follows that \D(u) has lower density >= \delta(u), as desired. [.]
+
+Bonus: Anti-concentration lemma ==> D(u) is continuous! [Since D(u) is nondecreasing by definition, if it has a discontinuity, it has a jump discontinuity. But the anti-concentration lemma is enough to rule that out.]

@@ -1,0 +1,95 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{bbold}
+\usepackage{url}
+\usepackage{geometry}
+\def\C{\mathbb{C}}
+\def\Z{\mathbb{Z}}
+\def\N{\mathbb{N}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\Pp{\mathcal{P}}
+\def\lcm{\mathrm{lcm}}
+\def\proj{\mathrm{proj}}
+\def\ord{\mathrm{ord}}
+\def\bz{\mathbb{1}}
+%\def\1{\mathbb{1}}
+\def\Arg{\mathrm{Arg}}
+\renewcommand\Re{\mathrm{Re}}
+\renewcommand\Im{\mathrm{Im}}
+\newcommand{\leg}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+\newcommand{\vc}[1]{\mathbf{#1}}
+\theoremstyle{plain}
+
+\newtheorem*{lem}{Lemma}
+\newtheorem*{thm}{Theorem}
+
+\theoremstyle{remark}
+\newtheorem*{rmk}{Remark}
+\geometry{left=1in, right=0.9in, top=.75in, bottom=.75in}
+\makeatletter
+\let\@@pmod\pmod
+\DeclareRobustCommand{\pmod}{\@ifstar\@pmods\@@pmod}
+\def\@pmods#1{\mkern4mu({\operator@font mod}\mkern 6mu#1)}
+\makeatother
+\begin{document}
+\thispagestyle{empty} \begin{center} {\textbf{MATH 4000/6000 --
+Homework \#3}\\ posted \today; due February 11, 2022}
+\end{center}
+
+\begin{quote} {\scriptsize I wish I had a dollar for every time I spent a dollar, because then, yahoo!, I'd have all my money back.\\
+--- Jack Handey}
+\end{quote}
+
+\noindent Assignments are expected to be neat and stapled. \textbf{Illegible work may not be marked}. Starred problems (*) are required for those in MATH 6000 and extra credit for those in MATH 4000.
+
+
+\begin{enumerate}
+
+\item[0.] Do but do not turn in: Read Examples 3 and 4 on pp. 40--41 of the text.
+
+\item Exercise 1.3.7.
+
+\item Exercise 1.3.14.
+
+\item Exercise 1.3.17.
+
+\item Exercise 1.3.21(b,c,e,g).
+
+{\scriptsize \emph{Hint:} Look at Theorem 3.8 for parts (e), (g). You will not be examined on problems like (e) and (g), but it is comforting to know there is a method to solve them.}
+
+\item Exercise 1.4.6.
+
+{\scriptsize \emph{Hint: } Look back at your notes from the first few classes, and your old HW. Make sure that your arguments do not assume commutativity of multiplication.}
+
+% \item Complete the verification from class that $\Z_m$ is a commutative ring. In other words, write down proofs of properties (1), (2), and (7) from the definition of a ring given on p. 38.
+
+\item Exercise 1.4.11.
+
+\item (Products and sums of elements of $\Z_m$)
+\begin{enumerate}
+\item For the positive integers $m=1,2,3,4,5$, find the sum of all of the elements of $\Z_m$. Formulate a general conjecture and then prove that your guess is correct.
+
+\item For the primes $p=2,3,5, 7$, find the product of all of the \emph{nonzero} elements of $\Z_p$. Formulate a general conjecture and then prove that your guess is correct.
+
+\end{enumerate}
+
+{\scriptsize \emph{Hint:} An insightful approach to (a) is to `try' to pair each element with its additive inverse. The reason `try' is in scare quotes is because sometimes an element is its own additive inverse, and so your `pair' is really just one element --- can you determine exactly when this happens? A similar strategy will work for (b); here you need to figure out which elements are their own multiplicative inverses.}
+
+\item Exercise 1.4.19(a,b).
+
+\item Let $R$ be an integral domain with finitely many elements. Let $r_1, \dots, r_n$ be a complete list of the elements of $R$ (without repetition). Let $r$ be a nonzero element of $R$.
+\begin{enumerate}
+	\item Show that $r\cdot r_1, \dots, r \cdot r_n$ is also a complete list of the elements of $R$. 
+	\item Use (a) to show that $r$ has a multiplicative inverse in $R$. Deduce that $R$ is a field.
+\end{enumerate}
+
+\item (*) Exercise 1.4.19(c,d)
+
+\end{enumerate}
+
+\end{document}

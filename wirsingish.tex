@@ -1,0 +1,196 @@
+% ----------------------------------------------------------------
+% AMS-LaTeX Paper ************************************************
+% **** -----------------------------------------------------------
+\documentclass[12pt]{amsart}
+\usepackage{graphicx,amsmath,amssymb}
+% ----------------------------------------------------------------
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+% THEOREMS -------------------------------------------------------
+\newtheorem{thm}{Theorem}
+\newtheorem*{thma}{Theorem A}
+\newtheorem*{thmb}{Theorem B}
+\newtheorem*{thmc}{Theorem C}
+\newtheorem*{conja}{Conjecture A}
+\newtheorem{conj}{Conjecture}
+\newtheorem{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{prop}{Proposition}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+%\numberwithin{equation}{section}
+% MATH -----------------------------------------------------------
+\renewcommand\phi\varphi
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\rad}{\mathrm{rad}}
+\newcommand{\bbN}{\mathbb N}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\I}{\mathcal{I}}
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\N}{\mathbf{N}}
+% ----------------------------------------------------------------
+\begin{document}
+
+\title[On the greatest common divisor of $n$ and $\sigma(n)$]{On the greatest common divisor of an integer and its sum of divisors}
+\author{Paul Pollack}%
+\address{Department of Mathematics \\ University of Illinois at Urbana-Champaign \\ 1409 West Green Street\\ Urbana, IL 61801}
+\thanks{The author is supported by NSF award DMS-0802970.}
+\email{pppollac@illinois.edu}
+\subjclass[2000]{11N37}
+%\keywords{aliquot cycles, sociable chains, aliquot sequences, sociable numbers, perfect numbers, amicable pairs}%
+%\date{}%
+%\dedicatory{}%
+%\commby{}%
+\begin{abstract} We show that for each fixed $\delta \in (0,1)$, the number of $n \leq x$ for which $\gcd(n,\sigma(n)) > n^{\delta}$ is $x^{1-\delta+o(1)}$, as $x\to\infty$. This both substantiates and sharpens an estimate stated by Erd\H{o}s without proof. In the course of establishing the upper bound we prove the following result, of independent interest: For each $x \geq 3$ and each $b\geq 1$, the number of $n\leq x$ for which $\sigma(n)/n$ has denominator $b$ in lowest terms is bounded above by $x^{c/\sqrt{\log\log{x}}}$, where $c$ is an absolute positive constant.
+\end{abstract}
+
+% ----------------------------------------------------------------
+\maketitle
+% ----------------------------------------------------------------
+\section{Introduction}
+
+What is the greatest common divisor of $n$ and its sum of divisors $\sigma(n)$? It was shown by K\'{a}tai and Subbarao (\cite[Theorem 1]{KS06}; cf.  \cite[Theorem 8]{ELP08}) that for all $n$ outside a set of density zero, one has
+\[ \gcd(n,\sigma(n)) = \prod_{\substack{p^e \parallel n \\ p \leq \log\log{n}}} p^e. \]
+In other words, $\gcd(n,\sigma(n))$ is almost always the largest divisor of $n$ supported on the primes up to $\log\log{n}$. It follows (see \cite[Corollary 10]{ELP08}) that the density of $n$ for which $\gcd(n,\sigma(n)) > (\log\log{n})^u$ is a continuous, strictly decreasing function of $u$, which takes the value $1$ when $u=0$ and which tends to zero as $u\to\infty$.
+
+Historically there has been great interest in much larger values of $\gcd(n,\sigma(n))$. For example, it is well-known that this greatest common divisor is sometimes $n$ itself; in this case $n$ is called \emph{multiply perfect}. We expect, but cannot prove, that there are infinitely many such $n$. In 1956 Erd\H{o}s \cite[p. 254]{erdos56} asserted that for each $\delta > 0$, there is a $\delta'>0$ so that the number of $n \leq x$ with $\gcd(\sigma(n),n) > n^{\delta}$ is at most $x^{1-\delta'}$. The primary purpose of this note is to prove the following sharpening of this result:
+
+\begin{thm}\label{thm:erdosstatement} Fix $\delta \in (0,1)$. As $x\to\infty$, the number of $n \leq x$ for which $\gcd(n,\sigma(n)) > n^{\delta}$ is $x^{1-\delta+o(1)}$.
+\end{thm}
+
+To establish the upper bound implicit in Theorem \ref{thm:erdosstatement}, we prove that the average of $\gcd(n,\sigma(n))$ on the positive integers $n \leq x$ is $x^{o(1)}$. The analogous statement with the Euler function $\phi$ in place of $\sigma$ was established by Erd\H{o}s, Luca, and Pomerance in \cite[Theorem 11]{ELP08}. Their argument makes use of the fact that $\phi(n)/n$ depends only on the set of primes dividing $n$, and so does not seem to apply to $\sigma$.
+
+To work around this difficulty we employ a result of Wirsing \cite{wirsing59}. If $n$ is a positive integer, define $a(n)$ and $b(n)$ to be the unique pair of coprime positive integers with $\sigma(n)/n = a(n)/b(n)$.
+
+\begin{thma}[Wirsing] For each $x\geq 3$ and every pair of positive integers $a$ and $b$, the number of $n \leq  x$ for which $a(n)=a$ and $b(n)=b$ is at most
+\[ x^{c_1/\log\log{x}}. \]
+Here $c_1$ denotes an absolute positive constant.
+\end{thma}
+
+For our purposes, we require a variant of Theorem A where only the denominator is specified. Perhaps surprisingly, such a variant can be derived from Theorem A by a simple inductive argument. We state our result here, which seems to be of independent interest:
+
+\begin{thm}\label{thm:wirsingish} For each $x\geq 3$ and each positive integer $b$, the number of $n \leq  x$ for which $b(n)=b$ is at most
+\[ x^{c_2/\sqrt{\log\log{x}}}. \]
+Here $c_2$ is an absolute positive constant.
+\end{thm}
+
+To establish the lower  bound implicit in Theorem \ref{thm:erdosstatement}, we use ideas of Luca and Pomerance from \cite{LP07} concerning ``Euler-function chains.'' These ideas have been employed to study large values of $\gcd(n,\phi(n))$ in \cite{ELP08}; see, e.g., the proof of \cite[Theorem 7]{ELP08}.
+
+\subsection*{Notation} For the most part we use standard notation of analytic number theory. As usual, we write $\omega(n)$ for the number of distinct prime factors of $n$, $\rad(n)$ for the product of the distinct primes dividing $n$, and $\Psi(x,y)$ for the number of $n \leq x$ all of whose prime divisors are $\leq y$. We put $\log_1{x}:=\max\{\log{x}, 1\}$, and we define inductively $\log_k{x} = \max\{1, \log_{k-1}{x}\}$. We emphasize that the $c_i$ always denote \emph{absolute} positive constants.
+
+\section{Proof of Theorem \ref{thm:wirsingish}}
+\begin{lem}\label{lem:support} Suppose $x \geq 1$. For each positive integer $b\leq x$, the number of $n \leq x$ which are supported on the primes dividing $b$ is at most $x^{c_3/\log_2{x}}$.
+\end{lem}
+
+Lemma \ref{lem:support} is proved by Erd\H{o}s et al. in the course of demonstrating \cite[Theorem 11]{ELP08}. For the convenience of the reader we extract their argument and present it here:
+
+\begin{proof}[Proof of Lemma \ref{lem:support}] The number of such $n \leq x$ is maximized when $b$ is the largest product of consecutive primes not exceeding $x$. In this case the number of such $n$ is precisely $\Psi(x,p)$, where $p$ is the largest prime divisor of $b$. By the prime number theorem, $p \sim \log x$, and by work of de Bruijn (see, e.g., \cite[Theorem 2, p. 359]{tenenbaum95}), $\Psi(x,p) = x^{(\log{4} + o(1))/\log_2{x}}$ as $x\to\infty$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:wirsingish}] It is well-known (see, e.g., \cite[Theorem 323]{HW79}) that $\sigma(n)/n \leq (e^{\gamma}+o(1))\log_2{n}$. Fix $x_0 > e^{2e}$ with the property that for all $x \geq x_0$, we have \[ \sigma(n)/n \leq 2\log_2{x} \]
+for all positive integers $n \leq x$.  We prove that for each integer $N \geq 2$, each $x > x_0^{N/2}$ and each positive integer $b$, the number of $n \leq x$ for which $b(n) = b$ is bounded by
+\[ x^{1/N + c_4 N/\log_2{x}}. \]
+Theorem \ref{thm:wirsingish} follows for large $x$ upon choosing $N = \lfloor \sqrt{\log_2{x}}\rfloor$. This implies the same result for all $x\geq 3$ with a possibly different constant in the exponent.
+
+We proceed by induction on $N$. Suppose first that $N=2$. If $b(n)=b$, then $b$ divides $n$, and so we can assume $b \leq x^{1/2}$ since otherwise we obtain an even sharper upper bound of $x^{1/2}$. Since $x  > x_0$, the relation $b(n)=b$ implies that \[ \sigma(n)/n \in \{a/b: b \leq a \leq 2x^{1/2} \log_2{x}\}.\] By Wirsing's theorem (Theorem A), we know that the number of $n \leq x$ with this property is at most
+\[ 2x^{1/2}(\log_2{x}) x^{c_1/\log_2{x}} \leq x^{1/2} x^{2c_4/\log_2{x}} \]
+if $c_4$ is chosen appropriately (depending on $x_0$ and $c_1$).
+
+Suppose the estimate is known for $N$; we prove it holds also for $N+1$. If $b \leq x^{1/(N+1)}$, then we can apply Wirsing's theorem as above to obtain that the number of $n\leq x$ with $b(n)=b$ is bounded by
+\[ 2x^{1/(N+1)}(\log_2{x}) x^{c_1/\log_2{x}} \leq x^{1/(N+1)} x^{(N+1)c_4/\log_2{x}}. \]
+So we may suppose $b \geq x^{1/(N+1)}$. We also assume $b \leq x$, since otherwise there are no solutions $n\leq x$ to $b(n)=b$. Let $d$ denote the largest divisor of $n$ supported on the primes dividing $b$. Since $b\mid n$, we have $b \mid d$. Moreover, if $n = d n'$, then \[ n' = n/d \leq x/b \leq  x^{N/(N+1)}\] and
+\[ \frac{\sigma(n')}{n'} = \frac{d}{\sigma(d)}\frac{\sigma(n)}{n} = \frac{d}{\sigma(d)} \frac{a}{b} \]
+where $a= a(n)$. In  particular, $b(n')$ divides $\sigma(d) b$. Let $b'$ be a divisor of $ \sigma(d) b$. Since \[ x^{N/(N+1)} \geq (x_0^{(N+1)/2})^{N/(N+1)} = x_0^{N/2}, \] the induction hypothesis implies that for each $b'$ dividing $\sigma(d) b$, there are at most
+\[ (x^{N/(N+1)})^{1/N} x^{c_4 N/\log_2{x}} = x^{1/(N+1)} x^{c_4 N/\log_2{x}}\]
+choices for $n'\leq x^{N/(N+1)}$ with $b(n')=b'$. (We have also used here that $x^{N/(N+1)} > e^e$, and that the function $t^{1/\log_2{t}}$ is increasing for $t > e^e$.) The maximal order of the divisor function (see, e.g., \cite[Theorem 317]{HW79}) guarantees that the number of choices for $b'$, given $d$, is bounded by $x^{c_5/\log_2{x}}$, while by Lemma \ref{lem:support}, the number of choices for $d$ is bounded by $x^{c_6/\log_2{x}}$. It follows that the number of choices for $n = dn'$ is at most
+\[ x^{1/(N+1)}x^{(c_4 N + (c_5+c_6))/\log_2{x}} \leq x^{1/(N+1)} x^{c_4 (N+1)/\log_2{x}},\]
+if we choose $c_4$ so that $c_4 \geq c_5 + c_6$.
+\end{proof}
+
+\begin{rem} Suppose $f\colon \N\to\N$ is a multiplicative function. Say that $f$ has \emph{property $W$} if the following holds (for each $\epsilon > 0$):
+\begin{quote} For $x > x_0(\epsilon)$, the number of $n \leq x$ with $f(n)/n = a/b$ is bounded by $x^{\epsilon}$, uniformly in the choice of positive  integers $a$ and $b$.\end{quote}
+Say that $f$ has \emph{property $W'$} if the following holds (for each $\epsilon > 0$):
+\begin{quote} For $x > x_1(\epsilon)$, the number of $n \leq x$ for which $n$ divides $bf(n)$ is bounded by $x^{\epsilon}$, uniformly for positive integers $b \leq x$.\end{quote}
+Wirsing's argument establishes that \emph{property $W$} holds for a large class of multiplicative functions (see, e.g., \cite{lucht76} for a general statement as well an extension to to certain compositions of multiplicative functions). The proof of Theorem \ref{thm:wirsingish} shows that if $f$ has property $W$ and $f(n) \ll_{\rho} n^{1+\rho}$ for each $\rho
+ > 0$, then $f$ also has property $W'$.
+\end{rem}
+
+
+\section{Proof of Theorem \ref{thm:erdosstatement}}
+By considering the contribution of those $n$ in $(x/2, x], (x/4, x/2]$, etc., it is enough to prove that the number of $n\leq x$ which satisfy the relation \begin{equation}\label{eq:erdosmodified} \gcd(n,\sigma(n)) > x^{\delta} \end{equation} is \[ x^{1-\delta + o(1)}.\] That this is an upper bound on the number of solutions follows immediately from the following estimate for the average of $\gcd(n,\sigma(n))$:
+\begin{thm}\label{thm:gcd} For all $x\geq 3$, we have
+\[ \frac{1}{x}\sum_{n \leq x} \gcd(n,\sigma(n)) < x^{c_7/\sqrt{\log_2{x}}}. \]
+\end{thm}
+\begin{proof} Having established Theorem \ref{thm:wirsingish}, we may (and do) follow the proof of the upper bound of \cite[Theorem 11]{ELP08}. We have
+\begin{align*} \frac{1}{x}\sum_{n \leq x} \gcd(n,\sigma(n)) &\leq \sum_{n \leq x} \frac{\gcd(n,\sigma(n))}{n} = \sum_{b \leq x} \frac{1}{b} \sum_{\substack{n\leq x\\ b(n)=b}}{1}\\ &\leq (1+\log{x}) x^{c_2/\sqrt{\log_2{x}}} \leq x^{c_7/\sqrt{\log_2{x}}}.  \qedhere \end{align*}
+\end{proof}
+
+Thus we focus attention on a lower bound for the number of solutions to \eqref{eq:erdosmodified}. Let $\psi$ denote the Dedekind $\psi$ function, which is the arithmetic function defined by $\psi(n):= n \prod_{p \mid n}(1+1/p)$. (Thus $\psi \leq  \sigma$ pointwise, and $\psi$ and $\sigma$ agree on squarefree arguments.) For each integer $K\geq 0$, define
+\[  F_K(n):= \prod_{0 \leq k \leq K} \psi_k(n),\]
+where $\psi_k$ denotes the $k$th iterate of $\psi$. We need the following lemma:
+
+\begin{lem}\label{lem:LP} Let $K$ be a fixed nonnegative integer. For each positive integer $n$, write
+\[ F_K(n) = AB, \quad \text{where}\quad A := \prod_{\substack{p^e \parallel F_K(n) \\ p \leq \log^3{x}}} p^e\text{ and } B:= \prod_{\substack{p^e \parallel F_K(n) \\ p > \log^3{x}}} p^e. \] Then for all but $o(x)$ values of $n \leq x$, we have that $B$ is squarefree and
+\[ A \leq \exp(2(5\log_2{x})^{K+2}) = x^{o(1)}. \]
+\end{lem}
+
+With the Euler function $\phi$ in place of $\psi$, this is established by Luca and Pomerance (see \cite[\S3.2]{LP07}). The same argument applies, with obvious changes, to prove Lemma \ref{lem:LP}. Put $R_K(n):= \rad(F_K(n))$.
+
+\begin{lem}\label{lem:largegcd1} Let $K$ be a fixed positive integer. Then for all but $o(x)$ values of $n \in [x/2,x]$, we have
+\[  R_K(n) = x^{K+1 + o(1)} \]
+and
+\[ \gcd(R_K(n), \psi(R_K(n))) > x^{K+o(1)}. \]
+\end{lem}
+\begin{proof} For all but $o(x)$ values of $n \in [x/2,x]$, the conclusion of Lemma \ref{lem:LP} holds. For these typical $n$, we have
+\[ R_K(n) \geq \frac{F_K(n)}{A} \geq \frac{n^{K+1}}{A} \geq \frac{1}{2^{K+1} A} x^{K+1}= x^{K+1+o(1)}, \]
+and
+\[ R_K(n) \leq F_K(n) \leq x^{K+1} (2\log_2{x})^{1+2+\dots + K} \leq x^{K+1+o(1)}. \]
+This gives the first assertion of the lemma. Moreover, for these $n$ we have that $B$ divides $R_K(n)$, so that $\psi(B)$ divides $\psi(R_K(n))$ and hence $\gcd(R_K(n), \psi(R_K(n))) \geq \gcd(B, \psi(B))$. Thus it is enough to show that for these $n$, we have $\gcd(B,\psi(B))\geq x^{K+o(1)}$.
+
+For a positive integer $m$, define $\rad'(m)$ to be the product of the distinct primes dividing $m$ that exceed $\log^3{x}$. Since $B$ is squarefree, it follows that
+\[ B = \rad'(F_K(n)) = \prod_{k=0}^{K} \rad'(\psi_k(n)). \] Hence
+\begin{align*} \gcd(B,\psi(B)) &= \prod_{k=0}^{K}\gcd(\rad'(\psi_k(n)), \psi(B)) \\ &\geq \prod_{k=1}^{K}\gcd(\rad'(\psi_k(n)), \psi(\rad'(\psi_{k-1}(n)))). \end{align*}
+Now we observe that \[ \rad'(\psi_k(n)) \mid \psi(\rad'(\psi_{k-1}(n))). \]
+Indeed, suppose $p$ divides $\psi_k(n)$ and $p > \log^3{x}$. Then either $p^2$ divides $\psi_{k-1}(n)$ or $q \mid \psi_{k-1}(n)$ for some prime $q\equiv -1\pmod{p}$. Since $B$ is squarefree, only the latter is possible. Then $q$ divides $\rad'(\psi_{k-1}(n))$ and so \[ p \mid q+1 = \psi(q) \mid \psi(\rad'(\psi_{k-1}(n))). \]
+Hence
+\begin{align*} \gcd(B,\psi(B)) &\geq \prod_{k=1}^{K} \rad'(\psi_k(n)) = B/\rad'(\psi_0(n)) \\ &\geq \frac{B}{n} = \frac{F_K(n)}{An} \geq \frac{n^{K}}{A} \geq \frac{1}{2^K A} x^{K} = x^{K+o(1)}.
+\end{align*}
+This completes the proof of Lemma \ref{lem:largegcd1}.
+\end{proof}
+
+We now prove the lower bound for the number of solutions to \eqref{eq:erdosmodified}. Given $\delta \in (0,1)$, fix an integer $K \geq 1$ for which $\delta  \in (0,K/(K+1))$. For small enough $\epsilon > 0$, we may define $\alpha = \alpha(\epsilon) \in (0,1)$ so that
+\[ \alpha K/(K+1) = \delta + (K+1)\epsilon. \]
+Having fixed such an $\epsilon$, we define the closed interval $\I$ by
+\[ \I:= \left[\frac{1}{2}x^{\alpha/(K+1)-\epsilon}, x^{\alpha/(K+1)-\epsilon}\right]. \]
+Then by Lemma \ref{lem:largegcd1}, for almost all $n \in \mathcal{I}$, we have \[ x^{\alpha - (K+1)\epsilon} \leq R_K(n) \leq x^{\alpha}, \]
+say, and
+\[ \gcd(R_K(n), \sigma(R_{K}(n))) \geq \frac{1}{2^K} x^{\alpha K/(K+1) - K\epsilon + o(1)} > x^{\delta}.\]
+Let $\R$ be the set of values $R_K(n)$ that arise from these typical $n \in \mathcal{I}$.
+Since $\rad(n) \mid R_K(n)$, each element of $\R$ arises from at most $x^{o(1)}$ values of $n$ (by Lemma \ref{lem:support}), and hence
+\[ \#\R \geq x^{\alpha/(K+1)-\epsilon+o(1)} \geq x^{\alpha/(K+1)-2\epsilon},\]
+say. For each $r \in \R$, define
+\[ \A(r):= \{br: b \leq x/r \text{ and } \gcd(b,r)=1\}, \quad \text{and put} \quad \A:= \bigcup_{r \in \R} \A(r). \]
+Note that every element of $\A$ satisfies \eqref{eq:erdosmodified}, since
+\[ \gcd(br, \sigma(br)) = \gcd(br, \sigma(b)\sigma(r)) \geq \gcd(r,\sigma(r)) > x^{\delta}.\]
+So the proof will be complete if we establish a suitable lower bound on $\#\A$.
+By inclusion-exclusion, for each $r \in \R$ we have that
+\[ \#\A(r) = \frac{x}{r} \frac{\phi(r)}{r} + O(2^{\omega(r)}) \geq x^{1-\alpha- \epsilon} \]
+for large enough $x$.  Moreover, each element $a \in \A$ is contained in at most $d(a) \leq x^{\epsilon}$ such sets $\A(r)$. It follows that
+\begin{align*} \#\A \geq x^{-\epsilon} \#\R \left(\min_{r\in \R} \#\A(r)\right) &\geq x^{-\epsilon} x^{\alpha/(K+1)-2\epsilon} x^{1-\alpha - \epsilon} \\ &= x^{1-\alpha K /(K+1) - 4\epsilon} = x^{1-\delta - (K+5)\epsilon}.\end{align*}
+Since we can take $\epsilon$ arbitrarily small, the theorem is proved.
+
+\section*{Acknowledgements}
+The author takes pleasure in acknowledging helpful conversations with Kevin Ford and Carl Pomerance.
+\bibliographystyle{amsalpha}
+\bibliography{wirsingish}
+\end{document}
