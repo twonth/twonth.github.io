@@ -10230,7 +10230,7 @@ input[type="tel"]:focus {
 }
 
 .bg--warning {
-    background: #f3d9d9;
+    background: #f3f3c7;
 }
 
 .bg--red p,
@@ -10950,7 +10950,7 @@ h4 span.book-title {
     text-transform: inherit;
     font-size: 1.2em;
     font-weight: 400;
-    color: #2a7ca2;
+    color: #1a6c92;
 }
 
 .course-block .course-header {
@@ -10976,7 +10976,7 @@ h4 span.book-title {
 }
 
 .course-header.bg__algebraic {
-    background-image: url(../img/bg-algebraic.jpg);
+    background-image: url(../img/bg-gaussian.jpg);
 }
 
 .course-header.bg__algebraicalt {
@@ -11007,7 +11007,7 @@ h4 span.book-title {
 }
 
 .course-title.bg__4 {
-    background: #ffcd83;
+    background: #e2b0cd;
 }
 
 .course-title.bg__2 {
@@ -11024,7 +11024,7 @@ h4 span.book-title {
     font-size: 0.9em;
     line-height: 1.2em;
     margin-left: 2.8em;
-    background: rgba(255,225,168,0.8);
+    background: rgba(226,176,205,0.8);
     color: #1e1e1e;
     min-height: 300px;
 }
