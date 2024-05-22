@@ -154,6 +154,11 @@ h6,
     line-height: 2.6em;
 }
 
+.underline {
+    text-decoration: underline;
+  }
+  
+
 .lead {
     font-size: 1.4375em;
     line-height: 1.69565217em;
