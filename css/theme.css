@@ -10961,7 +10961,7 @@ h4 span.book-title {
 .course-block .course-header {
     overflow: hidden;
     min-height: 300px;
-    background: #f5f8f9;
+    background: #cccccc;
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
@@ -10973,7 +10973,7 @@ h4 span.book-title {
 }
 
 .course-header.bg__sequencial {
-    background-image: url(../img/bg-origami.jpg);
+    background-image: url(../img/bg-nautilus.jpg);
 }
 
 .course-header.bg__sequencenew {
