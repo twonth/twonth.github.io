@@ -10235,7 +10235,7 @@ input[type="tel"]:focus {
 }
 
 .bg--warning {
-    background: #f3f3c7;
+    background: #f7f7f7;
 }
 
 .bg--red p,
@@ -11020,7 +11020,7 @@ h4 span.book-title {
 }
 
 .course-title.bg__3 {
-    background: #fffded;
+    background: #f7f7f7;
 }
 
 .course-block .course-info {
@@ -11029,7 +11029,7 @@ h4 span.book-title {
     font-size: 0.9em;
     line-height: 1.2em;
     margin-left: 2.8em;
-    background: rgba(225,225,225,0.5);
+    background: rgba(245,245,245,0.7);
     color: #1e1e1e;
     min-height: 300px;
 }
