@@ -11023,13 +11023,17 @@ h4 span.book-title {
     background: #f7f7f7;
 }
 
+.course-title.bg__5 {
+    background: rgba(200,230,255,0.72);
+}
+
 .course-block .course-info {
     position: relative;
     padding: 2.8em;
     font-size: 0.9em;
     line-height: 1.2em;
     margin-left: 2.8em;
-    background: rgba(245,245,245,0.7);
+    background: rgba(200,230,255,0.72);
     color: #1e1e1e;
     min-height: 300px;
 }
