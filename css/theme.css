@@ -970,7 +970,7 @@ div[data-overlay] ul {
 /**! 7. Colors **/
 
 body {
-    background: #f5f8f9;
+    background: #e8f0e4;
 }
 
 .color--primary {
@@ -10140,7 +10140,7 @@ footer.footer-4 {}
 .card__body h6 {
     padding-top: 10px;
     font-size: 0.875em;
-    color: #2b5e7e;
+    color: #14173d;
     line-height: 1.5em;
     font-weight: 600;
 }
@@ -10235,7 +10235,7 @@ input[type="tel"]:focus {
 }
 
 .bg--warning {
-    background: #faf0fb;
+    background: #f0fff0;
 }
 
 .bg--red p,
@@ -10981,7 +10981,7 @@ h4 span.book-title {
 }
 
 .course-header.bg__algebraic {
-    background-image: url(../img/bg-gaussian.jpg);
+    background-image: url(../img/bg-foliage.jpg);
 }
 
 .course-header.bg__algebraicalt {
@@ -11020,11 +11020,11 @@ h4 span.book-title {
 }
 
 .course-title.bg__3 {
-    background: #f7f7f7;
+    background: #bac5c0;
 }
 
 .course-title.bg__5 {
-    background: rgba(200,230,255,0.35);
+    background: #bedfbe;
 }
 
 .course-block .course-info {
@@ -11033,8 +11033,8 @@ h4 span.book-title {
     font-size: 0.9em;
     line-height: 1.2em;
     margin-left: 2.8em;
-    background: rgba(200,230,255,0.8);
-    color: #1e1e1e;
+    background: rgba(210,240,210,0.8);
+    color: #000000;
     min-height: 300px;
 }
 
