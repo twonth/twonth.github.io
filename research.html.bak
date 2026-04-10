@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -319,7 +319,7 @@
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper14" aria-expanded="false" aria-controls="paper14">Abstract</a>
                                                                 <div class="collapse" id="paper14">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>Let $n$ be a natural number. If the sum of the proper divisors of $n$ is less than $n$, then $n$ is said to be <i>deficient</i>. Let $G(x)$ be the largest gap between consecutive deficient numbers belonging to the interval $[1,x]$. In 1935, Erdős showed that for large $x$, the ratio $G(x)/\log\log\log{x}$ is bounded between two positive constants. We prove that $G(x)/\log\log\log{x}$ tends to a limit as $x\to\infty$. We also prove that long runs of nondeficient numbers are scarce, in that the proportion of $n$ for which all of $n+1, n+2, \ldots, n+A$ are nondeficient decays triply exponentially in <i>A</i>. </p>
+                                                                        <p>Let $n$ be a natural number. If the sum of the proper divisors of $n$ is less than $n$, then $n$ is said to be <i>deficient</i>. Let $G(x)$ be the largest gap between consecutive deficient numbers belonging to the interval $[1,x]$. In 1935, ErdÅ‘s showed that for large $x$, the ratio $G(x)/\log\log\log{x}$ is bounded between two positive constants. We prove that $G(x)/\log\log\log{x}$ tends to a limit as $x\to\infty$. We also prove that long runs of nondeficient numbers are scarce, in that the proportion of $n$ for which all of $n+1, n+2, \ldots, n+A$ are nondeficient decays triply exponentially in <i>A</i>. </p>
                                                                     </div>
                                                                 </div>
                                                             </p>
@@ -371,8 +371,8 @@
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper18" aria-expanded="false" aria-controls="paper18">Abstract</a>
                                                                 <div class="collapse" id="paper18">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>Let $s(n)$ denote the sum of the proper divisors of $n$. Two distinct positive integers $n$ and $m$ are said to form an <i>amicable pair</i> if $s(n)=m$ and $s(m)=n$; in this case, both $n$ and $m$ are called <i>amicable numbers</i>. The first example of an amicable pair, known already to the ancients, is $\{220, 284\}$. We do not know if there are infinitely many amicable pairs. In the opposite direction, Erdős showed in 1955 that the set of amicable numbers has asymptotic density zero. </p>
-                                                                        <p>Let $\ell \geq 1$. A natural number $n$ is said to be $\ell$-full if $p^\ell \mid n$ for each prime $p$ dividing $n$. As shown by Erdős and Szekeres in 1935, the number of $\ell$-full integers $n \leq x$ is asymptotically $c_{\ell}x^{1/\ell}$ as $x\to\infty$. Here $c_{\ell}$ is a positive constant depending on $\ell$. </p>
+                                                                        <p>Let $s(n)$ denote the sum of the proper divisors of $n$. Two distinct positive integers $n$ and $m$ are said to form an <i>amicable pair</i> if $s(n)=m$ and $s(m)=n$; in this case, both $n$ and $m$ are called <i>amicable numbers</i>. The first example of an amicable pair, known already to the ancients, is $\{220, 284\}$. We do not know if there are infinitely many amicable pairs. In the opposite direction, ErdÅ‘s showed in 1955 that the set of amicable numbers has asymptotic density zero. </p>
+                                                                        <p>Let $\ell \geq 1$. A natural number $n$ is said to be $\ell$-full if $p^\ell \mid n$ for each prime $p$ dividing $n$. As shown by ErdÅ‘s and Szekeres in 1935, the number of $\ell$-full integers $n \leq x$ is asymptotically $c_{\ell}x^{1/\ell}$ as $x\to\infty$. Here $c_{\ell}$ is a positive constant depending on $\ell$. </p>
                                                                         <p>We show that for each fixed $\ell$, the set of amicable $\ell$-full numbers has relative density zero within the set of $\ell$-full numbers. </p>
                                                                     </div>
                                                                 </div>
@@ -408,7 +408,7 @@
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper15" aria-expanded="false" aria-controls="paper15">Abstract</a>
                                                                 <div class="collapse" id="paper15">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>Let $s(n)$ denote the sum of the proper divisors of $n$. Let $s_0(n)=n$, and for $k > 0$, put $s_{k}(n):=s(s_{k-1}(n))$ if $s_{k-1}(n) > 0$. Thus, <i>perfect</i> numbers are those $n$ with $s(n)=n$ and <i>amicable numbers</i> are those $n$ with $s(n) \neq n$ but $s_2(n)=n$. We prove that for each fixed $k \geq 1$, the set of $n$ which divide $s_k(n)$ has density zero, and similarly for the set of $n$ for which $s_k(n)$ divides $n$. These results strengthen the theorem of Erdős that for each fixed $k$, the set of $n$ for which $s_k(n)=n$ has density zero. </p>
+                                                                        <p>Let $s(n)$ denote the sum of the proper divisors of $n$. Let $s_0(n)=n$, and for $k > 0$, put $s_{k}(n):=s(s_{k-1}(n))$ if $s_{k-1}(n) > 0$. Thus, <i>perfect</i> numbers are those $n$ with $s(n)=n$ and <i>amicable numbers</i> are those $n$ with $s(n) \neq n$ but $s_2(n)=n$. We prove that for each fixed $k \geq 1$, the set of $n$ which divide $s_k(n)$ has density zero, and similarly for the set of $n$ for which $s_k(n)$ divides $n$. These results strengthen the theorem of ErdÅ‘s that for each fixed $k$, the set of $n$ for which $s_k(n)=n$ has density zero. </p>
                                                                     </div>
                                                                 </div>
                                                                 </p>
@@ -484,7 +484,7 @@
                                                     </li>
                                                     <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
-                                                            <h4>    <span class="paper-title">    The Möbius transform and the infinitude of primes   </span>             </h4>
+                                                            <h4>    <span class="paper-title">    The MÃ¶bius transform and the infinitude of primes   </span>             </h4>
                                                             <p>
                                                                 <a href="   http://www.ems-ph.org/journals/journal.php?jrn=em   "> <span class="journal-name">Elem. Math.</span> </a><span>  66 (<span class="paper-year">2011</span>), 118--120 </span></p>
                                                         </div>
@@ -492,7 +492,7 @@
                                                         <div class="paper-abstract col-md-12 col-xs-12">
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper12" aria-expanded="false" aria-controls="paper12">Abstract</a>
                                                                 <div class="collapse" id="paper12">
-                                                                    <div class="well paper-abtract-content"><p>Say that the pair of arithmetic functions $(f, g)$ is a <i>Möbius pair</i> if $f(n)=\sum_{d \mid n}g(d)$ for all natural numbers $n$. In this case, one can express $g$ in terms of $f$ by the Möbius inversion formula familiar from elementary number theory. We give a simple proof that if $(f, g)$ is a Möbius pair, then $f$ and $g$ cannot both be of finite support unless they both vanish identically. From this, we deduce another proof of Euclid's famous theorem that there are infinitely many prime numbers. </p>
+                                                                    <div class="well paper-abtract-content"><p>Say that the pair of arithmetic functions $(f, g)$ is a <i>MÃ¶bius pair</i> if $f(n)=\sum_{d \mid n}g(d)$ for all natural numbers $n$. In this case, one can express $g$ in terms of $f$ by the MÃ¶bius inversion formula familiar from elementary number theory. We give a simple proof that if $(f, g)$ is a MÃ¶bius pair, then $f$ and $g$ cannot both be of finite support unless they both vanish identically. From this, we deduce another proof of Euclid's famous theorem that there are infinitely many prime numbers. </p>
 
                                                                     </div>
                                                                 </div>
@@ -554,13 +554,13 @@
                                                         <div class="col-sm-10">
                                                             <h4>    <span class="paper-title">    An arithmetic function arising from Carmichael's conjecture </span>    <span class="paper-author">   (w/ F. Luca)    </span>          </h4>
                                                             <p>
-                                                                <a href="   http://jtnb.math.u-bordeaux1.fr/jtnb_english.html   "> <span class="journal-name">J. Théor. Nombres Bordeaux</span> </a><span>   23 (<span class="paper-year">2011</span>), 697--714 </span></p>
+                                                                <a href="   http://jtnb.math.u-bordeaux1.fr/jtnb_english.html   "> <span class="journal-name">J. ThÃ©or. Nombres Bordeaux</span> </a><span>   23 (<span class="paper-year">2011</span>), 697--714 </span></p>
                                                         </div>
                                                         <div class="col-sm-2 paper-btn"><a href="http://www.pollack-math.net/carmichael5.pdf" target="_blank" class="btn btn--sm btn-pdf">PDF</a></div>
                                                         <div class="paper-abstract col-md-12 col-xs-12">
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper27" aria-expanded="false" aria-controls="paper27">Abstract</a>
                                                                 <div class="collapse" id="paper27">
-                                                                    <div class="well paper-abtract-content">Let $\varphi$ denote Euler's totient function. A century-old conjecture of Carmichael asserts that for every $n$, the equation $\varphi(n)=\varphi(m)$ has a solution $m \neq n$. This suggests defining $F(n)$ as the number of solutions $m$ to the equation $\varphi(n)=\varphi(m)$. (So Carmichael's conjecture asserts that $F(n)\geq 2$ always.) Results on $F$ are scattered throughout the literature. For example, Sierpiński conjectured, and Ford proved, that the range of $F$ contains every natural number $k \geq 2$. Also, the maximal order of $F$ has been investigated by Erdős and Pomerance. In this paper we study the normal behavior of $F$. Let
+                                                                    <div class="well paper-abtract-content">Let $\varphi$ denote Euler's totient function. A century-old conjecture of Carmichael asserts that for every $n$, the equation $\varphi(n)=\varphi(m)$ has a solution $m \neq n$. This suggests defining $F(n)$ as the number of solutions $m$ to the equation $\varphi(n)=\varphi(m)$. (So Carmichael's conjecture asserts that $F(n)\geq 2$ always.) Results on $F$ are scattered throughout the literature. For example, SierpiÅ„ski conjectured, and Ford proved, that the range of $F$ contains every natural number $k \geq 2$. Also, the maximal order of $F$ has been investigated by ErdÅ‘s and Pomerance. In this paper we study the normal behavior of $F$. Let
 $$ K(x) = (\log{x})^{(\log\log{x})(\log\log\log{x})}. $$
 We prove that for each fixed $\epsilon > 0$,
 $$ K(n)^{\frac{1}{2}-\epsilon} < F(n) < K(n)^{\frac{3}{2}+\epsilon} $$
@@ -573,7 +573,7 @@ for almost all natural numbers $n$. As an application, we show that $\varphi(n)+
                                                     </li>
                                                     <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
-                                                            <h4>    <span class="paper-title">    The average least quadratic nonresidue modulo $m$ and other variations on a theme of Erdős  </span>             </h4>
+                                                            <h4>    <span class="paper-title">    The average least quadratic nonresidue modulo $m$ and other variations on a theme of ErdÅ‘s  </span>             </h4>
                                                             <p>
                                                                 <a href="   http://www.elsevier.com/locate/jnt  "> <span class="journal-name">J. Number Theory</span> </a><span> 132 (<span class="paper-year">2012</span>), 1185--1202  </span></p>
                                                         </div>
@@ -582,7 +582,7 @@ for almost all natural numbers $n$. As an application, we show that $\varphi(n)+
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper25" aria-expanded="false" aria-controls="paper25">Abstract</a>
                                                                 <div class="collapse" id="paper25">
                                                                     <div class="well paper-abtract-content"><p>
-						For each natural number $m\geq 3$, let $n_2(m)$ denote the least <em>quadratic nonresidue</em> modulo $m$. That is, $n_2(m)$ is the least integer $n \geq 1$ coprime to $m$ for which the congruence $x^2\equiv n \pmod{m}$ is insoluble. In 1961, Erdős showed that the mean value of $n_2(p)$, as $p$ runs over the odd primes, is given by $$\sum_{k=1}^{\infty}\frac{p_k}{2^k} \approx 3.675,$$ where $p_k$ denotes the $k$th prime in increasing order. Our first theorem gives the mean value of $n_2(m)$ without the restriction to prime values; it is $$\sum_{k=1}^{\infty}\frac{p_k-1}{p_1 p_2 \cdots p_{k-1}} \approx 2.920.$$
+						For each natural number $m\geq 3$, let $n_2(m)$ denote the least <em>quadratic nonresidue</em> modulo $m$. That is, $n_2(m)$ is the least integer $n \geq 1$ coprime to $m$ for which the congruence $x^2\equiv n \pmod{m}$ is insoluble. In 1961, ErdÅ‘s showed that the mean value of $n_2(p)$, as $p$ runs over the odd primes, is given by $$\sum_{k=1}^{\infty}\frac{p_k}{2^k} \approx 3.675,$$ where $p_k$ denotes the $k$th prime in increasing order. Our first theorem gives the mean value of $n_2(m)$ without the restriction to prime values; it is $$\sum_{k=1}^{\infty}\frac{p_k-1}{p_1 p_2 \cdots p_{k-1}} \approx 2.920.$$
 
 						For each prime $p$, let $G(p)$ denote the least natural number $n$ so that the subgroup generated by $\{1, 2, \ldots, n\}$ is all of $(\mathbf{Z}/p\mathbf{Z})^{\times}$. For $p$ odd, $$n_2(p) \leq G(p) \leq g(p) < p,$$ where $g(p)$ is the least primitive root modulo $p$. Assuming the Generalized Riemann Hypothesis, we show that $G(p)$ possesses a finite mean value $\approx 3.975$.
 
@@ -590,7 +590,7 @@ for almost all natural numbers $n$. As an application, we show that $\varphi(n)+
 <p>
   <strong>Erratum:</strong> Pieter Moree kindly pointed out that the method of evaluating singular series, developed in his cited Manuscripta Math. paper, differs substantially from that of Wrench. A more correct description of his results would be that they make effective earlier work of Dahlquist; see</p>
 <p>
-G. Dahlquist, On the analytic continuation of Eulerian products. Ark. Mat. <b>1</b> (1952), 533–554.
+G. Dahlquist, On the analytic continuation of Eulerian products. Ark. Mat. <b>1</b> (1952), 533â€“554.
 					</p>
 
                                                                     </div>
@@ -609,7 +609,7 @@ G. Dahlquist, On the analytic continuation of Eulerian products. Ark. Mat. <b>1<
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper38" aria-expanded="false" aria-controls="paper38">Abstract</a>
                                                                 <div class="collapse" id="paper38">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>Let $f(N)$ be the number of unordered factorizations of $N$, where a <i>factorization</i> is a way of writing $N$ as a product of integers all larger than $1$. For example, the factorizations of $30$ are $$ 2\times3\times5,\quad 5 \times 6,\quad 3 \times 10,\quad 2 \times 15,\quad\text{and}\quad 30,$$ so that $f(30)=5$. The function $f(N)$, as a multiplicative analogue of the (additive) partition function $p(N)$, was first proposed by MacMahon, and its study was pursued by Oppenheim, Szekeres and Turán, and others. Recently, Zaharescu and Zaki showed that $f(N)$ is even a positive proportion of the time and odd a positive proportion of the time. Here we show that for any arithmetic progression $a\bmod{m}$, the set of $N$ for which $f(N)\equiv a\bmod{m}$ possesses an asymptotic density. Moreover, the density is positive as long as there is at least one such $N$. For the case investigated by Zaharescu and Zaki, we show that $f$ is odd more than $50\%$ of the time (in fact, about $57\%$). </p>
+                                                                        <p>Let $f(N)$ be the number of unordered factorizations of $N$, where a <i>factorization</i> is a way of writing $N$ as a product of integers all larger than $1$. For example, the factorizations of $30$ are $$ 2\times3\times5,\quad 5 \times 6,\quad 3 \times 10,\quad 2 \times 15,\quad\text{and}\quad 30,$$ so that $f(30)=5$. The function $f(N)$, as a multiplicative analogue of the (additive) partition function $p(N)$, was first proposed by MacMahon, and its study was pursued by Oppenheim, Szekeres and TurÃ¡n, and others. Recently, Zaharescu and Zaki showed that $f(N)$ is even a positive proportion of the time and odd a positive proportion of the time. Here we show that for any arithmetic progression $a\bmod{m}$, the set of $N$ for which $f(N)\equiv a\bmod{m}$ possesses an asymptotic density. Moreover, the density is positive as long as there is at least one such $N$. For the case investigated by Zaharescu and Zaki, we show that $f$ is odd more than $50\%$ of the time (in fact, about $57\%$). </p>
                                                                     </div>
                                                                 </div>
                                                             </p>
@@ -677,7 +677,7 @@ G. Dahlquist, On the analytic continuation of Eulerian products. Ark. Mat. <b>1<
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper37" aria-expanded="false" aria-controls="paper37">Abstract</a>
                                                                 <div class="collapse" id="paper37">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>Let $F(T) \in \mathbf{Z}[T]$ be a nonconstant polynomial. We prove a result concerning the maximal order of $\Omega(F(n))$, where $\Omega(\cdot)$ denotes the total number of prime factors (counting multiplicity). In the case when $F$ has only simple roots, the result asserts that $$ \limsup_{n\to\infty}\frac{\Omega(F(n))}{\log{n}}=\frac{1}{\log{\ell}}, $$ where $\ell$ is the least prime for which $F$ has a zero in the $\ell$-adic integers $\mathbf{Z}_\ell$. This extends investigations of Erdős and Nicolas, who treated the case $F(T)=T(T+1)$. </p>
+                                                                        <p>Let $F(T) \in \mathbf{Z}[T]$ be a nonconstant polynomial. We prove a result concerning the maximal order of $\Omega(F(n))$, where $\Omega(\cdot)$ denotes the total number of prime factors (counting multiplicity). In the case when $F$ has only simple roots, the result asserts that $$ \limsup_{n\to\infty}\frac{\Omega(F(n))}{\log{n}}=\frac{1}{\log{\ell}}, $$ where $\ell$ is the least prime for which $F$ has a zero in the $\ell$-adic integers $\mathbf{Z}_\ell$. This extends investigations of ErdÅ‘s and Nicolas, who treated the case $F(T)=T(T+1)$. </p>
                                                                     </div>
                                                                 </div>
                                                             </p>
@@ -719,7 +719,7 @@ G. Dahlquist, On the analytic continuation of Eulerian products. Ark. Mat. <b>1<
                                                     </li>
                                                     <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
-                                                            <h4>    <span class="paper-title">    The average least character nonresidue and further variations on a theme of Erdős   </span> <span class="paper-author">   (w/ G. Martin)  </span> </h4>
+                                                            <h4>    <span class="paper-title">    The average least character nonresidue and further variations on a theme of ErdÅ‘s   </span> <span class="paper-author">   (w/ G. Martin)  </span> </h4>
                                                             <p>
                                                                 <a href="   http://jlms.oxfordjournals.org/cgi/reprint/jds036?ijkey=lDDC7VTROagz5i5&keytype=ref "> <span class="journal-name">J. London Math. Soc.</span> </a><span> 87 (<span class="paper-year">2013</span>), 22--42   </span></p>
                                                         </div>
@@ -728,7 +728,7 @@ G. Dahlquist, On the analytic continuation of Eulerian products. Ark. Mat. <b>1<
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper42" aria-expanded="false" aria-controls="paper42">Abstract</a>
                                                                 <div class="collapse" id="paper42">
                                                                     <div class="well paper-abtract-content">
-                                                                         <p>For each nonprincipal Dirichlet character $\chi$, let $n_{\chi}$ be the least $n$ with $\chi(n) \notin \{0,1\}$. For each prime $p$, let $\chi_p(\cdot)$ be the quadratic character modulo $p$. In 1961, Erdős showed that $n_{\chi_p}$ possesses a finite mean value as $p$ runs over the odd primes in increasing order. We show that as $q\to\infty$, the average of $n_{\chi}$ over <i>all</i> nonprincipal characters $\chi$ modulo $q$ is $\ell(q) +o(1)$, where $\ell(q)$ denotes the least prime not dividing $q$. Moreover, if one averages over all nonprincipal characters of moduli $\leq x$, the average approaches (as $x\to\infty$) the limiting value $$ \sum_{\ell}\frac{\ell^2}{\prod_{p \leq \ell}(p+1)}\approx 2.5350541804,$$ where the sum is over primes $\ell$ and the product is over primes $p \leq \ell$. One can also view Erdős's theorem as giving the average size of the least non-split prime in the quadratic field of conductor $p$, where again $p$ runs over odd primes. Similar results with the average taken over all quadratic fields were recently proved by the second author. In this paper, we prove a result of this type for cubic number fields: If one averages over all cubic fields $K$, ordered by discriminant, then the mean value of the least rational prime that does not split completely in $K$ is $$ \sum_{r}\frac{r(5/6+1/r+1/r^2)}{1+1/r+1/r^2}\prod_{p
+                                                                         <p>For each nonprincipal Dirichlet character $\chi$, let $n_{\chi}$ be the least $n$ with $\chi(n) \notin \{0,1\}$. For each prime $p$, let $\chi_p(\cdot)$ be the quadratic character modulo $p$. In 1961, ErdÅ‘s showed that $n_{\chi_p}$ possesses a finite mean value as $p$ runs over the odd primes in increasing order. We show that as $q\to\infty$, the average of $n_{\chi}$ over <i>all</i> nonprincipal characters $\chi$ modulo $q$ is $\ell(q) +o(1)$, where $\ell(q)$ denotes the least prime not dividing $q$. Moreover, if one averages over all nonprincipal characters of moduli $\leq x$, the average approaches (as $x\to\infty$) the limiting value $$ \sum_{\ell}\frac{\ell^2}{\prod_{p \leq \ell}(p+1)}\approx 2.5350541804,$$ where the sum is over primes $\ell$ and the product is over primes $p \leq \ell$. One can also view ErdÅ‘s's theorem as giving the average size of the least non-split prime in the quadratic field of conductor $p$, where again $p$ runs over odd primes. Similar results with the average taken over all quadratic fields were recently proved by the second author. In this paper, we prove a result of this type for cubic number fields: If one averages over all cubic fields $K$, ordered by discriminant, then the mean value of the least rational prime that does not split completely in $K$ is $$ \sum_{r}\frac{r(5/6+1/r+1/r^2)}{1+1/r+1/r^2}\prod_{p
                                                                             < r}\frac{1/6}{1+1/p+1/p^2}\approx 2.1211027269,$$ where the sum is over all primes $r$. Similar average values are obtained for the least rational prime with other specified factorizations in $K$, although some are conditional on the generalized Riemann hypothesis. </p>
                                                                     </div>
                                                                 </div>
@@ -795,7 +795,7 @@ G. Dahlquist, On the analytic continuation of Eulerian products. Ark. Mat. <b>1<
                                                     </li>
                                                     <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
-                                                            <h4>    <span class="paper-title">    Sets of monotonicity for Euler's totient function   </span> <span class="paper-author">   (w/ C. Pomerance and E. Treviño)    </span> </h4>
+                                                            <h4>    <span class="paper-title">    Sets of monotonicity for Euler's totient function   </span> <span class="paper-author">   (w/ C. Pomerance and E. TreviÃ±o)    </span> </h4>
                                                             <p>
                                                                 <a href="   https://link.springer.com/journal/11139"> <span class="journal-name">Ramanujan J.</span> </a><span> 30 (<span class="paper-year">2013</span>), 379--398 </span></p>
                                                         </div>
@@ -874,16 +874,16 @@ G. Dahlquist, On the analytic continuation of Eulerian products. Ark. Mat. <b>1<
                                                     </li>
                                                     <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
-                                                            <h4>    <span class="paper-title">    Paul Erdős and the rise of statistical thinking in elementary number theory </span> <span class="paper-author">   (w/ C. Pomerance)   </span> </h4>
+                                                            <h4>    <span class="paper-title">    Paul ErdÅ‘s and the rise of statistical thinking in elementary number theory </span> <span class="paper-author">   (w/ C. Pomerance)   </span> </h4>
                                                             <p>
-                                                                <a href="https://www.springer.com/us/book/9783642392856"> <span class="journal-name">Erdős Centennial</span> </a><span> L. Lovász, I. Z. Ruzsa, and V. T. Sós, eds., János Bolyai Math. Soc. and Springer-Verlag, Hungary, <span class="paper-year">2013</span>, pp. 515--523   </span></p>
+                                                                <a href="https://www.springer.com/us/book/9783642392856"> <span class="journal-name">ErdÅ‘s Centennial</span> </a><span> L. LovÃ¡sz, I. Z. Ruzsa, and V. T. SÃ³s, eds., JÃ¡nos Bolyai Math. Soc. and Springer-Verlag, Hungary, <span class="paper-year">2013</span>, pp. 515--523   </span></p>
                                                         </div>
                                                         <div class="col-sm-2 paper-btn"><a href="http://www.pollack-math.net/erdossurvey.pdf" target="_blank" class="btn btn--sm btn-pdf">PDF</a></div>
                                                         <div class="paper-abstract col-md-12 col-xs-12">
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper40" aria-expanded="false" aria-controls="paper40">Abstract</a>
                                                                 <div class="collapse" id="paper40">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p> This survey article discusses how Erdős's take on elementary number theory, with a focus on counting, changed the face of the subject, shedding new light on old problems and unearthing new mathematical worlds ripe for exploration.
+                                                                        <p> This survey article discusses how ErdÅ‘s's take on elementary number theory, with a focus on counting, changed the face of the subject, shedding new light on old problems and unearthing new mathematical worlds ripe for exploration.
 								</p>
                                                                     </div>
                                                                 </div>
@@ -999,7 +999,7 @@ G. Dahlquist, On the analytic continuation of Eulerian products. Ark. Mat. <b>1<
                                                     </li>
                                                     <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
-                                                            <h4>    <span class="paper-title">    The primes that Euclid forgot   </span> <span class="paper-author">   (w/ E. Treviño) </span> </h4>
+                                                            <h4>    <span class="paper-title">    The primes that Euclid forgot   </span> <span class="paper-author">   (w/ E. TreviÃ±o) </span> </h4>
                                                             <p>
                                                                 <a href="http://www.maa.org/press/periodicals/american-mathematical-monthly"> <span class="journal-name">American Math. Monthly</span> </a><span>   121 (<span class="paper-year">2014</span>), 433--437    </span></p>
                                                         </div>
@@ -1102,8 +1102,8 @@ G. Dahlquist, On the analytic continuation of Eulerian products. Ark. Mat. <b>1<
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper55" aria-expanded="false" aria-controls="paper55">Abstract</a>
                                                                 <div class="collapse" id="paper55">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>For each positive integer $n$, let $s(n)$ denote the sum of the proper divisors of $n$. If $s(n)>0$, put $s_2(n)=s(s(n))$, and define the higher iterates $s_k(n)$ similarly. In 1976, Erdős proved the following theorem: <i>For each $\delta > 0$ and each integer $K \geq 2$, we have $$ -\delta < \frac{s_{k+1}(n)}{s_k(n)}- \frac{s(n)}{n}$$ for all $1 \leq k < K$, except for a set of $n$ of asymptotic density zero.</i> He also conjectured that $$ \frac{s_{k+1}(n)}{s_k(n)}- \frac{s(n)}{n}
-                                                                            < \delta $$ for all $1\leq k < K$ and all $n$ outside of a set of density zero. This conjecture has proved rather recalcitrant and is known only when $K=2$, a 1990 result of Erdős, Granville, Pomerance, and Spiro. We re-prove their theorem in quantitative form, by what seems to be a simpler and more transparent argument. Similar techniques are used to investigate the arithmetic properties of the sum of the distinct prime divisors of $n$, which we denote by $\beta(n)$. We show that for a randomly chosen $n$, the integer $\beta(n)$ is squarefree with the same probability as $n$ itself. We also prove the same result with &quot;squarefree&quot; replaced by &quot;abundant&quot;. Finally, we prove that for either of the functions $f(n)=s (n)$ or $f(n)=\beta(n)$, the number of $n\le x$ for which $f(n)$ is prime is $O(x/\log{x})$. </p>
+                                                                        <p>For each positive integer $n$, let $s(n)$ denote the sum of the proper divisors of $n$. If $s(n)>0$, put $s_2(n)=s(s(n))$, and define the higher iterates $s_k(n)$ similarly. In 1976, ErdÅ‘s proved the following theorem: <i>For each $\delta > 0$ and each integer $K \geq 2$, we have $$ -\delta < \frac{s_{k+1}(n)}{s_k(n)}- \frac{s(n)}{n}$$ for all $1 \leq k < K$, except for a set of $n$ of asymptotic density zero.</i> He also conjectured that $$ \frac{s_{k+1}(n)}{s_k(n)}- \frac{s(n)}{n}
+                                                                            < \delta $$ for all $1\leq k < K$ and all $n$ outside of a set of density zero. This conjecture has proved rather recalcitrant and is known only when $K=2$, a 1990 result of ErdÅ‘s, Granville, Pomerance, and Spiro. We re-prove their theorem in quantitative form, by what seems to be a simpler and more transparent argument. Similar techniques are used to investigate the arithmetic properties of the sum of the distinct prime divisors of $n$, which we denote by $\beta(n)$. We show that for a randomly chosen $n$, the integer $\beta(n)$ is squarefree with the same probability as $n$ itself. We also prove the same result with &quot;squarefree&quot; replaced by &quot;abundant&quot;. Finally, we prove that for either of the functions $f(n)=s (n)$ or $f(n)=\beta(n)$, the number of $n\le x$ for which $f(n)$ is prime is $O(x/\log{x})$. </p>
                                                                     </div>
                                                                 </div>
                                                                 </p>
@@ -1138,7 +1138,7 @@ G. Dahlquist, On the analytic continuation of Eulerian products. Ark. Mat. <b>1<
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper62" aria-expanded="false" aria-controls="paper62">Abstract</a>
                                                                 <div class="collapse" id="paper62">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>Let $g \geq 2$. A real number is said to be $g$-<i>normal</i> if its base $g$ expansion contains every finite sequence of digits with the expected limiting frequency. Let $\phi$ denote Euler's totient function, let $\sigma$ be the sum-of-divisors function, and let $\lambda$ be Carmichael's lambda-function. We show that if $f$ is any function formed by composing $\phi$, $\sigma$, or $\lambda$, then the number $$ 0. f(1) f(2) f(3) \ldots $$ obtained by concatenating the base $g$ digits of successive $f$-values is $g$-normal. We also prove the same result if the inputs $1, 2, 3, \ldots$ are replaced with the primes $2, 3, 5, \ldots$. The proof is an adaptation of a method introduced by Copeland and Erdős in 1946 to prove the $10$-normality of $0.235711131719\ldots$. </p>
+                                                                        <p>Let $g \geq 2$. A real number is said to be $g$-<i>normal</i> if its base $g$ expansion contains every finite sequence of digits with the expected limiting frequency. Let $\phi$ denote Euler's totient function, let $\sigma$ be the sum-of-divisors function, and let $\lambda$ be Carmichael's lambda-function. We show that if $f$ is any function formed by composing $\phi$, $\sigma$, or $\lambda$, then the number $$ 0. f(1) f(2) f(3) \ldots $$ obtained by concatenating the base $g$ digits of successive $f$-values is $g$-normal. We also prove the same result if the inputs $1, 2, 3, \ldots$ are replaced with the primes $2, 3, 5, \ldots$. The proof is an adaptation of a method introduced by Copeland and ErdÅ‘s in 1946 to prove the $10$-normality of $0.235711131719\ldots$. </p>
                                                                     </div>
                                                                 </div>
                                                             </p>
@@ -1202,7 +1202,7 @@ for all $d \geq 3$.																																																													
                                                         <div class="col-sm-10">
                                                             <h4>    <span class="paper-title">    Palindromic sums of proper divisors </span>             </h4>
                                                             <p>
-                                                                <a href="http://math.colgate.edu/~integers/"> <span class="journal-name">Integers</span> </a><span> 15A/Proceedings of the Erdős Centennial Conference (<span class="paper-year">2015</span>), article A13 (electronic), 12 pages   </span></p>
+                                                                <a href="http://math.colgate.edu/~integers/"> <span class="journal-name">Integers</span> </a><span> 15A/Proceedings of the ErdÅ‘s Centennial Conference (<span class="paper-year">2015</span>), article A13 (electronic), 12 pages   </span></p>
                                                         </div>
                                                         <div class="col-sm-2 paper-btn"><a href="http://www.pollack-math.net/palindrome-final.pdf" target="_blank" class="btn btn--sm btn-pdf">PDF</a></div>
                                                         <div class="paper-abstract col-md-12 col-xs-12">
@@ -1245,7 +1245,7 @@ for all $d \geq 3$.																																																													
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper66" aria-expanded="false" aria-controls="paper66">Abstract</a>
                                                                 <div class="collapse" id="paper66">
                                                                     <div class="well paper-abtract-content"><p>For each of the functions $f \in \{\phi, \sigma, \omega, \tau\}$ and every natural number $K$, we show that there are infinitely many solutions to the inequalities $f(p_n-1)
-                                                                            < f(p_{n+1}-1) < \cdots < f(p_{n+K}-1)$, and similarly for $f(p_n-1)> f(p_{n+1}-1) > \cdots > f(p_{n+K}-1)$. We also answer some questions of Sierpiński on the digit sums of consecutive primes. The arguments make essential use of Maynard and Tao's method for producing many primes in intervals of bounded length. </p>
+                                                                            < f(p_{n+1}-1) < \cdots < f(p_{n+K}-1)$, and similarly for $f(p_n-1)> f(p_{n+1}-1) > \cdots > f(p_{n+K}-1)$. We also answer some questions of SierpiÅ„ski on the digit sums of consecutive primes. The arguments make essential use of Maynard and Tao's method for producing many primes in intervals of bounded length. </p>
 
                                                                     </div>
                                                                 </div>
@@ -1290,13 +1290,13 @@ for all $d \geq 3$.																																																													
                                                         <div class="col-sm-10">
                                                             <h4>    <span class="paper-title">    Remarks on fibers of the sum-of-divisors function   </span>             </h4>
                                                             <p>
-                                                                <a href="https://www.springer.com/us/book/9783319222394"> <span class="journal-name">Analytic Number Theory: In Honor of Helmut Maier’s 60th Birthday</span> </a><span> M. Rassias and C. Pomerance, eds., Springer (<span class="paper-year">2015</span>), 305--320    </span></p>
+                                                                <a href="https://www.springer.com/us/book/9783319222394"> <span class="journal-name">Analytic Number Theory: In Honor of Helmut Maierâ€™s 60th Birthday</span> </a><span> M. Rassias and C. Pomerance, eds., Springer (<span class="paper-year">2015</span>), 305--320    </span></p>
                                                         </div>
                                                         <div class="col-sm-2 paper-btn"><a href="http://www.pollack-math.net/preimages-maier3.pdf" target="_blank" class="btn btn--sm btn-pdf">PDF</a></div>
                                                         <div class="paper-abstract col-md-12 col-xs-12">
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper61" aria-expanded="false" aria-controls="paper61">Abstract</a>
                                                                 <div class="collapse" id="paper61">
-                                                                    <div class="well paper-abtract-content">  <p>Let $\sigma$ denote the usual sum-of-divisors function. We show that every positive real number can be approximated arbitrarily closely by a fraction $m/n$ with $\sigma(m)=\sigma(n)$. This answers in the affirmative a question of Erdős. We also show that for almost all of the elements $v$ of $\sigma(\mathbf{N})$, the members of the fiber $\sigma^{-1}(v)$ all share the same largest prime factor. We describe an application of the second result to the theory of L. E. Dickson's amicable tuples, which are a generalization of the ancient notion of an amicable pair. </p>
+                                                                    <div class="well paper-abtract-content">  <p>Let $\sigma$ denote the usual sum-of-divisors function. We show that every positive real number can be approximated arbitrarily closely by a fraction $m/n$ with $\sigma(m)=\sigma(n)$. This answers in the affirmative a question of ErdÅ‘s. We also show that for almost all of the elements $v$ of $\sigma(\mathbf{N})$, the members of the fiber $\sigma^{-1}(v)$ all share the same largest prime factor. We describe an application of the second result to the theory of L. E. Dickson's amicable tuples, which are a generalization of the ancient notion of an amicable pair. </p>
                                                                     </div>
 
                                                                     </div>
@@ -1324,7 +1324,7 @@ We prove the following entirely explicit (but impractical) upper bound: If $N$ a
                                                     </li>
                                                     <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
-                                                            <h4>    <span class="paper-title">    Some problems of Erdős on the sum-of-divisors function  </span> <span class="paper-author">   (w/ C. Pomerance)   </span> </h4>
+                                                            <h4>    <span class="paper-title">    Some problems of ErdÅ‘s on the sum-of-divisors function  </span> <span class="paper-author">   (w/ C. Pomerance)   </span> </h4>
                                                             <p>
                                                                 <a href="http://www.ams.org/journals/btran/all_issues.html"> <span class="journal-name">Trans. Amer. Math. Soc. Ser. B.</span> </a><span>  3 (<span class="paper-year">2016</span>), 1--26 </span></p>
                                                         </div>
@@ -1335,7 +1335,7 @@ We prove the following entirely explicit (but impractical) upper bound: If $N$ a
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper72" aria-expanded="false" aria-controls="paper72">Abstract</a>
                                                                 <div class="collapse" id="paper72">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>Let $\sigma(n)$ denote the sum of all of the positive divisors of $n$, and let $s(n)=\sigma(n)-n$ denote the sum of the proper divisors of $n$. The functions $\sigma(\cdot)$ and $s(\cdot)$ were favorite subjects of investigation by the late Paul Erdős. Here we revisit three themes from Erdős's work on these functions. First, we improve the upper and lower bounds for the counting function of numbers $n$ with $n$ deficient but $s(n)$ abundant, or vice versa. Second, we describe a heuristic argument suggesting the precise asymptotic density of $n$ not in the range of the function $s(\cdot)$; these are the so-called <i>nonaliquot numbers</i>. Finally, we prove new results on the distribution of friendly $k$-sets, where a <i>friendly $k$-set</i> is a collection of $k$ distinct integers all of which share the same value of $\frac{\sigma(n)}{n}$. </p>
+                                                                        <p>Let $\sigma(n)$ denote the sum of all of the positive divisors of $n$, and let $s(n)=\sigma(n)-n$ denote the sum of the proper divisors of $n$. The functions $\sigma(\cdot)$ and $s(\cdot)$ were favorite subjects of investigation by the late Paul ErdÅ‘s. Here we revisit three themes from ErdÅ‘s's work on these functions. First, we improve the upper and lower bounds for the counting function of numbers $n$ with $n$ deficient but $s(n)$ abundant, or vice versa. Second, we describe a heuristic argument suggesting the precise asymptotic density of $n$ not in the range of the function $s(\cdot)$; these are the so-called <i>nonaliquot numbers</i>. Finally, we prove new results on the distribution of friendly $k$-sets, where a <i>friendly $k$-set</i> is a collection of $k$ distinct integers all of which share the same value of $\frac{\sigma(n)}{n}$. </p>
                                                                     </div>
                                                                 </div>
                                                             </p>
@@ -1352,7 +1352,7 @@ We prove the following entirely explicit (but impractical) upper bound: If $N$ a
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper71" aria-expanded="false" aria-controls="paper71">Abstract</a>
                                                                 <div class="collapse" id="paper71">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>Let $E/\mathbb{Q}$ be an elliptic curve with complex multiplication. We study the average size of $\tau(\#E(\mathbb{F}_p))$ as $p$ varies over primes of good ordinary reduction. We work out in detail the case of $E\colon y^2=x^3-x$, where we prove that $$ \sum_{p \leq x,~p \equiv 1\pmod{4}}\tau(\#E(\mathbb{F}_p)) \sim \left(\frac{5\pi}{16}\prod_{p > 2}\frac{p^4-\chi(p)}{p^2(p^2-1)}\right)x, \quad\text{as } x\to\infty.$$ Here $\chi$ is the nontrivial Dirichlet character modulo $4$. The proof uses number field analogues of the Brun--Titchmarsh and Bombieri--Vinogradov theorems, along with a theorem of Wirsing on mean values of nonnegative multiplicative functions. Now suppose that $E/\mathbb{Q}$ is a non-CM elliptic curve. We conjecture that the sum of $\tau(\#E(\mathbb{F}_p))$, taken over $p \le x$ of good reduction, is $\sim c_E x$ for some $c_E >0$, and we give a heuristic argument suggesting the precise value of $c_E$. Assuming the Generalized Riemann Hypothesis for Dedekind zeta functions, we prove that this sum is $\asymp_{E}x$. The proof uses combinatorial ideas of Erdős. </p>
+                                                                        <p>Let $E/\mathbb{Q}$ be an elliptic curve with complex multiplication. We study the average size of $\tau(\#E(\mathbb{F}_p))$ as $p$ varies over primes of good ordinary reduction. We work out in detail the case of $E\colon y^2=x^3-x$, where we prove that $$ \sum_{p \leq x,~p \equiv 1\pmod{4}}\tau(\#E(\mathbb{F}_p)) \sim \left(\frac{5\pi}{16}\prod_{p > 2}\frac{p^4-\chi(p)}{p^2(p^2-1)}\right)x, \quad\text{as } x\to\infty.$$ Here $\chi$ is the nontrivial Dirichlet character modulo $4$. The proof uses number field analogues of the Brun--Titchmarsh and Bombieri--Vinogradov theorems, along with a theorem of Wirsing on mean values of nonnegative multiplicative functions. Now suppose that $E/\mathbb{Q}$ is a non-CM elliptic curve. We conjecture that the sum of $\tau(\#E(\mathbb{F}_p))$, taken over $p \le x$ of good reduction, is $\sim c_E x$ for some $c_E >0$, and we give a heuristic argument suggesting the precise value of $c_E$. Assuming the Generalized Riemann Hypothesis for Dedekind zeta functions, we prove that this sum is $\asymp_{E}x$. The proof uses combinatorial ideas of ErdÅ‘s. </p>
                                                                     </div>
                                                                 </div>
                                                             </p>
@@ -1386,7 +1386,7 @@ We prove the following entirely explicit (but impractical) upper bound: If $N$ a
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper65" aria-expanded="false" aria-controls="paper65">Abstract</a>
                                                                 <div class="collapse" id="paper65">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>Let $\{a_n\}$ be a sequence of nonnegative real numbers. Under very mild hypotheses, we obtain upper bounds of the expected order of magnitude for sums of the form $\sum_{n \le x}a_n \tau_r(n)$, where $\tau_r(n)$ is the $r$-fold divisor function. This sharpens previous estimates of Friedlander and Iwaniec. The proof uses combinatorial ideas of Erdős and Wolke. </p>
+                                                                        <p>Let $\{a_n\}$ be a sequence of nonnegative real numbers. Under very mild hypotheses, we obtain upper bounds of the expected order of magnitude for sums of the form $\sum_{n \le x}a_n \tau_r(n)$, where $\tau_r(n)$ is the $r$-fold divisor function. This sharpens previous estimates of Friedlander and Iwaniec. The proof uses combinatorial ideas of ErdÅ‘s and Wolke. </p>
                                                                     </div>
                                                                 </div>
                                                             </p>
@@ -1420,7 +1420,7 @@ We prove the following entirely explicit (but impractical) upper bound: If $N$ a
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper73" aria-expanded="false" aria-controls="paper73">Abstract</a>
                                                                 <div class="collapse" id="paper73">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>For $f \in \mathbb{Q}[x]$, we say that a rational prime $p$ is a <i>prime divisor of $f$</i> if $p$ divides the numerator of $f(n)$ for some integer $n$. Let $\mathcal{P}(f)$ denote the set of prime divisors of $f$. We present an elementary proof of the following theorem, which generalizes results of Mihály Bauer and Alfred Brauer: Fix a nonzero integer $g$. Suppose that $f(x) \in \mathbb{Q}[x]$ is a nonconstant polynomial having a root in $\mathbb{Q}_p$ for every prime $p$ dividing $g$, and having a root in $\mathbb{R}$ if $g
+                                                                        <p>For $f \in \mathbb{Q}[x]$, we say that a rational prime $p$ is a <i>prime divisor of $f$</i> if $p$ divides the numerator of $f(n)$ for some integer $n$. Let $\mathcal{P}(f)$ denote the set of prime divisors of $f$. We present an elementary proof of the following theorem, which generalizes results of MihÃ¡ly Bauer and Alfred Brauer: Fix a nonzero integer $g$. Suppose that $f(x) \in \mathbb{Q}[x]$ is a nonconstant polynomial having a root in $\mathbb{Q}_p$ for every prime $p$ dividing $g$, and having a root in $\mathbb{R}$ if $g
                                                                             < 0$. Let $m$ be a positive integer coprime to $g$ and let $H$ be a subgroup of $(\mathbb{Z}/m\mathbb{Z})^{\times}$ not containing $g\bmod{m}$. Then there are infinitely many primes $p \in \mathcal{P}(f)$ with $p\bmod{m}\notin H$. </p>
                                                                     </div>
                                                                 </div>
@@ -1492,7 +1492,7 @@ We prove the following entirely explicit (but impractical) upper bound: If $N$ a
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper76" aria-expanded="false" aria-controls="paper76">Abstract</a>
                                                                 <div class="collapse" id="paper76">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>We sharpen a 1980 theorem of Erdős and Wagstaff on the distribution of positive integers having a large shifted prime divisor. Specifically, we obtain precise estimates for the quantity $N(x,y) := \#\{n \le x: \ell-1\mid n\text{ for some } \ell-1 > y, \ell \text{ prime}\},$ in essentially the full range of $x$ and $y$. We then present an application to a problem in arithmetic statistics. Let $T_{\mathrm{CM}}(d)$ denote the largest order of a torsion subgroup of a CM elliptic curve defined over a degree $d$ number field. Recently, Bourdon, Clark, and Pollack showed that the set of $d$ with $T_{\mathrm{CM}}(d) > y$ has upper density tending to $0$, as $y\to\infty$. We quantify the rate of decay to $0$, proving that the upper and lower densities of this set both have the form $(\log{y})^{-\beta+o(1)}$, where $\beta=1-\frac{1+\log\log{2}}{\log{2}}$ (the <i>Erdős--Ford--Tenenbaum constant</i>). </p>
+                                                                        <p>We sharpen a 1980 theorem of ErdÅ‘s and Wagstaff on the distribution of positive integers having a large shifted prime divisor. Specifically, we obtain precise estimates for the quantity $N(x,y) := \#\{n \le x: \ell-1\mid n\text{ for some } \ell-1 > y, \ell \text{ prime}\},$ in essentially the full range of $x$ and $y$. We then present an application to a problem in arithmetic statistics. Let $T_{\mathrm{CM}}(d)$ denote the largest order of a torsion subgroup of a CM elliptic curve defined over a degree $d$ number field. Recently, Bourdon, Clark, and Pollack showed that the set of $d$ with $T_{\mathrm{CM}}(d) > y$ has upper density tending to $0$, as $y\to\infty$. We quantify the rate of decay to $0$, proving that the upper and lower densities of this set both have the form $(\log{y})^{-\beta+o(1)}$, where $\beta=1-\frac{1+\log\log{2}}{\log{2}}$ (the <i>ErdÅ‘s--Ford--Tenenbaum constant</i>). </p>
                                                                     </div>
                                                                 </div>
                                                             </p>
@@ -1551,7 +1551,7 @@ We prove the following entirely explicit (but impractical) upper bound: If $N$ a
                                                     </li>
 <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
-                                                            <h4>    <span class="paper-title">An elemental Erdős-Kac theorem for algebraic number fields</span>             </h4>
+                                                            <h4>    <span class="paper-title">An elemental ErdÅ‘s-Kac theorem for algebraic number fields</span>             </h4>
                                                             <p>
                                                                 <a href="http://www.ams.org/publications/journals/journalsframework/proc "> <span class="journal-name">Proc. Amer. Math. Soc.</span></a> 145 (<span class="paper-year">2017</span>), 971--987</p>
                                                         </div>
@@ -1814,7 +1814,7 @@ $O_{\epsilon}(x^{1/12+\epsilon})$ for all $\epsilon>0$, where $|A| = 2^{\deg{A}}
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper94" aria-expanded="false" aria-controls="paper94">Abstract</a>
                                                                 <div class="collapse" id="paper94">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>Let $s(\cdot)$ denote the sum-of-proper-divisors function, that is, $s(n) = \sum_{d\mid n,~ d < n} d$. Erdős--Granville--Pomerance--Spiro conjectured that for any set $\mathcal{A}$ of asymptotic density zero, the preimage set $s^{-1}(\mathcal{A})$ also has density zero. We prove a weak form of this conjecture: If $\epsilon(x)$ is any function tending to $0$ as $x\to\infty$, and $\mathcal{A}$ is a set of integers  of cardinality at most $x^{\frac12+\epsilon(x)}$, then the number of integers $n\le x$ with $s(n) \in \mathcal{A}$ is $o(x)$, as $x\to\infty$. In particular, the EGPS conjecture holds for infinite sets with counting function $O(x^{\frac12 + \epsilon(x)})$. We also disprove a hypothesis from the same paper of EGPS by showing that for any positive numbers $\alpha$ and $\epsilon$, there are integers $n$ with arbitrarily many $s$-preimages lying between $\alpha(1-\epsilon)n$ and $\alpha(1+\epsilon)n$. Finally, we make some remarks on solutions $n$ to congruences of the form $\sigma(n) \equiv a\pmod{n}$, proposing a modification of a conjecture appearing in recent work of the first two authors. We also improve a previous upper bound for the number of solutions $n \leq x$, making it uniform in $a$.</p>
+                                                                        <p>Let $s(\cdot)$ denote the sum-of-proper-divisors function, that is, $s(n) = \sum_{d\mid n,~ d < n} d$. ErdÅ‘s--Granville--Pomerance--Spiro conjectured that for any set $\mathcal{A}$ of asymptotic density zero, the preimage set $s^{-1}(\mathcal{A})$ also has density zero. We prove a weak form of this conjecture: If $\epsilon(x)$ is any function tending to $0$ as $x\to\infty$, and $\mathcal{A}$ is a set of integers  of cardinality at most $x^{\frac12+\epsilon(x)}$, then the number of integers $n\le x$ with $s(n) \in \mathcal{A}$ is $o(x)$, as $x\to\infty$. In particular, the EGPS conjecture holds for infinite sets with counting function $O(x^{\frac12 + \epsilon(x)})$. We also disprove a hypothesis from the same paper of EGPS by showing that for any positive numbers $\alpha$ and $\epsilon$, there are integers $n$ with arbitrarily many $s$-preimages lying between $\alpha(1-\epsilon)n$ and $\alpha(1+\epsilon)n$. Finally, we make some remarks on solutions $n$ to congruences of the form $\sigma(n) \equiv a\pmod{n}$, proposing a modification of a conjecture appearing in recent work of the first two authors. We also improve a previous upper bound for the number of solutions $n \leq x$, making it uniform in $a$.</p>
                                                                     </div>
                                                                 </div>
                                                             </p>
@@ -1892,7 +1892,7 @@ on the strong boundedness of isogenies of prime degree for non-CM elliptic curve
                                                                 <div class="collapse" id="paper98">
                                                                     <div class="well paper-abtract-content">
                                                                         <p> In 1959 Golomb defined a connected topology on $\mathbb{Z}$.  An analogous <i>Golomb topology</i> on an arbitrary integral domain
-was defined first by Knopfmacher-Porubský and then again in a recent work of Clark. Here we study properties of Golomb topologies.
+was defined first by Knopfmacher-PorubskÃ½ and then again in a recent work of Clark. Here we study properties of Golomb topologies.
 </p>
                                                                     </div>
                                                                 </div>
@@ -1922,7 +1922,7 @@ of degree lying in a set of arbitrarily small density.  We show that for each fi
                                                     </li>
                                                 <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
-                                                            <h4>    <span class="paper-title">Finding the four squares in Lagrange's theorem</span>   <span class="paper-author">(w/ E. Treviño)</span>          </h4>
+                                                            <h4>    <span class="paper-title">Finding the four squares in Lagrange's theorem</span>   <span class="paper-author">(w/ E. TreviÃ±o)</span>          </h4>
                                                             <p>
 
                                                             <a href="http://math.colgate.edu/~integers/"> <span class="journal-name">Integers</span> </a> 18A (<span class="paper-year">2018</span>), article A15, 16 pages (electronic)</p>
@@ -1971,11 +1971,11 @@ $$ \sup_{K} g(k,K) = \infty. $$
                                                                     <div class="well paper-abtract-content">
                                                                         <p> The purpose of this article is to produce effective versions of some rigidity results in algebra and geometry. On
 the geometric side, we focus on the spectrum of primitive geodesic lengths (resp., complex lengths) for arithmetic hyperbolic
-2–manifolds (resp., 3–manifolds). By work of Reid, this spectrum determines the commensurability class of the 2–manifold
-(resp., 3–manifold). We establish effective versions of these rigidity results by ensuring that, for two incommensurable
+2â€“manifolds (resp., 3â€“manifolds). By work of Reid, this spectrum determines the commensurability class of the 2â€“manifold
+(resp., 3â€“manifold). We establish effective versions of these rigidity results by ensuring that, for two incommensurable
 arithmetic manifolds of bounded volume, the length sets (resp., the complex length sets) must disagree for a length that can
 be explicitly bounded as a function of volume. We also prove an effective version of a similar rigidity result established by the
-second author with Reid on a surface analog of the length spectrum for hyperbolic 3–manifolds. These effective results have
+second author with Reid on a surface analog of the length spectrum for hyperbolic 3â€“manifolds. These effective results have
 corresponding algebraic analogs involving maximal subfields and quaternion subalgebras of quaternion algebras. To prove
 these effective rigidity results, we establish results on the asymptotic behavior of certain algebraic and geometric counting
 functions which are of independent interest.
@@ -2144,7 +2144,7 @@ abelian number field settings, respectively.
                                                             <h4>    <span class="paper-title">Reciprocity by resultant in $k[t]$</span>  <span class="paper-author">(w/ P. L. Clark)</span>          </h4>
                                                             <p>
 
-                                                            <a href="https://www.unige.ch/math/EnsMath/EM_en/"> <span class="journal-name">L’Enseignement Mathématique</span></a> 65 (<span class="paper-year">2019</span>), 101--116</p>
+                                                            <a href="https://www.unige.ch/math/EnsMath/EM_en/"> <span class="journal-name">Lâ€™Enseignement MathÃ©matique</span></a> 65 (<span class="paper-year">2019</span>), 101--116</p>
                                                         </div>
                                                         <div class="col-sm-2 paper-btn"><a href="http://www.pollack-math.net/reciprocity.pdf" target="_blank" class="btn btn--sm btn-pdf">PDF</a></div>
                                                         <div class="paper-abstract col-md-12 col-xs-12">
@@ -2170,7 +2170,7 @@ abelian number field settings, respectively.
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper112" aria-expanded="false" aria-controls="paper112">Abstract</a>
                                                                 <div class="collapse" id="paper112">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p>  For each positive integer $n$, let $f(n)$ denote the number of <i>multiplicative partitions</i> of $n$, meaning the number of ways of writing $n$ as a product of integers larger than $1$, where the order of the factors is not taken into account. It was shown by Oppenheim in 1926 that, as $x\to\infty$, $$ \max_{n \le x,~n\text{ squarefree}} f(n) = x/L(x)^{2+o(1)},$$ where $L(x) = \exp(\log x\cdot \frac{\log\log\log{x}}{\log\log x})$. Without the restriction to squarefree $n$, the maximum is the significantly larger quantity $x/L(x)^{1+o(1)}$; this was proved by Canfield, Erdős, and Pomerance in 1983. We prove the following theorem that interpolates between these two results: For each fixed $\alpha \in [0,1]$,
+                                                                        <p>  For each positive integer $n$, let $f(n)$ denote the number of <i>multiplicative partitions</i> of $n$, meaning the number of ways of writing $n$ as a product of integers larger than $1$, where the order of the factors is not taken into account. It was shown by Oppenheim in 1926 that, as $x\to\infty$, $$ \max_{n \le x,~n\text{ squarefree}} f(n) = x/L(x)^{2+o(1)},$$ where $L(x) = \exp(\log x\cdot \frac{\log\log\log{x}}{\log\log x})$. Without the restriction to squarefree $n$, the maximum is the significantly larger quantity $x/L(x)^{1+o(1)}$; this was proved by Canfield, ErdÅ‘s, and Pomerance in 1983. We prove the following theorem that interpolates between these two results: For each fixed $\alpha \in [0,1]$,
                                                                             $$ \max_{n \le x,~\mathrm{rad}(n) \ge n^{\alpha}} f(n) = x/L(x)^{1+\alpha+o(1)}. $$
                                                                             We deduce, on the abc-conjecture, a nontrivial upper bound on how often values of certain polynomials appear in the range of Euler's $\phi$-function.
                                                                     </div>
@@ -2190,7 +2190,7 @@ abelian number field settings, respectively.
                                                             <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper113" aria-expanded="false" aria-controls="paper113">Abstract</a>
                                                                 <div class="collapse" id="paper113">
                                                                     <div class="well paper-abtract-content">
-                                                                        <p> Let $g(n)$ denote the number of ordered factorizations of $n$ into integers larger than $1$. In the 1930s, Kalmár and Hille investigated the average and maximal order of $g(n)$. In this note we examine these questions for the function $G(n)$ counting ordered factorizations into <i>distinct</i> parts.
+                                                                        <p> Let $g(n)$ denote the number of ordered factorizations of $n$ into integers larger than $1$. In the 1930s, KalmÃ¡r and Hille investigated the average and maximal order of $g(n)$. In this note we examine these questions for the function $G(n)$ counting ordered factorizations into <i>distinct</i> parts.
 Concerning the average of $G(n)$, we show that $$ \sum_{n \le x} G(n) = x \cdot L(x)^{1+o(1)}, $$
 where
 $$ L(x) = \exp\left(\log{x} \cdot \frac{\log \log\log {x}}{\log\log{x}}\right). $$
@@ -2221,7 +2221,7 @@ symmetric pairs of primes. In fact, we show that for every integer $m\ge 2$ ther
                                                     </li>
                                                     <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
-                                                            <h4>    <span class="paper-title">On sums of consecutive triangular numbers</span>  <span class="paper-author">(w/ D.  Subramaniam and E. Treviño)</span>          </h4>
+                                                            <h4>    <span class="paper-title">On sums of consecutive triangular numbers</span>  <span class="paper-author">(w/ D.  Subramaniam and E. TreviÃ±o)</span>          </h4>
                                                             <p>
 
                                                             <a href="http://math.colgate.edu/~integers/"><span class="journal-name">Integers</span></a>
@@ -2261,7 +2261,7 @@ symmetric pairs of primes. In fact, we show that for every integer $m\ge 2$ ther
                                                                     <div class="well paper-abtract-content">
                                                                         <p>Let $\omega(n)$ denote the number of distinct prime factors of the positive integer $n$. In 1917, Hardy and Ramanujan showed that for all real numbers $x\ge 2$ and all positive integers $k$,
 $$ \sum_{n \le x,~\omega(n)=k} 1 \le C \frac{x}{\log{x}} \frac{(\log\log{x}+D)^{k-1}}{(k-1)!}, $$
-where $C$ and $D$ are absolute constants. We derive an analogous result when the summand $1$ is replaced by $f(n)$, for many nonnegative multiplicative functions $f$. Summing on $k$ recovers a frequently-used mean-value theorem of Hall and Tenenbaum. We use the same idea to establish a variant of a theorem of Shirokov, concerning multiplicative functions that are $o(1)$ on average at the primes.</p><br><p><i>Remark</i>: Eq. (3) can be viewed as a special case of Lemma 1 in Tenenbaum's <i>A rate estimate in Billingsley's theorem for the size distribution of large prime factors</i>, Q. J. Math. 51 (2000), 385–403. That lemma is itself a dissected version of the Hall--Tenenbaum mean-value theorem, different from my Corollary 3. Thanks to Régis de la Bretèche and Kevin Ford for making me aware of this. </p>
+where $C$ and $D$ are absolute constants. We derive an analogous result when the summand $1$ is replaced by $f(n)$, for many nonnegative multiplicative functions $f$. Summing on $k$ recovers a frequently-used mean-value theorem of Hall and Tenenbaum. We use the same idea to establish a variant of a theorem of Shirokov, concerning multiplicative functions that are $o(1)$ on average at the primes.</p><br><p><i>Remark</i>: Eq. (3) can be viewed as a special case of Lemma 1 in Tenenbaum's <i>A rate estimate in Billingsley's theorem for the size distribution of large prime factors</i>, Q. J. Math. 51 (2000), 385â€“403. That lemma is itself a dissected version of the Hall--Tenenbaum mean-value theorem, different from my Corollary 3. Thanks to RÃ©gis de la BretÃ¨che and Kevin Ford for making me aware of this. </p>
                                                                     </div>
                                                                 </div>
                                                             </p>
@@ -2271,7 +2271,7 @@ where $C$ and $D$ are absolute constants. We derive an analogous result when the
                                              <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
                                                                    <h4>    <span class="paper-title">Sums of proper powers</span> [filler piece]
-                                                            <span class="paper-author">(w/  E. Treviño)</span></h4>
+                                                            <span class="paper-author">(w/  E. TreviÃ±o)</span></h4>
                                                             <p>
                                                             <a href="https://www.maa.org/press/periodicals/american-mathematical-monthly"><span class="journal-name">Amer. Math. Monthly</span></a> 128 (<span class="paper-year">2020</span>), 40</p>
                                                         </div>
@@ -2369,7 +2369,7 @@ where $C$ and $D$ are absolute constants. We derive an analogous result when the
                                                                 <div class="collapse" id="paper120">
                                                                     <div class="well paper-abtract-content">
                                                                         <p>
-                                                                            We investigate various questions concerning the reciprocal sum of  divisors, or prime divisors, of the Mersenne numbers $2^n-1$. Conditional on the Elliott--Halberstam Conjecture and the Generalized Riemann Hypothesis, we determine $\max_{n\le x} \sum_{p \mid 2^n-1} 1/p$ to within $o(1)$ and $\max_{n\le x} \sum_{d\mid 2^n-1}1/d$ to within a factor of $1+o(1)$, as $x\to\infty$. This refines, conditionally, earlier estimates of Erdős and Erdős--Kiss--Pomerance. Conditionally (only) on GRH, we also determine $\sum 1/d$ to within a factor of $1+o(1)$ where $d$ runs over all numbers dividing $2^n-1$ for some $n\le x$. This conditionally confirms a conjecture of Pomerance and answers a question of Murty--Rosen--Silverman. Finally, we show that both $\sum_{p\mid 2^n-1} 1/p$ and $\sum_{d\mid 2^n-1}1/d$ admit continuous distribution functions in the sense of probabilistic number theory.
+                                                                            We investigate various questions concerning the reciprocal sum of  divisors, or prime divisors, of the Mersenne numbers $2^n-1$. Conditional on the Elliott--Halberstam Conjecture and the Generalized Riemann Hypothesis, we determine $\max_{n\le x} \sum_{p \mid 2^n-1} 1/p$ to within $o(1)$ and $\max_{n\le x} \sum_{d\mid 2^n-1}1/d$ to within a factor of $1+o(1)$, as $x\to\infty$. This refines, conditionally, earlier estimates of ErdÅ‘s and ErdÅ‘s--Kiss--Pomerance. Conditionally (only) on GRH, we also determine $\sum 1/d$ to within a factor of $1+o(1)$ where $d$ runs over all numbers dividing $2^n-1$ for some $n\le x$. This conditionally confirms a conjecture of Pomerance and answers a question of Murty--Rosen--Silverman. Finally, we show that both $\sum_{p\mid 2^n-1} 1/p$ and $\sum_{d\mid 2^n-1}1/d$ admit continuous distribution functions in the sense of probabilistic number theory.
                                                                     </div>
                                                                 </div>
                                                             </p>
@@ -2425,7 +2425,7 @@ where $C$ and $D$ are absolute constants. We derive an analogous result when the
                                                                 <div class="collapse" id="paper123">
                                                                     <div class="well paper-abtract-content">
                                                                         <p>
-                                                                            Schinzel and Wójcik have shown that if $\alpha, \beta$ are rational numbers not $0$ or $\pm 1$, then $\text{ord}_p(\alpha)=\text{ord}_p(\beta)$ for infinitely many primes $p$, where $\text{ord}_p(\cdot)$ denotes the order in $\mathbb{F}_p^{\times}$. We begin by asking: When are there infinitely many primes $p$ with $\text{ord}_p(\alpha) > \text{ord}_p(\beta)$? We write down several families of pairs $\alpha,\beta$ for which we can prove this to be the case. In particular, we show this happens for &quot;100%&quot; of pairs $A,2$, as $A$ runs through the positive integers. We end on a different note, proving a version of Schinzel and Wójcik's theorem for the integers of an imaginary quadratic field $K$: If $\alpha, \beta \in \mathcal{O}_K$ are nonzero and neither is a root of unity, then there are infinitely many maximal ideals $P$ of $\mathcal{O}_K$ for which $\text{ord}_P(\alpha) = \text{ord}_P(\beta)$.
+                                                                            Schinzel and WÃ³jcik have shown that if $\alpha, \beta$ are rational numbers not $0$ or $\pm 1$, then $\text{ord}_p(\alpha)=\text{ord}_p(\beta)$ for infinitely many primes $p$, where $\text{ord}_p(\cdot)$ denotes the order in $\mathbb{F}_p^{\times}$. We begin by asking: When are there infinitely many primes $p$ with $\text{ord}_p(\alpha) > \text{ord}_p(\beta)$? We write down several families of pairs $\alpha,\beta$ for which we can prove this to be the case. In particular, we show this happens for &quot;100%&quot; of pairs $A,2$, as $A$ runs through the positive integers. We end on a different note, proving a version of Schinzel and WÃ³jcik's theorem for the integers of an imaginary quadratic field $K$: If $\alpha, \beta \in \mathcal{O}_K$ are nonzero and neither is a root of unity, then there are infinitely many maximal ideals $P$ of $\mathcal{O}_K$ for which $\text{ord}_P(\alpha) = \text{ord}_P(\beta)$.
                                                                     </div>
                                                                 </div>
                                                             </p>
@@ -2485,9 +2485,9 @@ where $C$ and $D$ are absolute constants. We derive an analogous result when the
                                                                 <div class="collapse" id="paper126">
                                                                     <div class="well paper-abtract-content">
                                                                         <p>
-                                                                          We call $n$ a <i>cyclic number</i> if every group of order $n$ is cyclic. It is implicit in work of Dickson, and explicit in work of Szele, that $n$ is cyclic precisely when $\gcd(n,\phi(n))=1$. With $C(x)$ denoting the count of cyclic $n\le x$, Erdős proved that
+                                                                          We call $n$ a <i>cyclic number</i> if every group of order $n$ is cyclic. It is implicit in work of Dickson, and explicit in work of Szele, that $n$ is cyclic precisely when $\gcd(n,\phi(n))=1$. With $C(x)$ denoting the count of cyclic $n\le x$, ErdÅ‘s proved that
 $$ C(x) \sim e^{-\gamma} x/\log\log\log{x}, \quad\text{as $x\to\infty$}. $$
-We show that $C(x)$ has an asymptotic series expansion, in the sense of Poincaré, in descending powers of $\log\log\log{x}$, namely
+We show that $C(x)$ has an asymptotic series expansion, in the sense of PoincarÃ©, in descending powers of $\log\log\log{x}$, namely
 $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} + \frac{\gamma^2 + \frac{1}{12}\pi^2}{(\log\log\log{x})^2} - \frac{\gamma^3 +\frac{1}{4} \gamma \pi^2 + \frac{2}{3}\zeta(3)}{(\log\log\log{x})^3} + \dots \right). $$                                                                    </div>
                                                                 </div>
                                                             </p>
@@ -2601,7 +2601,7 @@ $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} 
 
                 <li class="col-sm-12 list-item with-bullet">
                     <div class="col-sm-10">
-                        <h4>    <span class="paper-title">Dirichlet, Sierpiński, and Benford</span>  <span class="paper-author">(w/ A. Singha Roy)</span>          </h4>
+                        <h4>    <span class="paper-title">Dirichlet, SierpiÅ„ski, and Benford</span>  <span class="paper-author">(w/ A. Singha Roy)</span>          </h4>
                         <p>
                         <a href="https://www.journals.elsevier.com/journal-of-number-theory"><span class="journal-name">J. Number Theory</span></a>  239 (<span class="paper-year">2022</span>), 352--364</p>
                     </div>
@@ -2610,7 +2610,7 @@ $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} 
                         <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper132" aria-expanded="false" aria-controls="paper132">Abstract</a>
                             <div class="collapse" id="paper132">
                                 <div class="well paper-abtract-content">
-                                    <p>Sixty years ago, Sierpiński observed that for any positive integers $A$ and $B$, and any $g\ge 2$, there are infinitely many primes whose base $g$-expansion begins with the digits of $A$ and ends with those of $B$. Sierpiński's short proof rests on the prime number theorem for arithmetic progressions (PNT for APs). We explain how his result can be viewed as a natural intermediary between Dirichlet's theorem on primes in progressions and the PNT for APs. In addition to being of pedagogical interest, this perspective quickly yields a generalization of Sierpiński's result where the initial and terminal digits of $p$ are prescribed in two coprime bases simultaneously; moreover, the proportion (Dirichlet density) of the corresponding primes is determined explicitly. The same quasielementary method shows that the arithmetic functions $\phi(n)$, $\sigma(n)$, and $d(n)$ obey &quot;Benford's law&quot; in a suitable sense.</p>
+                                    <p>Sixty years ago, SierpiÅ„ski observed that for any positive integers $A$ and $B$, and any $g\ge 2$, there are infinitely many primes whose base $g$-expansion begins with the digits of $A$ and ends with those of $B$. SierpiÅ„ski's short proof rests on the prime number theorem for arithmetic progressions (PNT for APs). We explain how his result can be viewed as a natural intermediary between Dirichlet's theorem on primes in progressions and the PNT for APs. In addition to being of pedagogical interest, this perspective quickly yields a generalization of SierpiÅ„ski's result where the initial and terminal digits of $p$ are prescribed in two coprime bases simultaneously; moreover, the proportion (Dirichlet density) of the corresponding primes is determined explicitly. The same quasielementary method shows that the arithmetic functions $\phi(n)$, $\sigma(n)$, and $d(n)$ obey &quot;Benford's law&quot; in a suitable sense.</p>
 
                        </div>
                             </div>
@@ -2619,7 +2619,7 @@ $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} 
                 </li>
                 <li class="col-sm-12 list-item with-bullet">
                     <div class="col-sm-10">
-                        <h4>    <span class="paper-title">Sums of proper divisors follow the Erdős-Kac law</span>  <span class="paper-author">(w/ L. Troupe)</span>          </h4>
+                        <h4>    <span class="paper-title">Sums of proper divisors follow the ErdÅ‘s-Kac law</span>  <span class="paper-author">(w/ L. Troupe)</span>          </h4>
                         <p>
                         <a href="https://www.ams.org/publications/journals/journalsframework/proc"><span class="journal-name">Proc. Amer. Math. Soc.</span></a> 151 (<span class="paper-year">2023</span>), 977--988</p>
                     </div>
@@ -2628,7 +2628,7 @@ $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} 
                         <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper133" aria-expanded="false" aria-controls="paper133">Abstract</a>
                             <div class="collapse" id="paper133">
                                 <div class="well paper-abtract-content">
-                                    <p> Let $s(n)=\sum_{d\mid n,~d < n} d$ denote the sum  of the proper divisors of $n$. The second-named author proved that $\omega(s(n))$ has normal order $\log\log{n}$, the analogue for $s$-values of a classical result of Hardy and Ramanujan. We establish the corresponding Erdős--Kac theorem:  $\omega(s(n))$ is asymptotically normally distributed with mean and variance $\log\log{n}$. The same method applies with $s(n)$ replaced by any of several other unconventional arithmetic functions, such as $\beta(n):=\sum_{p\mid n} p$, $n-\phi(n)$, and $n+\tau(n)$ ($\tau$ being the divisor function). </p>
+                                    <p> Let $s(n)=\sum_{d\mid n,~d < n} d$ denote the sum  of the proper divisors of $n$. The second-named author proved that $\omega(s(n))$ has normal order $\log\log{n}$, the analogue for $s$-values of a classical result of Hardy and Ramanujan. We establish the corresponding ErdÅ‘s--Kac theorem:  $\omega(s(n))$ is asymptotically normally distributed with mean and variance $\log\log{n}$. The same method applies with $s(n)$ replaced by any of several other unconventional arithmetic functions, such as $\beta(n):=\sum_{p\mid n} p$, $n-\phi(n)$, and $n+\tau(n)$ ($\tau$ being the divisor function). </p>
 
                        </div>
                             </div>
@@ -2661,7 +2661,7 @@ $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} 
                     <div class="col-sm-10">
                         <h4>    <span class="paper-title">On the greatest common divisor of a number and its sum of divisors, II</span>  <span class="paper-author"></span>          </h4>
                         <p>
-                            <a href="https://link.springer.com/book/9783031316166">Number Theory in Memory of Eduard Wirsing</a>, Helmut Maier, Jörn Steuding, Rasa Steuding, eds. Springer Cham (<span class="paper-year">2023</span>)</p>
+                            <a href="https://link.springer.com/book/9783031316166">Number Theory in Memory of Eduard Wirsing</a>, Helmut Maier, JÃ¶rn Steuding, Rasa Steuding, eds. Springer Cham (<span class="paper-year">2023</span>)</p>
                     </div>
                     <div class="col-sm-2 paper-btn"><a href="http://www.pollack-math.net/gcdnsigmasequel.pdf" target="_blank" class="btn btn--sm btn-pdf">PDF</a></div>
                     <div class="paper-abstract col-md-12 col-xs-12">
@@ -2712,7 +2712,7 @@ $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} 
                                     <p> We provide a criterion to determine whether a real multiplicative function
                                         is a strong Benford sequence. The criterion implies that the $k$-divisor functions, where
                                         $k  \ne 10^j$, and Hecke eigenvalues of newforms, such as the Ramanujan tau function, are strong
-                                        Benford. In contrast to some earlier work, our approach is based on Halász’s Theorem.</p>
+                                        Benford. In contrast to some earlier work, our approach is based on HalÃ¡szâ€™s Theorem.</p>
 
                        </div>
                             </div>
@@ -2785,7 +2785,7 @@ $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} 
 
                 <li class="col-sm-12 list-item with-bullet">
                     <div class="col-sm-10">
-                        <h4>    <span class="paper-title">Partitioning powers into sets of equal sum</span>  <span class="paper-author">(w/ E. Treviño)</span>          </h4>
+                        <h4>    <span class="paper-title">Partitioning powers into sets of equal sum</span>  <span class="paper-author">(w/ E. TreviÃ±o)</span>          </h4>
                         <p>
                             <a href="https://rmmc.asu.edu/rmj/rmj.html"><span class="journal-name">Rocky Mountain J. Math.</span></a> (<span class="paper-year">to appear</span>)</p>
                     </div>
@@ -2882,7 +2882,7 @@ $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} 
 
                 <li class="col-sm-12 list-item with-bullet">
                     <div class="col-sm-10">
-                        <h4>    <span class="paper-title">Two variants of a theorem of Schinzel and Wójcik on multiplicative orders</span>  <span class="paper-author"></span>          </h4>
+                        <h4>    <span class="paper-title">Two variants of a theorem of Schinzel and WÃ³jcik on multiplicative orders</span>  <span class="paper-author"></span>          </h4>
                         <p>
                             <a href="https://www.impan.pl/en/publishing-house/journals-and-series/acta-arithmetica"><span class="journal-name">Acta Arithmetica</span></a> 218 (<span class="paper-year">2025</span>), 337--345</p>
                     </div>
@@ -2891,7 +2891,7 @@ $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} 
                         <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper146" aria-expanded="false" aria-controls="paper146">Abstract</a>
                             <div class="collapse" id="paper146">
                                 <div class="well paper-abtract-content">
-                                    <p>  Schinzel and Wójcik have shown that if $\alpha,\beta \in \mathbb{Q}^{\times} \setminus\{\pm 1\}$, then there are infinitely many primes $p$ where $v_p(\alpha)=v_p(\beta)=0$ and where $\alpha,\beta$ share the same multiplicative order modulo $p$. We present two variants of their result. First,  we give a short and simple proof of the analogous statement where $\mathbb{Q}$ is replaced by any global function field $K$. Second, we show that a similar conclusion holds in the number field case provided one can find a suitable `auxiliary prime'. Given $K$, $\alpha$, and $\beta$, it appears  simple in practice to find such a prime. As an application, we prove there are infinitely many primes $p$ with the same rank of appearance in the sequences of Pell and Fibonacci numbers. </p>
+                                    <p>  Schinzel and WÃ³jcik have shown that if $\alpha,\beta \in \mathbb{Q}^{\times} \setminus\{\pm 1\}$, then there are infinitely many primes $p$ where $v_p(\alpha)=v_p(\beta)=0$ and where $\alpha,\beta$ share the same multiplicative order modulo $p$. We present two variants of their result. First,  we give a short and simple proof of the analogous statement where $\mathbb{Q}$ is replaced by any global function field $K$. Second, we show that a similar conclusion holds in the number field case provided one can find a suitable `auxiliary prime'. Given $K$, $\alpha$, and $\beta$, it appears  simple in practice to find such a prime. As an application, we prove there are infinitely many primes $p$ with the same rank of appearance in the sequences of Pell and Fibonacci numbers. </p>
                        </div>
                             </div>
                         </p>
@@ -2933,8 +2933,8 @@ $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} 
                             <div class="collapse" id="paper147">
                                 <div class="well paper-abtract-content">
                                     <p>   We provide a uniform bound on the partial sums of multiplicative functions under very general hypotheses. As an application, we 
-                                        deduce the equidistribution of the Alladi--Erdős function $A(n) = \sum_{p^k \parallel n} k p$ in residue classes to moduli $q \le (\log x)^K$ (with $K$ fixed but arbitrary), improving known estimates on 
-                                        give a nearly optimal estimate for the count of $n \le x$ for which the Alladi--Erdős function $A(n) = \sum_{p^k \parallel n} k p$ takes values in a given residue class modulo $q$, where $q$ varies uniformly up to a fixed power of $\log x$. We establish a similar result for the equidistribution of the Euler totient function $\phi(n)$ among the coprime residues to the &quot;correct&quot; moduli $q$ that vary uniformly in a similar range, and also quantify the failure of  equidistribution of the values of $\phi(n)$ among the coprime residue classes to the &quot;incorrect&quot; moduli. </p>
+                                        deduce the equidistribution of the Alladi--ErdÅ‘s function $A(n) = \sum_{p^k \parallel n} k p$ in residue classes to moduli $q \le (\log x)^K$ (with $K$ fixed but arbitrary), improving known estimates on 
+                                        give a nearly optimal estimate for the count of $n \le x$ for which the Alladi--ErdÅ‘s function $A(n) = \sum_{p^k \parallel n} k p$ takes values in a given residue class modulo $q$, where $q$ varies uniformly up to a fixed power of $\log x$. We establish a similar result for the equidistribution of the Euler totient function $\phi(n)$ among the coprime residues to the &quot;correct&quot; moduli $q$ that vary uniformly in a similar range, and also quantify the failure of  equidistribution of the values of $\phi(n)$ among the coprime residue classes to the &quot;incorrect&quot; moduli. </p>
                        </div>
                             </div>
                         </p>
@@ -2944,7 +2944,7 @@ $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} 
                                 
                 <li class="col-sm-12 list-item with-bullet">
                     <div class="col-sm-10">
-                        <h4>    <span class="paper-title">Towards a Schinzel--Wójcik theorem for number fields</span>  <span class="paper-author"></span>          </h4>
+                        <h4>    <span class="paper-title">Towards a Schinzel--WÃ³jcik theorem for number fields</span>  <span class="paper-author"></span>          </h4>
                         <p>
                             <a href="https://link.springer.com/journal/40879"><span class="journal-name">European J. Math.</span></a> 11 (<span class="paper-year">2025</span>), no. 2, paper no. 26, 16 pages</p>
                     </div>
@@ -2953,7 +2953,7 @@ $$ \frac{e^{-\gamma} x}{\log\log\log{x}} \left(1-\frac{\gamma}{\log\log\log{x}} 
                         <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper148" aria-expanded="false" aria-controls="paper148">Abstract</a>
                             <div class="collapse" id="paper148">
                                 <div class="well paper-abtract-content">
-                                    <p>   Schinzel and Wójcik have shown that for every $\alpha,\beta \in \mathbb{Q}^{\times}\setminus \{\pm 1\}$, there are infinitely many primes $p$ where $v_p(\alpha)=v_p(\beta)=0$ and where $\alpha$ and $\beta$ generate the same multiplicative group mod $p$. We prove a weaker result in the same direction for algebraic numbers $\alpha, \beta$. Let $\alpha, \beta \in \bar{\mathbb{Q}}^{\times}$, and suppose $|N_{\mathbb{Q}(\alpha,\beta)/\mathbb{Q}}(\alpha)|\ne 1$ and $|N_{\mathbb{Q}(\alpha,\beta)/\mathbb{Q}}(\beta)|\ne 1$. Then for some positive integer $C = C(\alpha,\beta)$, there are infinitely many prime ideals $P$ of $\mathcal{O}_{\mathbb{Q}(\alpha,\beta)}$ where $v_P(\alpha)=v_P(\beta)=0$ and where the group $\langle \beta \bmod{P}\rangle$ is a subgroup of $\langle \alpha\bmod{P}\rangle$ with $[\langle \alpha\bmod{P}\rangle: \langle \beta \bmod{P}\rangle]$ dividing $C$. A key component of the proof is a theorem of Corvaja and Zannier bounding the greatest common divisor of shifted $S$-units.</p>
+                                    <p>   Schinzel and WÃ³jcik have shown that for every $\alpha,\beta \in \mathbb{Q}^{\times}\setminus \{\pm 1\}$, there are infinitely many primes $p$ where $v_p(\alpha)=v_p(\beta)=0$ and where $\alpha$ and $\beta$ generate the same multiplicative group mod $p$. We prove a weaker result in the same direction for algebraic numbers $\alpha, \beta$. Let $\alpha, \beta \in \bar{\mathbb{Q}}^{\times}$, and suppose $|N_{\mathbb{Q}(\alpha,\beta)/\mathbb{Q}}(\alpha)|\ne 1$ and $|N_{\mathbb{Q}(\alpha,\beta)/\mathbb{Q}}(\beta)|\ne 1$. Then for some positive integer $C = C(\alpha,\beta)$, there are infinitely many prime ideals $P$ of $\mathcal{O}_{\mathbb{Q}(\alpha,\beta)}$ where $v_P(\alpha)=v_P(\beta)=0$ and where the group $\langle \beta \bmod{P}\rangle$ is a subgroup of $\langle \alpha\bmod{P}\rangle$ with $[\langle \alpha\bmod{P}\rangle: \langle \beta \bmod{P}\rangle]$ dividing $C$. A key component of the proof is a theorem of Corvaja and Zannier bounding the greatest common divisor of shifted $S$-units.</p>
                        </div>
                             </div>
                         </p>
@@ -3003,7 +3003,7 @@ The above counterexample is usually attributed to Cark-Erik Lind as well as Reic
  For an atomic domain $D$, the <i>elasticity</i> $\rho(D)$ of $D$ is defined as $\sup\{r/s: \pi_1\cdots \pi_r = \rho_1 \cdots \rho_s,~ \text{where each $\pi_i, \rho_j$ is irreducible}\}$; the elasticity provides a concrete measure of the failure of unique factorization in $D$. Fix a quadratic number field $K$ with discriminant $\Delta_K$, and for each positive integer $f$, let $\mathcal{O}_f = \Z + f\mathcal{O}_K$ denote the order of conductor $f$ in $K$. Results of Halter-Koch imply that $\mathcal{O}_f$ has finite elasticity precisely when $f$ is <i>split-free</i>, meaning not divisible by any rational prime $p$ with $(\Delta_K/p)=1$. When $K$ is imaginary, we show that for almost all split-free $f$,
 $$ \rho(\mathcal{O}_f) = f/(\log{f})^{\frac{1}{2}\log\log\log{f} + \frac{1}{2}C_K+o(1)}, $$
 for a constant $C_K$ depending on $K$. When $K$ is real, we prove under the assumption of the Generalized Riemann Hypothesis that $$ \rho(\mathcal{O}_f)= (\log{f})^{\frac12 +o(1)}$$
-for almost all split-free $f$. Underlying these estimates are new statistical theorems about class groups of orders in quadratic fields, whose proofs borrow ideas from investigations of Erdős, Hooley, Li, Pomerance, Schmutz, and others into the multiplicative groups $(\mathbb{Z}/m\mathbb{Z})^\times$. One novelty of the argument is the development of a weighted version of the Turán--Kubilius inequality to handle a variety of sums over split-free integers.</p>
+for almost all split-free $f$. Underlying these estimates are new statistical theorems about class groups of orders in quadratic fields, whose proofs borrow ideas from investigations of ErdÅ‘s, Hooley, Li, Pomerance, Schmutz, and others into the multiplicative groups $(\mathbb{Z}/m\mathbb{Z})^\times$. One novelty of the argument is the development of a weighted version of the TurÃ¡n--Kubilius inequality to handle a variety of sums over split-free integers.</p>
                        </div>
                             </div>
                         </p>
@@ -3043,7 +3043,7 @@ The celebrated Artin conjecture on primitive roots asserts that given any intege
                         <p><a class="btn btn--sm btn-abstract" role="button" data-toggle="collapse" href="#paper152" aria-expanded="false" aria-controls="paper152">Abstract</a>
                             <div class="collapse" id="paper152">
                                 <div class="well paper-abtract-content">
-                                    <p>   Erdős and Pomerance have shown that $\varphi(n)$ typically has about $\frac{1}{2}(\log\log{n})^2$ distinct prime factors. More precisely, $\omega(\varphi(n))$ has normal order $\frac{1}{2}(\log\log{n})^2$. Since $\varphi(n)$ is the size of the multiplicative group $(\Z/n\Z)^{\times}$, this result also gives the normal number of Sylow subgroups of $(\Z/n\Z)^{\times}$. Recently, Pollack considered specifically noncyclic Sylow subgroups of $(\Z/n\Z)^{\times}$, showing that the count of those has normal order $\log\log{n}/\log\log\log{n}$. We prove that the count of noncyclic Sylow subgroups that are elementary abelian of a fixed rank $k\ge 2$ has normal order $\frac{1}{k(k-1)} \log\log{n}/\log\log\log{n}$. So for example, (typically) among the primes $p$ for which the $p$-primary component of $(\Z/n\Z)^{\times}$ is noncyclic, this component is $\Z/p\Z \oplus \Z/p\Z$ about half the time. Additionally, we show that the count of $p$ for which the $p$-Sylow subgroup of $(\Z/n\Z)^{\times}$ is not elementary abelian has normal order $2\sqrt{\pi} \sqrt{\log\log{n}}/\log\log\log{n}$.
+                                    <p>   ErdÅ‘s and Pomerance have shown that $\varphi(n)$ typically has about $\frac{1}{2}(\log\log{n})^2$ distinct prime factors. More precisely, $\omega(\varphi(n))$ has normal order $\frac{1}{2}(\log\log{n})^2$. Since $\varphi(n)$ is the size of the multiplicative group $(\Z/n\Z)^{\times}$, this result also gives the normal number of Sylow subgroups of $(\Z/n\Z)^{\times}$. Recently, Pollack considered specifically noncyclic Sylow subgroups of $(\Z/n\Z)^{\times}$, showing that the count of those has normal order $\log\log{n}/\log\log\log{n}$. We prove that the count of noncyclic Sylow subgroups that are elementary abelian of a fixed rank $k\ge 2$ has normal order $\frac{1}{k(k-1)} \log\log{n}/\log\log\log{n}$. So for example, (typically) among the primes $p$ for which the $p$-primary component of $(\Z/n\Z)^{\times}$ is noncyclic, this component is $\Z/p\Z \oplus \Z/p\Z$ about half the time. Additionally, we show that the count of $p$ for which the $p$-Sylow subgroup of $(\Z/n\Z)^{\times}$ is not elementary abelian has normal order $2\sqrt{\pi} \sqrt{\log\log{n}}/\log\log\log{n}$.
 </p>
                        </div>
                             </div>
@@ -3084,7 +3084,7 @@ The celebrated Artin conjecture on primitive roots asserts that given any intege
 <li class="col-sm-12 list-item with-bullet">
     <div class="col-sm-10">
         <h4> <span class="paper-title">An almost-always measure of the failure of unique factorization</span>
-        <span class="paper-author">(w/ E. Treviño)</span></h4>
+        <span class="paper-author">(w/ E. TreviÃ±o)</span></h4>
     </div>
     <div class="col-sm-2 paper-btn"><a href="http://www.pollack-math.net/concentration_elasticity.pdf" target="_blank" class="btn btn--sm btn-pdf">PDF</a></div>
 </li>        
@@ -3100,7 +3100,7 @@ The celebrated Artin conjecture on primitive roots asserts that given any intege
 <li class="col-sm-12 list-item with-bullet">
     <div class="col-sm-10">
         <h4> <span class="paper-title">Orders in the Euclidean court</span>
-        <span class="paper-author">(w/ C.F. Adajar, K.J. McGown, and E. Treviño)</span></h4>
+        <span class="paper-author">(w/ C.F. Adajar, K.J. McGown, and E. TreviÃ±o)</span></h4>
     </div>
     <div class="col-sm-2 paper-btn"><a href="http://www.pollack-math.net/Euclidean_misc.pdf" target="_blank" class="btn btn--sm btn-pdf">PDF</a></div>
 </li>        
@@ -3181,7 +3181,7 @@ The celebrated Artin conjecture on primitive roots asserts that given any intege
                                                             <h4>    <span class="paper-title">The distribution of sociable numbers </span>
                                                             </h4>
                                                             <p>
-                                                                <span>See also: <a href="http://www.pollack-math.net/perfect-MNT.pdf" target="_blank"><strong>Sociable numbers, <em>or</em> How I messed with perfection and lived to write papers about it</strong></a> (2011 Joint Mathematics Meetings)<strong>, <a href="http://www.pollack-math.net/perfectstorm.pdf" target="_blank">A perfect storm</a> (U. Missouri</strong>, College of Charleston), and <a href="http://www.pollack-math.net/oberlin.pdf" target="_blank"><strong>Some problems of Erdős on the sum-of-divisors function</strong></a> (Cleveland Area Number Theory Seminar, 2015) </span>
+                                                                <span>See also: <a href="http://www.pollack-math.net/perfect-MNT.pdf" target="_blank"><strong>Sociable numbers, <em>or</em> How I messed with perfection and lived to write papers about it</strong></a> (2011 Joint Mathematics Meetings)<strong>, <a href="http://www.pollack-math.net/perfectstorm.pdf" target="_blank">A perfect storm</a> (U. Missouri</strong>, College of Charleston), and <a href="http://www.pollack-math.net/oberlin.pdf" target="_blank"><strong>Some problems of ErdÅ‘s on the sum-of-divisors function</strong></a> (Cleveland Area Number Theory Seminar, 2015) </span>
                                                             </p>
                                                         </div>
                                                         <div class="col-sm-2 paper-btn"><a href="http://www.pollack-math.net/penntalk1.pdf" target="_blank" class="btn btn--sm btn-pdf">SLIDES</a></div>
@@ -3298,7 +3298,7 @@ The celebrated Artin conjecture on primitive roots asserts that given any intege
                                                 <ul class="paper-list list">
                                                     <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
-                                                            <h4>    <span class="paper-title">A (not so) mean feat of Erdős </span>
+                                                            <h4>    <span class="paper-title">A (not so) mean feat of ErdÅ‘s </span>
                                                             </h4>
                                                             <p><span>(2012 Pacific Northwest Number Theory Conference, Dartmouth NTS)</span></p>
                                                         </div>
@@ -3489,7 +3489,7 @@ factorization fail, usually?</span>
                                                     </li>
                                                     <li class="col-sm-12 list-item with-bullet">
                                                         <div class="col-sm-10">
-                                                            <h4>    <span class="paper-title">N = ☐ + ☐ + ☐</span>
+                                                            <h4>    <span class="paper-title">N = â˜ + â˜ + â˜</span>
                                                             </h4>
                                                             <p>
                                                                 <span>see also: <a href="http://www.pollack-math.net/3talk-CNTA.pdf" target="_blank">15-minute version for CNTA 2010</a></span></p>
