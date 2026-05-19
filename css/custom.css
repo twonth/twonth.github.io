@@ -1,7 +1,101 @@
 input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: searchfield-cancel-button;
 }
+
 .site-disclaimer {
     font-size: 0.85em;
     line-height: 1.4;
+}
+
+
+/* Desktop navigation tab adjustments */
+@media (min-width: 600px) {
+
+    /* Control the actual width of the four-tab strip here */
+    :root {
+        --tab-strip-width: 835px;
+    }
+
+    /* Prevent the theme's floated menu wrapper from shrink-wrapping */
+    .nav-tab .menu-module,
+    .nav-tab .menu-module.left,
+    .nav-tab .nav-module.menu-module.left {
+        float: none !important;
+        width: 100% !important;
+    }
+
+    .nav-tab .nav-bar {
+        width: 100% !important;
+    }
+
+    /* Force the menu itself to a real width */
+    .nav-tab .menu {
+        width: var(--tab-strip-width) !important;
+        max-width: calc(100vw - 80px);
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 0;
+        display: flex !important;
+    }
+
+    /* Four equal-width tabs */
+    .nav-tab .menu > li {
+        width: 25% !important;
+        max-width: 25% !important;
+        flex: 0 0 25% !important;
+        float: none !important;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    /* Make each link fill exactly its tab */
+    .nav-tab .menu > li > a {
+        display: block !important;
+        width: 100% !important;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+        text-align: center;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        white-space: nowrap;
+    }
+
+    /* Style the fourth tab: COURSES */
+    .nav-tab .menu > li:nth-child(4) > a {
+        background: #6f7f4f !important;
+        color: #f1f4ea !important;
+    }
+
+    /* Large faint icon for COURSES */
+    .nav-tab .menu > li:nth-child(4) > a i {
+        position: absolute;
+        left: 28px;
+        bottom: -24px;
+        font-size: 82px;
+        line-height: 1;
+        opacity: 0.24;
+        color: #f1f4ea;
+    }
+
+    /* Remove the theme's original active-line pieces */
+    .nav-tab .menu > li.active,
+    .nav-tab .menu > li.active > a {
+        border-top: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .nav-tab .menu > li.active::before,
+    .nav-tab .menu > li.active::after,
+    .nav-tab .menu > li.active > a::before,
+    .nav-tab .menu > li.active > a::after {
+        content: none !important;
+        display: none !important;
+    }
+
+    /* Draw a new active line inside the actual tab box */
+    .nav-tab .menu > li.active > a {
+        box-shadow: inset 0 5px 0 #d8eef3 !important;
+    }
 }
