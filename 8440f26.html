@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Course information and syllabus for MATH 8440: Topics in Analytic and Combinatorial Number Theory, Fall 2026.">
+  <title>MATH 8440: Analytic and Combinatorial Number Theory — Fall 2026</title>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17253a;
+      --muted: #526174;
+      --paper: #ffffff;
+      --page: #f3f6f8;
+      --line: #cbd5df;
+      --link: #005ea8;
+      --link-visited: #5f3c8a;
+      --accent: #8f0a27;
+      --accent-dark: #5f061a;
+      --gold: #f2c14e;
+      --soft-gold: #fff8df;
+      --focus: #ffbf47;
+      --max-width: 72rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration-thickness: 0.1em;
+      text-underline-offset: 0.16em;
+    }
+
+    a:visited {
+      color: var(--link-visited);
+    }
+
+    a:hover {
+      text-decoration-thickness: 0.16em;
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      border-radius: 0.15rem;
+      outline: 0.2rem solid var(--focus);
+      outline-offset: 0.2rem;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 100;
+      top: 0.75rem;
+      left: 0.75rem;
+      padding: 0.7rem 1rem;
+      transform: translateY(-200%);
+      background: var(--ink);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-header {
+      color: #ffffff;
+      background-color: var(--accent-dark);
+      background-image:
+        linear-gradient(110deg, rgba(95, 6, 26, 0.98), rgba(23, 37, 58, 0.94)),
+        repeating-linear-gradient(90deg, transparent 0 5rem, rgba(255, 255, 255, 0.08) 5rem 5.1rem);
+      border-top: 0.45rem solid var(--gold);
+    }
+
+    .header-inner,
+    .nav-inner,
+    main,
+    .footer-inner {
+      width: min(100% - 2rem, var(--max-width));
+      margin-inline: auto;
+    }
+
+    .header-inner {
+      padding-block: clamp(2.5rem, 7vw, 5.5rem);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.5rem;
+      color: #ffe9a6;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      line-height: 1.2;
+      text-wrap: balance;
+    }
+
+    h1 {
+      max-width: 18ch;
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 4rem);
+      letter-spacing: -0.025em;
+    }
+
+    .term {
+      display: inline-block;
+      margin: 1.25rem 0 0;
+      padding: 0.3rem 0.75rem;
+      border: 0.1rem solid #ffe9a6;
+      border-radius: 999px;
+      color: #fff8df;
+      font-weight: 750;
+    }
+
+    .site-nav {
+      background: var(--paper);
+      border-bottom: 0.1rem solid var(--line);
+    }
+
+    .site-nav ul {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.35rem 1.25rem;
+      margin: 0;
+      padding: 0.8rem 0;
+      list-style: none;
+    }
+
+    .site-nav a {
+      display: flex;
+      align-items: center;
+      min-height: 2.75rem;
+      padding-block: 0.3rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .site-nav li {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .site-nav li + li {
+      margin-top: 0;
+    }
+
+    main {
+      padding-block: 2rem 4rem;
+    }
+
+    .course-facts {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      margin: 0 0 2rem;
+      border: 1px solid var(--line);
+      border-radius: 0.6rem;
+      background: var(--line);
+    }
+
+    .course-facts > div {
+      min-width: 0;
+      padding: 1rem 1.15rem;
+      background: var(--paper);
+    }
+
+    .course-facts dt {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .course-facts dd {
+      margin: 0.2rem 0 0;
+      font-weight: 650;
+    }
+
+    section {
+      margin-block: 1.25rem;
+      padding: clamp(1.25rem, 4vw, 2.25rem);
+      border: 1px solid var(--line);
+      border-radius: 0.6rem;
+      background: var(--paper);
+      box-shadow: 0 0.25rem 1.25rem rgba(23, 37, 58, 0.06);
+      scroll-margin-top: 1rem;
+    }
+
+    section h2 {
+      margin: 0 0 1rem;
+      padding-bottom: 0.55rem;
+      border-bottom: 0.18rem solid var(--gold);
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
+    }
+
+    section h3 {
+      margin: 1.5rem 0 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    p,
+    li {
+      max-width: 72ch;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.4rem;
+    }
+
+    li + li {
+      margin-top: 0.45rem;
+    }
+
+    .notice {
+      margin: 0 0 2rem;
+      padding: 1rem 1.15rem;
+      border-left: 0.35rem solid var(--accent);
+      background: var(--soft-gold);
+    }
+
+    .notice p {
+      margin: 0;
+    }
+
+    .resource-list {
+      display: grid;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .resource-list li {
+      max-width: none;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 0.4rem;
+      background: #f7f9fb;
+    }
+
+    .resource-list li + li {
+      margin-top: 0;
+    }
+
+    .resource-list h4,
+    .resource-list p {
+      margin: 0;
+    }
+
+    .resource-list p + p {
+      margin-top: 0.45rem;
+    }
+
+    .resource-download {
+      font-weight: 700;
+    }
+
+    .resource-empty {
+      margin: 0;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .course-log {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    .course-log th,
+    .course-log td {
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .course-log th {
+      background: #edf2f6;
+    }
+
+    .course-log th:first-child,
+    .course-log td:first-child {
+      width: 8rem;
+      white-space: nowrap;
+    }
+
+    .policy-list {
+      display: grid;
+      gap: 1.25rem;
+    }
+
+    .policy-list article {
+      padding-top: 0.25rem;
+    }
+
+    .policy-list article + article {
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .policy-list h3,
+    .policy-list p {
+      margin-top: 0;
+    }
+
+    blockquote {
+      max-width: 68ch;
+      margin: 1rem 0;
+      padding: 0.85rem 1rem;
+      border-left: 0.3rem solid var(--gold);
+      background: #f7f9fb;
+    }
+
+    blockquote p {
+      margin: 0;
+    }
+
+    .site-footer {
+      padding-block: 2rem;
+      background: var(--ink);
+      color: #ffffff;
+    }
+
+    .site-footer p {
+      margin: 0.25rem 0;
+    }
+
+    .site-footer a,
+    .site-footer a:visited {
+      color: #b9dcff;
+    }
+
+    math {
+      font-size: 1.05em;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    @media (max-width: 42rem) {
+      .course-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .course-log th:first-child,
+      .course-log td:first-child {
+        width: auto;
+        white-space: normal;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media (forced-colors: active) {
+      .term,
+      section,
+      .course-facts {
+        border: 1px solid CanvasText;
+      }
+    }
+
+    @media print {
+      :root {
+        --ink: #000000;
+        --muted: #222222;
+        --paper: #ffffff;
+        --page: #ffffff;
+        --line: #777777;
+      }
+
+      body {
+        font-size: 11pt;
+      }
+
+      .skip-link,
+      .site-nav {
+        display: none;
+      }
+
+      .site-header,
+      .site-footer {
+        color: #000000;
+        background: #ffffff;
+      }
+
+      .site-header {
+        border-top-color: #000000;
+      }
+
+      .eyebrow,
+      .term,
+      .site-footer a,
+      .site-footer a:visited {
+        color: #000000;
+      }
+
+      .term {
+        border-color: #000000;
+      }
+
+      section {
+        break-inside: avoid;
+        box-shadow: none;
+      }
+
+      a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.85em;
+        font-weight: normal;
+        overflow-wrap: anywhere;
+      }
+
+      a[href^="#"]::after,
+      a[href^="mailto:"]::after,
+      a[href^="tel:"]::after {
+        content: "";
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">University of Georgia · Department of Mathematics</p>
+      <h1>MATH 8440: Topics in Analytic and Combinatorial Number Theory</h1>
+      <p class="term">Fall 2026</p>
+    </div>
+  </header>
+
+  <nav class="site-nav" aria-label="Course page">
+    <div class="nav-inner">
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#outcomes">Learning outcomes</a></li>
+        <li><a href="#textbook">Textbook</a></li>
+        <li><a href="#resources">Course materials</a></li>
+        <li><a href="#record">Course record</a></li>
+        <li><a href="#grading">Grading</a></li>
+        <li><a href="#policies">Policies and support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content" tabindex="-1">
+    <h2 class="visually-hidden">Course information</h2>
+
+    <dl class="course-facts">
+      <div>
+        <dt>Instructor</dt>
+        <dd>Paul Pollack</dd>
+      </div>
+      <div>
+        <dt>Email</dt>
+        <dd><a href="mailto:pollack@uga.edu">pollack@uga.edu</a></dd>
+      </div>
+      <div>
+        <dt>Class meetings</dt>
+        <dd>Monday, Wednesday, and Friday, 1:15–2:10</dd>
+      </div>
+      <div>
+        <dt>Class location</dt>
+        <dd>Boyd 640</dd>
+      </div>
+      <div>
+        <dt>Office</dt>
+        <dd>Boyd 406</dd>
+      </div>
+      <div>
+        <dt>Office hours</dt>
+        <dd>To be announced</dd>
+      </div>
+    </dl>
+
+    <aside class="notice" aria-labelledby="page-note-heading">
+      <h2 class="visually-hidden" id="page-note-heading">About this page</h2>
+      <p>This page is the online syllabus. It will be updated with course topics, readings, and other materials as the semester progresses.</p>
+    </aside>
+
+    <section id="overview" aria-labelledby="overview-heading">
+      <h2 id="overview-heading">Overview</h2>
+
+      <h3>Bulletin description</h3>
+      <p>Topics in combinatorial and analytic number theory, such as sieve methods, probabilistic models of prime numbers, the distribution of arithmetic functions, the circle method, additive number theory, and transcendence methods.</p>
+
+      <h3>Topical outline</h3>
+      <p>This version of MATH 8440 is an introduction to analytic methods in number theory, with an emphasis on concrete, easily described problems. Possible topics include:</p>
+      <ul>
+        <li>Elementary results on the distribution of prime numbers, from Euclid to Euler to Chebyshev to Mertens</li>
+        <li>Dirichlet’s theorem on prime numbers in arithmetic progressions</li>
+        <li>Elementary sieve methods and their applications, including Brun’s theorem on twin primes and Schnirelmann’s theorem toward Goldbach’s conjecture</li>
+        <li>Character sums and the distribution of power residues</li>
+        <li>The distribution of arithmetic functions, with particular attention to the number of prime divisors, number of divisors, and sum of divisors</li>
+        <li>The prime number theorem</li>
+      </ul>
+
+      <h3>Prerequisites</h3>
+      <p>Prerequisites are minimal. Familiarity with algebra and analysis, both real and complex, at the advanced undergraduate level is assumed. Prior acquaintance with elementary number theory will be helpful but is not essential.</p>
+
+      <h3>Timeline</h3>
+      <p>The last time this course was offered, it proceeded roughly as follows: elementary theory of primes (two weeks); the weak forms of the prime number theorem proved by Chebyshev and Mertens (two weeks); Dirichlet’s theorem on primes in arithmetic progressions and applications (three weeks); an introduction to sieve methods (four weeks); and Waring’s problem (four weeks).</p>
+      <p>But this time will surely be different!</p>
+    </section>
+
+    <section id="outcomes" aria-labelledby="outcomes-heading">
+      <h2 id="outcomes-heading">Learning outcomes</h2>
+      <p>By the end of the course, students should be able to:</p>
+      <ul>
+        <li>Identify and state foundational theorems in analytic number theory</li>
+        <li>Articulate the major components of the proofs of these theorems</li>
+        <li>Apply the methods to solve non-routine problems at the level needed to gain a foothold in the research literature</li>
+      </ul>
+    </section>
+
+    <section id="textbook" aria-labelledby="textbook-heading">
+      <h2 id="textbook-heading">Textbook</h2>
+      <p>The required main reference is the instructor’s book:</p>
+      <p><cite><strong>Not Always Buried Deep: A Second Course in Elementary Number Theory</strong></cite> (American Mathematical Society, 2009).</p>
+      <p>No purchase is required. Thanks to the kind permission of the American Mathematical Society, the book can be downloaded free of charge.</p>
+    </section>
+
+    <section id="resources" aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Course materials</h2>
+      <p>Homework assignments, handouts, and other course materials will be posted here, usually as PDF files.</p>
+      <p class="resource-empty">No course materials have been posted yet.</p>
+      <ul class="resource-list">
+        <!-- To add a course material, remove the empty-state paragraph above and copy this item outside the comment.
+        <li>
+          <article>
+            <h3>Material title</h3>
+            <p>Brief description of the material, including a due date when applicable.</p>
+            <p><a class="resource-download" href="files/material-name.pdf" download>Download Material title (PDF)</a></p>
+          </article>
+        </li>
+        -->
+      </ul>
+    </section>
+
+    <section id="record" aria-labelledby="record-heading">
+      <h2 id="record-heading">Course record</h2>
+      <p>The table below will be updated after class meetings. Newest entries will appear first.</p>
+      <div class="table-wrapper">
+        <table class="course-log">
+          <caption class="visually-hidden">Dates and topics covered in MATH 8440 during Fall 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">Topic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>To be added</td>
+              <td>Summaries of course meetings will be listed here.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Example of more substantial native MathML for a future course-record entry:
+      <p>
+        An upper bound for representations of
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+          <mi>N</mi>
+        </math>
+        as a sum of two primes.
+      </p>
+      -->
+    </section>
+
+    <section id="grading" aria-labelledby="grading-heading">
+      <h2 id="grading-heading">Homework, exams, and grading</h2>
+      <p>There are no exams in this class. Your grade is based entirely on homework. If you decide to concentrate in number theory or arithmetic geometry, the material in this course may well form part of your oral exams, and I encourage you—implore you!—to take the homework seriously.</p>
+      <p>You should expect homework assignments roughly every two weeks, on average. Each problem will carry a point value. To receive an A in the class, you should complete at least roughly half of the assigned problems. Students who attend class but do not turn in homework will receive a B at the end of the term.</p>
+      <p>In general, late homework is not accepted, but I am happy to discuss individual circumstances on a case-by-case basis.</p>
+      <p>Attendance is required. Missing more than four classes may result in automatic withdrawal.</p>
+    </section>
+
+    <section id="policies" aria-labelledby="policies-heading">
+      <h2 id="policies-heading">Policies and student support</h2>
+
+      <div class="policy-list">
+        <article aria-labelledby="wellness-heading">
+          <h3 id="wellness-heading">UGA well-being resources</h3>
+          <p>UGA Well-being Resources promote student success by cultivating a culture that supports a more active, healthy, and engaged student community.</p>
+          <p>Anyone needing assistance is encouraged to contact <a href="https://sco.uga.edu/">Student Care and Outreach</a> in the Division of Student Affairs at <a href="tel:+17065428479">706&#8209;542&#8209;8479</a>. Student Care and Outreach helps students navigate difficult circumstances by connecting them with the most appropriate resources or services. They also administer the Embark@UGA program, which supports students experiencing, or who have experienced, homelessness, foster care, or housing insecurity.</p>
+          <p>UGA provides clinical and non-clinical options to support student well-being and mental health—any time, any place. Whether on campus or studying from home or abroad, UGA Well-being Resources are here to help.</p>
+          <ul>
+            <li><a href="https://well-being.uga.edu/">Well-being Resources</a></li>
+            <li><a href="https://sco.uga.edu/">Student Care and Outreach</a></li>
+            <li><a href="https://healthcenter.uga.edu/">University Health Center</a></li>
+            <li><a href="https://caps.uga.edu/">Counseling and Psychiatric Services</a>; CAPS 24/7 crisis support: <a href="tel:+17065422273">706&#8209;542&#8209;2273</a></li>
+            <li><a href="https://healthpromotion.uga.edu/">Health Promotion and the Fontaine Center</a></li>
+            <li><a href="https://accessibility.uga.edu/">Accessibility and Testing</a></li>
+          </ul>
+          <p>Additional information, including free digital well-being resources, is available through the UGA app and the <a href="https://well-being.uga.edu/">UGA Well-being Resources website</a>.</p>
+        </article>
+
+        <article aria-labelledby="honesty-heading">
+          <h3 id="honesty-heading">Academic honesty and AI statement</h3>
+          <p>All UGA students are bound by the Honor Code:</p>
+          <blockquote>
+            <p>“I will be academically honest in all of my academic work and will not tolerate academic dishonesty of others.”</p>
+          </blockquote>
+          <p><a href="https://honesty.uga.edu/">A Culture of Honesty</a> contains the University’s policy and procedures for handling cases of suspected dishonesty.</p>
+          <p><strong>What that means for this class:</strong> Everything you turn in has to reflect your own understanding of the material. Were you interrogated alone in a room with nothing but your wits and your answer sheet, you should be able to explain what you wrote and why you wrote it. But how you come to that understanding is left up to you. I strongly encourage you to come to me with questions and discuss the material with your classmates. You are also free to consult textbooks and, yes, AI tools.</p>
+        </article>
+
+        <article aria-labelledby="changes-heading">
+          <h3 id="changes-heading">Syllabus changes</h3>
+          <p>This syllabus is a general plan for the course. Deviations announced to the class by the instructor may be necessary.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p><strong>MATH 8440 · Fall 2026</strong></p>
+      <p><a href="https://www.uga.edu/">University of Georgia</a> · Athens, Georgia 30602</p>
+    </div>
+  </footer>
+</body>
+</html>
