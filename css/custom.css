@@ -38,6 +38,14 @@ input[type="search"]::-webkit-search-cancel-button {
         display: flex !important;
     }
 
+    /* When the navigation becomes fixed, its wrapper spans the viewport but
+       retains its original horizontal offset. Do not center the tab strip
+       inside that oversized wrapper, which pushes COURSES off-screen. */
+    .nav-tab .nav-bar.nav--fixed .menu {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
     /* Four equal-width tabs */
     .nav-tab .menu > li {
         width: 25% !important;
