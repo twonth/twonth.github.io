@@ -771,6 +771,264 @@
           </thead>
           <tbody>
             <tr>
+              <td><time datetime="2026-11-06">November 6</time></td>
+              <td>
+                The number of squarefree numbers up to
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="x">
+                  <semantics>
+                    <mi>x</mi>
+                    <annotation-xml encoding="MathML-Content"><ci>x</ci></annotation-xml>
+                  </semantics>
+                </math>
+                is
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="six over pi squared times x plus big O of square root of x">
+                  <semantics>
+                    <mrow>
+                      <mfrac>
+                        <mn>6</mn>
+                        <msup><mi>&#x03C0;</mi><mn>2</mn></msup>
+                      </mfrac>
+                      <mo>&#x2062;</mo><mi>x</mi>
+                      <mo>+</mo>
+                      <mi>O</mi><mo>&#x2061;</mo>
+                      <mrow>
+                        <mo stretchy="false">(</mo>
+                        <msqrt><mi>x</mi></msqrt>
+                        <mo stretchy="false">)</mo>
+                      </mrow>
+                    </mrow>
+                    <annotation-xml encoding="MathML-Content">
+                      <apply>
+                        <plus/>
+                        <apply>
+                          <times/>
+                          <apply>
+                            <divide/>
+                            <cn>6</cn>
+                            <apply><power/><pi/><cn>2</cn></apply>
+                          </apply>
+                          <ci>x</ci>
+                        </apply>
+                        <apply>
+                          <ci type="function">O</ci>
+                          <apply><root/><ci>x</ci></apply>
+                        </apply>
+                      </apply>
+                    </annotation-xml>
+                  </semantics>
+                </math>.
+                Start of final segment of the course: proving
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="M of x is defined as the sum over n less than or equal to x of mu of n">
+                  <semantics>
+                    <mrow>
+                      <mi>M</mi><mo>&#x2061;</mo>
+                      <mrow>
+                        <mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo>
+                      </mrow>
+                      <mo>&#x2254;</mo>
+                      <msub>
+                        <mo>&#x2211;</mo>
+                        <mrow><mi>n</mi><mo>&#x2264;</mo><mi>x</mi></mrow>
+                      </msub>
+                      <mi>&#x03BC;</mi><mo>&#x2061;</mo>
+                      <mrow>
+                        <mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo>
+                      </mrow>
+                    </mrow>
+                    <annotation-xml encoding="MathML-Content">
+                      <apply>
+                        <eq/>
+                        <apply><ci type="function">M</ci><ci>x</ci></apply>
+                        <apply>
+                          <sum/>
+                          <bvar><ci>n</ci></bvar>
+                          <condition><apply><leq/><ci>n</ci><ci>x</ci></apply></condition>
+                          <apply><ci type="function">&#x03BC;</ci><ci>n</ci></apply>
+                        </apply>
+                      </apply>
+                    </annotation-xml>
+                  </semantics>
+                </math>
+                is
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="little o of x">
+                  <semantics>
+                    <mrow>
+                      <mi>o</mi><mo>&#x2061;</mo>
+                      <mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow>
+                    </mrow>
+                    <annotation-xml encoding="MathML-Content">
+                      <apply><ci type="function">o</ci><ci>x</ci></apply>
+                    </annotation-xml>
+                  </semantics>
+                </math>
+                and deducing the prime number theorem. The estimate
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="the absolute value of the integral from 1 to x of M of t over t times d t over t is less than 3">
+                  <semantics>
+                    <mrow>
+                      <mo fence="true">|</mo>
+                      <msubsup><mo>&#x222B;</mo><mn>1</mn><mi>x</mi></msubsup>
+                      <mfrac>
+                        <mrow>
+                          <mi>M</mi><mo>&#x2061;</mo>
+                          <mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow>
+                        </mrow>
+                        <mi>t</mi>
+                      </mfrac>
+                      <mspace width="0.15em"/>
+                      <mfrac>
+                        <mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow>
+                        <mi>t</mi>
+                      </mfrac>
+                      <mo fence="true">|</mo>
+                      <mo>&lt;</mo><mn>3</mn>
+                    </mrow>
+                    <annotation-xml encoding="MathML-Content">
+                      <apply>
+                        <lt/>
+                        <apply>
+                          <abs/>
+                          <apply>
+                            <int/>
+                            <bvar><ci>t</ci></bvar>
+                            <lowlimit><cn>1</cn></lowlimit>
+                            <uplimit><ci>x</ci></uplimit>
+                            <apply>
+                              <divide/>
+                              <apply><ci type="function">M</ci><ci>t</ci></apply>
+                              <apply><power/><ci>t</ci><cn>2</cn></apply>
+                            </apply>
+                          </apply>
+                        </apply>
+                        <cn>3</cn>
+                      </apply>
+                    </annotation-xml>
+                  </semantics>
+                </math>.
+                Statement of the Fundamental Lemma: With
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="a equals the limit superior as t tends to infinity of the absolute value of M of t over t">
+                  <semantics>
+                    <mrow>
+                      <mi>a</mi><mo>=</mo>
+                      <munder>
+                        <mrow><mi mathvariant="normal">lim</mi><mo>&#x2061;</mo><mi mathvariant="normal">sup</mi></mrow>
+                        <mrow><mi>t</mi><mo>&#x2192;</mo><mi>&#x221E;</mi></mrow>
+                      </munder>
+                      <mfrac>
+                        <mrow>
+                          <mo fence="true">|</mo>
+                          <mi>M</mi><mo>&#x2061;</mo>
+                          <mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow>
+                          <mo fence="true">|</mo>
+                        </mrow>
+                        <mi>t</mi>
+                      </mfrac>
+                    </mrow>
+                    <annotation-xml encoding="MathML-Content">
+                      <apply>
+                        <eq/>
+                        <ci>a</ci>
+                        <apply>
+                          <ci type="function">limsup</ci>
+                          <bvar><ci>t</ci></bvar>
+                          <condition>
+                            <apply><tendsto/><ci>t</ci><infinity/></apply>
+                          </condition>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <abs/>
+                              <apply><ci type="function">M</ci><ci>t</ci></apply>
+                            </apply>
+                            <ci>t</ci>
+                          </apply>
+                        </apply>
+                      </apply>
+                    </annotation-xml>
+                  </semantics>
+                </math>,
+                we have
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="the integral from 1 to y of the positive part of a minus the absolute value of M of t over t, times d t over t, equals little o of log y">
+                  <semantics>
+                    <mrow>
+                      <msubsup><mo>&#x222B;</mo><mn>1</mn><mi>y</mi></msubsup>
+                      <msup>
+                        <mrow>
+                          <mo stretchy="false">(</mo>
+                          <mi>a</mi><mo>&#x2212;</mo>
+                          <mfrac>
+                            <mrow>
+                              <mo fence="true">|</mo>
+                              <mi>M</mi><mo>&#x2061;</mo>
+                              <mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow>
+                              <mo fence="true">|</mo>
+                            </mrow>
+                            <mi>t</mi>
+                          </mfrac>
+                          <mo stretchy="false">)</mo>
+                        </mrow>
+                        <mo>+</mo>
+                      </msup>
+                      <mspace width="0.15em"/>
+                      <mfrac>
+                        <mrow><mi mathvariant="normal">d</mi><mi>t</mi></mrow>
+                        <mi>t</mi>
+                      </mfrac>
+                      <mo>=</mo>
+                      <mi>o</mi><mo>&#x2061;</mo>
+                      <mrow>
+                        <mo stretchy="false">(</mo>
+                        <mi mathvariant="normal">log</mi><mo>&#x2061;</mo><mi>y</mi>
+                        <mo stretchy="false">)</mo>
+                      </mrow>
+                    </mrow>
+                    <annotation-xml encoding="MathML-Content">
+                      <apply>
+                        <eq/>
+                        <apply>
+                          <int/>
+                          <bvar><ci>t</ci></bvar>
+                          <lowlimit><cn>1</cn></lowlimit>
+                          <uplimit><ci>y</ci></uplimit>
+                          <apply>
+                            <divide/>
+                            <apply>
+                              <ci type="function">positive-part</ci>
+                              <apply>
+                                <minus/>
+                                <ci>a</ci>
+                                <apply>
+                                  <divide/>
+                                  <apply>
+                                    <abs/>
+                                    <apply><ci type="function">M</ci><ci>t</ci></apply>
+                                  </apply>
+                                  <ci>t</ci>
+                                </apply>
+                              </apply>
+                            </apply>
+                            <ci>t</ci>
+                          </apply>
+                        </apply>
+                        <apply>
+                          <ci type="function">o</ci>
+                          <apply><ln/><ci>y</ci></apply>
+                        </apply>
+                      </apply>
+                    </annotation-xml>
+                  </semantics>
+                </math>,
+                as
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="y tends to infinity">
+                  <semantics>
+                    <mrow><mi>y</mi><mo>&#x2192;</mo><mi>&#x221E;</mi></mrow>
+                    <annotation-xml encoding="MathML-Content">
+                      <apply><tendsto/><ci>y</ci><infinity/></apply>
+                    </annotation-xml>
+                  </semantics>
+                </math>.
+              </td>
+            </tr>
+            <tr>
               <td><time datetime="2026-11-04">November 4</time></td>
               <td>
                 Real and complex characters.
