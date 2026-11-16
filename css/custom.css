@@ -167,8 +167,8 @@ input[type="search"]::-webkit-search-cancel-button {
 
 /* Lean formalization links in the AI argument digests. */
 #ai-digests a.btn[href^="https://github.com/twonth/"][href$="-lean"] {
-    color: #fff;
-    background-color: #7350a2;
+    color: #7350a2;
+    background-color: transparent;
     border-color: #7350a2;
     opacity: 1;
 }
@@ -176,8 +176,8 @@ input[type="search"]::-webkit-search-cancel-button {
 #ai-digests a.btn[href^="https://github.com/twonth/"][href$="-lean"]:hover,
 #ai-digests a.btn[href^="https://github.com/twonth/"][href$="-lean"]:focus {
     color: #fff;
-    background-color: #593981;
-    border-color: #593981;
+    background-color: #7350a2;
+    border-color: #7350a2;
 }
 
 #ai-digests a.btn[href^="https://github.com/twonth/"][href$="-lean"]:focus-visible {
