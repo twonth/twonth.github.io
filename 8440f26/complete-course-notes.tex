@@ -28,13 +28,24 @@
 \begin{document}
 
 % ---- sections/01-infinitude ----
-\begin{frame}[plain]
-{\color{teal}MATH 8440\quad/\quad FALL 2026}\par
+\begingroup
+\setbeamercolor{background canvas}{bg=navy}
+\setbeamertemplate{frametitle}{}
+\setbeamertemplate{footline}{}
+\begin{frame}[plain,t]{}
+\color{white}
+\vspace{.6cm}
+{\color[HTML]{DFB86D}\large MATH 8440\quad/\quad FALL 2026}\par
 Topics in Analytic and Combinatorial Number Theory\par
-\vspace{16pt}
-{\rmfamily\LARGE Elementary methods in the\\distribution of prime numbers\par}
-\vspace{20pt}Paul Pollack\\University of Georgia
+\vspace{.85cm}
+{\rmfamily\fontsize{27}{32}\selectfont Elementary methods in the\\distribution of prime numbers\par}
+\vspace{.65cm}
+{\color[HTML]{DFB86D}\rule{2.6cm}{.7pt}}\par
+\vspace{.5cm}
+Paul Pollack\par
+University of Georgia
 \end{frame}
+\endgroup
 \begin{frame}[label=overview]{The course at a glance}
 \small
 \textbf{Infinitely many primes.} Euclid, Euler, squarefree integers, and two proofs from algebra.
@@ -98,7 +109,7 @@ Topics in Analytic and Combinatorial Number Theory\par
 \begin{frame}{Euclid's proof}
 A prime is an integer greater than $1$ whose only positive divisors are $1$ and itself. Here are the first few:
 \[2,\quad3,\quad5,\quad7,\quad11,\quad13,\quad17.\]
-Let $p_1,\ldots,p_k$ be any finite list of distinct primes, and put $P=p_1\cdots p_k$. Look at $P+1$. We know $P+1>1$, so $P+1$ has some prime factor $q$. But $P+1\equiv1\pmod{p_i}$ for all $i$, and so $q\notin\{p_1,\ldots,p_k\}$. Thus no finite list of primes is complete.
+Let $p_1,\ldots,p_k$ be any finite list of distinct primes, and put $P=p_1\cdots p_k$. Look at $P+1$. We know $P+1>1$, so $P+1$ has some prime factor $q$. But $P+1\equiv1\pmod{p_i}$ for all $i$, and so $q\notin\{p_1,\ldots,p_k\}$. So there must be infinitely many primes.
 \end{frame}
 \begin{frame}{The proof of Stieltjes}
 \textbf{Stieltjes.} Factor $P=AB$ with $A,B>0$. Each $p_i$ divides exactly one of $A,B$, so it cannot divide $A+B$. Take any prime factor of $A+B$. Choosing $B=1$ gives Euclid's proof.
@@ -264,7 +275,7 @@ We can regard $\sum_{n\ge1}a_nn^{-s}$ as a formal series. What matters is the co
 \[\left(\sum_{d\ge1}\frac{a_d}{d^s}\right)\left(\sum_{e\ge1}\frac{b_e}{e^s}\right)=\sum_{n\ge1}\frac1{n^s}\sum_{de=n}a_db_e.\]
 For example, $\zeta(s)^2=\sum_{n\ge1}\tau(n)n^{-s}$, where $\tau(n)=\#\{d:d\mid n\}$. The coefficient in $\zeta(s)^k$ counts ordered $k$-tuples with product $n$.
 
-Each coefficient is a finite sum, regardless of convergence at any particular $s$.
+Each coefficient is a finite sum. We are not asserting convergence for any value of $s$.
 
 \HW{1}{12} Consider formal Dirichlet series with complex coefficients, with termwise addition and the multiplication above. Prove that this ring is an integral domain and determine its units.
 \end{frame}
@@ -332,7 +343,7 @@ Thus finitely many primes would make $\mathcal O_K$ a principal ideal domain, he
 \begin{frame}{Washington's proof}
 In $\mathcal O_{\mathbb Q(\sqrt{-5})}=\Z[\sqrt{-5}]$ we have
 \[6=2\cdot3=(1+\sqrt{-5})(1-\sqrt{-5}).\]
-Take norms, where $N(a+b\sqrt{-5})=a^2+5b^2$. Norms multiply, and the only units are $\pm1$. There is no element of norm $2$ or $3$. Consequently elements of norms $4,9,6$ are irreducible (how could one factor their norms?). This accounts for all four factors on display. Neither factor on the right can be associate to one on the left, since their norms differ. So unique factorization does fail.
+Take norms, where $N(a+b\sqrt{-5})=a^2+5b^2$. Norms multiply, and the only units are $\pm1$. There is no element of norm $2$ or $3$. Consequently elements of norms $4,9,6$ are irreducible (how could one factor their norms?). So all four factors are irreducible. Neither factor on the right can be associate to one on the left, since their norms differ. So unique factorization does fail.
 \end{frame}
 
 
@@ -378,7 +389,7 @@ Thus $p=\alpha\beta$ for nonunits. Since $p^2=N\alpha N\beta$, both norms equal 
 If $b=0$, then $p=a^2$. Otherwise $p\ge163/4$, hence $p\ge41$. Both are impossible.
 \end{frame}
 \begin{frame}{The primes as polynomial values in several variables}
-What if we allow polynomials in several variables? There is a polynomial in $26$ variables whose positive values, as the variables range over the nonnegative integers, are precisely the primes. Here the qualification \emph{positive} matters. The polynomial is allowed to take zero and negative values.
+What if we allow polynomials in several variables? There is a polynomial in $26$ variables whose positive values, as the variables range over the nonnegative integers, are precisely the primes. The word \emph{positive} is important! Zero and negative values are allowed.
 \end{frame}
 
 % ---- sections/polynomial ----
@@ -421,7 +432,7 @@ For example, $X^2+X+2$ has relatively prime coefficients but is even at every in
 For a linear polynomial this is Dirichlet's theorem. Already for $X^2+1$ we do not know the answer. Iwaniec proved that $n^2+1$ has at most two prime factors (counted with multiplicity) for infinitely many $n$.
 \end{frame}
 \begin{frame}{Erd\H{o}s's theorem on the numbers $2^n+k$}
-Erd\H{o}s proved that there is an odd positive integer $k$ such that $2^n+k$ is composite for all positive integers $n$. We work piecemeal, imposing conditions on $k$ to cover all $n$.
+Erd\H{o}s proved that there is an odd positive integer $k$ such that $2^n+k$ is composite for all positive integers $n$. We impose congruence conditions on $k$, dealing with some of the exponents $n$ at each step.
 
 If $n$ is odd, then $2^n\equiv-1\pmod3$, so choose $k\equiv1\pmod3$. If $n\equiv2\pmod4$, then $2^n\equiv-1\pmod5$, so choose $k\equiv1\pmod5$.
 
@@ -501,7 +512,7 @@ Given a finite list $S$ of primes, let $N=1+\prod_{p\in S}p$. For $p\in S$, $|N|
 Since the product is less than $1$, at least one prime outside $S$ divides $N$. This is Euclid's proof again.
 \end{frame}
 \begin{frame}{From infinitude to counting primes}
-For a count of the primes up to $x$ we want an integer divisible by every prime up to $x$, whose size we also know something about. The factorial $\lfloor x\rfloor!$ suggests itself.
+To count primes up to $x$, look at $\lfloor x\rfloor!$. Every prime up to $x$ divides it, and we can estimate its size.
 \end{frame}
 \begin{frame}{Chebyshev's estimates for $\pi(x)$}
 \begin{block}{Theorem}Let $0<c_1<\log2$ and $c_2>2\log2$. For all sufficiently large $x$,
@@ -726,7 +737,7 @@ $10^8$&$5\,761\,455$&$5\,762\,208.3$&$753.3$\\
 $10^{10}$&$455\,052\,511$&$455\,055\,613.5$&$3\,102.5$\\
 $10^{12}$&$37\,607\,912\,018$&$37\,607\,950\,279.8$&$38\,261.8$\\\bottomrule
 \end{tabular}\end{center}
-The absolute error grows along these rows, but the relative error shrinks dramatically. Every error shown has the same sign: Gauss's approximation is too large.
+The error is getting larger, but it is a smaller and smaller fraction of $\pi(x)$. Notice also: every entry in the last column is positive!
 
 {\footnotesize Prime counts: \link{https://personal.science.psu.edu/rcv4/571s25/Class571-01.pdf}{R. C. Vaughan's table}; integral values computed with the convention above.}
 \end{frame}
@@ -740,18 +751,16 @@ $\pi(x)$&$2\,220\,819\,602\,560\,918\,840$
 \end{tabular}\end{center}
 Gauss's guess is too large by about $222\,744\,643$, or one part in $10^{10}$. The Riemann hypothesis predicts $|\pi(x)-\operatorname{Li}(x)|=O_\epsilon(x^{1/2+\epsilon})$ for every $\epsilon>0$.
 
-Here too, $\operatorname{Li}(x)$ overestimates the number of primes. Might it always stay above $\pi(x)$ once $x$ is large?
+Again $\operatorname{Li}(x)>\pi(x)$. Is this true for all large $x$?
 
 {\footnotesize Prime count from R. C. Vaughan's table. Here $\operatorname{Li}(x)=\int_2^x\dd t/\log t$.}
 \end{frame}
-\begin{frame}{The numerical pattern and Littlewood's theorem}
-The comparisons suggest a persistent bias: $\operatorname{Li}(x)$ seems to overcount the primes, even when it is extraordinarily accurate.
-
-But an excellent approximation need not err on the same side forever.
+\begin{frame}{Littlewood's theorem}
+Our table might lead one to conjecture that $\operatorname{Li}(x)-\pi(x)\to\infty$ as $x\to\infty$. Littlewood's theorem has a surprising consequence: this difference changes sign infinitely often.
 \begin{block}{Littlewood (1914)}
 The difference $\pi(x)-\operatorname{Li}(x)$ takes both positive and negative values for arbitrarily large $x$. In particular, it changes sign infinitely often.
 \end{block}
-Thus neither $\pi(x)<\operatorname{Li}(x)$ nor the reverse inequality holds for all sufficiently large $x$. The pattern in our table cannot continue forever.
+In particular, there are arbitrarily large $x$ for which the inequality suggested by our table is reversed.
 \end{frame}
 \begin{frame}{A heuristic for primes ending in 3}
 Adding $1/\log(10k+3)$ over $10k+3\le x$ gives about $\operatorname{Li}(x)/10$. But this would give just as much for numbers ending in $2$, among which precisely one is prime! What did we overlook? Numbers ending in $3$ are divisible by neither $2$ nor $5$.
@@ -875,7 +884,7 @@ Thus there are infinitely many primes $p\equiv1\pmod m$.
 \begin{frame}{Toward the class $-1$ modulo $m$}
 For the class $-1\pmod m$, we look for a polynomial whose prime divisors lie in the two classes $1$ and $-1$.
 
-We shall then force a prime divisor in the second class. The device is to pair a primitive root of unity with its inverse.
+We shall then force a prime divisor in the second class. The idea is to pair each primitive root of unity with its inverse.
 \end{frame}
 \begin{frame}{The real cyclotomic polynomial}
 \small
@@ -920,7 +929,7 @@ A theorem of Schur and Murty says that a polynomial whose prime divisors, with f
 \[a^2\equiv1\pmod m.\]
 The subgroup $\{1,a\}$ of $\operatorname{Gal}(\mathbb Q(\zeta_m)/\mathbb Q)$ leads to a polynomial through its fixed field.
 
-Even the class $2\pmod5$ lies beyond this approach. Dirichlet's theorem requires a different idea.
+Even the class $2\pmod5$ lies beyond this approach. For this we need Dirichlet's theorem.
 \end{frame}
 
 
@@ -952,7 +961,7 @@ Even the class $2\pmod5$ lies beyond this approach. Dirichlet's theorem requires
 \begin{frame}{Dirichlet's theorem: statement and plan}
 \begin{block}{Theorem}Fix $m\ge1$ and $(a,m)=1$. For $x\ge3$,
 \[\sum_{\substack{p\le x\\p\equiv a\bmod m}}\frac{\log p}{p}=\frac{\log x}{\varphi(m)}+O_m(1).\]\end{block}
-Thus primes equidistribute in the coprime classes when counted with weight $(\log p)/p$. In particular each such class contains infinitely many primes.
+Thus the primes are equally distributed among the coprime classes, if we give each prime weight $(\log p)/p$. In particular each such class contains infinitely many primes.
 
 It suffices to use prime powers $p^k$ in place of primes: the extra contribution is at most $\sum_p(\log p)/(p(p-1))=O(1)$.
 \end{frame}
@@ -1084,7 +1093,7 @@ Put $r_\chi(n)=\sum_{d\mid n}\chi(d)$. This is multiplicative, and
 \begin{cases}k+1,&\chi(p)=1,\\1,&\chi(p)=0,\\1\text{ or }0,&\chi(p)=-1,\ k\text{ even or odd}.\end{cases}\]
 Thus $r_\chi(n)\ge0$ and $r_\chi(j^2)\ge1$. In particular,
 \[\sum_{n\le x}\frac{r_\chi(n)}{\sqrt n}\ge\sum_{j\le\sqrt x}\frac{r_\chi(j^2)}j\ge\sum_{j\le\sqrt x}\frac1j\longrightarrow\infty.\]
-We estimate this weighted average another way to force $L(1,\chi)\ne0$.
+Now estimate the same sum another way.
 \end{frame}
 \begin{frame}{Splitting the sum at the square root}
 Put $y=\sqrt x$ and split the pairs $de\le x$ according as $d\le y$ or $d>y$:
@@ -1104,7 +1113,7 @@ Subtract $\int_e^{e+1}t^{-1/2}\dd t$ from $e^{-1/2}$. The difference lies betwee
 
 Finally $\int_1^{\lfloor u\rfloor+1}t^{-1/2}\dd t=2\sqrt u-2+O(u^{-1/2})$, proving the formula.
 \end{frame}
-\begin{frame}{The real-character contradiction}
+\begin{frame}{Nonvanishing for real characters}
 The first double sum is
 \[2\sqrt x\sum_{d\le y}\frac{\chi(d)}d+C\sum_{d\le y}\frac{\chi(d)}{\sqrt d}
 +O\left(\frac1{\sqrt x}\sum_{d\le y}1\right).\]
@@ -1205,7 +1214,7 @@ We will prove the Prime Number Theorem in the form
 \[\psi(x)=\sum_{n\le x}\Lambda(n)\sim x.\]
 Our first goal is cancellation in the M\"obius sum:
 \[M(x):=\sum_{n\le x}\mu(n)=o(x).\]
-We first prove this cancellation, and then deduce $\psi(x)\sim x$. The first assertion rests on the Fundamental Lemma below, proved by restricting the sum to smooth integers.
+We give a proof using smooth numbers, following Daboussi. First we prove $M(x)=o(x)$; then we deduce $\psi(x)\sim x$.
 \end{frame}
 \begin{frame}{The number of squarefree integers up to $x$}
 Recall that $\mu(1)=1$ and
@@ -1238,37 +1247,39 @@ Since $\sum_e e^{-2}=\pi^2/6$, the leading constant is $6/\pi^2$. We have proved
 \[A(x)=\frac6{\pi^2}x+O(\sqrt x).\]
 \end{frame}
 \begin{frame}{Cancellation in the M\"obius sum}
-For the signed sum we want to prove the following substantial improvement on the trivial bound.
-\begin{block}{Theorem (to be proved)}\[M(x)=o(x).\]\end{block}
+What about the signed sum? We want to prove
+\begin{block}{Theorem (von Mangoldt, 1897)}\[M(x)=o(x).\]\end{block}
 In other words, squarefree integers split equally between the signs: each of $\mu(n)=1$ and $\mu(n)=-1$ occurs $3x/\pi^2+o(x)$ times up to $x$.
 \end{frame}
 \begin{frame}{From M\"obius cancellation to primes}
-If $M(x)=o(x)$, asymptotically half of the squarefree integers have each sign. There is also a consequence for primes.
+If $M(x)=o(x)$, asymptotically half of the squarefree integers have each sign. We will use this to prove the PNT.
 \begin{block}{Theorem}\[M(x)=o(x)\quad\Longrightarrow\quad\psi(x)\sim x.\]\end{block}
 We prove this implication after establishing $M(x)=o(x)$.
 \end{frame}
 \begin{frame}{A bounded M\"obius sum with weight $1/n$}
-Sum $\sum_{d\mid n}\mu(d)=\ind_{n=1}$ over $n\le x$:
+The M\"obius function gives a number-theoretically friendly answer to the question of ``who is number $1$'':
+\[\ind_{n=1}=\sum_{d\mid n}\mu(d).\]
+Let $x\ge1$ and sum over $n\le x$:
 \[1=\sum_{d\le x}\mu(d)\left\lfloor\frac xd\right\rfloor
 =x\sum_{d\le x}\frac{\mu(d)}d-\sum_{d\le x}\mu(d)\left\{\frac xd\right\}.\]
 Since $|\mu(d)|\le1$ and $0\le\{x/d\}<1$,
 \[\left|\sum_{d\le x}\frac{\mu(d)}d\right|<\frac{1+\lfloor x\rfloor}{x}\le2\qquad(x\ge1).\]
-Exercise. Assuming $M(x)=o(x)$, show that these partial sums tend to $0$. We return to this in the bonus.
+
 \end{frame}
 \begin{frame}{A logarithmic average of $M(t)/t$}
-Partial summation gives
+Expressing the same sum by partial summation, we have
 \[\sum_{n\le x}\frac{\mu(n)}n=\frac{M(x)}x+\int_1^x\frac{M(t)}t\frac{\dd t}t.\]
 Since $|M(x)|\le x$, we obtain
 \[\left|\int_1^x\frac{M(t)}t\frac{\dd t}t\right|<3.\]
 Thus $M(t)/t$ tends to zero on logarithmic average:
 \[\frac1{\log x}\int_1^x\frac{M(t)}t\frac{\dd t}t\longrightarrow0.\]
-We want convergence before averaging.
+We want $M(x)/x$ itself to tend to zero.
 \end{frame}
 \begin{frame}{The Fundamental Lemma}
 Put $a=\limsup_{t\to\infty}|M(t)|/t$, so $0\le a\le1$. Write $v^+=\max\{v,0\}$.
 \begin{block}{Fundamental Lemma}As $x\to\infty$,
 \[\int_1^x\left(a-\frac{|M(t)|}t\right)^+\frac{\dd t}t=o(\log x).\]\end{block}
-For fixed $\delta>0$, the set where $|M(t)|/t\le a-\delta$ therefore has $\dd t/t$ integral $o(\log x)$: each such $t$ contributes at least $\delta$ to the integrand.
+Roughly speaking, $|M(t)|/t$ spends most of its time close to its limit superior $a$, with time measured logarithmically (with respect to $\dd t/t$).
 
 First we deduce $a=0$ from this lemma; then we prove it.
 \end{frame}
@@ -1280,15 +1291,15 @@ Then $|M(t)|/t\le3a/4$ throughout a short interval starting at $u$. Each such in
 contradicting the Fundamental Lemma.
 \end{frame}
 \begin{frame}{Finding a small value in every long interval}
-Take $B=\exp(12/a)$. We claim that every $[X,BX]$, $X\ge1$, contains $u$ with $|M(u)|/u\le a/2$.
+Suppose for a contradiction that $a>0$, and fix $B=\exp(12/a)$. We first show that every interval $[X,BX]$, with $X\ge1$, contains a $u$ for which $|M(u)|\le(a/2)u$.
 
-Otherwise $|M(t)|>(a/2)t$ throughout. Since $M$ is integer-valued and jumps by at most $1$, it has constant nonzero sign. Hence
+Indeed, if there is no such $u$, then $M(t)$ is nonzero throughout $[X,BX]$. Since $M$ takes integer values and jumps by at most $1$, it has constant sign there. This gives
 \[\left|\int_X^{BX}\frac{M(t)}t\frac{\dd t}t\right|
 =\int_X^{BX}\frac{|M(t)|}t\frac{\dd t}t\ge\frac a2\log B=6.\]
 But the two integrals from $1$ to $BX$ and $1$ to $X$ each have absolute value less than $3$. Their difference is less than $6$, a contradiction.
 \end{frame}
 \begin{frame}{A whole interval of small values}
-Suppose $X\ge X_0:=8/a$, and choose $u\in[X,BX]$ with $|M(u)|/u\le a/2$.
+Now let $X\ge X_0:=8/a$, and choose $u\in[X,BX]$ with $|M(u)|\le(a/2)u$. To obtain a lower bound for the integral in the Fundamental Lemma, we extend this estimate to nearby values of $t$.
 
 For $u\le t\le u(1+a/8)$,
 \begin{align*}
@@ -1305,7 +1316,7 @@ For every $X\ge X_0$,
 &\ge\int_u^{u(1+a/8)}\frac a4\frac{\dd t}t\\
 &=\frac a4\log(1+a/8)>0.
 \end{align*}
-This lower bound is independent of $X$: multiplicative intervals of the same ratio have the same $\dd t/t$ integral.
+This lower bound is independent of $X$: $\int_u^{u(1+a/8)}\dd t/t=\log(1+a/8)$ for every $u$.
 \end{frame}
 \begin{frame}{Contradiction to the Fundamental Lemma}
 Use the last estimate at $X=X_0,(2B)X_0,\ldots,(2B)^{N-1}X_0$. The intervals have disjoint interiors, so
@@ -1313,7 +1324,7 @@ Use the last estimate at $X=X_0,(2B)X_0,\ldots,(2B)^{N-1}X_0$. The intervals hav
 \ge N\frac a4\log(1+a/8).\]
 The Fundamental Lemma makes the left side $o(N)$, since
 \[\log((2B)^NX_0)=N\log(2B)+\log X_0.\]
-The positive linear lower bound is impossible. Thus the lemma implies $a=0$.
+This contradiction forces $a=0$.
 \end{frame}
 \begin{frame}{Proving the Fundamental Lemma}
 It remains to show
@@ -1339,14 +1350,14 @@ For $t\ge P$, every squarefree smooth integer is a divisor of $P$, and all divis
 \[M(t,y)=\sum_{d\mid P}\mu(d)=0.\]
 \end{frame}
 \begin{frame}{The integral comparison we need}
-Our first task is to show, for every $y\ge3$, that
+Following Daboussi, we compare $|M(x,y)|$ with $a\Psi(x,y)$. The following estimate gets us started: for every $y\ge3$,
 \[\int_1^\infty\left(\frac{|M(t,y)|}t-a\frac{\Psi(t,y)}t\right)\frac{\dd t}t\ge0.\]
 Below $y$ the integrand is $|M(t)|/t-a\lfloor t\rfloor/t$, differing from $|M(t)|/t-a$ by at most $a/t$.
 
 We first establish the inequality with $y$ fixed, then let $y$ tend to infinity.
 \end{frame}
-\begin{frame}{Separating small and large prime factors}
-Every positive integer factors uniquely as
+\begin{frame}{Splitting off bounded prime factors}
+Each positive integer admits a unique decomposition in the form
 \[n=bc,\qquad P^+(b)\le y,\qquad(c,P)=1.\]
 Put the full prime powers for $p\le y$ into $b$, and the remaining prime powers into $c$. Since $(b,c)=1$, $\mu(bc)=\mu(b)\mu(c)$. Thus
 \[M(x)=\sum_{\substack{c\le x\\(c,P)=1}}\mu(c)
@@ -1362,7 +1373,7 @@ Keep $y$ fixed and group by $j=\lfloor x/c\rfloor$, where $1\le j<P$. Then $x/(j
 \end{frame}
 \begin{frame}{Counting integers coprime to $P$}
 \small
-Each block of $P$ consecutive integers has $\varphi(P)$ integers coprime to $P$. Therefore
+View $y$ as fixed. Every block of $P$ consecutive integers contains precisely $\varphi(P)$ integers coprime to $P$, so
 \[\sum_{\substack{x/(j+1)<c\le x/j\\(c,P)=1}}1
 =x\frac{\varphi(P)}P\left(\frac1j-\frac1{j+1}\right)+O_y(1).\]
 There are only $P-1$ terms, so the total error is still $O_y(1)$:
@@ -1381,7 +1392,7 @@ Consequently
 =a\prod_{p\le y}(1-1/p)^{-1}.\]
 \end{frame}
 \begin{frame}{The corresponding integral for $\Psi$}
-For fixed $y$,
+The product just obtained also occurs in the integral of $\Psi(t,y)/t$. To see this, first observe that, for fixed $y$,
 \[\Psi(x,y)\le\left(1+\frac{\log x}{\log2}\right)^{\pi(y)}=o(x),\]
 since each prime exponent is at most $\log x/\log2$. Partial summation gives
 \[\sum_{\substack{n\le x\\P^+(n)\le y}}\frac1n
@@ -1400,21 +1411,21 @@ Equivalently,
 We now consider $y\to\infty$.
 \end{frame}
 \begin{frame}{Excess and deficit}
-Put
+To apply the integral comparison to the Fundamental Lemma, we separate its integrand into positive and negative parts. Define excess and deficit functions by
 \[E_y(t)=\left(\frac{|M(t,y)|}t-a\frac{\Psi(t,y)}t\right)^+,\quad
 D_y(t)=\left(a\frac{\Psi(t,y)}t-\frac{|M(t,y)|}t\right)^+.\]
-Their difference is $|M(t,y)|/t-a\Psi(t,y)/t$. The comparison says
+Their difference is $|M(t,y)|/t-a\Psi(t,y)/t$. The total excess is at least the total deficit, both measured with respect to $\dd t/t$:
 \[\int_1^\infty D_y(t)\frac{\dd t}t\le\int_1^\infty E_y(t)\frac{\dd t}t.\]
 Both integrals converge: $E_y(t)\le\Psi(t,y)/t$ and $D_y(t)\le a\Psi(t,y)/t$.
 \end{frame}
 \begin{frame}{Relating the deficit to the Fundamental Lemma}
-For $1\le t\le y$,
+When $1\le t\le y$, the deficit $D_y(t)$ is closely related to the integrand in the Fundamental Lemma:
 \begin{align*}
 D_y(t)&=\left(a\frac{\lfloor t\rfloor}t-\frac{|M(t)|}t\right)^+\\
 &=\left(a-\frac{|M(t)|}t-a\frac{\{t\}}t\right)^+\\
 &\ge\left(a-\frac{|M(t)|}t\right)^+-\frac at.
 \end{align*}
-We used $(v-h)^+\ge v^+-h$ for $h\ge0$. Thus the lemma's integrand is at most $D_y(t)+a/t$.
+We used $(v-h)^+\ge v^+-h$ for $h\ge0$. Thus $(a-|M(t)|/t)^+\le D_y(t)+a/t$.
 \end{frame}
 \begin{frame}{It suffices to bound the excess}
 Integrating and comparing deficit with excess,
@@ -1423,10 +1434,10 @@ Integrating and comparing deficit with excess,
 &\le\int_1^y D_y(t)\frac{\dd t}t+a\int_1^y\frac{\dd t}{t^2}\\
 &\le\int_1^\infty E_y(t)\frac{\dd t}t+a.
 \end{align*}
-Thus it suffices to prove
+We have therefore reduced the Fundamental Lemma to proving that
 \[\int_1^\infty E_y(t)\frac{\dd t}t=o(\log y).\]
 \end{frame}
-\begin{frame}{The easy bound for the excess}
+\begin{frame}{Making less of the excess}
 We have $0\le E_y(t)\le|M(t,y)|/t\le\Psi(t,y)/t\le1$. Hence
 \begin{align*}
 \int_1^\infty E_y(t)\frac{\dd t}t
@@ -1435,10 +1446,10 @@ We have $0\le E_y(t)\le|M(t,y)|/t\le\Psi(t,y)/t\le1$. Hence
 \end{align*}
 by Mertens' product estimate.
 
-We need to change $O$ to $o$!
+So the remaining fight is over the case of a single letter: We must improve $O(\log y)$ to $o(\log y)$.
 \end{frame}
 \begin{frame}{The excess below $y$}
-We split the integral at $t=y$. Below $y$ we claim
+We split the integral at $y$. The required estimate below $y$ follows from the definition of $a$:
 \[\int_1^y E_y(t)\frac{\dd t}t=o(\log y).\]
 Fix $\epsilon>0$. By the definition of $a$, choose $T\ge1$ so that
 \[\frac{|M(t)|}t\le a+\epsilon\qquad(t\ge T).\]
@@ -1456,7 +1467,7 @@ Using $E_y(t)\le1$ on the initial interval,
 Divide by $\log y$ and let $y\to\infty$. The limsup is at most every $\epsilon>0$, so it is zero.
 \end{frame}
 \begin{frame}{An identity for the smooth M\"obius sum}
-The range $t>y$ is trickier. Recall
+To handle the remaining range $(y,\infty)$, we need two logarithmic relations. We begin their derivation with some simple consequences of M\"obius inversion. Recall
 \[\Lambda(n)=-\sum_{d\mid n}\mu(d)\log d.\]
 M\"obius inversion gives
 \[-\mu(n)\log n=\sum_{d\mid n}\Lambda(d)\mu(n/d)
@@ -1474,20 +1485,20 @@ We sum over smooth integers.
 We put $n=p^km$. Since $p\le y$, smoothness of $n$ is equivalent to smoothness of $m$.
 \end{frame}
 \begin{frame}{Partial summation of the logarithmic weight}
-On the other hand,
+On the other hand, partial summation gives
 \[\sum_{\substack{n\le x\\P^+(n)\le y}}\mu(n)\log n
 =M(x,y)\log x-\int_1^x M(t,y)\frac{\dd t}t.\]
-Comparing and rearranging,
+Substituting into the preceding identity and rearranging,
 \[M(x,y)\log x=-\sum_{\substack{p\le y\\p^k\le x}}\log p\,M(x/p^k,y)
 +\int_1^x M(t,y)\frac{\dd t}t.\]
 \end{frame}
 \begin{frame}{Taking absolute values}
-From the preceding identity, the triangle inequality gives
+Taking absolute values and appealing to the triangle inequality,
 \[|M(x,y)|\log x\le\sum_{\substack{p\le y\\p^k\le x}}\log p\,|M(x/p^k,y)|
 +\int_1^x|M(t,y)|\frac{\dd t}t.\]
 We will compare this with an exact identity for $\Psi(x,y)$.
 \end{frame}
-\begin{frame}{The matching identity for $\Psi$}
+\begin{frame}{The identity for $\Psi$}
 Start instead with $\log n=\sum_{p^k\mid n}\log p$. Summing over smooth integers gives
 \[\sum_{\substack{n\le x\\P^+(n)\le y}}\log n
 =\sum_{\substack{p\le y\\p^k\le x}}\log p\,\Psi(x/p^k,y).\]
@@ -1505,7 +1516,7 @@ We obtain
 \bigl(|M(x/p^k,y)|-a\Psi(x/p^k,y)\bigr)\\
 &\quad+\int_1^x\bigl(|M(t,y)|-a\Psi(t,y)\bigr)\frac{\dd t}t.
 \end{align*}
-Replacing each difference on the right by its positive part only increases the right side. The result is nonnegative, so we may also take the positive part on the left.
+Replacing each difference on the right by its positive part only increases the right-hand side and so preserves the inequality. Since the resulting right-hand side is nonnegative, we may also replace the left-hand side by its positive part.
 \end{frame}
 \begin{frame}{The inequality for $E_y$}
 Since $(|M(t,y)|-a\Psi(t,y))^+=tE_y(t)$,
@@ -1522,7 +1533,7 @@ Recall
 +\int_1^x\frac tx E_y(t)\frac{\dd t}t.\]
 For fixed $y$, $M(t,y)=0$ for $t\ge P$, and so $E_y(t)=0$ there. The integral on the left is finite.
 
-All terms on the right are nonnegative, so we may integrate term by term.
+Here all manipulations of sums and integrals are justified by nonnegativity.
 \end{frame}
 \begin{frame}{Integrating the prime-power terms}
 For the term indexed by $p^k$, substitute $t=x/p^k$:
@@ -1533,7 +1544,7 @@ Therefore the first contribution is
 \int_1^\infty E_y(t)\frac{\dd t}t.\]
 \end{frame}
 \begin{frame}{Reversing the double integral}
-For the second contribution, reverse the order:
+For the remaining term, we reverse the order of integration:
 \[\int_1^\infty\left(\int_1^x\frac tx E_y(t)\frac{\dd t}t\right)\frac{\dd x}x
 =\int_1^\infty E_y(t)\left(\int_t^\infty\frac tx\frac{\dd x}x\right)\frac{\dd t}t.\]
 The inner integral is
@@ -1545,7 +1556,7 @@ Combining the contributions,
 \[\int_1^\infty E_y(t)\log t\frac{\dd t}t
 \le\left(1+\sum_{p\le y}\sum_{k\ge1}\frac{\log p}{p^k}\right)
 \int_1^\infty E_y(t)\frac{\dd t}t.\]
-The right-hand integral is what we want to estimate. Mertens' theorem determines its coefficient to within $O(1)$.
+The coefficient on the right is estimated using Mertens' theorem.
 \end{frame}
 \begin{frame}{Estimating the coefficient}
 Sum the geometric series in $k$:
@@ -1563,38 +1574,49 @@ For an absolute constant $C>0$,
 Subtracting $\log y$ times the excess integral gives
 \[\int_1^\infty E_y(t)\log(t/y)\frac{\dd t}t
 \le C\int_1^\infty E_y(t)\frac{\dd t}t=O(\log y).\]
-For $t\ge y^{1+\epsilon}$, the logarithm is at least $\epsilon\log y$. First account for $t<y$, where the logarithm is negative.
+With the factor $\log(t/y)$ omitted, we already had an $O(\log y)$ bound; the advantage here is that the new factor is sensitive to where the excess occurs.
 \end{frame}
-\begin{frame}{The weighted excess above $y$}
-We know $\int_1^y E_y(t)\dd t/t=o(\log y)$ and the weighted upper bound just proved. Move the range below $y$ to the right:
+\begin{frame}{Let's mop up}
+\small
+Recall that $\int_1^y E_y(t)\dd t/t=o(\log y)$. Slightly larger values of $t$, say $y\le t\le y^{1+\epsilon}$ with $\epsilon>0$ fixed, pose no trouble. Since $E_y(t)\le1$,
+\[\int_y^{y^{1+\epsilon}}E_y(t)\frac{\dd t}t\le\epsilon\log y,\]
+which will be acceptable to us upon taking $\epsilon$ small.
+
+It remains to consider $t$ that are substantially larger than $y$, meaning $t\ge y^{1+\epsilon}$. Moving the contribution from $[1,y]$ in the weighted inequality to the right,
 \begin{align*}
 \int_y^\infty E_y(t)\log(t/y)\frac{\dd t}t
-&\le O(\log y)+\int_1^y E_y(t)\log(y/t)\frac{\dd t}t\\
-&\le O(\log y)+\log y\int_1^y E_y(t)\frac{\dd t}t\\
+&\le\int_1^y E_y(t)\log(y/t)\frac{\dd t}t+O(\log y)\\
+&\le(\log y)\int_1^y E_y(t)\frac{\dd t}t+O(\log y)\\
 &=o((\log y)^2).
 \end{align*}
 \end{frame}
-\begin{frame}{Completing the excess estimate}
-Fix $\epsilon>0$. Since $E_y(t)\le1$,
-\[\int_y^{y^{1+\epsilon}}E_y(t)\frac{\dd t}t\le\epsilon\log y.\]
-For $t>y^{1+\epsilon}$, use $\log(t/y)>\epsilon\log y$:
-\[\int_{y^{1+\epsilon}}^\infty E_y(t)\frac{\dd t}t
-\le\frac1{\epsilon\log y}\int_y^\infty E_y(t)\log(t/y)\frac{\dd t}t=o_\epsilon(\log y).\]
-Adding all three ranges and dividing by $\log y$ gives limsup at most every $\epsilon>0$. Therefore $\int_1^\infty E_y(t)\dd t/t=o(\log y)$.
+\begin{frame}{Combining the three ranges}
+\small
+On the other hand, $\log(t/y)\ge\epsilon\log y$ when $t\ge y^{1+\epsilon}$, so
+\[\int_y^\infty E_y(t)\log(t/y)\frac{\dd t}t
+\ge\epsilon\log y\int_{y^{1+\epsilon}}^\infty E_y(t)\frac{\dd t}t.\]
+Comparing with the preceding estimate, we find that
+\[\int_{y^{1+\epsilon}}^\infty E_y(t)\frac{\dd t}t=o(\log y).\]
+Combining the estimates for the three ranges gives
+\[\int_1^\infty E_y(t)\frac{\dd t}t\le\epsilon\log y+o(\log y).\]
+Dividing by $\log y$ and letting $y\to\infty$, the limsup is at most $\epsilon$. But $\epsilon>0$ is arbitrary, and so $\int_1^\infty E_y(t)\dd t/t=o(\log y)$, as desired.
 \end{frame}
-\begin{frame}{M\"obius cancellation is proved}
+\begin{frame}{Conclusion: $M(x)=o(x)$}
 The deficit estimate now gives
 \[\int_1^y\left(a-\frac{|M(t)|}t\right)^+\frac{\dd t}t
 \le a+\int_1^\infty E_y(t)\frac{\dd t}t=o(\log y).\]
-This proves the Fundamental Lemma. As shown earlier, a positive $a$ would force a fixed positive contribution from every interval $[X,2BX]$, contradicting the lemma. Hence $a=0$:
+This proves the Fundamental Lemma. We already showed that the lemma implies $a=0$. Hence
 \[\boxed{\displaystyle M(x)=\sum_{n\le x}\mu(n)=o(x).}\]
 \end{frame}
-\begin{frame}{From M\"obius cancellation to the PNT}
-We can now deduce the PNT in the form $\psi(x)\sim x$.
+\begin{frame}{From $M(x)=o(x)$ to the PNT}
+We want to prove $\psi(x)\sim x$.
 
-We will express $\Lambda(n)-1$, apart from a term supported at $n=1$, as
-\[\sum_{de=n}\mu(d)g(e),\]
-where $g$ also has small partial sums.
+\textbf{Strategy.} Write
+\[\Lambda(n)-1+\text{(stuff with small partial sums)}
+=\sum_{de=n}\mu(d)g(e),\]
+where $g$ has small partial sums.
+
+Sum both sides on $n\le x$. The left side is $\psi(x)-x+o(x)$. We show that the right side is $o(x)$, using the hyperbola method.
 \end{frame}
 \begin{frame}{The hyperbola method}
 \begin{columns}[c]
@@ -1625,12 +1647,14 @@ Every pair has $d\le\sqrt x$ or $e\le\sqrt x$; the square is counted twice.
 Dropping the floors in the sum costs $O(\sqrt x)$, and $\lfloor\sqrt x\rfloor^2=x+O(\sqrt x)$. The harmonic-sum estimate therefore gives
 \[\sum_{n\le x}\tau(n)=x\log x+(2\gamma-1)x+O(\sqrt x).\]
 \end{frame}
-\begin{frame}{Choosing a function with small partial sums}
-Subtracting the divisor-sum estimate from $\sum_{n\le x}\log n=x\log x-x+O(\log x)$ gives a linear term $-2\gamma x$. Remove it by putting
+\begin{frame}{From $M(x)=o(x)$ to the PNT}
+Subtracting our estimate for $\sum_{n\le x}\tau(n)$ from the one for $\sum_{n\le x}\log n$ gives
+\[\sum_{n\le x}(\log n-\tau(n))=-2\gamma x+O(\sqrt x).\]
+Too large! So put
 \[g(n)=\log n-\tau(n)+2\gamma,\qquad G(x)=\sum_{n\le x}g(n).\]
 Since $2\gamma\lfloor x\rfloor=2\gamma x+O(1)$, we have $G(x)=O(\sqrt x)$.
 
-Recall $\sum_{d\mid n}\mu(d)\log(n/d)=\Lambda(n)$. The divisor sum with $\tau$ in place of the logarithm is even simpler.
+Recall $\sum_{d\mid n}\mu(d)\log(n/d)=\Lambda(n)$. What happens with $\tau$ in place of the logarithm?
 \end{frame}
 \begin{frame}{The convolution identity}
 Expand $\tau(n/d)$ and sum on $e$ first:
@@ -1658,21 +1682,21 @@ For every fixed $K\ge1$,
 \[\psi(x)-x=o_K(x)+O(x/\sqrt K).\]
 Divide by $x$ and take the limsup:
 \[\limsup_{x\to\infty}\left|\frac{\psi(x)}x-1\right|\le\frac C{\sqrt K}.\]
-Since $K$ is arbitrary, the limsup is zero. Thus
+Since $K$ can be taken arbitrarily large, the limsup is zero. Thus
 \[\boxed{\psi(x)\sim x.}\]
 \end{frame}
 
 
 % ---- sections/08-bonus ----
-\section{BONUS: a vanishing M\"obius series}
-\begin{frame}{BONUS: a vanishing M\"obius series}
-We now know $M(x)=o(x)$. We first prove
+\section{BONUS}
+\begin{frame}{BONUS: $\sum \mu(n)/n=0$}
+We know $M(x)=o(x)$. First we prove a lemma:
 \[R(x):=\sum_{d\le x}\mu(d)\left\{\frac xd\right\}=o(x).\]
-Fix an integer $K>2$ and split at $x/K$. The initial portion satisfies
+Fix an integer $K>2$. We break the sum at $x/K$. Then
 \[\left|\sum_{d\le x/K}\mu(d)\left\{\frac xd\right\}\right|\le\frac xK.\]
-The remaining portion will be $o_K(x)$, using cancellation in $M$.
+Now consider $x/K<d\le x$. I claim this part of the sum is $o(x)$!
 \end{frame}
-\begin{frame}{BONUS: the partial-summation calculation}
+\begin{frame}{BONUS: partial summation}
 \small
 Put $a=x/K$. Partial summation gives
 \[x\sum_{a<d\le x}\frac{\mu(d)}d=M(x)-KM(a)+x\int_a^x\frac{M(t)}{t^2}\dd t.\]
@@ -1684,25 +1708,25 @@ Subtracting the two identities gives
 =x\int_{x/K}^x\frac{M(t)}{t^2}\dd t-\sum_{j=2}^K M(x/j).\]
 \end{frame}
 \begin{frame}{BONUS: the fractional-part sum is $o(x)$}
-For fixed $K$, every term $M(x/j)$ is $o(x)$. Moreover,
+Divide the last identity by $x$. Each term $M(x/j)/x$ goes to zero, for $j=2,\ldots,K$. Also,
 \[\left|\int_{x/K}^x\frac{M(t)}{t^2}\dd t\right|
 \le\sup_{t\ge x/K}\frac{|M(t)|}t\int_{x/K}^x\frac{\dd t}t
 =\log K\sup_{t\ge x/K}\frac{|M(t)|}t\longrightarrow0.\]
-Together with the initial portion, this gives
+Therefore
 \[|R(x)|\le\frac xK+o_K(x),\qquad
 \limsup_{x\to\infty}\frac{|R(x)|}x\le\frac1K.\]
-Since $K$ is arbitrary, $R(x)=o(x)$.
+Take $K$ large. This proves $R(x)=o(x)$.
 \end{frame}
-\begin{frame}{BONUS: evaluating the series}
-Return to the divisor-sum identity:
+\begin{frame}{BONUS: $\sum \mu(n)/n=0$}
+We showed that
 \begin{align*}
 1&=\sum_{n\le x}\sum_{d\mid n}\mu(d)
 =\sum_{d\le x}\mu(d)\left\lfloor\frac xd\right\rfloor\\
 &=x\sum_{d\le x}\frac{\mu(d)}d-R(x).
 \end{align*}
-Therefore
+Rearranging,
 \[\sum_{d\le x}\frac{\mu(d)}d=\frac1x+\frac{R(x)}x\longrightarrow0.\]
-The series converges, and its value is
+We win!
 \[\boxed{\displaystyle\sum_{n=1}^\infty\frac{\mu(n)}n=0.}\]
 \end{frame}
 
