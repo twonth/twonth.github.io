@@ -595,11 +595,11 @@ For each $0<c_3<\frac13\log2$ and all sufficiently large $x$, $(x/2,x]$ contains
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
 \hyperlink{Navigation76}{The theorem of Montgomery and Wagon}&76--77\\
 \hyperlink{Navigation78}{Ingham's theorem (statement)}&78\\
-\hyperlink{Navigation79}{The approximations of Gauss and Legendre}&79--82\\
-\hyperlink{Navigation83}{A heuristic for primes ending in 3}&83\\
-\hyperlink{Navigation84}{A heuristic for twin primes}&84\\
-\hyperlink{Navigation85}{A heuristic for prime values of $n^2+1$}&85\\
-\hyperlink{Navigation86}{Numerical examples}&86\\
+\hyperlink{Navigation79}{Gauss, Legendre, and Littlewood's theorem}&79--84\\
+\hyperlink{Navigation85}{A heuristic for primes ending in 3}&85\\
+\hyperlink{Navigation86}{A heuristic for twin primes}&86\\
+\hyperlink{Navigation87}{A heuristic for prime values of $n^2+1$}&87\\
+\hyperlink{Navigation88}{Numerical examples}&88\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
 \begin{frame}{Mertens' estimate for $\sum_{p\le x}(\log p)/p$}
@@ -712,6 +712,24 @@ Keeping three terms gives
 \end{align*}
 Thus $x/(\log x-1)$ is eventually too small. For Legendre's data, a constant slightly larger than $1$ gives better agreement. Paasche and Hiary found that $1.08366$ is close to the value minimizing the average error for those data.
 \end{frame}
+\begin{frame}{Comparing $\pi(x)$ with $\operatorname{Li}(x)$}
+\small
+Recall our convention $\operatorname{Li}(x)=\int_2^x\dd t/\log t$. The last two columns are rounded to one decimal place.
+\begin{center}\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{rrrr}\toprule
+$x$&$\pi(x)$&$\operatorname{Li}(x)$&$\operatorname{Li}(x)-\pi(x)$\\\midrule
+$10^2$&$25$&$29.1$&$4.1$\\
+$10^3$&$168$&$176.6$&$8.6$\\
+$10^4$&$1\,229$&$1\,245.1$&$16.1$\\
+$10^6$&$78\,498$&$78\,626.5$&$128.5$\\
+$10^8$&$5\,761\,455$&$5\,762\,208.3$&$753.3$\\
+$10^{10}$&$455\,052\,511$&$455\,055\,613.5$&$3\,102.5$\\
+$10^{12}$&$37\,607\,912\,018$&$37\,607\,950\,279.8$&$38\,261.8$\\\bottomrule
+\end{tabular}\end{center}
+The absolute error grows along these rows, but the relative error shrinks dramatically. Every error shown has the same sign: Gauss's approximation is too large.
+
+{\footnotesize Prime counts: \link{https://personal.science.psu.edu/rcv4/571s25/Class571-01.pdf}{R. C. Vaughan's table}; integral values computed with the convention above.}
+\end{frame}
 \begin{frame}{The approximations of Gauss and Legendre}
 At $x=10^{20}$, rounded to the nearest integer:
 \begin{center}\begin{tabular}{lr}
@@ -722,9 +740,18 @@ $\pi(x)$&$2\,220\,819\,602\,560\,918\,840$
 \end{tabular}\end{center}
 Gauss's guess is too large by about $222\,744\,643$, or one part in $10^{10}$. The Riemann hypothesis predicts $|\pi(x)-\operatorname{Li}(x)|=O_\epsilon(x^{1/2+\epsilon})$ for every $\epsilon>0$.
 
-Littlewood proved that $\pi(x)-\operatorname{Li}(x)$ changes sign infinitely often.
+Here too, $\operatorname{Li}(x)$ overestimates the number of primes. Might it always stay above $\pi(x)$ once $x$ is large?
 
 {\footnotesize Prime count from R. C. Vaughan's table. Here $\operatorname{Li}(x)=\int_2^x\dd t/\log t$.}
+\end{frame}
+\begin{frame}{The numerical pattern and Littlewood's theorem}
+The comparisons suggest a persistent bias: $\operatorname{Li}(x)$ seems to overcount the primes, even when it is extraordinarily accurate.
+
+But an excellent approximation need not err on the same side forever.
+\begin{block}{Littlewood (1914)}
+The difference $\pi(x)-\operatorname{Li}(x)$ takes both positive and negative values for arbitrarily large $x$. In particular, it changes sign infinitely often.
+\end{block}
+Thus neither $\pi(x)<\operatorname{Li}(x)$ nor the reverse inequality holds for all sufficiently large $x$. The pattern in our table cannot continue forever.
 \end{frame}
 \begin{frame}{A heuristic for primes ending in 3}
 Adding $1/\log(10k+3)$ over $10k+3\le x$ gives about $\operatorname{Li}(x)/10$. But this would give just as much for numbers ending in $2$, among which precisely one is prime! What did we overlook? Numbers ending in $3$ are divisible by neither $2$ nor $5$.
@@ -763,6 +790,7 @@ The rounded guesses are $\operatorname{Li}(x)/4$, $2C_2\int_2^x\dd t/(\log t)^2$
 \end{frame}
 
 
+
 % ---- sections/05-progressions ----
 \section{Primes in progressions}
 
@@ -770,12 +798,12 @@ The rounded guesses are $\operatorname{Li}(x)/4$, $2C_2\int_2^x\dd t/(\log t)^2$
 \begin{frame}{Primes in progressions}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation88}{The odd classes modulo 4}&88--89\\
-\hyperlink{Navigation90}{Schur's theorem on prime divisors of polynomial values}&90\\
-\hyperlink{Navigation91}{The four odd classes modulo 8}&91--94\\
-\hyperlink{Navigation95}{Primes congruent to 1 modulo $m$}&95--97\\
-\hyperlink{Navigation98}{Primes congruent to $-1$ modulo $m$}&98--103\\
-\hyperlink{Navigation104}{The criterion of Schur and Murty}&104\\
+\hyperlink{Navigation90}{The odd classes modulo 4}&90--91\\
+\hyperlink{Navigation92}{Schur's theorem on prime divisors of polynomial values}&92\\
+\hyperlink{Navigation93}{The four odd classes modulo 8}&93--96\\
+\hyperlink{Navigation97}{Primes congruent to 1 modulo $m$}&97--99\\
+\hyperlink{Navigation100}{Primes congruent to $-1$ modulo $m$}&100--105\\
+\hyperlink{Navigation106}{The criterion of Schur and Murty}&106\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
 \begin{frame}{The odd classes modulo 4}
@@ -903,11 +931,11 @@ Even the class $2\pmod5$ lies beyond this approach. Dirichlet's theorem requires
 \begin{frame}{Dirichlet's theorem (1 of 2)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation107}{Statement and plan of proof}&107--108\\
-\hyperlink{Navigation109}{The modulus 4}&109--111\\
-\hyperlink{Navigation112}{Orthogonality relations for characters}&112--115\\
-\hyperlink{Navigation116}{Convergence of $L(s,\chi)$ for nonprincipal $\chi$}&116--117\\
-\hyperlink{Navigation118}{Reduction to nonvanishing}&118\\
+\hyperlink{Navigation109}{Statement and plan of proof}&109--110\\
+\hyperlink{Navigation111}{The modulus 4}&111--113\\
+\hyperlink{Navigation114}{Orthogonality relations for characters}&114--117\\
+\hyperlink{Navigation118}{Convergence of $L(s,\chi)$ for nonprincipal $\chi$}&118--119\\
+\hyperlink{Navigation120}{Reduction to nonvanishing}&120\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
 
@@ -915,10 +943,10 @@ Even the class $2\pmod5$ lies beyond this approach. Dirichlet's theorem requires
 \begin{frame}{Dirichlet's theorem (2 of 2)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation119}{Nonvanishing for nonreal characters}&119--121\\
-\hyperlink{Navigation122}{Nonvanishing for real nonprincipal characters}&122--125\\
-\hyperlink{Navigation126}{Conclusion and a counting consequence}&126--127\\
-\hyperlink{Navigation128}{Siegel zeros and Linnik's theorem}&128--130\\
+\hyperlink{Navigation121}{Nonvanishing for nonreal characters}&121--123\\
+\hyperlink{Navigation124}{Nonvanishing for real nonprincipal characters}&124--127\\
+\hyperlink{Navigation128}{Conclusion and a counting consequence}&128--129\\
+\hyperlink{Navigation130}{Siegel zeros and Linnik's theorem}&130--132\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
 \begin{frame}{Dirichlet's theorem: statement and plan}
@@ -1147,14 +1175,14 @@ The bound on the preceding slide combines with Selberg's symmetry formulas to gi
 \begin{frame}{The prime number theorem (1 of 2)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation133}{Statement and plan of proof}&133\\
-\hyperlink{Navigation134}{Squarefree integers and M\"obius cancellation}&134--138\\
-\hyperlink{Navigation139}{The implication from $M(x)=o(x)$ to the PNT}&139\\
-\hyperlink{Navigation140}{A logarithmic average of $M(t)/t$}&140--141\\
-\hyperlink{Navigation142}{The Fundamental Lemma}&142\\
-\hyperlink{Navigation143}{Deduction of cancellation from the lemma}&143--147\\
-\hyperlink{Navigation148}{The integral comparison}&148--157\\
-\hyperlink{Navigation158}{Excess and deficit}&158--161\\
+\hyperlink{Navigation135}{Statement and plan of proof}&135\\
+\hyperlink{Navigation136}{Squarefree integers and M\"obius cancellation}&136--140\\
+\hyperlink{Navigation141}{The implication from $M(x)=o(x)$ to the PNT}&141\\
+\hyperlink{Navigation142}{A logarithmic average of $M(t)/t$}&142--143\\
+\hyperlink{Navigation144}{The Fundamental Lemma}&144\\
+\hyperlink{Navigation145}{Deduction of cancellation from the lemma}&145--149\\
+\hyperlink{Navigation150}{The integral comparison}&150--159\\
+\hyperlink{Navigation160}{Excess and deficit}&160--163\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
 
@@ -1162,14 +1190,14 @@ The bound on the preceding slide combines with Selberg's symmetry formulas to gi
 \begin{frame}{The prime number theorem (2 of 2)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation162}{The excess below $y$}&162--163\\
-\hyperlink{Navigation164}{The inequality for $E_y$}&164--170\\
-\hyperlink{Navigation171}{The integrated inequality}&171--176\\
-\hyperlink{Navigation177}{The excess above $y$}&177--178\\
-\hyperlink{Navigation179}{Conclusion: $M(x)=o(x)$}&179\\
-\hyperlink{Navigation180}{The hyperbola method and $\sum_{n\le x}\tau(n)$}&180--182\\
-\hyperlink{Navigation183}{Deduction of $\psi(x)\sim x$}&183--186\\
-\hyperlink{Navigation187}{BONUS: $\sum_{n\ge1}\mu(n)/n=0$}&187--190\\
+\hyperlink{Navigation164}{The excess below $y$}&164--165\\
+\hyperlink{Navigation166}{The inequality for $E_y$}&166--172\\
+\hyperlink{Navigation173}{The integrated inequality}&173--178\\
+\hyperlink{Navigation179}{The excess above $y$}&179--180\\
+\hyperlink{Navigation181}{Conclusion: $M(x)=o(x)$}&181\\
+\hyperlink{Navigation182}{The hyperbola method and $\sum_{n\le x}\tau(n)$}&182--184\\
+\hyperlink{Navigation185}{Deduction of $\psi(x)\sim x$}&185--188\\
+\hyperlink{Navigation189}{BONUS: $\sum_{n\ge1}\mu(n)/n=0$}&189--192\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
 \begin{frame}{The prime number theorem: statement and plan}
@@ -1638,7 +1666,7 @@ Since $K$ is arbitrary, the limsup is zero. Thus
 % ---- sections/08-bonus ----
 \section{BONUS: a vanishing M\"obius series}
 \begin{frame}{BONUS: a vanishing M\"obius series}
-We now know $M(x)=o(x)$. Following the final lecture notes, we first prove
+We now know $M(x)=o(x)$. We first prove
 \[R(x):=\sum_{d\le x}\mu(d)\left\{\frac xd\right\}=o(x).\]
 Fix an integer $K>2$ and split at $x/K$. The initial portion satisfies
 \[\left|\sum_{d\le x/K}\mu(d)\left\{\frac xd\right\}\right|\le\frac xK.\]
@@ -1651,7 +1679,7 @@ Put $a=x/K$. Partial summation gives
 For $d>a$, the integer $\lfloor x/d\rfloor$ counts $1\le j\le K-1$ with $d\le x/j$. Thus
 \[\sum_{a<d\le x}\mu(d)\left\lfloor\frac xd\right\rfloor
 =\sum_{j=1}^{K-1}\bigl(M(x/j)-M(a)\bigr).\]
-Subtracting the two identities yields the formula from the notes:
+Subtracting the two identities gives
 \[\sum_{x/K<d\le x}\mu(d)\left\{\frac xd\right\}
 =x\int_{x/K}^x\frac{M(t)}{t^2}\dd t-\sum_{j=2}^K M(x/j).\]
 \end{frame}
