@@ -32,6 +32,7 @@
 \setbeamercolor{background canvas}{bg=navy}
 \setbeamertemplate{frametitle}{}
 \setbeamertemplate{footline}{}
+% voice-original-frame: 1
 \begin{frame}[plain,t]{}
 \color{white}
 \vspace{.6cm}
@@ -46,6 +47,7 @@ Paul Pollack\par
 University of Georgia
 \end{frame}
 \endgroup
+% voice-original-frame: 2
 \begin{frame}[label=overview]{The course at a glance}
 \small
 \textbf{Infinitely many primes.} Euclid, Euler, squarefree integers, and two proofs from algebra.
@@ -65,6 +67,7 @@ University of Georgia
 \section{Infinitely many primes}
 
 % ---- sections/toc-003 ----
+% voice-original-frame: 3
 \begin{frame}{Infinitely many primes (1 of 3)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
@@ -80,6 +83,7 @@ University of Georgia
 
 
 % ---- sections/toc-004 ----
+% voice-original-frame: 4
 \begin{frame}{Infinitely many primes (2 of 3)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
@@ -95,37 +99,49 @@ University of Georgia
 
 
 % ---- sections/toc-005 ----
+% voice-original-frame: 5
 \begin{frame}{Infinitely many primes (3 of 3)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
 \hyperlink{Navigation27}{The identity $\sum_{d\mid n}\mu(d)=\ind_{n=1}$}&27\\
 \hyperlink{Navigation28}{Infinitude from the support of $\mu$}&28\\
-\hyperlink{Navigation29}{M\"obius inversion}&29--30\\
-\hyperlink{Navigation31}{Counting smooth integers}&31--33\\
-\hyperlink{Navigation34}{The maximal ideals of $\Z[X]$}&34--35\\
-\hyperlink{Navigation36}{Washington's proof}&36--37\\
+\hyperlink{Navigation29}{M\"obius inversion}&29--32\\
+\hyperlink{Navigation33}{Counting smooth integers}&33--35\\
+\hyperlink{Navigation36}{The maximal ideals of $\Z[X]$}&36--37\\
+\hyperlink{Navigation38}{Washington's proof}&38--39\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
+% voice-original-frame: 6
 \begin{frame}{Euclid's proof}
 A prime is an integer greater than $1$ whose only positive divisors are $1$ and itself. Here are the first few:
 \[2,\quad3,\quad5,\quad7,\quad11,\quad13,\quad17.\]
-Let $p_1,\ldots,p_k$ be any finite list of distinct primes, and put $P=p_1\cdots p_k$. Look at $P+1$. We know $P+1>1$, so $P+1$ has some prime factor $q$. But $P+1\equiv1\pmod{p_i}$ for all $i$, and so $q\notin\{p_1,\ldots,p_k\}$. So there must be infinitely many primes.
+Let $p_1,\ldots,p_k$ be any finite list of distinct primes, and put $P=p_1\cdots p_k$. Look at $P+1$. We know $P+1>1$, so $P+1$ has some prime factor $q$. But $P+1\equiv1\pmod{p_i}$ for all $i$, and so $q\notin\{p_1,\ldots,p_k\}$. So no finite list of primes is complete.
 \end{frame}
+% voice-original-frame: 7
 \begin{frame}{The proof of Stieltjes}
-\textbf{Stieltjes.} Factor $P=AB$ with $A,B>0$. Each $p_i$ divides exactly one of $A,B$, so it cannot divide $A+B$. Take any prime factor of $A+B$. Choosing $B=1$ gives Euclid's proof.
+Let $p_1,\ldots,p_k$ be a finite list of distinct primes, with product $P$. Factor $P=AB$ with $A,B>0$, and consider $A+B$.
+
+Each $p_i$ divides exactly one of $A,B$: if it divided both, then $p_i^2$ would divide $P$. Hence $p_i\nmid A+B$.
+
+But $A+B\ge2$, so it has a prime factor. Again we have discovered a prime not on our original list.
+
+Euclid's proof is the case $B=1$.
 \end{frame}
+% voice-original-frame: 8
 \begin{frame}{The proof of Braun}
 \textbf{Braun.} Suppose $k\ge2$. Put the fractions over a common denominator:
 \[\frac1{p_1}+\cdots+\frac1{p_k}=\frac NP,\qquad N=\frac P{p_1}+\cdots+\frac P{p_k}.\]
-For each $i$, $p_i$ divides $P/p_j$ for all $j\ne i$. Thus $N\equiv P/p_i\pmod{p_i}$. If $p_i\mid N$, then $p_i\mid P/p_i$ and $p_i^2\mid P$, a contradiction. Take any prime $q\mid N$. (This proof needs $k\ge2$.)
+For each $i$, $p_i$ divides $P/p_j$ for all $j\ne i$. Thus $N\equiv P/p_i\pmod{p_i}$. If $p_i\mid N$, then $p_i\mid P/p_i$ and $p_i^2\mid P$, a contradiction. Since $k\ge2$, we have $N>1$. Take any prime $q\mid N$; it is not on our list. This is why the proof needs $k\ge2$.
 
 Another variant is to look at $m!+1$. Every prime factor exceeds $m$.
 \end{frame}
+% voice-original-frame: 9
 \begin{frame}{Euclid's lemma}
 \HW{1}{2} Here is a slightly unusual proof of Euclid's lemma. Fix a prime $p$ and an integer $a$, and consider $I=\{b\in\Z:p\mid ab\}$. The difference of two members of $I$ again belongs to $I$, as does every integer multiple of a member of $I$. Thus $I$ is an ideal of $\Z$.
 
 Write $I=d\Z$ with $d>0$ (notice that $p\in I$). Then $d\mid p$, so either $d=1$ or $d=p$. If $d=1$, then $1\in I$, whence $p\mid a$. If $d=p$, then every $b$ for which $p\mid ab$ is itself divisible by $p$. These are precisely the two alternatives in Euclid's lemma.
 \end{frame}
+% voice-original-frame: 10
 \begin{frame}{Furstenberg's proof}
 For $m>0$ let
 \[U_{a,m}=\{n\in\Z:n\equiv a\pmod m\}.\]
@@ -133,11 +149,13 @@ The \emph{profinite topology} is the topology on $\Z$ with basic open sets $U_{a
 
 Each set $U_{a,m}$ is closed. Indeed, its complement is the union of the other classes modulo $m$. Also, every nonempty open set is infinite, since it contains a full arithmetic progression.
 \end{frame}
+% voice-original-frame: 11
 \begin{frame}{Furstenberg's proof}
 Suppose $p_1,\ldots,p_k$ are all the primes. The set of integers divisible by at least one of them is
 \[U_{0,p_1}\cup\cdots\cup U_{0,p_k}.\]
 This set is closed (a finite union of closed sets). Hence its complement is open. But the complement consists of the integers divisible by no prime, namely $\{-1,1\}$. This is a contradiction, since nonempty open sets are infinite.
 \end{frame}
+% voice-original-frame: 12
 \begin{frame}{Goldbach's proof and the Fermat numbers}
 Suppose $a_1,a_2,\ldots$ is an infinite sequence of integers greater than $1$, with $(a_i,a_j)=1$ whenever $j<i$. Let $p_i$ be a prime factor of $a_i$. Then $p_1,p_2,\ldots$ is an infinite sequence of distinct primes.
 
@@ -147,6 +165,7 @@ First, notice that each $a_i$ is odd, by induction. If $d\mid a_i$ and $d\mid a_
 
 The sequence begins $3,5,17,257,65537$. This suggests $a_i=2^{2^{i-1}}+1$.
 \end{frame}
+% voice-original-frame: 13
 \begin{frame}{Goldbach's proof and the Fermat numbers}
 \small
 Write $F_n=2^{2^n}+1$ for the $n$th Fermat number. Factoring a difference of squares repeatedly gives
@@ -159,11 +178,13 @@ In particular $2^{n+1}\mid p-1$. Distinct $n$ give distinct prime divisors, and 
 
 \HW{1}{3} Let $n\ge2$ and let $p$ be a prime divisor of $F_n$. Prove the stronger divisibility $2^{n+2}\mid p-1$.
 \end{frame}
+% voice-original-frame: 14
 \begin{frame}{Infinitude of primes from the factors of $2^p-1$}
 Suppose there is a largest prime $p$. Let $q$ be any prime factor of $2^p-1$. Then
 \[2^p\equiv1\pmod q.\]
 Hence the order of $2$ modulo $q$ divides $p$. The order is not $1$, since $q\nmid2-1$. It follows that the order is $p$. By Lagrange's theorem, $p\mid q-1$. Hence $q>p$, contrary to the choice of $p$.
 \end{frame}
+% voice-original-frame: 15
 \begin{frame}{Multiplicative functions}
 An arithmetic function is a function on the positive integers. We call $f$ \emph{multiplicative} if $f(1)=1$ and $f(ab)=f(a)f(b)$ whenever $(a,b)=1$. Hence
 \[f(p_1^{e_1}\cdots p_k^{e_k})=\prod_{i=1}^k f(p_i^{e_i})\]
@@ -171,6 +192,7 @@ whenever the $p_i$ are distinct. Conversely, this identity implies multiplicativ
 
 The functions $1$ and $n^s$ are examples, as is Euler's $\phi(n)=\#(\Z/n\Z)^\times$. For $\phi$, apply the Chinese remainder theorem and count units on both sides. For $\sigma(n)=\sum_{d\mid n}d$, observe that specifying a divisor amounts to choosing, independently for each $p_i$, an exponent between $0$ and $e_i$.
 \end{frame}
+% voice-original-frame: 16
 \begin{frame}{Euler's factorization theorem}
 \begin{block}{Theorem}For a multiplicative function $f$,
 \[\sum_{n\ge1}f(n)=\prod_p(1+f(p)+f(p^2)+\cdots)\]
@@ -179,6 +201,7 @@ if $\sum_n|f(n)|$ converges, or if the product with $|f|$ in place of $f$ is fin
 Suppose first that $\sum_n|f(n)|<\infty$. On multiplying out just the factors corresponding to $p\le x$, unique factorization gives
 \[\prod_{p\le x}(1+f(p)+f(p^2)+\cdots)=\sum_{\substack{n\ge1\\p\mid n\Rightarrow p\le x}}f(n).\]
 \end{frame}
+% voice-original-frame: 17
 \begin{frame}{Euler's factorization theorem}
 What have we left out? Only integers having a prime factor $>x$, all of which are themselves $>x$. Thus the error is bounded by $\sum_{n>x}|f(n)|$, which tends to zero.
 
@@ -186,6 +209,7 @@ Suppose now that we are given convergence of the product for $|f|$. Then
 \[\sum_{n\le x}|f(n)|\le\prod_{p\le x}(1+|f(p)|+|f(p^2)|+\cdots)\le\prod_p(1+|f(p)|+|f(p^2)|+\cdots).\]
 The partial sums on the left increase and are bounded. Thus the series converges absolutely, and the first argument applies.
 \end{frame}
+% voice-original-frame: 18
 \begin{frame}{Euler's proof that $\sum_p1/p$ diverges}
 What happens if we try $f(n)=1/n$? For any one prime $p$ we have
 \[1+\frac1p+\frac1{p^2}+\cdots=(1-1/p)^{-1}.\]
@@ -195,6 +219,7 @@ In fact $\sum_p1/p$ diverges. Otherwise the partial products would again be boun
 \[(1-1/p)^{-1}=1+\frac1{p-1}\le1+\frac2p\le e^{2/p}.\]
 The products would be bounded by $\exp(2\sum_p1/p)$, so the harmonic series would converge. This proves Euler's assertion.
 \end{frame}
+% voice-original-frame: 19
 \begin{frame}{Upper and lower bounds for $\sum_{p\le x}1/p$}
 For $x>1$ the integral test gives $\log x<\sum_{n\le x}1/n\le1+\log x$. Every term on the left occurs on multiplying out the product below, so
 \[\log x<\prod_{p\le x}(1-1/p)^{-1}\le\exp\left(\sum_{p\le x}\frac1{p-1}\right).\]
@@ -202,13 +227,15 @@ Since $1/(p-1)=1/p+1/(p(p-1))$ and
 \[\sum_{p\le x}\frac1{p(p-1)}\le\sum_{n\ge2}\left(\frac1{n-1}-\frac1n\right)=1,\]
 taking logarithms gives $\sum_{p\le x}1/p>\log\log x-1$.
 \end{frame}
+% voice-original-frame: 20
 \begin{frame}{Upper and lower bounds for $\sum_{p\le x}1/p$}
-On squaring the sum, how often can a given integer occur as a denominator? At most twice, since $pq$ determines the unordered pair $\{p,q\}$. Hence
+Upper bounds are more difficult! Can we show that $\sum_{p\le x}1/p$ is significantly smaller than $\log x$? Square the sum. How often can a given integer occur as a denominator? At most twice, since $pq$ determines the unordered pair $\{p,q\}$. Hence
 \[\left(\sum_{p\le x}\frac1p\right)^2=\sum_{p,q\le x}\frac1{pq}\le2\sum_{n\le x^2}\frac1n\le2+4\log x.\]
-Already we see that the sum of the reciprocals of the primes grows more slowly than the harmonic sum.
+Thus $\sum_{p\le x}1/p=O(\sqrt{\log x})=o(\log x)$. So we win! Higher powers give still better bounds.
 
 \HW{1}{11} Take higher powers of $\sum_{p\le x}1/p$. By letting the exponent depend on $x$, prove that this sum is at most $\log\log x+O(\log\log\log x)$.
 \end{frame}
+% voice-original-frame: 21
 \begin{frame}{Hacks's proof using $\zeta(2)$}
 For $s>1$, put $\zeta(s)=\sum_{n\ge1}n^{-s}$. Euler's factorization gives
 \[\zeta(s)=\prod_p(1-p^{-s})^{-1}.\]
@@ -216,11 +243,13 @@ At $s=2$ the series equals $\pi^2/6$. Recall Euler's calculation: in the sine pr
 \[\frac{\sin t}t=\prod_{n\ge1}\left(1-\frac{t^2}{n^2\pi^2}\right)\]
 the coefficient of $t^2$ is $-\zeta(2)/\pi^2$. Comparing this with $-1/3!$ gives Euler's evaluation. If there were only finitely many primes, then $\pi^2/6$ would be a finite product of rational numbers. But $\pi^2/6$ is irrational (Homework 1, Problem 13).
 \end{frame}
+% voice-original-frame: 22
 \begin{frame}{Infinitude of primes from $\zeta(2)^2/\zeta(4)$}
 Comparing the coefficients of $t^4$ gives $(\zeta(2)^2-\zeta(4))/(2\pi^4)=1/5!$. Thus $\zeta(4)=\pi^4/90$, and
 \[\frac52=\frac{\zeta(2)^2}{\zeta(4)}=\prod_p\frac{1-p^{-4}}{(1-p^{-2})^2}=\prod_p\frac{p^2+1}{p^2-1}.\]
-The quotient $5/2$ is rational, so irrationality is of no help. But look at the denominator of the first factor, $5/3$. If there were only finitely many factors, some numerator $p^2+1$ would have to be divisible by $3$. But $-1$ is not a square modulo $3$, since the only squares are $0$ and $1$. This contradiction proves infinitude.
+The quotient $5/2$ is rational. But there is something suspicious here: how does the $3$ in the denominator of the first factor, $5/3$, go away? If there were only finitely many factors, some numerator $p^2+1$ would have to be divisible by $3$. But $-1$ is not a square modulo $3$, since the only squares are $0$ and $1$. This contradiction proves infinitude.
 \end{frame}
+% voice-original-frame: 23
 \begin{frame}{Exercises on Euler products}
 \HW{1}{10} Let $\chi$ be zero on even integers, $1$ on $1\bmod4$, and $-1$ on $3\bmod4$. Show that $\chi$ is completely multiplicative. Assuming there are only finitely many primes, show that
 \[1-\frac13+\frac15-\frac17+\cdots=\prod_p(1-\chi(p)/p)^{-1}.\]
@@ -228,6 +257,7 @@ Use the value of the alternating series to reach a contradiction.
 
 \HW{2}{3} Let $\mathcal P$ be the set of primes dividing at least one Fermat number. Prove that $\sum_{p\in\mathcal P}1/p$ converges. Use the order of $2$ modulo $p$ to count divisors of the higher-index Fermat numbers, and their sizes for the lower indices.
 \end{frame}
+% voice-original-frame: 24
 \begin{frame}{Perott's proof using squarefree integers}
 A positive integer is \emph{squarefree} if it is divisible by no square greater than $1$. It is determined by its set of prime divisors. With only $k$ primes there would be only $2^k$ squarefree integers.
 
@@ -235,16 +265,18 @@ How many $n\le N$ fail to be squarefree? At most
 \[\sum_{m=2}^{\lfloor\sqrt N\rfloor}\left\lfloor\frac N{m^2}\right\rfloor\le N\sum_{m\ge2}\frac1{m^2}=cN.\]
 Since $c<\int_1^\infty t^{-2}\dd t=1$, at least $(1-c)N$ integers up to $N$ are squarefree. For $N$ large this is more than $2^k$, however large we took $k$.
 \end{frame}
+% voice-original-frame: 25
 \begin{frame}{Erd\H{o}s's lower bound for $\pi(N)$}
 Every positive integer $n$ can be written uniquely as $uv^2$, with $u$ squarefree. Throw into $u$ those primes appearing to an odd power in $n$.
 
 Let $\pi(N)=\#\{p\le N\}$. If $n\le N$, there are at most $2^{\pi(N)}$ choices for $u$, since $u$ is determined by its prime factors. There are at most $\sqrt N$ choices for $v$. Hence
 \[N\le2^{\pi(N)}\sqrt N,\qquad \pi(N)\ge\frac{\log N}{\log4}.\]
-So Erd\H{o}s's argument does a little more than prove infinitude. It gives a lower bound for $\pi(N)$ that tends to infinity with $N$.
+The bound is crude: at $N=10^6$, it gives $\pi(N)\ge9.96\ldots$, whereas $\pi(N)=78\,498$. But it tends to infinity, which is enough for our purpose.
 \end{frame}
 
 
 % ---- sections/01b-infinitude ----
+% voice-original-frame: 26
 \begin{frame}{Erd\H{o}s's proof that $\sum_p1/p$ diverges}
 Suppose $\sum_p1/p$ converges. Choose $y$ so that $\sum_{p>y}1/p<1/2$.
 
@@ -254,47 +286,78 @@ Every remaining $n$ is a multiple of a prime $p>y$. There are at most
 \[\sum_{y<p\le N}\left\lfloor\frac Np\right\rfloor\le N\sum_{p>y}\frac1p<N/2\]
 such multiples. We conclude that $N/2\le2^{\pi(y)}\sqrt N$. But $y$ has been fixed all along, and this fails for all sufficiently large $N$.
 \end{frame}
-\begin{frame}{The identity $\sum_{d\mid n}\mu(d)=\ind_{n=1}$}
+% voice-original-frame: 27
+\begin{frame}{M\"obius detects 1}
 Put $\mu(1)=1$, put $\mu(n)=0$ if $n$ is not squarefree, and put $\mu(n)=(-1)^k$ if $n$ is a product of $k$ distinct primes.
 
 For $n>1$ with $k$ distinct prime factors, only products of subsets of those primes contribute. Thus
 \[\sum_{d\mid n}\mu(d)=\sum_{j=0}^k(-1)^j\binom kj=(1-1)^k=0.\]
 For $n=1$ we get $1$, the contribution of the empty set of primes. Thus the single formula $\sum_{d\mid n}\mu(d)=\ind_{n=1}$ covers both cases.
 \end{frame}
+% voice-original-frame: 28
 \begin{frame}{Infinitude of primes from the support of $\mu$}
 Suppose $g(n)=\sum_{d\mid n}f(d)$ and both $f$ and $g$ vanish beyond some point. We claim $f$ is identically zero.
 
 Otherwise let $D$ be the largest index with $f(D)\ne0$. For $|z|<1$,
 \[\sum_{n\ge1}g(n)z^n=\sum_{d\le D}f(d)\sum_{j\ge1}z^{dj}=\sum_{d\le D}f(d)\frac{z^d}{1-z^d}.\]
-The left side is a polynomial. Let $z$ tend radially to a primitive $D$th root of unity. The $d=D$ term becomes unbounded, while every $d<D$ term has a finite limit. This proves the claim.
+What's the problem? The left side is a polynomial, but the right side has a pole! Let $z$ tend radially to a primitive $D$th root $\zeta$. For $d<D$, $\zeta^d\ne1$, so those terms have finite limits. The $d=D$ term is unbounded, since $f(D)\ne0$. Contradiction.
 
 Take $f=\mu$ and $g=\ind_{n=1}$. Finitely many primes would mean finitely many squarefree numbers, giving $\mu=0$, although $\mu(1)=1$.
 \end{frame}
+% voice-original-frame: 29
 \begin{frame}{M\"obius inversion}
 We can regard $\sum_{n\ge1}a_nn^{-s}$ as a formal series. What matters is the coefficient of each $n^{-s}$. Since $d^{-s}e^{-s}=(de)^{-s}$,
 \[\left(\sum_{d\ge1}\frac{a_d}{d^s}\right)\left(\sum_{e\ge1}\frac{b_e}{e^s}\right)=\sum_{n\ge1}\frac1{n^s}\sum_{de=n}a_db_e.\]
-For example, $\zeta(s)^2=\sum_{n\ge1}\tau(n)n^{-s}$, where $\tau(n)=\#\{d:d\mid n\}$. The coefficient in $\zeta(s)^k$ counts ordered $k$-tuples with product $n$.
+Each coefficient is a finite sum. Here $s$ is a formal variable; we are not asserting convergence for any value of $s$.
 
-Each coefficient is a finite sum. We are not asserting convergence for any value of $s$.
+For power series the indices \emph{add}; here they \emph{multiply}. Formal power series are useful for additive problems, Dirichlet series for multiplicative ones.
+\end{frame}
+\begin{frame}{Examples of formal Dirichlet series}
+Put $\zeta(s)=\sum_{n\ge1}n^{-s}$. Then
+\[
+\zeta(s)^2=\sum_{n\ge1}\frac1{n^s}\sum_{de=n}1
+=\sum_{n\ge1}\frac{\tau(n)}{n^s},
+\qquad \tau(n)=\#\{d:d\mid n\}.
+\]
+More generally, the coefficient of $n^{-s}$ in $\zeta(s)^k$ counts ordered $k$-tuples of positive integers with product $n$.
+
+Multiplying the series for an arithmetic function $f$ by $\zeta(s)$ replaces $f(n)$ by $\sum_{d\mid n}f(d)$. This is exactly the operation we want to undo in M\"obius inversion.
 
 \HW{1}{12} Consider formal Dirichlet series with complex coefficients, with termwise addition and the multiplication above. Prove that this ring is an integral domain and determine its units.
 \end{frame}
+% voice-original-frame: 30
 \begin{frame}{M\"obius inversion}
-The partial Euler product for $\zeta(s)$ over $p\le N$ has the right coefficient for every $n\le N$. Formal convergence means that each coefficient is eventually constant.
-\[\zeta(s)^{-1}=\prod_p(1-p^{-s})=\sum_{n\ge1}\frac{\mu(n)}{n^s}.\]
-We select $-p^{-s}$ for each $p\mid n$, so $n$ must be squarefree and its coefficient is $(-1)^{\#\{p:p\mid n\}}$.
-
-If $g(n)=\sum_{d\mid n}f(d)$, its series is $\zeta(s)\sum f(n)n^{-s}$. Multiply by $1/\zeta(s)$ and compare coefficients:
-\[f(n)=\sum_{d\mid n}\mu(d)g(n/d).\]
-Multiplying back by $\zeta(s)$ proves the converse. This is M\"obius inversion.
+How might we get $f$ in terms of $g$? The key is to invert $\zeta(s)$.
+\[
+\zeta(s)\sum_{n\ge1}\frac{\mu(n)}{n^s}
+=\sum_{n\ge1}\frac1{n^s}\sum_{d\mid n}\mu(d)=1.
+\]
+Thus, if $g(n)=\sum_{d\mid n}f(d)$, then
+\[
+\sum_{n\ge1}\frac{g(n)}{n^s}=\zeta(s)\sum_{n\ge1}\frac{f(n)}{n^s},\qquad
+\sum_{n\ge1}\frac{f(n)}{n^s}=\left(\sum_{d\ge1}\frac{\mu(d)}{d^s}\right)\left(\sum_{e\ge1}\frac{g(e)}{e^s}\right).
+\]
+Comparing coefficients gives $f(n)=\sum_{d\mid n}\mu(d)g(n/d)$. Multiplying back by $\zeta(s)$ proves the converse.
 \end{frame}
+\begin{frame}{Why did we define $\mu$ this way?}
+There is still something of a mystery here. We gave a direct proof, so there is no logical gap. But there is still a psychological gap: why this definition of $\mu$?
+
+Start from the formal Euler product and invert:
+\[\zeta(s)=\prod_p(1-p^{-s})^{-1},\qquad
+\zeta(s)^{-1}=\prod_p(1-p^{-s})=\sum_{n\ge1}\frac{\mu(n)}{n^s}.\]
+To obtain $n^{-s}$, select $-p^{-s}$ for each prime dividing $n$. Each prime can be selected at most once, so $n$ must be squarefree; its coefficient is $(-1)^{\#\{p:p\mid n\}}$.
+
+What does convergence mean here? Each coefficient is eventually constant. The product over $p\le N$ already has the right coefficient for every $n\le N$.
+\end{frame}
+% voice-original-frame: 31
 \begin{frame}{Infinitude of primes by counting smooth integers}
 Call $n$ \emph{$y$-smooth} if every prime factor is at most $y$. Write $\Psi(x,y)$ for their count up to $x$, including $1$.
 
 For $y=2$ we get $1+\lfloor\log x/\log2\rfloor$. For $y=3$ count nonnegative integer pairs $(a,b)$ with
 \[a\log2+b\log3\le\log x.\]
-Denote by $\Delta(t)$ the triangle with $t$ on the right. Draw a unit square with lower left corner at each lattice point counted. These squares cover $\Delta(\log x)$ (round coordinates down). Increasing both coordinates by $1$ adds only $\log6$, so every square is contained in $\Delta(\log x+\log6)$.
+Denote by $\Delta(t)$ the triangle $a,b\ge0$, $a\log2+b\log3\le t$. Our guess is that the number of lattice points is about the area. Draw a unit square with lower left corner at each lattice point counted. These squares cover $\Delta(\log x)$: round both coordinates down to find a square containing any given point. How far can they protrude? Increasing both coordinates by $1$ adds only $\log6$, so every square lies in $\Delta(\log x+\log6)$.
 \end{frame}
+% voice-original-frame: 32
 \begin{frame}{Infinitude of primes by counting smooth integers}
 \begin{columns}
 \column{.49\textwidth}
@@ -311,6 +374,7 @@ Each dot represents one integer $2^a3^b\le30$. For instance, $(3,1)$ represents 
 The shaded squares cover the triangle $a\log2+b\log3\le\log30$ in the first quadrant. Each has area $1$, so their combined area is $\Psi(30,3)$.
 \end{columns}
 \end{frame}
+% voice-original-frame: 33
 \begin{frame}{Infinitude of primes by counting smooth integers}
 The area of $\Delta(t)$ is $t^2/(2\log2\log3)$. The two areas differ by $O(\log x)$, so
 \[\Psi(x,3)=\frac{(\log x)^2}{2\log2\log3}+O(\log x).\]
@@ -318,6 +382,7 @@ For the first $k$ primes, draw unit cubes in $k$ dimensions. Their union contain
 \[\Psi(x,p_k)=\frac{(\log x)^k}{k!\prod_{i=1}^k\log p_i}+O_k((\log x)^{k-1}).\]
 If $p_k$ were the last prime, $\Psi(x,p_k)=\lfloor x\rfloor$. But $\Psi(x,p_k)/x\to0$, whereas $\lfloor x\rfloor/x\to1$. This proves infinitude.
 \end{frame}
+% voice-original-frame: 34
 \begin{frame}{Infinitude of primes from the maximal ideals of $\Z[X]$}
 Suppose $(f)$ is maximal. Then $\Z[X]/(f)$ is a field. A constant $f$ will not do: $f=0,\pm1$ gives $\Z[X]$ or the zero ring; for $|f|>1$ the class of $X$ is a nonzero nonunit.
 
@@ -325,21 +390,26 @@ If $\deg f>0$, choose an integer $n$ with $|f(n)|>1$. The constant $f(n)$ has no
 \[f(n)g(X)-f(X)h(X)=1,\qquad g,h\in\Z[X].\]
 Set $X=n$. The left side is divisible by $f(n)$, while the right side is $1$. Thus $\Z[X]$ has no principal maximal ideal.
 \end{frame}
+% voice-original-frame: 35
 \begin{frame}{Infinitude of primes from the maximal ideals of $\Z[X]$}
-Suppose the complete list of primes is $p_1,\ldots,p_k$, and put $P=p_1\cdots p_k$. Every positive integer divides a power of $P$, so adjoining $1/P$ to $\Z$ gives all of $\mathbb Q$. In particular,
+Suppose the complete list of primes is $p_1,\ldots,p_k$, and put $P=p_1\cdots p_k$. What numbers do we get by adjoining $1/P$ to $\Z$? Every positive integer $b$ divides some $P^j$. Thus $a/b=(aP^j/b)/P^j$ belongs to $\Z[1/P]$, and we get all of $\mathbb Q$. In particular,
 \[\mathbb Q=\Z[1/P]\cong\Z[X]/(PX-1).\]
 Send $X$ to $1/P$. Conversely send $a/P^j$ to the class of $aX^j$; this is well defined since $PX=1$ in the quotient.
 
 But $\mathbb Q$ is a field. This would make $(PX-1)$ a principal maximal ideal of $\Z[X]$, and we have just seen that there are none.
 \end{frame}
+% voice-original-frame: 36
 \begin{frame}{Washington's proof}
-We use two facts about the ring of integers $\mathcal O_K$ of a number field $K$, the elements satisfying monic polynomials over $\Z$.
+Recall that the ring of integers $\mathcal O_K$ consists of the elements of $K$ satisfying monic polynomials over $\Z$.
+
+A \emph{Dedekind domain} is a Noetherian, integrally closed domain whose nonzero prime ideals are maximal. We use two facts:
 \begin{itemize}
 \item Every nonzero prime ideal lies over a rational prime $p$: its intersection with $\Z$ is $p\Z$. At most $[K:\mathbb Q]$ prime ideals lie over any one $p$.
 \item $\mathcal O_K$ is a Dedekind domain. A Dedekind domain with only finitely many nonzero prime ideals is a principal ideal domain, hence has unique factorization of elements.
 \end{itemize}
 Thus finitely many primes would make $\mathcal O_K$ a principal ideal domain, hence a unique factorization domain, for every $K$. But this is false for some $K$.
 \end{frame}
+% voice-original-frame: 37
 \begin{frame}{Washington's proof}
 In $\mathcal O_{\mathbb Q(\sqrt{-5})}=\Z[\sqrt{-5}]$ we have
 \[6=2\cdot3=(1+\sqrt{-5})(1-\sqrt{-5}).\]
@@ -352,17 +422,19 @@ Take norms, where $N(a+b\sqrt{-5})=a^2+5b^2$. Norms multiply, and the only units
 \section{Prime-producing sequences}
 
 % ---- sections/toc-038 ----
+% voice-original-frame: 38
 \begin{frame}{Prime-producing sequences}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation39}{Composite values of polynomials}&39\\
-\hyperlink{Navigation40}{Euler's prime-producing polynomial}&40--41\\
-\hyperlink{Navigation42}{Primes as polynomial values in several variables}&42--44\\
-\hyperlink{Navigation45}{Bunyakovsky's conjecture}&45\\
-\hyperlink{Navigation46}{Erd\H{o}s's theorem on $2^n+k$}&46--48\\
-\hyperlink{Navigation49}{Pseudoprimes and Carmichael numbers}&49--50\\
+\hyperlink{Navigation41}{Composite values of polynomials}&41\\
+\hyperlink{Navigation42}{Euler's prime-producing polynomial}&42--43\\
+\hyperlink{Navigation44}{Primes as polynomial values in several variables}&44--46\\
+\hyperlink{Navigation47}{Bunyakovsky's conjecture}&47\\
+\hyperlink{Navigation48}{Erd\H{o}s's theorem on $2^n+k$}&48--51\\
+\hyperlink{Navigation52}{Pseudoprimes and Carmichael numbers}&52--53\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
+% voice-original-frame: 39
 \begin{frame}{Composite values of polynomials}
 Goldbach called Euler's attention to $f(X)=X^2+19X-19$. At $X=2,4,8,16,32$ one gets a prime each time. At $64$ one gets $5293=67\cdot79$. Could a more fortunate choice of $f$ succeed?
 
@@ -370,30 +442,36 @@ Let $f\in\Z[X]$ be nonconstant. Choose $n_0>0$ with $|f(n_0)|>1$ and a prime $p\
 
 Even restriction to powers of $2$ does not help. Otherwise, for large $n_0$ we would have $|f(2^{n_0})|=p$ with $p$ odd. For every $n\equiv n_0\pmod{p-1}$, Fermat's theorem gives $p\mid f(2^n)$. Now take $n$ large.
 \end{frame}
+% voice-original-frame: 40
 \begin{frame}{Euler's prime-producing polynomial}
-Euler's $f(X)=X^2-X+41$ takes prime values for $1\le n\le40$. At $n=41$, it gives $41^2$. Why such a long run?
+Euler's $f(X)=X^2-X+41$ takes prime values for $1\le n\le40$. At $n=41$, it gives $41^2$. Why such a long run? The explanation comes from unique factorization in $\Z[(1+\sqrt{-163})/2]$.
 
 Put $\theta=(1+\sqrt{-163})/2$. Then $\theta^2=\theta-41$, $\bar\theta=1-\theta$, and
 \[\mathcal O=\Z[\theta]=\{a+b\theta:a,b\in\Z\},\qquad f(n)=(n-\theta)(n-\bar\theta).\]
 We use the fact that $\mathcal O$ is a unique factorization domain. Its norm is
 \[N(a+b\theta)=(a+b\theta)(a+b\bar\theta)=a^2+ab+41b^2.\]
-An element of norm $1$ has its conjugate for an inverse. Conversely, a unit has norm $1$, since norms multiply and nonzero elements have positive integer norms.
+Why is $\mathcal O=\Z+\Z\theta$? The relation $\theta^2=\theta-41$ reduces every higher power to this form. Also $\bar\theta=1-\theta\in\mathcal O$, so $\mathcal O$ is closed under conjugation.
+
+An element of norm $1$ has its conjugate for an inverse. Conversely, a unit has norm $1$: take norms in $\alpha\beta=1$.
 \end{frame}
+% voice-original-frame: 41
 \begin{frame}{Euler's prime-producing polynomial}
 Suppose $1\le n<41$ and $f(n)$ is composite. Since $1<f(n)<41^2$, some prime $p<41$ divides $f(n)$.
 
 If $p$ were irreducible in $\mathcal O$, unique factorization would force $p\mid n-\theta$ or $p\mid n-1+\theta$. Neither is possible: dividing by $p$ leaves coefficient $\pm1/p$ on $\theta$.
 
-Thus $p=\alpha\beta$ for nonunits. Since $p^2=N\alpha N\beta$, both norms equal $p$. Writing $\alpha=a+b\theta$ gives
+Thus $p=\alpha\beta$ for nonunits. Taking norms gives $p^2=N\alpha N\beta$. Both norms are positive integers greater than $1$, so both must equal $p$. Writing $\alpha=a+b\theta$ gives
 \[p=(a+b/2)^2+\frac{163}4b^2.\]
 If $b=0$, then $p=a^2$. Otherwise $p\ge163/4$, hence $p\ge41$. Both are impossible.
 \end{frame}
+% voice-original-frame: 42
 \begin{frame}{The primes as polynomial values in several variables}
 What if we allow polynomials in several variables? There is a polynomial in $26$ variables whose positive values, as the variables range over the nonnegative integers, are precisely the primes. The word \emph{positive} is important! Zero and negative values are allowed.
 \end{frame}
 
 % ---- sections/polynomial ----
 
+% voice-original-frame: 43
 \begin{frame}{A prime-producing polynomial in 26 variables}
 The positive values of the following polynomial, for nonnegative integer values of $a,b,\ldots,z$, are precisely the primes.
 \vspace{1pt}
@@ -421,9 +499,13 @@ P(a,b,\ldots,z)=(k+2)\bigl\{1
 Jones, Sato, Wada, and Wiens, \emph{American Mathematical Monthly} 83 (1976), 449--464.}
 \end{frame}
 
+% voice-original-frame: 44
 \begin{frame}{Returning to one variable}
-Returning to polynomials in one variable, which should we expect to take infinitely many prime values?
+Which functions assume infinitely many prime values?
+
+For a linear polynomial $a+mX$, with $m>0$ and $(a,m)=1$, Dirichlet's theorem gives the answer. What about higher degree polynomials?
 \end{frame}
+% voice-original-frame: 45
 \begin{frame}{Bunyakovsky's conjecture}
 For a nonconstant $f\in\Z[X]$ with positive leading coefficient we certainly want $f$ irreducible. We must also exclude a \emph{fixed prime divisor}, a prime $p$ dividing $f(n)$ for every integer $n$.
 
@@ -431,13 +513,15 @@ For example, $X^2+X+2$ has relatively prime coefficients but is even at every in
 \begin{block}{Bunyakovsky's conjecture}Under those two conditions, $f(n)$ is prime for infinitely many positive integers $n$.\end{block}
 For a linear polynomial this is Dirichlet's theorem. Already for $X^2+1$ we do not know the answer. Iwaniec proved that $n^2+1$ has at most two prime factors (counted with multiplicity) for infinitely many $n$.
 \end{frame}
+% voice-original-frame: 46
 \begin{frame}{Erd\H{o}s's theorem on the numbers $2^n+k$}
-Erd\H{o}s proved that there is an odd positive integer $k$ such that $2^n+k$ is composite for all positive integers $n$. We impose congruence conditions on $k$, dealing with some of the exponents $n$ at each step.
+Erd\H{o}s proved that there is an odd positive integer $k$ such that $2^n+k$ is composite for all positive integers $n$. We work piecemeal, imposing more conditions on $k$ to cover all $n$.
 
-If $n$ is odd, then $2^n\equiv-1\pmod3$, so choose $k\equiv1\pmod3$. If $n\equiv2\pmod4$, then $2^n\equiv-1\pmod5$, so choose $k\equiv1\pmod5$.
+Baby problem: find a $k$ for which $2^n+k$ is never prime for an \emph{odd} $n$. Then $2^n\equiv-1\pmod3$, so choose $k\equiv1\pmod3$, $k>3$. If $n\equiv2\pmod4$, then $2^n\equiv-1\pmod5$, so choose $k\equiv1\pmod5$.
 
 Recall that if $p\mid F_j$, then $2^{2^j}\equiv-1\pmod p$ and the order of $2$ modulo $p$ is $2^{j+1}$. Use prime factors of the Fermat numbers to cover the remaining classes.
 \end{frame}
+% voice-original-frame: 47
 \begin{frame}{Erd\H{o}s's theorem on the numbers $2^n+k$}
 \small\centering
 \begin{tabular}{lll}\toprule
@@ -450,10 +534,18 @@ $16\bmod32$&65537&$1\bmod65537$\\
 $32\bmod64$&641&$1\bmod641$\\
 $0\bmod64$&6700417&$-1\bmod6700417$\\\bottomrule
 \end{tabular}\par\raggedright
-The last two rows use $F_5=641\cdot6700417$ and $2^{64}\equiv1\pmod{6700417}$.
+Why does the table cover every $n$? Either $n$ is odd, or $2\mid n$. In the latter case, either $n\equiv2\pmod4$, or $4\mid n$. Keep going: after the first six rows, only $64\mid n$ remains.
+\end{frame}
+\begin{frame}{Finishing the covering argument}
+The last two rows use the two prime factors of $F_5$:
+\[F_5=2^{32}+1=641\cdot6700417.\]
+If $n\equiv32\pmod{64}$, then $2^n\equiv-1\pmod{641}$. If $64\mid n$, then $2^n\equiv1\pmod{6700417}$.
+
+This is why two factors of the same Fermat number are useful: one deals with $32\pmod{64}$, the other with $0\pmod{64}$.
 
 Our seven moduli, together with $2$, are pairwise coprime. The Chinese remainder theorem supplies an odd $k>6700417$ satisfying every condition. Whichever row contains $n$, the indicated prime is a proper divisor of $2^n+k$.
 \end{frame}
+% voice-original-frame: 48
 \begin{frame}{Erd\H{o}s's theorem on the numbers $2^n+k$}
 \small
 Which $k$ do we get? The six congruences with residue $1$ say $k=1+Mt$, where
@@ -466,11 +558,13 @@ This $k$ is odd and exceeds all seven primes, so each indicated divisor is prope
 
 \HW{2}{4} Prove that for every integer $n\ge1$, the number $2^n+78557$ is divisible by at least one of $3,5,7,13,19,37,73$.
 \end{frame}
+% voice-original-frame: 49
 \begin{frame}{Pseudoprimes to base 2}
 If $N$ is an odd prime, then $2^{N-1}\equiv1\pmod N$ by Fermat's little theorem. Does the converse hold?
 
 Consider $341=11\cdot31$. Since $2^{10}=1024=3\cdot341+1$, we have $2^{340}\equiv1\pmod{341}$. A composite that passes this test is called a \emph{pseudoprime to base $2$}.
 \end{frame}
+% voice-original-frame: 50
 \begin{frame}{Carmichael numbers}
 Some composites pass for every base coprime to them. For example, $561=3\cdot11\cdot17$, and $2,10,16$ all divide $560$. If $(a,561)=1$, Fermat's little theorem gives $a^{560}\equiv1$ modulo each of $3,11,17$, hence modulo $561$. Such numbers are called \emph{Carmichael numbers}.
 \end{frame}
@@ -480,23 +574,37 @@ Some composites pass for every base coprime to them. For example, $561=3\cdot11\
 \section{Counting primes}
 
 % ---- sections/toc-051 ----
+% voice-original-frame: 51
 \begin{frame}{Counting primes}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation52}{A heuristic for the prime number theorem}&52\\
-\hyperlink{Navigation53}{The product formula for rational numbers}&53\\
-\hyperlink{Navigation54}{Infinitude from the product formula}&54--55\\
-\hyperlink{Navigation56}{Chebyshev's estimates for $\pi(x)$}&56--62\\
-\hyperlink{Navigation63}{A quantitative form of Bertrand's postulate}&63--64\\
+\hyperlink{Navigation55}{A heuristic for the prime number theorem}&55--56\\
+\hyperlink{Navigation57}{The product formula for rational numbers}&57\\
+\hyperlink{Navigation58}{Infinitude from the product formula}&58--59\\
+\hyperlink{Navigation60}{Chebyshev's estimates for $\pi(x)$}&60--66\\
+\hyperlink{Navigation67}{A quantitative form of Bertrand's postulate}&67--68\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
+% voice-original-frame: 52
 \begin{frame}{A heuristic for the prime number theorem}
-In class we obtained $\sum_{p\le x}1/p>\log\log x-1$. The upper bound from Homework 1, Problem 11 gives $\sum_{p\le x}1/p\sim\log\log x$.
+We know $\pi(x)\to\infty$. How fast? Let's guess!
+
+Our lower bound, together with Homework 1, Problem 11, gives $\sum_{p\le x}1/p\sim\log\log x$.
 
 Partial summation (Homework 2, Problem 7) writes the sum as
 \[\frac{\pi(x)}x+\int_2^x\frac{\pi(t)}{t^2}\dd t.\]
-Now $\pi(x)/x\le1$, so the integral alone is asymptotic to $\log\log x$. Differentiating would give $\pi(x)/x^2\sim1/(x\log x)$, or $\pi(x)\sim x/\log x$. This is only heuristic: asymptotic relations need not hold after differentiation.
+Since $\pi(x)/x\le1$, the integral alone is asymptotic to $\log\log x$.
 \end{frame}
+\begin{frame}{A heuristic for the prime number theorem}
+Suppose we replace $\pi(t)$ by a good smooth approximation $P(t)$. We expect
+\[\int_2^x\frac{P(t)}{t^2}\dd t\sim\log\log x.\]
+Differentiating suggests
+\[\frac{P(x)}{x^2}\sim\frac1{x\log x},\qquad P(x)\sim\frac{x}{\log x}.\]
+``Hence'' $\pi(x)\sim x/\log x$.
+
+This is a guess, not a proof: an asymptotic relation need not survive differentiation. The prime number theorem says that the guess is right!
+\end{frame}
+% voice-original-frame: 53
 \begin{frame}{The product formula for rational numbers}
 For a prime $p$, let $v_p(n)$ be its exponent in a nonzero integer $n$. Extend by $v_p(a/b)=v_p(a)-v_p(b)$, and put $|r|_p=p^{-v_p(r)}$ for $r\ne0$, $|0|_p=0$.
 
@@ -506,20 +614,28 @@ For a nonzero rational $r$,
 \[|r|\prod_p|r|_p=1.\]
 Write $r=\pm\prod p^{e_p}$. Then $|r|=\prod p^{e_p}$, while the factor at $p$ is $p^{-e_p}$. All but finitely many factors are $1$.
 \end{frame}
+% voice-original-frame: 54
 \begin{frame}{Infinitude of primes from the product formula}
 Given a finite list $S$ of primes, let $N=1+\prod_{p\in S}p$. For $p\in S$, $|N|_p=1$. The product formula reads
 \[\prod_{p\notin S}|N|_p=\frac1N<1.\]
 Since the product is less than $1$, at least one prime outside $S$ divides $N$. This is Euclid's proof again.
 \end{frame}
+% voice-original-frame: 55
 \begin{frame}{From infinitude to counting primes}
-To count primes up to $x$, look at $\lfloor x\rfloor!$. Every prime up to $x$ divides it, and we can estimate its size.
+If we understand both the size and the prime factorization of an integer $N$, we get information about primes.
+
+For counting primes up to $x$, the candidate is
+\[N_x=1\cdot2\cdot3\cdots\lfloor x\rfloor=\lfloor x\rfloor!.\]
+Every prime up to $x$ divides it. We can estimate its size by summing $\log n$, and count its prime factors by counting multiples of $p,p^2,p^3,\ldots$.
 \end{frame}
+% voice-original-frame: 56
 \begin{frame}{Chebyshev's estimates for $\pi(x)$}
 \begin{block}{Theorem}Let $0<c_1<\log2$ and $c_2>2\log2$. For all sufficiently large $x$,
 \[c_1\frac{x}{\log x}\le\pi(x)\le c_2\frac{x}{\log x}.\]
 \end{block}
 We first bound $\psi(x)=\sum_{p^k\le x}\log p$ and compare it with $\pi(x)\log x$. We compute $\log\lfloor x\rfloor!$ in two ways: summing $\log n$ and counting prime factors. Subtracting twice the identity at $x/2$ from the identity at $x$ gives an alternating sum with decreasing terms.
 \end{frame}
+% voice-original-frame: 57
 \begin{frame}{Chebyshev's estimates for $\pi(x)$}
 Put $T(x)=\log\lfloor x\rfloor!=\sum_{n\le x}\log n$, with natural logarithms. Put $N=\lfloor x\rfloor$ and compare areas under $\log t$. For $x\ge2$,
 \[\int_1^N\log t\dd t\le T(x)\le\int_1^{N+1}\log t\dd t.\]
@@ -527,12 +643,14 @@ The two integrals differ by at most $\log(N+1)$, and $\int_1^x\log t\dd t=x\log 
 \[T(x)=x\log x-x+O(\log x).\]
 The lower bound $T(x)\ge x\log x-x-K\log x$ is Homework 2, Problem 8. Here $O(\log x)$ means a quantity bounded in absolute value by a constant times $\log x$ for $x\ge2$.
 \end{frame}
+% voice-original-frame: 58
 \begin{frame}{Chebyshev's estimates for $\pi(x)$}
-Each multiple of $p$ in $\lfloor x\rfloor!$ contributes one copy of $p$, each multiple of $p^2$ a second, and so on:
+How many copies of $p$ are there in $\lfloor x\rfloor!$? Each multiple of $p$ contributes one, each multiple of $p^2$ a second, and so on:
 \[v_p(\lfloor x\rfloor!)=\sum_{n\le x}\sum_{\substack{k\ge1\\p^k\mid n}}1=\sum_{k\ge1}\left\lfloor\frac{x}{p^k}\right\rfloor.\]
 Put $\theta(x)=\sum_{p\le x}\log p$ and $\psi(x)=\sum_{p^k\le x}\log p$, where $k\ge1$. Taking logarithms and reversing summation gives
 \[T(x)=\sum_{p^k\le x}\log p\left\lfloor\frac{x}{p^k}\right\rfloor=\sum_{j\le x}\sum_{p^k\le x/j}\log p=\sum_{j\le x}\psi(x/j).\]
 \end{frame}
+% voice-original-frame: 59
 \begin{frame}{Chebyshev's estimates for $\pi(x)$}
 In $T(x)=\sum_j\psi(x/j)$ the even-indexed terms sum to $T(x/2)$. Subtracting $2T(x/2)$ changes precisely their signs:
 \[\psi(x)-\psi(x/2)+\psi(x/3)-\psi(x/4)+\cdots=T(x)-2T(x/2).\]
@@ -543,6 +661,7 @@ T(x)-2T(x/2)&=x\log x-x-x\log(x/2)+x+O(\log x)\\
 \end{align*}
 We have an alternating sum with decreasing terms! Its first term gives an upper bound for the sum, the first two terms a lower bound, and so on.
 \end{frame}
+% voice-original-frame: 60
 \begin{frame}{Chebyshev's estimates for $\pi(x)$}
 Keeping the first term gives $\psi(x)\ge x\log2-O(\log x)$. Powers of any single prime contribute at most $\log x$, since
 \[\psi(x)=\sum_{p\le x}\log p\left\lfloor\frac{\log x}{\log p}\right\rfloor\le\pi(x)\log x.\]
@@ -550,12 +669,14 @@ It follows that
 \[\pi(x)\ge(\log2)\frac{x}{\log x}-O(1).\]
 Thus any $c_1<\log2$ works in the lower bound once $x$ is large enough.
 \end{frame}
+% voice-original-frame: 61
 \begin{frame}{Chebyshev's estimates for $\pi(x)$}
 Stopping after two terms gives
 \[\psi(x)-\psi(x/2)\le x\log2+C\log x\qquad(x\ge4).\]
-Apply this at $x,x/2,x/4,\ldots$, stopping just before the argument drops below $4$. The left side telescopes to $\psi(x)+O(1)$. The main terms sum to at most $x\log2\sum_{j\ge0}2^{-j}=2x\log2$. There are $O(\log x)$ error terms, each $O(\log x)$. Thus
+Replace $x$ by $x/2$, then $x/4$, and keep going. Choose $k$ as large as possible with $x/2^{k-1}\ge4$. On adding, the left side is $\psi(x)-\psi(x/2^k)$. Since $2\le x/2^k<4$, the last term is bounded. The main terms sum to at most $x\log2\sum_{j\ge0}2^{-j}=2x\log2$. There are $O(\log x)$ error terms, each $O(\log x)$. Thus
 \[\psi(x)\le(2\log2)x+O((\log x)^2).\]
 \end{frame}
+% voice-original-frame: 62
 \begin{frame}{Chebyshev's estimates for $\pi(x)$}
 Fix $\epsilon\in(0,1)$ and let $y=x^{1-\epsilon}$. Every prime in $(y,x]$ contributes at least $\log y$ to $\psi(x)$. Thus
 \[\pi(x)\le\pi(y)+\frac{\psi(x)}{\log y}\le x^{1-\epsilon}+\frac1{1-\epsilon}\frac{\psi(x)}{\log x}.\]
@@ -563,15 +684,19 @@ Divide by $x/\log x$. The first term tends to zero, and the limsup of the second
 \begin{block}{Chebyshev's estimates}For $0<c_1<\log2$ and $c_2>2\log2$, $c_1x/\log x\le\pi(x)\le c_2x/\log x$ for all sufficiently large $x$.\end{block}
 Changing constants covers every $x\ge2$: the ratio is bounded above and away from zero on the remaining bounded interval.
 \end{frame}
+% voice-original-frame: 63
 \begin{frame}{A quantitative form of Bertrand's postulate}
 Fix $K>2$. Choose $c_1<\log2$ and $c_2>2\log2$ close enough to the endpoints that $Kc_1/c_2>1$. For large $x$,
 \[\frac{\pi(Kx)}{\pi(x)}\ge K\frac{c_1}{c_2}\frac{\log x}{\log(Kx)}>1.\]
-This gives a prime in $(x,Kx]$. For $K=2$, return to the alternating sum and keep one more term:
+This gives a prime in $(x,Kx]$. But the ratio argument does not reach $K=2$: we need $Kc_1/c_2>1$, whereas $c_1/c_2<1/2$.
+
+For $K=2$, go back to the alternating sum and keep one more term:
 \begin{align*}
 \psi(x)-\psi(x/2)&\ge x\log2-\psi(x/3)-O(\log x)\\
 &\ge\tfrac13(\log2)x-O((\log x)^2).
 \end{align*}
 \end{frame}
+% voice-original-frame: 64
 \begin{frame}{A quantitative form of Bertrand's postulate}
 If $p^k\le x$ with $k\ge2$, then $p\le\sqrt x$. All powers of any one $p$ contribute at most $\log x$. Hence
 \[0\le\psi(x)-\theta(x)\le\sqrt x\log x.\]
@@ -587,39 +712,43 @@ For each $0<c_3<\frac13\log2$ and all sufficiently large $x$, $(x/2,x]$ contains
 \section{Mertens' estimates}
 
 % ---- sections/toc-065 ----
+% voice-original-frame: 65
 \begin{frame}{Mertens' estimates (1 of 2)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation67}{Mertens' estimate for $\sum_{p\le x}(\log p)/p$}&67\\
-\hyperlink{Navigation68}{Partial summation}&68\\
-\hyperlink{Navigation69}{Mertens' estimate for $\sum_{p\le x}1/p$}&69\\
-\hyperlink{Navigation70}{Mertens' product up to a constant factor}&70\\
-\hyperlink{Navigation71}{Euler's constant and the harmonic sum}&71\\
-\hyperlink{Navigation72}{Mertens' product theorem}&72\\
-\hyperlink{Navigation73}{Reading supplement: the constant in the product}&73--75\\
+\hyperlink{Navigation71}{Mertens' estimate for $\sum_{p\le x}(\log p)/p$}&71\\
+\hyperlink{Navigation72}{Partial summation}&72\\
+\hyperlink{Navigation73}{Mertens' estimate for $\sum_{p\le x}1/p$}&73--74\\
+\hyperlink{Navigation75}{Mertens' product up to a constant factor}&75\\
+\hyperlink{Navigation76}{The harmonious truth}&76\\
+\hyperlink{Navigation77}{Mertens' product theorem}&77\\
+\hyperlink{Navigation78}{Reading supplement: the constant in the product}&78--80\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
 
 % ---- sections/toc-066 ----
+% voice-original-frame: 66
 \begin{frame}{Mertens' estimates (2 of 2)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation76}{The theorem of Montgomery and Wagon}&76--77\\
-\hyperlink{Navigation78}{Ingham's theorem (statement)}&78\\
-\hyperlink{Navigation79}{Gauss, Legendre, and Littlewood's theorem}&79--84\\
-\hyperlink{Navigation85}{A heuristic for primes ending in 3}&85\\
-\hyperlink{Navigation86}{A heuristic for twin primes}&86\\
-\hyperlink{Navigation87}{A heuristic for prime values of $n^2+1$}&87\\
-\hyperlink{Navigation88}{Numerical examples}&88\\
+\hyperlink{Navigation81}{The theorem of Montgomery and Wagon}&81--83\\
+\hyperlink{Navigation84}{How (not) to prove the PNT}&84\\
+\hyperlink{Navigation85}{Gauss, Legendre, and Littlewood's theorem}&85--90\\
+\hyperlink{Navigation91}{A heuristic for primes ending in 3}&91\\
+\hyperlink{Navigation92}{A heuristic for twin primes}&92\\
+\hyperlink{Navigation93}{A heuristic for prime values of $n^2+1$}&93--94\\
+\hyperlink{Navigation95}{Numerical examples}&95\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
+% voice-original-frame: 67
 \begin{frame}{Mertens' estimate for $\sum_{p\le x}(\log p)/p$}
 Recall $\log\lfloor x\rfloor!=\sum_{p^k\le x}\log p\lfloor x/p^k\rfloor$. Dropping the floor incurs error at most $\psi(x)=O(x)$. Thus
 \[x\sum_{p^k\le x}\frac{\log p}{p^k}=\log\lfloor x\rfloor!+O(x)=x\log x+O(x).\]
-Divide by $x$. Prime powers with $k\ge2$ contribute only $O(1)$, since
+Divide by $x$. If it were not for the terms with $k\ge2$, we would already have the estimate we want. But these nuisance terms contribute a bounded amount:
 \[\sum_p\sum_{k\ge2}\frac{\log p}{p^k}=\sum_p\frac{\log p}{p(p-1)}\le\sum_{n\ge2}\frac{\log n}{n(n-1)}<\infty.\]
 Consequently $\sum_{p\le x}(\log p)/p=\log x+O(1)$ for $x\ge2$.
 \end{frame}
+% voice-original-frame: 68
 \begin{frame}{The partial summation formula}
 From Homework 2, Problem 7: put $A(t)=\sum_{n\le t}a_n$. For continuously differentiable $h$ and $x\ge1$,
 \[\sum_{n\le x}a_nh(n)=A(x)h(x)-\int_1^x A(t)h'(t)\dd t.\]
@@ -628,20 +757,34 @@ Substitute $h(n)=h(x)-\int_n^x h'(t)\dd t$ on the left. The coefficient of $h'(t
 For example, take $a_n$ to be $1$ on primes and $0$ elsewhere, and $h(t)=1/t$:
 \[\sum_{p\le x}\frac1p=\frac{\pi(x)}x+\int_2^x\frac{\pi(t)}t\frac{\dd t}t.\]
 \end{frame}
+% voice-original-frame: 69
 \begin{frame}{Mertens' estimate for $\sum_{p\le x}1/p$}
 Write $A(t)=\sum_{p\le t}(\log p)/p=\log t+R(t)$ for $t\ge2$, where $R(t)=O(1)$. Partial summation with $h(t)=1/\log t$ gives
 \[\sum_{p\le x}\frac1p=\frac{A(x)}{\log x}+\int_2^x\frac{A(t)}{t(\log t)^2}\dd t.\]
-The $\log t$ term contributes $1+\log\log x-\log\log2$. The integral involving $R$ converges, with tail $O(\int_x^\infty\dd t/(t\log^2t))=O(1/\log x)$. Also $R(x)/\log x=O(1/\log x)$. Collecting constants in $B$ gives
-\[\sum_{p\le x}\frac1p=\log\log x+B+O(1/\log x).\]
+The $\log t$ term contributes $1+\log\log x-\log\log2$. Since $R$ is bounded,
+\[\int_2^\infty\frac{R(t)}{t(\log t)^2}\dd t\]
+converges absolutely. Its tail has absolute value at most
+\[C\int_x^\infty\frac{\dd t}{t(\log t)^2}=\frac{C}{\log x}.\]
 \end{frame}
+\begin{frame}{Mertens' estimate for $\sum_{p\le x}1/p$}
+Thus we can put
+\[B=1-\log\log2+\int_2^\infty\frac{R(t)}{t(\log t)^2}\dd t.\]
+Also $R(x)/\log x=O(1/\log x)$. Collecting estimates gives
+\[\sum_{p\le x}\frac1p=\log\log x+B+O(1/\log x).\]
+The point is that the error in $A(t)=\log t+O(1)$ contributes a convergent integral. Replacing that integral by its limit leaves only a tail of size $O(1/\log x)$.
+\end{frame}
+% voice-original-frame: 70
 \begin{frame}{Mertens' product up to a constant factor}
 Take logarithms and use $-\log(1-u)=\sum_{k\ge1}u^k/k$:
 \[\log\prod_{p\le x}(1-1/p)^{-1}=\sum_{p\le x}\frac1p+\sum_{p\le x}\sum_{k\ge2}\frac1{kp^k}.\]
-The double sum converges over all primes; its $p>x$ tail is at most $\sum_{n>x}1/(n(n-1))=O(1/x)$. For some constant $b$, the logarithm is $\log\log x+b+O(1/\log x)$. Exponentiating gives
+The double sum converges over all primes; its $p>x$ tail is at most $\sum_{n>x}1/(n(n-1))=O(1/x)$. For some constant $b$, the logarithm is $\log\log x+b+O(1/\log x)$. Taking exponentials and using $e^{O(1/\log x)}=1+O(1/\log x)$ gives
 \[\prod_{p\le x}(1-1/p)=\frac{e^{-b}}{\log x}+O\left(\frac1{(\log x)^2}\right).\]
 What is $b$?
 \end{frame}
-\begin{frame}{Euler's constant and the harmonic sum}
+% voice-original-frame: 71
+\begin{frame}{The harmonious truth}
+We know the harmonic sum is within $1$ of $\log x$. In fact, the difference tends to a limit.
+
 Put $\gamma_n=1/n-\int_n^{n+1}\dd t/t$. By monotonicity,
 \[0\le\gamma_n\le\frac1n-\frac1{n+1},\qquad \gamma=\sum_{n\ge1}\gamma_n\]
 exists, and $\sum_{n>N}\gamma_n\le1/(N+1)$. Thus
@@ -649,20 +792,23 @@ exists, and $\sum_{n>N}\gamma_n\le1/(N+1)$. Thus
 Take $N=\lfloor x\rfloor$. Since $0\le\log((N+1)/x)\le1/x$,
 \[\sum_{n\le x}\frac1n=\log x+\gamma+O(1/x).\]
 \end{frame}
+% voice-original-frame: 72
 \begin{frame}{Mertens' product theorem}
 Mertens' product theorem says that $b$ is precisely this $\gamma$. For $x\ge3$,
 \[\prod_{p\le x}(1-1/p)=\frac{e^{-\gamma}}{\log x}+O\left(\frac1{(\log x)^2}\right).\]
-We referred to the book for the identification of $b$. Its argument is included in the reading supplement that follows. \emph{Not Always Buried Deep}, Theorem 3.17.
+It remains to identify the constant. We do this by evaluating the same limit in two different ways.
 \end{frame}
+% voice-original-frame: 73
 \begin{frame}{Reading supplement: the constant in Mertens' product}
 Put $B_1=\lim_{x\to\infty}(\sum_{p\le x}1/p-\log\log x)$ and $B_2=\sum_p\sum_{k\ge2}1/(kp^k)$. We must show $B_1+B_2=\gamma$.
 
 For real $s>1$, removing prime terms from the logarithm of the Euler product gives
 \[F(s):=\log\zeta(s)-\sum_p p^{-s}=\sum_p\sum_{k\ge2}\frac1{kp^{ks}}.\]
-The summands are bounded by the convergent series for $B_2$. Hence $F(s)\to B_2$ as $s\downarrow1$. Compute the same limit another way.
+The summands are bounded by the convergent series for $B_2$. Hence $F(s)\to B_2$ as $s\downarrow1$. We now derive another expression for $F(s)$ which will make visible that the limit is $\gamma-B_1$.
 
 {\footnotesize P. Pollack, \emph{Not Always Buried Deep}, Chapter 3, Theorem 3.17, pp. 99--100.}
 \end{frame}
+% voice-original-frame: 74
 \begin{frame}{Reading supplement: the constant in Mertens' product}
 Put $h=s-1$. The integral test gives $1/h\le\zeta(1+h)\le1+1/h$. Since $1-e^{-h}=h(1+O(h))$,
 \[\log\zeta(1+h)=-\log(1-e^{-h})+O(h)=\sum_{n\ge1}\frac{e^{-hn}}n+O(h).\]
@@ -670,6 +816,7 @@ Put $H(t)=\sum_{n\le t}1/n$, $P(u)=\sum_{p\le u}1/p$. Using $e^{-hn}=h\int_n^\in
 \[\sum_{n\ge1}\frac{e^{-hn}}n=h\int_0^\infty H(t)e^{-ht}\dd t.\]
 Likewise $p^{-h}=h\int_{\log p}^\infty e^{-ht}\dd t$, so $\sum_p p^{-1-h}=h\int_0^\infty P(e^t)e^{-ht}\dd t$.
 \end{frame}
+% voice-original-frame: 75
 \begin{frame}{Reading supplement: the constant in Mertens' product}
 Subtracting gives
 \[F(1+h)=h\int_0^\infty(H(t)-P(e^t))e^{-ht}\dd t+O(h).\]
@@ -679,50 +826,72 @@ The constant integrates to $\gamma-B_1$. Split the error at $t=1/h$:
 \[h\int_0^\infty\frac{e^{-ht}}{1+t}\dd t\le h\log(1+1/h)+h\int_{1/h}^\infty he^{-ht}\dd t=o(1).\]
 Thus $B_2=\gamma-B_1$, proving Mertens' product theorem.
 \end{frame}
+% voice-original-frame: 76
 \begin{frame}{The theorem of Montgomery and Wagon}
 \begin{block}{Montgomery and Wagon}Suppose $\pi(x)\sim xW(x)$, with $W$ positive and eventually decreasing. Then $W(x)\sim1/\log x$. In particular, if $\pi(x)\sim cx/\log x$ with $c>0$, then $c=1$.\end{block}
-Recall $f\sim g$ means $f/g\to1$. Partial summation gives
+In other words: if $\pi(x)/x$ is ``steadily decreasing to zero'', then the PNT holds. To see what Mertens' estimate says about $W$, first express it in terms of $\pi(t)$. Partial summation gives
 \[\sum_{p\le x}\frac{\log p}p=\frac{\pi(x)\log x}x+\int_2^x\frac{\pi(t)(\log t-1)}{t^2}\dd t.\]
 By Chebyshev, the first term is $O(1)$ and $\int_2^x\pi(t)\dd t/t^2=O(\log\log x)$. Mertens now gives $\int_2^x(\pi(t)/t)\log t\dd t/t\sim\log x$.
 \end{frame}
+% voice-original-frame: 77
 \begin{frame}{The theorem of Montgomery and Wagon}
 By Homework 3, Problem 7(a), replace $\pi(t)/t$ by $W(t)$ in the integral: their ratio is eventually between $1-\delta$ and $1+\delta$, and a fixed initial interval contributes $O(1)$. Divide by $\log x$ and let $\delta\to0$.
+More explicitly, put
+\[A(x)=\int_2^x W(t)\frac{\log t}{t}\dd t.\]
+For each fixed $0<\delta<1$ and all sufficiently large $x$,
+\[(1-\delta)A(x)+O_\delta(1)\le
+\int_2^x\frac{\pi(t)}t\frac{\log t}{t}\dd t
+\le(1+\delta)A(x)+O_\delta(1).\]
+The middle expression is $\sim\log x$. Thus
+\[\frac1{1+\delta}\le\liminf\frac{A(x)}{\log x}
+\le\limsup\frac{A(x)}{\log x}\le\frac1{1-\delta},\]
+and so $A(x)\sim\log x$.
+\end{frame}
+\begin{frame}{Where does monotonicity enter?}
+We have $\int_2^x W(t)(\log t)\dd t/t\sim\log x$. We must show $W(x)\log x\to1$. This is a Tauberian step: recover the function from a weighted average, or ``unscramble an egg''.
 
 Fix $0<\epsilon<1$. Subtract the integrals up to $x$ and $x^{1+\epsilon}$. Their difference is $\epsilon\log x+o(\log x)$, and is at most
 \[W(x)\int_x^{x^{1+\epsilon}}\frac{\log t}t\dd t=W(x)\epsilon(1+\epsilon/2)(\log x)^2.\]
 Hence $\liminf W(x)\log x\ge(1+\epsilon/2)^{-1}$. On $[x^{1-\epsilon},x]$, the integral is at least $W(x)\epsilon(1-\epsilon/2)(\log x)^2$, so $\limsup W(x)\log x\le(1-\epsilon/2)^{-1}$. Let $\epsilon\downarrow0$.
 \end{frame}
-\begin{frame}{Ingham's theorem (statement)}
+% voice-original-frame: 78
+\begin{frame}{How (not) to prove the PNT}
 We used
 \[\sum_{n\le x}\psi(x/n)=x\log x-x+O(\log x)\]
 to bound $\psi(x)$. Could we recover $\psi(x)\sim x$ by unscrambling this average?
 
 Suppose $f$ is nonnegative and nondecreasing and
 \[\sum_{n\le x}f(x/n)=x\log x+Bx+o(x).\]
-Does $f(x)\sim x$ follow? Ingham's theorem says yes. This is less help in proving the PNT than one might hope, since its usual short proof appeals to the PNT itself.
+Optimistic Tauberian Theorem: $f(x)\sim x$.
+
+Ingham proved that this is true! But the simplest proof uses the PNT.
 \end{frame}
+% voice-original-frame: 79
 \begin{frame}{The approximations of Gauss and Legendre}
 Legendre proposed $x/(\log x-1.08366)$. Gauss counted primes in blocks of a thousand. Density $1/\log t$ near $t$ suggested
 \[\operatorname{Li}(x)=\int_2^x\frac{\dd t}{\log t}.\]
-Both are right to first order. For Legendre this is immediate. For Gauss, integrate by parts:
+Lesson 1: Legendre and Gauss are both right (to first order). For Legendre this is immediate. For Gauss, integrate by parts:
 \[\operatorname{Li}(x)=\frac{x}{\log x}-\frac2{\log2}+\int_2^x\frac{\dd t}{(\log t)^2}.\]
 Split the last integral at $\sqrt x$: the pieces are $O(\sqrt x)$ and $O(x/(\log x)^2)$. This works for any fixed power of $1/\log t$.
 \end{frame}
+% voice-original-frame: 80
 \begin{frame}{The approximations of Gauss and Legendre}
-Repeated integration by parts gives, for fixed $k\ge1$,
+Lesson 2: Gauss was more right. Repeated integration by parts gives, for fixed $k\ge1$,
 \[\operatorname{Li}(x)=\sum_{j=1}^k\frac{(j-1)!x}{(\log x)^j}+O_k\left(\frac{x}{(\log x)^{k+1}}\right).\]
 The classical PNT with error term gives $\pi(x)=\operatorname{Li}(x)+O(xe^{-c\sqrt{\log x}})$ for some $c>0$. We quote this stronger result. It gives the same expansion for $\pi(x)$; in particular,
 \[\frac{x}{\pi(x)}=\log x\left(1+\frac1{\log x}+O((\log x)^{-2})\right)^{-1}=\log x-1+O(1/\log x).\]
-Thus if $\pi(x)=x/(\log x-c(x))$, the limit of $c(x)$ is $1$. Where did Legendre's $1.08366$ come from?
+Thus if $\pi(x)=x/(\log x-c(x))$, the limit of $c(x)$ is $1$. Wherefore $1.08366$?
 \end{frame}
+% voice-original-frame: 81
 \begin{frame}{The approximations of Gauss and Legendre}
 Keeping three terms gives
 \begin{align*}
 \pi(x)&=\frac{x}{\log x}+\frac{x}{(\log x)^2}+\frac{2x}{(\log x)^3}+O\left(\frac{x}{(\log x)^4}\right),\\
 \frac{x}{\log x-1}&=\frac{x}{\log x}+\frac{x}{(\log x)^2}+\frac{x}{(\log x)^3}+O\left(\frac{x}{(\log x)^4}\right).
 \end{align*}
-Thus $x/(\log x-1)$ is eventually too small. For Legendre's data, a constant slightly larger than $1$ gives better agreement. Paasche and Hiary found that $1.08366$ is close to the value minimizing the average error for those data.
+Thus $x/(\log x-1)$ underestimates by about $x/(\log x)^3$. To compensate, use $x/(\log x-(1+\delta))$! Paasche and Hiary found that $1.08366$ is close to the value minimizing the average error for those data.
 \end{frame}
+% voice-original-frame: 82
 \begin{frame}{Comparing $\pi(x)$ with $\operatorname{Li}(x)$}
 \small
 Recall our convention $\operatorname{Li}(x)=\int_2^x\dd t/\log t$. The last two columns are rounded to one decimal place.
@@ -741,8 +910,9 @@ The error is getting larger, but it is a smaller and smaller fraction of $\pi(x)
 
 {\footnotesize Prime counts: \link{https://personal.science.psu.edu/rcv4/571s25/Class571-01.pdf}{R. C. Vaughan's table}; integral values computed with the convention above.}
 \end{frame}
+% voice-original-frame: 83
 \begin{frame}{The approximations of Gauss and Legendre}
-At $x=10^{20}$, rounded to the nearest integer:
+How much is $\operatorname{Li}(x)$ off by? At $x=10^{20}$, rounded to the nearest integer:
 \begin{center}\begin{tabular}{lr}
 $x/\log x$&$2\,171\,472\,409\,516\,259\,138$\\
 $x/(\log x-1.08366)$&$2\,223\,801\,523\,570\,829\,204$\\
@@ -755,6 +925,7 @@ Again $\operatorname{Li}(x)>\pi(x)$. Is this true for all large $x$?
 
 {\footnotesize Prime count from R. C. Vaughan's table. Here $\operatorname{Li}(x)=\int_2^x\dd t/\log t$.}
 \end{frame}
+% voice-original-frame: 84
 \begin{frame}{Littlewood's theorem}
 Our table might lead one to conjecture that $\operatorname{Li}(x)-\pi(x)\to\infty$ as $x\to\infty$. Littlewood's theorem has a surprising consequence: this difference changes sign infinitely often.
 \begin{block}{Littlewood (1914)}
@@ -762,14 +933,20 @@ The difference $\pi(x)-\operatorname{Li}(x)$ takes both positive and negative va
 \end{block}
 In particular, there are arbitrarily large $x$ for which the inequality suggested by our table is reversed.
 \end{frame}
+% voice-original-frame: 85
 \begin{frame}{A heuristic for primes ending in 3}
-Adding $1/\log(10k+3)$ over $10k+3\le x$ gives about $\operatorname{Li}(x)/10$. But this would give just as much for numbers ending in $2$, among which precisely one is prime! What did we overlook? Numbers ending in $3$ are divisible by neither $2$ nor $5$.
+Adding $1/\log(10k+3)$ over $10k+3\le x$ gives about $\operatorname{Li}(x)/10$. Fishy! The same prediction would apply to numbers ending in $2$, among which precisely one is prime.
+
+The issue is that $3+10k$ is biased, arithmetically: it is always odd and never divisible by $5$. We must compare its chance of passing each divisibility test with that of a random integer.
 
 The correction factors are
 \[\frac1{1-1/2}=2,\qquad\frac1{1-1/5}=\frac54.\]
 At every other prime the fraction passing the divisibility test is the usual one. The revised guess is $2\cdot(5/4)\cdot\operatorname{Li}(x)/10=\operatorname{Li}(x)/4$.
 \end{frame}
+% voice-original-frame: 86
 \begin{frame}{A heuristic for twin primes}
+How do we think the count of twin primes behaves? The naive guess is $\int_2^x\dd t/(\log t)^2$. Again we need correction factors.
+
 For $n,n+2$ to be prime, both must avoid each small prime $p$. For independent integers the fraction passing is $(1-1/p)^2$.
 
 At $p=2$ the pair passes half the time, giving correction $2$. At odd $p$, forbidden classes $0,-2$ are distinct, giving correction
@@ -778,13 +955,23 @@ Our guess for $\#\{p\le x:p+2\text{ prime}\}$ is
 \[2\prod_{p>2}\left(1-\frac1{(p-1)^2}\right)\int_2^x\frac{\dd t}{(\log t)^2}.\]
 The product is positive since $\sum_{p>2}1/(p-1)^2$ converges. We cannot even show that the actual count tends to infinity.
 \end{frame}
+% voice-original-frame: 87
 \begin{frame}{A heuristic for prime values of $n^2+1$}
 The uncorrected guess is $\operatorname{Li}(x)/2$, since $\log(n^2+1)\sim2\log n$. Put $\rho(p)=\#\{a\bmod p:a^2+1\equiv0\pmod p\}$. The correction is $c_p=(1-\rho(p)/p)/(1-1/p)$.
 
-At $2$ it is $1$. For odd $p$, a root has order $4$ in cyclic $\F_p^\times$, so there are two roots if $p\equiv1\pmod4$ and none if $p\equiv3\pmod4$. Thus
+At $2$ it is $1$. For odd $p$, a root has order $4$ in $\F_p^\times$. Conversely, an element of order $4$ squares to $-1$. Since $\F_p^\times$ is cyclic, such an element exists precisely when $4\mid p-1$. A root $a$ comes with the distinct root $-a$. Thus
 \[c_p=\begin{cases}(p-2)/(p-1),&p\equiv1\pmod4,\\p/(p-1),&p\equiv3\pmod4.\end{cases}\]
 The revised guess for $n\le x$ with $n^2+1$ prime is $A\operatorname{Li}(x)/2$, where $A=\prod_pc_p$, taking primes in increasing order.
 \end{frame}
+\begin{frame}{Why does this product converge?}
+For odd primes put $\chi(p)=1$ if $p\equiv1\pmod4$ and $\chi(p)=-1$ if $p\equiv3\pmod4$. Then
+\[c_p=1-\frac{\chi(p)}{p-1},\qquad
+\log c_p=-\frac{\chi(p)}p+O(1/p^2).\]
+The error terms have a convergent sum. So convergence of the product comes down to convergence of
+\[\sum_{p\text{ odd}}\frac{\chi(p)}p=-\frac13+\frac15-\frac17-\frac1{11}+\frac1{13}+\cdots.\]
+This says that the primes are balanced between $1\pmod4$ and $3\pmod4$, from the point of view of reciprocal sums. Our proof of Dirichlet's theorem will give $\sum_{p\le x}\chi(p)(\log p)/p=O(1)$; partial summation then gives the required convergence.
+\end{frame}
+% voice-original-frame: 88
 \begin{frame}{Numerical examples of the three heuristics}
 In the last row, $x$ bounds $n$; the primes can be as large as $x^2+1$.
 \begin{center}\scriptsize\begin{tabular}{lrrr}\toprule
@@ -804,47 +991,56 @@ The rounded guesses are $\operatorname{Li}(x)/4$, $2C_2\int_2^x\dd t/(\log t)^2$
 \section{Primes in progressions}
 
 % ---- sections/toc-087 ----
+% voice-original-frame: 89
 \begin{frame}{Primes in progressions}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation90}{The odd classes modulo 4}&90--91\\
-\hyperlink{Navigation92}{Schur's theorem on prime divisors of polynomial values}&92\\
-\hyperlink{Navigation93}{The four odd classes modulo 8}&93--96\\
-\hyperlink{Navigation97}{Primes congruent to 1 modulo $m$}&97--99\\
-\hyperlink{Navigation100}{Primes congruent to $-1$ modulo $m$}&100--105\\
-\hyperlink{Navigation106}{The criterion of Schur and Murty}&106\\
+\hyperlink{Navigation97}{The odd classes modulo 4}&97--98\\
+\hyperlink{Navigation99}{Schur's theorem on prime divisors of polynomial values}&99\\
+\hyperlink{Navigation100}{The four odd classes modulo 8}&100--103\\
+\hyperlink{Navigation104}{Primes congruent to 1 modulo $m$}&104--106\\
+\hyperlink{Navigation107}{Primes congruent to $-1$ modulo $m$}&107--114\\
+\hyperlink{Navigation115}{The criterion of Schur and Murty}&115\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
+% voice-original-frame: 90
 \begin{frame}{The odd classes modulo 4}
-Suppose $p_1,\ldots,p_r$ are all the primes congruent to $3\pmod4$. Put $N=4p_1\cdots p_r-1$. Since $N\equiv3\pmod4$, some prime divisor is $3\pmod4$; but none of the $p_i$ divides $N$. Contradiction.
+Suppose $p_1,\ldots,p_r$ are all the primes congruent to $3\pmod4$. Put $N=4p_1\cdots p_r-1$. Since $N\equiv3\pmod4$, some prime divisor is $3\pmod4$ (a product of primes $1\pmod4$ would still be $1\pmod4$); but none of the $p_i$ divides $N$. Contradiction.
 
 Replacing $4$ by $3$ proves that infinitely many primes are $2\pmod3$.
 \end{frame}
+% voice-original-frame: 91
 \begin{frame}{The odd classes modulo 4}
-If an odd prime $p$ divides $n^2+1$, the residue class of $n$ has order $4$ in $\F_p^\times$. Hence $4\mid p-1$.
+For $1\pmod4$, use $X^2+1$ somehow! If an odd prime $p$ divides $n^2+1$, then $n^2\equiv-1\not\equiv1\pmod p$ and $n^4\equiv1\pmod p$. Thus $n$ has order $4$ in $\F_p^\times$, and $4\mid p-1$.
 
 It remains to show that infinitely many primes divide values of $n^2+1$. The next theorem gives much more.
 
 \HW{4}{1} Let $H$ be a proper subgroup of $(\Z/m\Z)^\times$. Adapt Euclid's proof to show that infinitely many primes $p\nmid m$ have residue class outside $H$.
 \end{frame}
+% voice-original-frame: 92
 \begin{frame}{Schur's theorem}
 \begin{block}{Theorem}A nonconstant polynomial $f\in\Z[X]$ has a root modulo infinitely many primes.\end{block}
-If $f(0)=0$, every prime works. Otherwise let $a=f(0)$ and $g(X)=f(aX)/a$. This is a nonconstant integer polynomial with constant term $1$.
+If $f(0)=0$, every prime works. Otherwise put $a=f(0)$ and $g(X)=f(aX)/a$. Why does $g$ have integer coefficients? Write $f(X)=a+a_1X+\cdots+a_dX^d$. Then
+\[g(X)=1+a_1X+a_2aX^2+\cdots+a_da^{d-1}X^d.\]
+Thus $g\in\Z[X]$, $g(0)=1$, and $\deg g=\deg f>0$.
 
 Suppose only $p_1,\ldots,p_r$ divide nonzero values of $f$, and put $P=p_1\cdots p_r$. Choose $j$ with $|g(jP)|>1$. Each prime divisor of $g(jP)$ divides $f(ajP)$ and hence is among the $p_i$. But $g(jP)\equiv1\pmod {p_i}$ for each $i$, a contradiction.
 \end{frame}
+% voice-original-frame: 93
 \begin{frame}{The class 1 modulo 8}
 If an odd prime $p$ divides $n^4+1$, then $n^8\equiv1\pmod p$ but $n^4\not\equiv1\pmod p$. Thus $n$ has order $8$ in $\F_p^\times$, and $p\equiv1\pmod8$.
 
 Schur's theorem applied to $X^4+1$ now gives infinitely many primes in this class.
 \end{frame}
+% voice-original-frame: 94
 \begin{frame}{The class 3 modulo 8}
 Suppose the primes in this class form a finite list. Choose an odd positive integer $n$ divisible by every prime on the list.
 
-Now $n^2+2\equiv3\pmod8$. Each prime divisor $p$ satisfies $\bigl(\frac{-2}{p}\bigr)=1$, so $p\equiv1$ or $3\pmod8$. They cannot all be $1\pmod8$.
+Now $n^2+2\equiv3\pmod8$. Each prime divisor $p$ satisfies $\bigl(\frac{-2}{p}\bigr)=1$. The supplementary laws of quadratic reciprocity give $p\equiv1$ or $3\pmod8$. They cannot all be $1\pmod8$.
 
 Thus some prime divisor is $3\pmod8$. It cannot divide $n$, since it is odd and divides $n^2+2$. This is a new prime, a contradiction.
 \end{frame}
+% voice-original-frame: 95
 \begin{frame}{The class 5 modulo 8}
 Suppose the primes in this class form a finite list. By the Chinese remainder theorem, choose $n\equiv2\pmod4$ divisible by every prime on the list.
 
@@ -852,28 +1048,34 @@ Then $n^2+1\equiv5\pmod8$. Every prime divisor is $1\pmod4$, hence $1$ or $5\pmo
 
 This prime does not divide $n$, contradicting the choice of $n$.
 \end{frame}
+% voice-original-frame: 96
 \begin{frame}{The class 7 modulo 8}
 Suppose the primes in this class form a finite list. Choose an odd $n\ge3$ divisible by every prime on the list.
 
-The positive integer $n^2-2$ is $7\pmod8$. Each of its prime divisors $p$ satisfies $\bigl(\frac2p\bigr)=1$, so $p\equiv1$ or $7\pmod8$. Some divisor must be $7\pmod8$.
+The positive integer $n^2-2$ is $7\pmod8$. Each prime divisor $p$ satisfies $\bigl(\frac2p\bigr)=1$. By the supplementary law for $2$, $p\equiv1$ or $7\pmod8$. Some divisor must be $7\pmod8$.
 
 Again this odd prime cannot divide $n$, giving the contradiction.
 \end{frame}
+% voice-original-frame: 97
 \begin{frame}{Primes congruent to 1 modulo $m$}
 \small
-Let $\Phi_m(X)$ be the monic polynomial whose roots are the primitive $m$th roots of unity. Then
+Let $\Phi_m(X)$ be the monic polynomial whose roots are the primitive $m$th roots of unity. Grouping the roots of $X^m-1$ by their exact orders gives the first identity; multiplicative M\"obius inversion gives the second:
 \[X^m-1=\prod_{d\mid m}\Phi_d(X),\qquad \Phi_m(X)=\prod_{d\mid m}(X^d-1)^{\mu(m/d)}.\]
 Indeed the exponent of $\Phi_e$ on the right is $\sum_{e\mid d\mid m}\mu(m/d)=\ind_{e=m}$. For example,
 \[\Phi_3=X^2+X+1,\quad\Phi_4=X^2+1,\quad\Phi_8=X^4+1.\]
 \HW{4}{3} Let $G$ be an abelian group, written multiplicatively, and let $f,g:\Z_{>0}\to G$. Prove that if $g(n)=\prod_{d\mid n}f(d)$ for every $n$, then $f(n)=\prod_{d\mid n}g(d)^{\mu(n/d)}$.
 \end{frame}
+% voice-original-frame: 98
 \begin{frame}{Cyclotomic polynomials modulo a prime}
 Inductively, $\Phi_m\in\Z[X]$: divide $X^m-1$ by the monic integer polynomial $\prod_{d\mid m,\ d<m}\Phi_d$. Long division has integer coefficients, and the remainder is zero over $\C$.
 
-Suppose $p\nmid m$ and $\Phi_m(a)=0$ in $\F_p$. The order of $a$ divides $m$. If it were a proper divisor $d$, then $a$ would also be a root of $X^d-1$ and hence a repeated root of $X^m-1$.
+The following argument works over \emph{any} field of characteristic $p\nmid m$. Suppose $\Phi_m(a)=0$. Since $\Phi_m\mid X^m-1$, we have $a^m=1$, so $a\ne0$ and its order divides $m$.
+
+If the order were $d<m$, then $0=a^d-1=\prod_{e\mid d}\Phi_e(a)$. Thus $a$ is also a root of some $\Phi_e$ with $e\mid d$, $e<m$. Hence $(X-a)^2\mid\Phi_e(X)\Phi_m(X)\mid X^m-1$.
 
 But $(X^m-1)'=mX^{m-1}$ is nonzero at each root when $p\nmid m$. Therefore $a$ has order exactly $m$.
 \end{frame}
+% voice-original-frame: 99
 \begin{frame}{Infinitely many primes congruent to 1 modulo $m$}
 Schur's theorem supplies infinitely many primes for which $\Phi_m$ has a root. Discard the finitely many primes dividing $m$.
 
@@ -881,53 +1083,81 @@ For each remaining prime $p$, the root has order $m$ in $\F_p^\times$. Lagrange'
 
 Thus there are infinitely many primes $p\equiv1\pmod m$.
 \end{frame}
+% voice-original-frame: 100
 \begin{frame}{Toward the class $-1$ modulo $m$}
 For the class $-1\pmod m$, we look for a polynomial whose prime divisors lie in the two classes $1$ and $-1$.
 
 We shall then force a prime divisor in the second class. The idea is to pair each primitive root of unity with its inverse.
 \end{frame}
+% voice-original-frame: 101
 \begin{frame}{The real cyclotomic polynomial}
 \small
-Let $m\ge3$ and $h=\varphi(m)/2$. The reciprocal polynomial $\Phi_m$ satisfies
+Let $m\ge3$ and $h=\varphi(m)/2$. Pairing each primitive root $\zeta$ with $\zeta^{-1}$ shows that $\Phi_m$ has even degree and is \emph{palindromic}: its coefficients read the same in reverse order. We can write
 \[\Phi_m(X)=X^h\Psi_m(X+X^{-1})\]
-for a monic $\Psi_m\in\Z[Y]$ of degree $h$. Indeed $X^{-h}\Phi_m(X)$ is an integer linear combination of $1$ and $X^j+X^{-j}$. These are polynomials in $Y=X+X^{-1}$, since
+for a monic $\Psi_m\in\Z[Y]$ of degree $h$. Indeed $X^{-h}\Phi_m(X)$ is an integer linear combination of $1$ and $X^j+X^{-j}$. Put $S_j=X^j+X^{-j}$. These are polynomials in $Y=X+X^{-1}$, since
 \[S_0=2,\quad S_1=Y,\quad S_{j+1}=YS_j-S_{j-1}.\]
 For $m=3,4,5,8$ the polynomials $\Psi_m$ are, respectively,
 \[Y+1,\quad Y,\quad Y^2+Y-1,\quad Y^2-2.\]
 \HW{4}{4--5} Prove the reciprocal symmetry of $\Phi_m$ and the existence and uniqueness of $\Psi_m$ in the displayed identity.
 \end{frame}
+% voice-original-frame: 102
 \begin{frame}{A negative value of $\Psi_m$}
-The roots of $\Psi_m$ are
-\[2\cos(2\pi a/m),\qquad 0<a<m/2,\quad(a,m)=1.\]
-These are $\varphi(m)/2$ distinct real numbers, so they account for all roots.
+Put $\zeta=e^{2\pi ia/m}$, where $(a,m)=1$. Since $\Phi_m(\zeta)=0$ and $\zeta\ne0$,
+\[0=\zeta^h\Psi_m(\zeta+\zeta^{-1}),\qquad
+\zeta+\zeta^{-1}=2\cos(2\pi a/m).\]
+Pair $a$ with $m-a$, and take $0<a<m/2$. There are $\varphi(m)/2$ such $a$, and the cosines are distinct: cosine is strictly decreasing on $(0,\pi)$. This accounts for the full degree of $\Psi_m$.
 
-In particular $2\cos(2\pi/m)$ is a simple root. Hence $\Psi_m$ changes sign there, and there is an open interval $I$ on which $\Psi_m$ is negative.
+In particular $r=2\cos(2\pi/m)$ is a simple root. Write $\Psi_m(Y)=(Y-r)Q(Y)$ with $Q(r)\ne0$. Near $r$, $Q$ keeps its sign while $Y-r$ changes sign. Hence there is an open interval $I$ on which $\Psi_m<0$.
+\end{frame}
+% voice-original-frame: 103
+\begin{frame}{Prime divisors of values of $\Psi_m$}
+Suppose $p\nmid m$ and $\Psi_m(r)=0$ in $\F_p$. We want a $z$ with $z+z^{-1}=r$. Choose a root of $X^2-rX+1$ in an algebraic closure of $\F_p$.
+
+The constant term is $1$, so $z\ne0$. Dividing $z^2-rz+1=0$ by $z$ gives
+\[z+z^{-1}=r.\]
+Now substitute in the defining identity:
+\[\Phi_m(z)=z^h\Psi_m(z+z^{-1})=z^h\Psi_m(r)=0.\]
+Since $p\nmid m$, our argument for cyclotomic polynomials shows that $z$ has order exactly $m$.
 \end{frame}
 \begin{frame}{Prime divisors of values of $\Psi_m$}
-Suppose $p\nmid m$ and $\Psi_m(r)=0$ in $\F_p$. Choose a root $z$ of $X^2-rX+1$ in an algebraic closure. Then $\Phi_m(z)=0$, so $z$ has order $m$.
-
-Since $r^p=r$, we have $z^p+(z^p)^{-1}=z+z^{-1}$. The identity
-\[u+u^{-1}=v+v^{-1}\quad\Longrightarrow\quad (u-v)\left(1-\frac1{uv}\right)=0\]
-shows that $z^p=z$ or $z^{-1}$. Thus $m\mid p-1$ or $m\mid p+1$.
+Raise $z+z^{-1}=r$ to the $p$th power. In characteristic $p$, $(a+b)^p=a^p+b^p$; and $r^p=r$ since $r\in\F_p$. Thus
+\[z^p+(z^p)^{-1}=z+z^{-1}.\]
+Consider more generally $u+u^{-1}=v+v^{-1}$, with $u,v\ne0$. Rearranging,
+\[u-v=\frac1v-\frac1u=\frac{u-v}{uv}.\]
+So either $u=v$ or $uv=1$. Taking $u=z^p$, $v=z$, we get
+\[z^{p-1}=1\quad\hbox{or}\quad z^{p+1}=1.\]
+Since $z$ has order $m$, $m\mid p-1$ or $m\mid p+1$. Hence $p\equiv\pm1\pmod m$.
 \end{frame}
+% voice-original-frame: 104
 \begin{frame}{Forcing a new prime in the class $-1$}
-Suppose $p_1,\ldots,p_r$ are all the primes $-1\pmod m$. Put $D=mp_1\cdots p_r$. Choose $v=D^\ell$ and $u=1+Dj$ with $u/v\in I$; this is possible for large $\ell$, since the spacing is $D^{1-\ell}$.
+Can we just apply Schur? Not yet: it could give only primes $1\pmod m$. We must force the minus sign to occur.
+
+Suppose $p_1,\ldots,p_r$ are all the primes $-1\pmod m$, and put $D=mp_1\cdots p_r$. Choose
+\[v=D^\ell,\qquad u=1+Dj,\qquad u/v\in I.\]
+For fixed $\ell$, these fractions are spaced $D^{1-\ell}$ apart. Choose $\ell$ so that this spacing is less than the length of $I$, then choose $j$. Notice that $(u,v)=1$.
+\end{frame}
+\begin{frame}{Clearing denominators}
+Write $\Psi_m(Y)=Y^h+a_{h-1}Y^{h-1}+\cdots+a_0$. Then
+\[v^h\Psi_m(u/v)=u^h+a_{h-1}u^{h-1}v+\cdots+a_0v^h.\]
+Every term is an integer, and all but the first are divisible by $v$.
 
 The integer
 \[N=v^h\Psi_m(u/v)\]
 is negative. Since $\Psi_m$ is monic, $N\equiv u^h\pmod v$. Consequently $(N,v)=1$ and $N\equiv1\pmod m$.
 \end{frame}
+% voice-original-frame: 105
 \begin{frame}{Finishing the class $-1$}
 If $q\mid N$, then $q\nmid v$ and $\Psi_m(u/v)=0$ modulo $q$. Hence $q\equiv\pm1\pmod m$.
 
-All the supposed primes $-1\pmod m$ divide $v$, so every prime divisor of $N$ is $1\pmod m$. But $N<0$, and therefore $N\equiv-1\pmod m$.
+All the supposed primes $-1\pmod m$ divide $v$, so every prime divisor of $N$ is $1\pmod m$. But $N<0$. Writing $N=-q_1\cdots q_j$ with prime factors repeated according to multiplicity gives $N\equiv-1\pmod m$.
 
 This contradicts $N\equiv1\pmod m$ when $m\ge3$. For $m=1,2$, the classes $1$ and $-1$ coincide, and the result is already known.
 \end{frame}
+% voice-original-frame: 106
 \begin{frame}{How far can this method go?}
 A theorem of Schur and Murty says that a polynomial whose prime divisors, with finitely many exceptions, lie in the classes $1$ and $a\pmod m$, with infinitely many in the latter class, exists precisely when
 \[a^2\equiv1\pmod m.\]
-The subgroup $\{1,a\}$ of $\operatorname{Gal}(\mathbb Q(\zeta_m)/\mathbb Q)$ leads to a polynomial through its fixed field.
+When $a^2\equiv1\pmod m$, $H=\{1,a\}$ is a subgroup of $\operatorname{Gal}(\mathbb Q(\zeta_m)/\mathbb Q)$. Write its fixed field as $\mathbb Q(\alpha)$ and take the minimal polynomial of $\alpha$, scaled to have integer coefficients. This gives the polynomial in Schur's direction. Murty proved the converse.
 
 Even the class $2\pmod5$ lies beyond this approach. For this we need Dirichlet's theorem.
 \end{frame}
@@ -937,34 +1167,38 @@ Even the class $2\pmod5$ lies beyond this approach. For this we need Dirichlet's
 \section{Dirichlet's theorem}
 
 % ---- sections/toc-105 ----
+% voice-original-frame: 107
 \begin{frame}{Dirichlet's theorem (1 of 2)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation109}{Statement and plan of proof}&109--110\\
-\hyperlink{Navigation111}{The modulus 4}&111--113\\
-\hyperlink{Navigation114}{Orthogonality relations for characters}&114--117\\
-\hyperlink{Navigation118}{Convergence of $L(s,\chi)$ for nonprincipal $\chi$}&118--119\\
-\hyperlink{Navigation120}{Reduction to nonvanishing}&120\\
+\hyperlink{Navigation118}{Statement and plan of proof}&118--119\\
+\hyperlink{Navigation120}{The modulus 4}&120--122\\
+\hyperlink{Navigation123}{Orthogonality relations for characters}&123--127\\
+\hyperlink{Navigation128}{Convergence of $L(s,\chi)$ for nonprincipal $\chi$}&128--129\\
+\hyperlink{Navigation130}{Reduction to nonvanishing}&130\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
 
 % ---- sections/toc-106 ----
+% voice-original-frame: 108
 \begin{frame}{Dirichlet's theorem (2 of 2)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation121}{Nonvanishing for nonreal characters}&121--123\\
-\hyperlink{Navigation124}{Nonvanishing for real nonprincipal characters}&124--127\\
-\hyperlink{Navigation128}{Conclusion and a counting consequence}&128--129\\
-\hyperlink{Navigation130}{Siegel zeros and Linnik's theorem}&130--132\\
+\hyperlink{Navigation131}{Nonvanishing for nonreal characters}&131--133\\
+\hyperlink{Navigation134}{Nonvanishing for real nonprincipal characters}&134--137\\
+\hyperlink{Navigation138}{Conclusion and a counting consequence}&138--139\\
+\hyperlink{Navigation140}{Siegel zeros and Linnik's theorem}&140--142\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
+% voice-original-frame: 109
 \begin{frame}{Dirichlet's theorem: statement and plan}
 \begin{block}{Theorem}Fix $m\ge1$ and $(a,m)=1$. For $x\ge3$,
 \[\sum_{\substack{p\le x\\p\equiv a\bmod m}}\frac{\log p}{p}=\frac{\log x}{\varphi(m)}+O_m(1).\]\end{block}
-Thus the primes are equally distributed among the coprime classes, if we give each prime weight $(\log p)/p$. In particular each such class contains infinitely many primes.
+Thus the primes equidistribute themselves in the coprime residue classes, if we count each prime with weight $(\log p)/p$. In particular each such class contains infinitely many primes.
 
 It suffices to use prime powers $p^k$ in place of primes: the extra contribution is at most $\sum_p(\log p)/(p(p-1))=O(1)$.
 \end{frame}
+% voice-original-frame: 110
 \begin{frame}{Dirichlet's theorem: plan of proof}
 For $m=4$ we detect a congruence with a linear combination of two completely multiplicative functions. In general we use Dirichlet characters modulo $m$.
 
@@ -972,14 +1206,16 @@ Mertens' theorem handles the principal character. For each nonprincipal characte
 \[L(1,\chi)\sum_{p^k\le x}\frac{\chi(p^k)\log p}{p^k}=O_m(1).\]
 It suffices to prove $L(1,\chi)\ne0$. First we show that at most one nonprincipal character can have $L(1,\chi)=0$. Nonreal characters occur in conjugate pairs, so this leaves the real characters to consider.
 \end{frame}
+% voice-original-frame: 111
 \begin{frame}{Dirichlet's theorem for the modulus 4}
 Let $\chi_0$ be $1$ on odd integers and $0$ on even integers. Let $\chi$ be $1$ on $1\pmod4$, $-1$ on $3\pmod4$, and $0$ on even integers. Both are completely multiplicative, and
 \[\ind_{n\equiv1\bmod4}=\tfrac12(\chi_0(n)+\chi(n)),\qquad
 \ind_{n\equiv3\bmod4}=\tfrac12(\chi_0(n)-\chi(n)).\]
 Mertens' theorem gives
 \[\sum_{p^k\le x}\chi_0(p^k)\frac{\log p}{p^k}=\log x+O(1),\]
-since the powers of $2$ contribute at most $\log2$. We want the remaining character sum to be $O(1)$.
+since the powers of $2$ contribute at most $\log2$. Substituting gives $\frac12\log x+O(1)$, which is what we wanted to end up with! So we should be trying to show that the remaining character sum is $O(1)$.
 \end{frame}
+% voice-original-frame: 112
 \begin{frame}{A positive value of $L(1,\chi)$}
 The alternating series test gives
 \[L=\sum_{n\ge1}\frac{\chi(n)}n=1-\frac13+\frac15-\frac17+\cdots>1-\frac13>0,\]
@@ -988,6 +1224,7 @@ The series $\sum_n\chi(n)(\log n)/n$ also converges: $(\log t)/t$ eventually dec
 
 On the other hand, prime factorization gives $\log n=\sum_{p^k\mid n}\log p$. Substitute this into the partial sum.
 \end{frame}
+% voice-original-frame: 113
 \begin{frame}{Completing the proof for modulus 4}
 Write $n=p^kj$ and use complete multiplicativity:
 \begin{align*}
@@ -1000,13 +1237,26 @@ The error is $O(\psi(x)/x)=O(1)$ by Chebyshev's estimate. The left side is bound
 
 Substitution gives $\tfrac12\log x+O(1)$ for each odd class.
 \end{frame}
+% voice-original-frame: 114
 \begin{frame}{Characters of a finite abelian group}
+How can we write $\ind_{n\equiv a\bmod m}$ as a linear combination of completely multiplicative functions? We first work with a finite abelian group $G$.
+
 A character of $G$ is a homomorphism to the complex numbers of absolute value $1$. The characters form a group $\widehat G$ under pointwise multiplication; the identity is the constant character $1$, and $\chi^{-1}=\overline\chi$.
 
-If $G=\langle g\rangle$ has order $h$, a character is determined by $\chi(g)$, which may be any $h$th root of unity: $\chi(g^j)=\chi(g)^j$.
+Easy case: $G=\langle g\rangle$ has order $h$. A character is determined by $\chi(g)$, and $\chi(g)^h=\chi(g^h)=1$. Conversely, for any $h$th root $\omega$, put $\chi(g^j)=\omega^j$. This is well defined because changing $j$ by a multiple of $h$ does not change $\omega^j$.
 
-In general write $G=\langle g_1\rangle\times\cdots\times\langle g_r\rangle$, with $g_i$ of order $h_i$. Choose $\chi(g_i)$ independently among the $h_i$th roots. This gives all characters, so $|\widehat G|=\prod_i h_i=|G|$.
 \end{frame}
+\begin{frame}{Characters of a finite abelian group}
+General case: write $G=\langle g_1\rangle\times\cdots\times\langle g_r\rangle$, with $g_i$ of order $h_i$.
+
+A character is determined by $\chi(g_1),\ldots,\chi(g_r)$. Each $\chi(g_i)$ must be an $h_i$th root of unity, so there are at most $h_1\cdots h_r$ characters.
+
+Conversely, choose any such roots $\omega_1,\ldots,\omega_r$, independently, and put
+\[\chi(g_1^{e_1}\cdots g_r^{e_r})=\omega_1^{e_1}\cdots\omega_r^{e_r}.\]
+The direct product decomposition makes this well defined. It is a character, and every character arises this way. Hence
+\[|\widehat G|=h_1\cdots h_r=|G|.\]
+\end{frame}
+% voice-original-frame: 115
 \begin{frame}{The orthogonality relations}
 For nontrivial $\chi$, choose $h\in G$ with $\chi(h)\ne1$. Multiplication by $h$ permutes $G$, so
 \[\chi(h)\sum_{g\in G}\chi(g)=\sum_{g\in G}\chi(hg)=\sum_{g\in G}\chi(g).\]
@@ -1016,15 +1266,17 @@ If $g\ne1$, some character $\eta$ has $\eta(g)\ne1$: use a nonidentity cyclic co
 
 Multiplication by $\eta$ permutes $\widehat G$, so the same argument gives $\sum_{\chi\in\widehat G}\chi(g)=0$.
 \end{frame}
+% voice-original-frame: 116
 \begin{frame}{The orthogonality relations}
 \small
-Apply the preceding identities to $\chi\overline\eta$ and to $gh^{-1}$:
+Averaging over group elements tells characters apart; averaging over characters tells group elements apart. If $\chi=\eta$, every term in the first average is $1$. Otherwise $\chi\overline\eta$ is nontrivial, so its sum is $0$. For the second average use $\chi(g)\overline{\chi(h)}=\chi(gh^{-1})$:
 \[\frac1{|G|}\sum_{g\in G}\chi(g)\overline{\eta(g)}=\ind_{\chi=\eta},\qquad
 \frac1{|G|}\sum_{\chi\in\widehat G}\chi(g)\overline{\chi(h)}=\ind_{g=h}.\]
 The units modulo $8$ are generated by $3$ and $5$, each of order $2$. Their signs can be chosen independently:
 \[\begin{array}{c|rrrr}&1&3&5&7\\\hline\chi_0&1&1&1&1\\\chi_1&1&-1&1&-1\\\chi_2&1&1&-1&-1\\\chi_3&1&-1&-1&1\end{array}\]
 \HW{4}{6} For a finite abelian group $G$, let $T=(\chi(g))_{\chi\in\widehat G,\,g\in G}$. Compute $TT^*$, where $T^*$ is the conjugate transpose.
 \end{frame}
+% voice-original-frame: 117
 \begin{frame}{Dirichlet characters}
 Take $G=(\Z/m\Z)^\times$. Extend a group character to all integers by periodicity on the coprime classes and by zero elsewhere. These are the $\varphi(m)$ Dirichlet characters modulo $m$.
 
@@ -1034,8 +1286,9 @@ This is group orthogonality if $(n,m)=1$; otherwise both sides vanish.
 
 \HW{4}{7} Show that the three properties above characterize Dirichlet characters.
 \end{frame}
+% voice-original-frame: 118
 \begin{frame}{Convergence of $L(s,\chi)$}
-Suppose $\chi\ne\chi_0$, and put $S(t)=\sum_{n\le t}\chi(n)$. A full period sums to zero, so $|S(t)|\le\varphi(m)$. Partial summation gives
+We use that the values of $\chi$ average to zero. Suppose $\chi\ne\chi_0$, and put $S(t)=\sum_{n\le t}\chi(n)$. Each complete block of $m$ consecutive integers sums to $0$; only an incomplete block remains. Thus $|S(t)|\le\varphi(m)$. Partial summation gives
 \[\sum_{n\le x}\frac{\chi(n)}{n^s}=S(x)x^{-s}+s\int_1^x S(t)t^{-s-1}\dd t.\]
 For real $s>0$, the first term tends to zero and the integral converges absolutely. Thus $L(s,\chi)=\sum_{n\ge1}\chi(n)n^{-s}$ converges.
 
@@ -1043,6 +1296,7 @@ For $\chi_0$ the series converges for $s>1$ and diverges at $s=1$, by comparison
 
 \HW{4}{8(a)} Derive the displayed formula from partial summation.
 \end{frame}
+% voice-original-frame: 119
 \begin{frame}{The tail of $L(s,\chi)$}
 \small
 Subtract the finite sum from its limit and use $s\int_x^\infty t^{-s-1}\dd t=x^{-s}$:
@@ -1053,6 +1307,7 @@ In particular, $\sum_{n\le x}\chi(n)/n=L(1,\chi)+O_m(1/x)$. Also $\sum_n\chi(n)(
 
 \HW{4}{8(b,c)} For nonprincipal $\chi\bmod m$ and real $s>0$, prove the tail bound above for $x\ge1$, and prove convergence of $\sum_{n\ge1}\chi(n)(\log n)/n$.
 \end{frame}
+% voice-original-frame: 120
 \begin{frame}{Reduction to nonvanishing}
 \small
 Orthogonality gives
@@ -1062,8 +1317,9 @@ For $\chi_0$, the inner sum is $\log x+O_m(1)$: primes dividing $m$ contribute a
 
 For nonprincipal $\chi$, the calculation for modulus $4$ gives
 \[\sum_{n\le x}\frac{\chi(n)\log n}n=L(1,\chi)\sum_{p^k\le x}\frac{\chi(p^k)\log p}{p^k}+O_m(\psi(x)/x).\]
-Both the left side and $\psi(x)/x$ are bounded. It remains to prove $L(1,\chi)\ne0$.
+Both the left side and $\psi(x)/x$ are bounded. New goal: show that $L(1,\chi)\ne0$. Then we can divide through by it, just as for $m=4$.
 \end{frame}
+% voice-original-frame: 121
 \begin{frame}{Nonvanishing for nonreal characters}
 Write $\Lambda(n)=\log p$ if $n=p^k$, $k\ge1$, and $0$ otherwise. Since $\log n=\sum_{d\mid n}\Lambda(d)$, M\"obius inversion gives
 \[\Lambda(n)=\sum_{d\mid n}\mu(d)\log(n/d)=-\sum_{d\mid n}\mu(d)\log d.\]
@@ -1071,6 +1327,7 @@ The term $\log n\sum_{d\mid n}\mu(d)$ vanishes even at $n=1$. Consequently,
 \[\sum_{d\mid n}\mu(d)\log(x/d)=\Lambda(n)+\ind_{n=1}\log x.\]
 On multiplying by $\chi(n)/n$ and summing, the $n=1$ term contributes precisely $\log x$.
 \end{frame}
+% voice-original-frame: 122
 \begin{frame}{What a zero at 1 would imply}
 Multiply by $\chi(n)/n$, sum over $n\le x$, and put $n=de$:
 \[\log x+\sum_{n\le x}\frac{\chi(n)\Lambda(n)}n
@@ -1079,31 +1336,39 @@ If $L(1,\chi)=0$, the inner sum is $O_m(d/x)$. The right side is then
 \[O_m\left(\frac1x\sum_{d\le x}\log(x/d)\right)=O_m(1),\]
 since the sum is $\lfloor x\rfloor\log x-\log\lfloor x\rfloor!=O(x)$. Thus a zero implies $\sum_{n\le x}\chi(n)\Lambda(n)/n=-\log x+O_m(1)$.
 \end{frame}
+% voice-original-frame: 123
 \begin{frame}{There is at most one exceptional character}
-Let $N$ count the nonprincipal $\chi$ with $L(1,\chi)=0$. Add the prime-power sums over all characters. The principal character contributes $\log x+O_m(1)$, the $N$ zeros each contribute $-\log x+O_m(1)$, and all others contribute $O_m(1)$.
+We compute the sum over all characters in two different ways. Let $N$ count the nonprincipal $\chi$ with $L(1,\chi)=0$. First add the prime-power sums character by character. The principal character contributes $\log x+O_m(1)$, the $N$ zeros each contribute $-\log x+O_m(1)$, and all others contribute $O_m(1)$.
 
 The total is $(1-N)\log x+O_m(1)$. In the other order, orthogonality gives
 \[\varphi(m)\sum_{\substack{p^k\le x\\p^k\equiv1\bmod m}}\frac{\log p}{p^k}\ge0.\]
 Hence $N\le1$. But a nonreal zero would give two distinct characters $\chi,\overline\chi$ with zero value, since $L(1,\overline\chi)=\overline{L(1,\chi)}$. So nonreal characters do not vanish.
 \end{frame}
+% voice-original-frame: 124
 \begin{frame}{Nonvanishing for real nonprincipal characters}
 \small
-Put $r_\chi(n)=\sum_{d\mid n}\chi(d)$. This is multiplicative, and
+Put $r_\chi(n)=\sum_{d\mid n}\chi(d)$. We will show that a weighted average of $r_\chi(n)$ tends to infinity, and that this forces $L(1,\chi)\ne0$.
+
+Notice that $r_\chi$ is multiplicative: for $(a,b)=1$, every divisor of $ab$ is uniquely $uv$ with $u\mid a$, $v\mid b$, and $\chi(uv)=\chi(u)\chi(v)$. On prime powers,
 \[r_\chi(p^k)=\sum_{j=0}^k\chi(p)^j=
 \begin{cases}k+1,&\chi(p)=1,\\1,&\chi(p)=0,\\1\text{ or }0,&\chi(p)=-1,\ k\text{ even or odd}.\end{cases}\]
 Thus $r_\chi(n)\ge0$ and $r_\chi(j^2)\ge1$. In particular,
 \[\sum_{n\le x}\frac{r_\chi(n)}{\sqrt n}\ge\sum_{j\le\sqrt x}\frac{r_\chi(j^2)}j\ge\sum_{j\le\sqrt x}\frac1j\longrightarrow\infty.\]
 Now estimate the same sum another way.
 \end{frame}
+% voice-original-frame: 125
 \begin{frame}{Splitting the sum at the square root}
 Put $y=\sqrt x$ and split the pairs $de\le x$ according as $d\le y$ or $d>y$:
 \[\sum_{n\le x}\frac{r_\chi(n)}{\sqrt n}
 =\sum_{d\le y}\frac{\chi(d)}{\sqrt d}\sum_{e\le x/d}\frac1{\sqrt e}
 +\sum_{e\le y}\frac1{\sqrt e}\sum_{y<d\le x/e}\frac{\chi(d)}{\sqrt d}.\]
-In the second region $e\le y$. Its inner sum is a difference of two tails of $L(1/2,\chi)$, each $O_m(y^{-1/2})$.
+Why is $e\le y$ in the second region? Since $d>y$ and $de\le x=y^2$, we have $e<y$. There is no overlap, since the first region has $d\le y$.
+
+The second inner sum is a difference of two tails of $L(1/2,\chi)$, each $O_m(y^{-1/2})$.
 
 Thus the second double sum is $O_m(y^{-1/2}\sum_{e\le y}e^{-1/2})=O_m(1)$ by the integral test.
 \end{frame}
+% voice-original-frame: 126
 \begin{frame}{Keeping the constant term}
 For $u\ge1$ we need
 \[\sum_{e\le u}\frac1{\sqrt e}=2\sqrt u+C+O(u^{-1/2}).\]
@@ -1113,6 +1378,7 @@ Subtract $\int_e^{e+1}t^{-1/2}\dd t$ from $e^{-1/2}$. The difference lies betwee
 
 Finally $\int_1^{\lfloor u\rfloor+1}t^{-1/2}\dd t=2\sqrt u-2+O(u^{-1/2})$, proving the formula.
 \end{frame}
+% voice-original-frame: 127
 \begin{frame}{Nonvanishing for real characters}
 The first double sum is
 \[2\sqrt x\sum_{d\le y}\frac{\chi(d)}d+C\sum_{d\le y}\frac{\chi(d)}{\sqrt d}
@@ -1121,13 +1387,15 @@ The first term is $2\sqrt xL(1,\chi)+O_m(\sqrt x/y)$; the middle sum is bounded 
 \[\sum_{n\le x}\frac{r_\chi(n)}{\sqrt n}=2\sqrt xL(1,\chi)+O_m(1).\]
 If $L(1,\chi)=0$, this is bounded, contradicting the lower bound $\sum_{j\le\sqrt x}1/j\to\infty$.
 \end{frame}
+% voice-original-frame: 128
 \begin{frame}{Conclusion of Dirichlet's theorem}
-For every nonprincipal $\chi$, nonvanishing gives
+We can now finish the proof. For every nonprincipal $\chi$, we have $L(1,\chi)\ne0$, and hence
 \[\sum_{p^k\le x}\frac{\chi(p^k)\log p}{p^k}=O_m(1).\]
 Substitute into orthogonality and remove the terms with $k\ge2$:
 \[\boxed{\displaystyle\sum_{\substack{p\le x\\p\equiv a\bmod m}}\frac{\log p}{p}=\frac{\log x}{\varphi(m)}+O_m(1).}\]
 In particular every coprime class contains infinitely many primes.
 \end{frame}
+% voice-original-frame: 129
 \begin{frame}{Counting primes in a coprime class}
 Subtract the estimate at $x/K$ from the estimate at $x$. The difference is $\log K/\varphi(m)+O_m(1)$, at least $1$ if we fix $K$ large enough.
 
@@ -1137,6 +1405,7 @@ Each prime counted contributes at most $K\log x/x$. Thus at least $x/(K\log x)$ 
 \[\sum_{\substack{a\in A\\a\le x}}\frac{\log a}{a}=c\log x+O(1),\qquad c>0.\]
 Prove that $\#\{a\in A:a\le x\}$ lies between two positive constant multiples of $x/\log x$ for all sufficiently large $x$.
 \end{frame}
+% voice-original-frame: 130
 \begin{frame}{A remark on Siegel zeros}
 Let $\chi$ be a real nonprincipal character modulo $m$. If $L(1,\chi)=0$, the argument above would give
 \[
@@ -1150,6 +1419,7 @@ We ruled this out. In fact, our proof of nonvanishing gives
 \]
 For each fixed $m$, this sum is therefore at most $\frac34\log x$ once $x$ is sufficiently large. But how large must $x$ be, in terms of $m$?
 \end{frame}
+% voice-original-frame: 131
 \begin{frame}{OpenAI's bound and the Siegel-zero problem}
 \textbf{OpenAI (October 2026).} There is an absolute constant $A>0$ such that, for every $m\ge2$ and every real nonprincipal character $\chi$ modulo $m$,
 \[
@@ -1164,6 +1434,7 @@ L(s,\chi)\ne0\qquad\left(1-\frac{c}{\log m}<s\le1,\quad s\text{ real}\right).
 \]
 {\scriptsize\link{\oaurl}{OpenAI, \emph{Uniform exclusion of Landau--Siegel zeros} (2026).}}
 \end{frame}
+% voice-original-frame: 132
 \begin{frame}{Linnik's theorem}
 Another question in which the dependence on $m$ matters is how far we must go to find the first prime in a given coprime residue class.
 
@@ -1181,34 +1452,37 @@ The bound on the preceding slide combines with Selberg's symmetry formulas to gi
 \section{The prime number theorem}
 
 % ---- sections/toc-131 ----
+% voice-original-frame: 133
 \begin{frame}{The prime number theorem (1 of 2)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation135}{Statement and plan of proof}&135\\
-\hyperlink{Navigation136}{Squarefree integers and M\"obius cancellation}&136--140\\
-\hyperlink{Navigation141}{The implication from $M(x)=o(x)$ to the PNT}&141\\
-\hyperlink{Navigation142}{A logarithmic average of $M(t)/t$}&142--143\\
-\hyperlink{Navigation144}{The Fundamental Lemma}&144\\
-\hyperlink{Navigation145}{Deduction of cancellation from the lemma}&145--149\\
-\hyperlink{Navigation150}{The integral comparison}&150--159\\
-\hyperlink{Navigation160}{Excess and deficit}&160--163\\
+\hyperlink{Navigation145}{Statement and plan of proof}&145\\
+\hyperlink{Navigation146}{Squarefree integers and M\"obius cancellation}&146--150\\
+\hyperlink{Navigation151}{The implication from $M(x)=o(x)$ to the PNT}&151\\
+\hyperlink{Navigation152}{A logarithmic average of $M(t)/t$}&152--153\\
+\hyperlink{Navigation154}{The Fundamental Lemma}&154\\
+\hyperlink{Navigation155}{Deduction of cancellation from the lemma}&155--159\\
+\hyperlink{Navigation160}{The integral comparison}&160--169\\
+\hyperlink{Navigation170}{Excess and deficit}&170--173\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
 
 % ---- sections/toc-132 ----
+% voice-original-frame: 134
 \begin{frame}{The prime number theorem (2 of 2)}
 \small\renewcommand{\arraystretch}{1.35}
 \begin{tabular}{p{.79\textwidth}r}\textbf{Contents}&\textbf{Pages}\\\midrule
-\hyperlink{Navigation164}{The excess below $y$}&164--165\\
-\hyperlink{Navigation166}{The inequality for $E_y$}&166--172\\
-\hyperlink{Navigation173}{The integrated inequality}&173--178\\
-\hyperlink{Navigation179}{The excess above $y$}&179--180\\
-\hyperlink{Navigation181}{Conclusion: $M(x)=o(x)$}&181\\
-\hyperlink{Navigation182}{The hyperbola method and $\sum_{n\le x}\tau(n)$}&182--184\\
-\hyperlink{Navigation185}{Deduction of $\psi(x)\sim x$}&185--188\\
-\hyperlink{Navigation189}{BONUS: $\sum_{n\ge1}\mu(n)/n=0$}&189--192\\
+\hyperlink{Navigation174}{The excess below $y$}&174--175\\
+\hyperlink{Navigation176}{The inequality for $E_y$}&176--182\\
+\hyperlink{Navigation183}{The integrated inequality}&183--188\\
+\hyperlink{Navigation189}{The excess above $y$}&189--190\\
+\hyperlink{Navigation191}{Conclusion: $M(x)=o(x)$}&191\\
+\hyperlink{Navigation192}{The hyperbola method and $\sum_{n\le x}\tau(n)$}&192--194\\
+\hyperlink{Navigation195}{Deduction of $\psi(x)\sim x$}&195--198\\
+\hyperlink{Navigation199}{BONUS: $\sum_{n\ge1}\mu(n)/n=0$}&199--202\\
 \end{tabular}\par\medskip\hyperlink{overview}{\color{teal}Course overview}\end{frame}
 
+% voice-original-frame: 135
 \begin{frame}{The prime number theorem: statement and plan}
 We will prove the Prime Number Theorem in the form
 \[\psi(x)=\sum_{n\le x}\Lambda(n)\sim x.\]
@@ -1216,6 +1490,7 @@ Our first goal is cancellation in the M\"obius sum:
 \[M(x):=\sum_{n\le x}\mu(n)=o(x).\]
 We give a proof using smooth numbers, following Daboussi. First we prove $M(x)=o(x)$; then we deduce $\psi(x)\sim x$.
 \end{frame}
+% voice-original-frame: 136
 \begin{frame}{The number of squarefree integers up to $x$}
 Recall that $\mu(1)=1$ and
 \[\mu(n)=\begin{cases}0,&p^2\mid n\text{ for some prime }p,\\(-1)^k,&n=p_1\cdots p_k\text{ with distinct primes }p_i.\end{cases}\]
@@ -1223,12 +1498,14 @@ There are two natural sums:
 \[A(x)=\sum_{n\le x}|\mu(n)|,\qquad M(x)=\sum_{n\le x}\mu(n).\]
 The first counts squarefree integers. The second counts with a sign: $+1$ for an even number of prime factors and $-1$ for an odd number.
 \end{frame}
+% voice-original-frame: 137
 \begin{frame}{Counting squarefree integers}
 \begin{block}{Theorem}For $x\ge1$, $A(x)=\dfrac6{\pi^2}x+O(\sqrt x)$.\end{block}
 We use the identity
 \[|\mu(n)|=\sum_{d^2\mid n}\mu(d).\]
 The sum expands $\prod_{p^2\mid n}(1-1)$. If $n$ is squarefree this is an empty product, equal to $1$. Otherwise some factor is zero.
 \end{frame}
+% voice-original-frame: 138
 \begin{frame}{Reversing the squarefree sum}
 Summing and reversing order,
 \begin{align*}
@@ -1239,6 +1516,7 @@ A(x)&=\sum_{n\le x}\sum_{d^2\mid n}\mu(d)
 Extend the sum to infinity, since
 \[\left|\sum_{d>\sqrt x}\frac{\mu(d)}{d^2}\right|\le\sum_{d>\sqrt x}\frac1{d^2}=O(x^{-1/2}).\]
 \end{frame}
+% voice-original-frame: 139
 \begin{frame}{The squarefree density}
 By absolute convergence,
 \[\left(\sum_{d\ge1}\frac{\mu(d)}{d^2}\right)\left(\sum_{e\ge1}\frac1{e^2}\right)
@@ -1246,16 +1524,19 @@ By absolute convergence,
 Since $\sum_e e^{-2}=\pi^2/6$, the leading constant is $6/\pi^2$. We have proved
 \[A(x)=\frac6{\pi^2}x+O(\sqrt x).\]
 \end{frame}
+% voice-original-frame: 140
 \begin{frame}{Cancellation in the M\"obius sum}
 What about the signed sum? We want to prove
 \begin{block}{Theorem (von Mangoldt, 1897)}\[M(x)=o(x).\]\end{block}
 In other words, squarefree integers split equally between the signs: each of $\mu(n)=1$ and $\mu(n)=-1$ occurs $3x/\pi^2+o(x)$ times up to $x$.
 \end{frame}
+% voice-original-frame: 141
 \begin{frame}{From M\"obius cancellation to primes}
 If $M(x)=o(x)$, asymptotically half of the squarefree integers have each sign. We will use this to prove the PNT.
 \begin{block}{Theorem}\[M(x)=o(x)\quad\Longrightarrow\quad\psi(x)\sim x.\]\end{block}
 We prove this implication after establishing $M(x)=o(x)$.
 \end{frame}
+% voice-original-frame: 142
 \begin{frame}{A bounded M\"obius sum with weight $1/n$}
 The M\"obius function gives a number-theoretically friendly answer to the question of ``who is number $1$'':
 \[\ind_{n=1}=\sum_{d\mid n}\mu(d).\]
@@ -1266,6 +1547,7 @@ Since $|\mu(d)|\le1$ and $0\le\{x/d\}<1$,
 \[\left|\sum_{d\le x}\frac{\mu(d)}d\right|<\frac{1+\lfloor x\rfloor}{x}\le2\qquad(x\ge1).\]
 
 \end{frame}
+% voice-original-frame: 143
 \begin{frame}{A logarithmic average of $M(t)/t$}
 Expressing the same sum by partial summation, we have
 \[\sum_{n\le x}\frac{\mu(n)}n=\frac{M(x)}x+\int_1^x\frac{M(t)}t\frac{\dd t}t.\]
@@ -1275,6 +1557,7 @@ Thus $M(t)/t$ tends to zero on logarithmic average:
 \[\frac1{\log x}\int_1^x\frac{M(t)}t\frac{\dd t}t\longrightarrow0.\]
 We want $M(x)/x$ itself to tend to zero.
 \end{frame}
+% voice-original-frame: 144
 \begin{frame}{The Fundamental Lemma}
 Put $a=\limsup_{t\to\infty}|M(t)|/t$, so $0\le a\le1$. Write $v^+=\max\{v,0\}$.
 \begin{block}{Fundamental Lemma}As $x\to\infty$,
@@ -1283,6 +1566,7 @@ Roughly speaking, $|M(t)|/t$ spends most of its time close to its limit superior
 
 First we deduce $a=0$ from this lemma; then we prove it.
 \end{frame}
+% voice-original-frame: 145
 \begin{frame}{How the Fundamental Lemma implies cancellation}
 Suppose $a>0$. In every interval $[X,BX]$, we will find a $u$ with $|M(u)|/u\le a/2$. Otherwise $M$ would keep one sign and its logarithmic integral would be too large.
 
@@ -1290,6 +1574,7 @@ Then $|M(t)|/t\le3a/4$ throughout a short interval starting at $u$. Each such in
 \[\int_1^x\left(a-\frac{|M(t)|}t\right)^+\frac{\dd t}t,\]
 contradicting the Fundamental Lemma.
 \end{frame}
+% voice-original-frame: 146
 \begin{frame}{Finding a small value in every long interval}
 Suppose for a contradiction that $a>0$, and fix $B=\exp(12/a)$. We first show that every interval $[X,BX]$, with $X\ge1$, contains a $u$ for which $|M(u)|\le(a/2)u$.
 
@@ -1298,6 +1583,7 @@ Indeed, if there is no such $u$, then $M(t)$ is nonzero throughout $[X,BX]$. Sin
 =\int_X^{BX}\frac{|M(t)|}t\frac{\dd t}t\ge\frac a2\log B=6.\]
 But the two integrals from $1$ to $BX$ and $1$ to $X$ each have absolute value less than $3$. Their difference is less than $6$, a contradiction.
 \end{frame}
+% voice-original-frame: 147
 \begin{frame}{A whole interval of small values}
 Now let $X\ge X_0:=8/a$, and choose $u\in[X,BX]$ with $|M(u)|\le(a/2)u$. To obtain a lower bound for the integral in the Fundamental Lemma, we extend this estimate to nearby values of $t$.
 
@@ -1309,6 +1595,7 @@ For $u\le t\le u(1+a/8)$,
 \end{align*}
 We used $t\ge u\ge8/a$. Since $a\le1$, this whole interval lies in $[X,2BX]$.
 \end{frame}
+% voice-original-frame: 148
 \begin{frame}{A fixed positive contribution}
 For every $X\ge X_0$,
 \begin{align*}
@@ -1318,6 +1605,7 @@ For every $X\ge X_0$,
 \end{align*}
 This lower bound is independent of $X$: $\int_u^{u(1+a/8)}\dd t/t=\log(1+a/8)$ for every $u$.
 \end{frame}
+% voice-original-frame: 149
 \begin{frame}{Contradiction to the Fundamental Lemma}
 Use the last estimate at $X=X_0,(2B)X_0,\ldots,(2B)^{N-1}X_0$. The intervals have disjoint interiors, so
 \[\int_1^{(2B)^NX_0}\left(a-\frac{|M(t)|}t\right)^+\frac{\dd t}t
@@ -1326,6 +1614,7 @@ The Fundamental Lemma makes the left side $o(N)$, since
 \[\log((2B)^NX_0)=N\log(2B)+\log X_0.\]
 This contradiction forces $a=0$.
 \end{frame}
+% voice-original-frame: 150
 \begin{frame}{Proving the Fundamental Lemma}
 It remains to show
 \[\int_1^y\left(a-\frac{|M(t)|}t\right)^+\frac{\dd t}t=o(\log y).\]
@@ -1333,6 +1622,7 @@ We compare $|M(t,y)|/t$ with $a\Psi(t,y)/t$, where both sums are restricted to $
 
 For $t\le y$, these are $|M(t)|/t$ and $a\lfloor t\rfloor/t$, nearly the quantities in the lemma.
 \end{frame}
+% voice-original-frame: 151
 \begin{frame}{Smooth integers}
 Let $P^+(n)$ be the largest prime factor of $n$, with $P^+(1)=1$. An integer is $y$-smooth if $P^+(n)\le y$. Put
 \[\Psi(x,y)=\sum_{\substack{n\le x\\P^+(n)\le y}}1,\qquad
@@ -1341,6 +1631,7 @@ Throughout take $y\ge3$ and $P=\prod_{p\le y}p$.
 
 For $t\le y$, $M(t,y)=M(t)$. For fixed $y$ and large enough $t$, the smooth M\"obius sum vanishes.
 \end{frame}
+% voice-original-frame: 152
 \begin{frame}{Three basic facts about the smooth sums}
 First, $|M(t,y)|\le\Psi(t,y)$ for all $t\ge1$.
 
@@ -1349,6 +1640,7 @@ For $1\le t\le y$, every integer counted is smooth, so
 For $t\ge P$, every squarefree smooth integer is a divisor of $P$, and all divisors have appeared. Hence
 \[M(t,y)=\sum_{d\mid P}\mu(d)=0.\]
 \end{frame}
+% voice-original-frame: 153
 \begin{frame}{The integral comparison we need}
 Following Daboussi, we compare $|M(x,y)|$ with $a\Psi(x,y)$. The following estimate gets us started: for every $y\ge3$,
 \[\int_1^\infty\left(\frac{|M(t,y)|}t-a\frac{\Psi(t,y)}t\right)\frac{\dd t}t\ge0.\]
@@ -1356,6 +1648,7 @@ Below $y$ the integrand is $|M(t)|/t-a\lfloor t\rfloor/t$, differing from $|M(t)
 
 We first establish the inequality with $y$ fixed, then let $y$ tend to infinity.
 \end{frame}
+% voice-original-frame: 154
 \begin{frame}{Splitting off bounded prime factors}
 Each positive integer admits a unique decomposition in the form
 \[n=bc,\qquad P^+(b)\le y,\qquad(c,P)=1.\]
@@ -1364,6 +1657,7 @@ Put the full prime powers for $p\le y$ into $b$, and the remaining prime powers 
 \sum_{\substack{b\le x/c\\P^+(b)\le y}}\mu(b)
 =\sum_{\substack{c\le x\\(c,P)=1}}\mu(c)M(x/c,y).\]
 \end{frame}
+% voice-original-frame: 155
 \begin{frame}{Grouping the smooth sums}
 Since $M(t,y)=0$ for $t\ge P$,
 \[|M(x)|\le\sum_{\substack{x/P<c\le x\\(c,P)=1}}|M(x/c,y)|.\]
@@ -1371,6 +1665,7 @@ Keep $y$ fixed and group by $j=\lfloor x/c\rfloor$, where $1\le j<P$. Then $x/(j
 \[|M(x)|\le\sum_{j=1}^{P-1}|M(j,y)|
 \sum_{\substack{x/(j+1)<c\le x/j\\(c,P)=1}}1.\]
 \end{frame}
+% voice-original-frame: 156
 \begin{frame}{Counting integers coprime to $P$}
 \small
 View $y$ as fixed. Every block of $P$ consecutive integers contains precisely $\varphi(P)$ integers coprime to $P$, so
@@ -1381,6 +1676,7 @@ There are only $P-1$ terms, so the total error is still $O_y(1)$:
 Divide by $x$ and take the limsup:
 \[a\le\frac{\varphi(P)}P\sum_{j=1}^{P-1}|M(j,y)|\left(\frac1j-\frac1{j+1}\right).\]
 \end{frame}
+% voice-original-frame: 157
 \begin{frame}{Writing the sum as an integral}
 Since $M(t,y)=M(j,y)$ on $[j,j+1)$,
 \begin{align*}
@@ -1391,6 +1687,7 @@ Consequently
 \[\int_1^\infty\frac{|M(t,y)|}t\frac{\dd t}t\ge a\frac P{\varphi(P)}
 =a\prod_{p\le y}(1-1/p)^{-1}.\]
 \end{frame}
+% voice-original-frame: 158
 \begin{frame}{The corresponding integral for $\Psi$}
 The product just obtained also occurs in the integral of $\Psi(t,y)/t$. To see this, first observe that, for fixed $y$,
 \[\Psi(x,y)\le\left(1+\frac{\log x}{\log2}\right)^{\pi(y)}=o(x),\]
@@ -1401,6 +1698,7 @@ Let $x\to\infty$:
 \[\int_1^\infty\frac{\Psi(t,y)}t\frac{\dd t}t
 =\sum_{P^+(n)\le y}\frac1n=\prod_{p\le y}(1-1/p)^{-1}.\]
 \end{frame}
+% voice-original-frame: 159
 \begin{frame}{The integral comparison is proved}
 We have shown
 \[\int_1^\infty\frac{|M(t,y)|}t\frac{\dd t}t
@@ -1410,6 +1708,7 @@ Equivalently,
 \[\int_1^\infty\left(\frac{|M(t,y)|}t-a\frac{\Psi(t,y)}t\right)\frac{\dd t}t\ge0.\]
 We now consider $y\to\infty$.
 \end{frame}
+% voice-original-frame: 160
 \begin{frame}{Excess and deficit}
 To apply the integral comparison to the Fundamental Lemma, we separate its integrand into positive and negative parts. Define excess and deficit functions by
 \[E_y(t)=\left(\frac{|M(t,y)|}t-a\frac{\Psi(t,y)}t\right)^+,\quad
@@ -1418,6 +1717,7 @@ Their difference is $|M(t,y)|/t-a\Psi(t,y)/t$. The total excess is at least the 
 \[\int_1^\infty D_y(t)\frac{\dd t}t\le\int_1^\infty E_y(t)\frac{\dd t}t.\]
 Both integrals converge: $E_y(t)\le\Psi(t,y)/t$ and $D_y(t)\le a\Psi(t,y)/t$.
 \end{frame}
+% voice-original-frame: 161
 \begin{frame}{Relating the deficit to the Fundamental Lemma}
 When $1\le t\le y$, the deficit $D_y(t)$ is closely related to the integrand in the Fundamental Lemma:
 \begin{align*}
@@ -1427,6 +1727,7 @@ D_y(t)&=\left(a\frac{\lfloor t\rfloor}t-\frac{|M(t)|}t\right)^+\\
 \end{align*}
 We used $(v-h)^+\ge v^+-h$ for $h\ge0$. Thus $(a-|M(t)|/t)^+\le D_y(t)+a/t$.
 \end{frame}
+% voice-original-frame: 162
 \begin{frame}{It suffices to bound the excess}
 Integrating and comparing deficit with excess,
 \begin{align*}
@@ -1437,6 +1738,7 @@ Integrating and comparing deficit with excess,
 We have therefore reduced the Fundamental Lemma to proving that
 \[\int_1^\infty E_y(t)\frac{\dd t}t=o(\log y).\]
 \end{frame}
+% voice-original-frame: 163
 \begin{frame}{Making less of the excess}
 We have $0\le E_y(t)\le|M(t,y)|/t\le\Psi(t,y)/t\le1$. Hence
 \begin{align*}
@@ -1448,6 +1750,7 @@ by Mertens' product estimate.
 
 So the remaining fight is over the case of a single letter: We must improve $O(\log y)$ to $o(\log y)$.
 \end{frame}
+% voice-original-frame: 164
 \begin{frame}{The excess below $y$}
 We split the integral at $y$. The required estimate below $y$ follows from the definition of $a$:
 \[\int_1^y E_y(t)\frac{\dd t}t=o(\log y).\]
@@ -1455,6 +1758,7 @@ Fix $\epsilon>0$. By the definition of $a$, choose $T\ge1$ so that
 \[\frac{|M(t)|}t\le a+\epsilon\qquad(t\ge T).\]
 Here $M(t,y)=M(t)$ and $\Psi(t,y)=\lfloor t\rfloor$ when $t\le y$.
 \end{frame}
+% voice-original-frame: 165
 \begin{frame}{Finishing the estimate below $y$}
 For $T\le t\le y$,
 \[E_y(t)=\left(\frac{|M(t)|}t-a+a\frac{\{t\}}t\right)^+\le\epsilon+\frac at.\]
@@ -1466,6 +1770,7 @@ Using $E_y(t)\le1$ on the initial interval,
 \end{align*}
 Divide by $\log y$ and let $y\to\infty$. The limsup is at most every $\epsilon>0$, so it is zero.
 \end{frame}
+% voice-original-frame: 166
 \begin{frame}{An identity for the smooth M\"obius sum}
 To handle the remaining range $(y,\infty)$, we need two logarithmic relations. We begin their derivation with some simple consequences of M\"obius inversion. Recall
 \[\Lambda(n)=-\sum_{d\mid n}\mu(d)\log d.\]
@@ -1474,6 +1779,7 @@ M\"obius inversion gives
 =\sum_{p^k\mid n}\log p\,\mu(n/p^k).\]
 We sum over smooth integers.
 \end{frame}
+% voice-original-frame: 167
 \begin{frame}{Summing the identity over smooth integers}
 \begin{align*}
 -\sum_{\substack{n\le x\\P^+(n)\le y}}\mu(n)\log n
@@ -1484,6 +1790,7 @@ We sum over smooth integers.
 \end{align*}
 We put $n=p^km$. Since $p\le y$, smoothness of $n$ is equivalent to smoothness of $m$.
 \end{frame}
+% voice-original-frame: 168
 \begin{frame}{Partial summation of the logarithmic weight}
 On the other hand, partial summation gives
 \[\sum_{\substack{n\le x\\P^+(n)\le y}}\mu(n)\log n
@@ -1492,12 +1799,14 @@ Substituting into the preceding identity and rearranging,
 \[M(x,y)\log x=-\sum_{\substack{p\le y\\p^k\le x}}\log p\,M(x/p^k,y)
 +\int_1^x M(t,y)\frac{\dd t}t.\]
 \end{frame}
+% voice-original-frame: 169
 \begin{frame}{Taking absolute values}
 Taking absolute values and appealing to the triangle inequality,
 \[|M(x,y)|\log x\le\sum_{\substack{p\le y\\p^k\le x}}\log p\,|M(x/p^k,y)|
 +\int_1^x|M(t,y)|\frac{\dd t}t.\]
 We will compare this with an exact identity for $\Psi(x,y)$.
 \end{frame}
+% voice-original-frame: 170
 \begin{frame}{The identity for $\Psi$}
 Start instead with $\log n=\sum_{p^k\mid n}\log p$. Summing over smooth integers gives
 \[\sum_{\substack{n\le x\\P^+(n)\le y}}\log n
@@ -1507,6 +1816,7 @@ Partial summation yields
 +\int_1^x\Psi(t,y)\frac{\dd t}t.\]
 We subtract $a$ times this identity from the inequality for $|M|$.
 \end{frame}
+% voice-original-frame: 171
 \begin{frame}{Subtracting and taking positive parts}
 \small
 We obtain
@@ -1518,6 +1828,7 @@ We obtain
 \end{align*}
 Replacing each difference on the right by its positive part only increases the right-hand side and so preserves the inequality. Since the resulting right-hand side is nonnegative, we may also replace the left-hand side by its positive part.
 \end{frame}
+% voice-original-frame: 172
 \begin{frame}{The inequality for $E_y$}
 Since $(|M(t,y)|-a\Psi(t,y))^+=tE_y(t)$,
 \[xE_y(x)\log x\le\sum_{\substack{p\le y\\p^k\le x}}\log p\,\frac{x}{p^k}E_y(x/p^k)
@@ -1527,6 +1838,7 @@ Divide by $x$:
 +\int_1^x\frac tx E_y(t)\frac{\dd t}t.\]
 Next we integrate with respect to $\dd x/x$.
 \end{frame}
+% voice-original-frame: 173
 \begin{frame}{Integrating the excess inequality}
 Recall
 \[E_y(x)\log x\le\sum_{\substack{p\le y\\p^k\le x}}\frac{\log p}{p^k}E_y(x/p^k)
@@ -1535,6 +1847,7 @@ For fixed $y$, $M(t,y)=0$ for $t\ge P$, and so $E_y(t)=0$ there. The integral on
 
 Here all manipulations of sums and integrals are justified by nonnegativity.
 \end{frame}
+% voice-original-frame: 174
 \begin{frame}{Integrating the prime-power terms}
 For the term indexed by $p^k$, substitute $t=x/p^k$:
 \[\int_{p^k}^\infty\frac{\log p}{p^k}E_y(x/p^k)\frac{\dd x}x
@@ -1543,6 +1856,7 @@ Therefore the first contribution is
 \[\left(\sum_{p\le y}\sum_{k\ge1}\frac{\log p}{p^k}\right)
 \int_1^\infty E_y(t)\frac{\dd t}t.\]
 \end{frame}
+% voice-original-frame: 175
 \begin{frame}{Reversing the double integral}
 For the remaining term, we reverse the order of integration:
 \[\int_1^\infty\left(\int_1^x\frac tx E_y(t)\frac{\dd t}t\right)\frac{\dd x}x
@@ -1551,6 +1865,7 @@ The inner integral is
 \[\int_t^\infty\frac t{x^2}\dd x=\left[-\frac tx\right]_{x=t}^{x=\infty}=1.\]
 Thus this contribution is simply $\int_1^\infty E_y(t)\dd t/t$.
 \end{frame}
+% voice-original-frame: 176
 \begin{frame}{The integrated inequality}
 Combining the contributions,
 \[\int_1^\infty E_y(t)\log t\frac{\dd t}t
@@ -1558,6 +1873,7 @@ Combining the contributions,
 \int_1^\infty E_y(t)\frac{\dd t}t.\]
 The coefficient on the right is estimated using Mertens' theorem.
 \end{frame}
+% voice-original-frame: 177
 \begin{frame}{Estimating the coefficient}
 Sum the geometric series in $k$:
 \begin{align*}
@@ -1568,6 +1884,7 @@ Sum the geometric series in $k$:
 \end{align*}
 The first sum is Mertens' estimate. The second is bounded by the convergent series $\sum_{n\ge2}(\log n)/(n(n-1))$.
 \end{frame}
+% voice-original-frame: 178
 \begin{frame}{A weighted bound for the excess}
 For an absolute constant $C>0$,
 \[\int_1^\infty E_y(t)\log t\frac{\dd t}t\le(\log y+C)\int_1^\infty E_y(t)\frac{\dd t}t.\]
@@ -1576,6 +1893,7 @@ Subtracting $\log y$ times the excess integral gives
 \le C\int_1^\infty E_y(t)\frac{\dd t}t=O(\log y).\]
 With the factor $\log(t/y)$ omitted, we already had an $O(\log y)$ bound; the advantage here is that the new factor is sensitive to where the excess occurs.
 \end{frame}
+% voice-original-frame: 179
 \begin{frame}{Let's mop up}
 \small
 Recall that $\int_1^y E_y(t)\dd t/t=o(\log y)$. Slightly larger values of $t$, say $y\le t\le y^{1+\epsilon}$ with $\epsilon>0$ fixed, pose no trouble. Since $E_y(t)\le1$,
@@ -1590,6 +1908,7 @@ It remains to consider $t$ that are substantially larger than $y$, meaning $t\ge
 &=o((\log y)^2).
 \end{align*}
 \end{frame}
+% voice-original-frame: 180
 \begin{frame}{Combining the three ranges}
 \small
 On the other hand, $\log(t/y)\ge\epsilon\log y$ when $t\ge y^{1+\epsilon}$, so
@@ -1601,6 +1920,7 @@ Combining the estimates for the three ranges gives
 \[\int_1^\infty E_y(t)\frac{\dd t}t\le\epsilon\log y+o(\log y).\]
 Dividing by $\log y$ and letting $y\to\infty$, the limsup is at most $\epsilon$. But $\epsilon>0$ is arbitrary, and so $\int_1^\infty E_y(t)\dd t/t=o(\log y)$, as desired.
 \end{frame}
+% voice-original-frame: 181
 \begin{frame}{Conclusion: $M(x)=o(x)$}
 The deficit estimate now gives
 \[\int_1^y\left(a-\frac{|M(t)|}t\right)^+\frac{\dd t}t
@@ -1608,6 +1928,7 @@ The deficit estimate now gives
 This proves the Fundamental Lemma. We already showed that the lemma implies $a=0$. Hence
 \[\boxed{\displaystyle M(x)=\sum_{n\le x}\mu(n)=o(x).}\]
 \end{frame}
+% voice-original-frame: 182
 \begin{frame}{From $M(x)=o(x)$ to the PNT}
 We want to prove $\psi(x)\sim x$.
 
@@ -1618,6 +1939,7 @@ where $g$ has small partial sums.
 
 Sum both sides on $n\le x$. The left side is $\psi(x)-x+o(x)$. We show that the right side is $o(x)$, using the hyperbola method.
 \end{frame}
+% voice-original-frame: 183
 \begin{frame}{The hyperbola method}
 \begin{columns}[c]
 \begin{column}{.47\textwidth}
@@ -1638,6 +1960,7 @@ Count the pairs with $d\le3$, then those with $e\le3$. Every pair is counted, an
 For general $x$, split at $\sqrt x$.
 \end{column}\end{columns}
 \end{frame}
+% voice-original-frame: 184
 \begin{frame}{The average order of $\tau(n)$}
 Since $\tau(n)$ counts positive divisors,
 \[\sum_{n\le x}\tau(n)=\sum_{de\le x}1
@@ -1647,6 +1970,7 @@ Every pair has $d\le\sqrt x$ or $e\le\sqrt x$; the square is counted twice.
 Dropping the floors in the sum costs $O(\sqrt x)$, and $\lfloor\sqrt x\rfloor^2=x+O(\sqrt x)$. The harmonic-sum estimate therefore gives
 \[\sum_{n\le x}\tau(n)=x\log x+(2\gamma-1)x+O(\sqrt x).\]
 \end{frame}
+% voice-original-frame: 185
 \begin{frame}{From $M(x)=o(x)$ to the PNT}
 Subtracting our estimate for $\sum_{n\le x}\tau(n)$ from the one for $\sum_{n\le x}\log n$ gives
 \[\sum_{n\le x}(\log n-\tau(n))=-2\gamma x+O(\sqrt x).\]
@@ -1656,6 +1980,7 @@ Since $2\gamma\lfloor x\rfloor=2\gamma x+O(1)$, we have $G(x)=O(\sqrt x)$.
 
 Recall $\sum_{d\mid n}\mu(d)\log(n/d)=\Lambda(n)$. What happens with $\tau$ in place of the logarithm?
 \end{frame}
+% voice-original-frame: 186
 \begin{frame}{The convolution identity}
 Expand $\tau(n/d)$ and sum on $e$ first:
 \[\sum_{d\mid n}\mu(d)\tau(n/d)=\sum_{de\mid n}\mu(d)
@@ -1665,6 +1990,7 @@ Consequently
 Summing, it remains to prove
 \[\psi(x)-\lfloor x\rfloor+2\gamma=\sum_{dj\le x}\mu(d)g(j)=o(x).\]
 \end{frame}
+% voice-original-frame: 187
 \begin{frame}{Using the hyperbola method again}
 \small
 Fix a positive integer $K$. For $x\ge K$, split according as $j\le K$ or $j>K$:
@@ -1677,6 +2003,7 @@ In the second, $x/d\ge K$, and
 with constants independent of $K$. Its absolute value is bounded by a constant times
 \[\sqrt x\sum_{d\le x/K}\frac1{\sqrt d}\le2\sqrt x\sqrt{x/K}=\frac{2x}{\sqrt K}.\]
 \end{frame}
+% voice-original-frame: 188
 \begin{frame}{The prime number theorem}
 For every fixed $K\ge1$,
 \[\psi(x)-x=o_K(x)+O(x/\sqrt K).\]
@@ -1689,6 +2016,7 @@ Since $K$ can be taken arbitrarily large, the limsup is zero. Thus
 
 % ---- sections/08-bonus ----
 \section{BONUS}
+% voice-original-frame: 189
 \begin{frame}{BONUS: $\sum \mu(n)/n=0$}
 We know $M(x)=o(x)$. First we prove a lemma:
 \[R(x):=\sum_{d\le x}\mu(d)\left\{\frac xd\right\}=o(x).\]
@@ -1696,6 +2024,7 @@ Fix an integer $K>2$. We break the sum at $x/K$. Then
 \[\left|\sum_{d\le x/K}\mu(d)\left\{\frac xd\right\}\right|\le\frac xK.\]
 Now consider $x/K<d\le x$. I claim this part of the sum is $o(x)$!
 \end{frame}
+% voice-original-frame: 190
 \begin{frame}{BONUS: partial summation}
 \small
 Put $a=x/K$. Partial summation gives
@@ -1707,6 +2036,7 @@ Subtracting the two identities gives
 \[\sum_{x/K<d\le x}\mu(d)\left\{\frac xd\right\}
 =x\int_{x/K}^x\frac{M(t)}{t^2}\dd t-\sum_{j=2}^K M(x/j).\]
 \end{frame}
+% voice-original-frame: 191
 \begin{frame}{BONUS: the fractional-part sum is $o(x)$}
 Divide the last identity by $x$. Each term $M(x/j)/x$ goes to zero, for $j=2,\ldots,K$. Also,
 \[\left|\int_{x/K}^x\frac{M(t)}{t^2}\dd t\right|
@@ -1717,6 +2047,7 @@ Therefore
 \limsup_{x\to\infty}\frac{|R(x)|}x\le\frac1K.\]
 Take $K$ large. This proves $R(x)=o(x)$.
 \end{frame}
+% voice-original-frame: 192
 \begin{frame}{BONUS: $\sum \mu(n)/n=0$}
 We showed that
 \begin{align*}
@@ -1733,6 +2064,7 @@ We win!
 
 % ---- sections/09-references ----
 \section{Course materials}
+% voice-original-frame: 193
 \begin{frame}{Course materials}
 \small
 \link{https://www.pollack-math.net/8440f26.html}{\textbf{MATH 8440, Fall 2026}}\\
@@ -1751,6 +2083,7 @@ The course handout for the final sequence of lectures.
 \end{frame}
 
 % ---- sections/further-reading ----
+% voice-original-frame: 194
 \begin{frame}{Further reading}
 \link{https://hexagonmath.org/2610.00545v1}{\textbf{The missing Lin(ni)k}}
 
